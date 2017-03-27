@@ -1,0 +1,18 @@
+package com.softsquare.application.dao;
+
+import java.util.ArrayList;
+
+import com.softsquare.application.domain.ProjectMapping;
+import com.softsquare.application.domain.WorkingMapping;
+import com.softsquare.application.entity.Project;
+import com.softsquare.application.entity.Working;
+
+public interface WorkingDao {
+
+	public ArrayList<WorkingMapping> findWorkbyProjectId(WorkingMapping workingMapping);
+	
+	public void saveWorking(Working working) throws Exception;
+	public void removeWorking(Working working) throws Exception ;
+
+	
+}

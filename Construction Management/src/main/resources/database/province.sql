@@ -1,0 +1,20 @@
+
+CREATE TABLE IF NOT EXISTS `PROVINCE` (
+  `PROVINCEID` int(100) NOT NULL AUTO_INCREMENT,
+  `PROVINCECODE` varchar(3) NOT NULL,
+  `PROVINCENAME` varchar(20) NOT NULL,
+    PRIMARY KEY (`PROVINCEID`),
+  UNIQUE KEY `PROVINCECODE` (`PROVINCECODE`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+
+INSERT INTO `PROVINCE` (`PROVINCEID`, `PROVINCECODE`, `PROVINCENAME`) VALUES
+(1, 'CRI', 'ChiangRai'),
+(2, 'CMI', 'ChiangMai'),
+(3, 'NAN', 'Nan'),
+(4, 'PYO', 'Phayao'),
+(5, 'PRE', 'Phrae'),
+(6, 'MSN', 'MaeHongSon'),
+(7, 'LPG', 'Lampang'),
+(8, 'LPN', 'Lamphun'),
+(9, 'UTD', 'Uttaradit');

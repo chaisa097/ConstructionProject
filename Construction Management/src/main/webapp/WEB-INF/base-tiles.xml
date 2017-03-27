@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+        <!-- Pages 
+        <definition name="home" extends="ss.layout">
+            <put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
+            <put-attribute name="localization" value="" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/home.js" />
+            <put-attribute name="pageJsIncluded" value="/js/script/home.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition> 
+        --> 
+		<definition name="home" extends="ss.layout">
+            <put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
+            <put-attribute name="localization" value="" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition> 
+        
+        <definition name="homePM" extends="ss.layout">
+            <put-attribute name="body" value="/WEB-INF/jsp/homePM.jsp" />
+            <put-attribute name="localization" value="" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBarProjectManager.jsp"/>
+        </definition> 
+        
+        <definition name="error" extends="ss.layout">
+            <put-attribute name="body" value="/WEB-INF/jsp/error.jsp" />
+            <put-attribute name="localization" value="" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBarLogin.jsp"/>
+        </definition>
+        
+        <definition name="index" extends="ss.layout">
+            <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+            <put-attribute name="localization" value="" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBarLogin.jsp"/>
+        </definition>
+        
+        <definition name="pageTest" extends="ss.layout">
+        	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/pageTest.jsp" />
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/pageTest-localization.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageToolBar" value="Back|Search"/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBarLogin.jsp"/>
+        </definition>
+        
+         <definition name="register" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/register.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/register.js" />
+            <put-attribute name="pageToolBar" value="Search|Save"/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+         <definition name="manageRole" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/manageRole.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/manageRole.js" />
+            <put-attribute name="pageToolBar" value="Search|Save"/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+         <definition name="province" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/province.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/province.js" />
+            <put-attribute name="pageToolBar" value="Search|Save"/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+          <definition name="listproject" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/listProject.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/listProject.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+          <definition name="createProject" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/createProject.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/createProject.js" />
+            <put-attribute name="pageToolBar" value="Save"/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+          <definition name="listPojectPM" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/listProjectPM.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/listProjectPM.js" />
+            <put-attribute name="pageToolBar" value="Search"/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+          <definition name="addEmployee" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/addEmployee.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/addEmployee.js" />
+            <put-attribute name="pageToolBar" value="Back|Save"/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+         <definition name="viewProject" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/viewProject.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/viewProject.js" />
+            <put-attribute name="pageToolBar" value="Back"/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+           <definition name="stock" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/stock.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/stock.js" />
+            <put-attribute name="pageToolBar" value="Search"/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+        
+        <definition name="orderMaterial" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/orderMaterial.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/orderMaterial.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+        
+        
+</tiles-definitions>
