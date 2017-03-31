@@ -1,5 +1,6 @@
 		$(document).ready(function(){
    	    	BSBaseTable.callFiterTable();
+   	    	SearchFunction();
 	    });
 	    
 		 function searchFunction(){
