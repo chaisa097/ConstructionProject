@@ -145,10 +145,17 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/orderMaterial.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/orderMaterial.js" />
-            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="pageToolBar" value="Save"/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
-        
+        <definition name="orderMaterialDetail" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/orderMaterialDetail.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/orderMaterialDetail.js" />
+            <put-attribute name="pageToolBar" value="Back|Save"/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
         
 </tiles-definitions>

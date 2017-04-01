@@ -48,6 +48,39 @@ var BSBaseComboBox = function () {
 	        });
         },
         
+        getType: function (params, callBack) {
+    		$.ajax({
+	        	type: 'GET'
+	        	, url: application.contextPath+"/combobox.html"
+	        	, data: params
+	        	, success: function(result){
+	            	var json = $.parseJSON(result);
+	            	var data = ['<option></option>'];
+	            	$.each(json, function(index, value) {
+	            		  data.push("<option title="+value.typeName+" value="+value.typeId+" >"+value.typeName+"</option>");
+	            	});
+	            	callBack(data.join());
+	        	}
+	        });
+        },
+        
+        getMaterial: function (params, callBack) {
+    		$.ajax({
+	        	type: 'GET'
+	        	, url: application.contextPath+"/combobox.html"
+	        	, data: params
+	        	, success: function(result){
+	            	var json = $.parseJSON(result);
+	            	var data = ['<option></option>'];
+	            	$.each(json, function(index, value) {
+	            		  data.push("<option title="+value.materialName+" value="+value.materialId+" data-subtext="+value.materialCode+" >"+value.materialName+"</option>");
+	            	});
+	            	callBack(data.join());
+	        	}
+	        });
+        },
+        
+        
         
         
         getprovince: function (params, callBack) {

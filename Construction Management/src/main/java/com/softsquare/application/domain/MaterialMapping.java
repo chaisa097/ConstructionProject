@@ -4,6 +4,7 @@ public class MaterialMapping {
    
 	 private  Integer materialId;
 	 private  String  description;
+	 private  String   materialCode;
 	 private Integer  price;
 	 private Integer typeId;
 	 private Integer  unitId;
@@ -16,6 +17,13 @@ public class MaterialMapping {
 	}
 	public void setMaterialId(Integer materialId) {
 		this.materialId = materialId;
+	}
+	
+	public String getMaterialCode() {
+		return materialCode;
+	}
+	public void setMaterialCode(String materialCode) {
+		this.materialCode = materialCode;
 	}
 	public String getDescription() {
 		return description;

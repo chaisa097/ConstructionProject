@@ -49,8 +49,6 @@
 					<div class="col-md-3"  style="margin-top:10px; margin-bottom:20px">
 						<select class="selectpicker show-tick show-menu-arrow" id="employee"  name="employeeList" data-live-search="true" data-size="5" data-header="Select Employee" disabled></select>
 					</div>
-			   			       
-			   
 				</div>
 			
 				

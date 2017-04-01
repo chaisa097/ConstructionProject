@@ -11,9 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.softsquare.application.common.util.BeanUtils;
-import com.softsquare.application.domain.LoginMapping;
 import com.softsquare.application.domain.ProvinceMapping;
-import com.softsquare.application.entity.Login;
 import com.softsquare.application.entity.Province;
 
 @Repository()

@@ -9,15 +9,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 import com.softsquare.application.entity.Employee;
+import com.softsquare.application.entity.Material;
+import com.softsquare.application.entity.MaterialType;
 import com.softsquare.application.entity.Province;
 import com.softsquare.application.entity.Role;
 import com.softsquare.application.service.EmployeeService;
+import com.softsquare.application.service.MaterialService;
 import com.softsquare.application.service.RoleService;
 import com.softsquare.application.service.ProvinceService;
+import com.softsquare.application.service.TypeService;
+
+
 @RestController
 @RequestMapping("/combobox.html")
 @Configurable
@@ -30,6 +37,11 @@ public class ComboboxController {
 	@Autowired
 	private ProvinceService provinceSerivce;
 
+	@Autowired
+	private TypeService typeSerivce;
+	@Autowired
+	private MaterialService materialService;
+	
 	
 	@RequestMapping(params =  "method=role" , method=RequestMethod.POST)
     public void register(HttpServletRequest request, HttpServletResponse response){
@@ -70,6 +82,34 @@ public class ComboboxController {
 				e.printStackTrace();
 		}
 	}
+	
+	
+	@RequestMapping(params =  "method=Type" , method=RequestMethod.GET)
+    public void typeMateriallist(HttpServletRequest request, HttpServletResponse response  ){
+		ArrayList<MaterialType> typeList =  typeSerivce.getMaterialType();
+		Gson gson = new Gson();
+		String  json = gson.toJson(typeList);
+		try {
+//			response.getWriter().write("{records:"+json+"}");
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
+	
+	@RequestMapping(params =  "method=Material" , method=RequestMethod.GET)
+    public void Materiallist(@RequestParam("TypeId") int typeId,HttpServletRequest request, HttpServletResponse response  ){
+		ArrayList<Material> materialList =  materialService.getMaterial(typeId);		
+		Gson gson = new Gson();
+		String  json = gson.toJson(materialList);
+		try {
+//			response.getWriter().write("{records:"+json+"}");
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
+	
 	
 	
 	

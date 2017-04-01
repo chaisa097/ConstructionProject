@@ -1,0 +1,65 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<html>
+<div name="statusSave" hidden="true"></div>
+<div class="container">
+	<div class="form-group">
+		<div class="panel panel-default">
+		  <div class="panel-heading"><lable class="headPanal">MaterialDetail</lable>
+				
+			  </div>
+		 </div>
+		 <div class="panel-body" style="margin-top:-25px;">
+		  <div class="row">
+		 		<button type="button" class="btn btn-default" onclick="addRow()">
+					<span class="glyphicon glyphicon-plus"></span>InsertMaterial
+				</button> 
+				      
+				<div class="row" style="margin-top:10px; margin-bottom:-5px" name="addEditData">
+					
+				
+					<div class="col-md-3" style="margin-top:10px; margin-bottom:5px" >
+						<select class="typeList"  id="type"  name="typeList" data-live-search="true" data-size="5" data-header="Select Type" disabled></select>
+					</div>
+			        
+					<div class="col-md-3"  style="margin-top:10px; margin-bottom:20px">
+						<select class="selectpicker show-tick show-menu-arrow" id="type"  name="materialList" data-live-search="true" data-size="5" data-header="Select Material" disabled></select>
+					</div>
+					
+					<div class="col-md-3"  style="margin-top:10px; margin-bottom:20px">
+							<input type="number" id="" class="form-control" placeholder="Amount of Order" name="quantityOrder" disabled>
+					</div>
+					<div class="col-md-3"  style="margin-top:10px; margin-bottom:20px">
+							<input type="text" id="" class="form-control" placeholder="Anotation" name="anotation" disabled>
+					</div>
+					
+				</div>
+			
+				
+		        <div class="panel panel-default filterable">
+		            <div class="panel-heading">
+		                <h3 class="panel-title">material List</h3>
+		               
+		            </div>
+		            <table class="table">
+		                <thead>
+		                    <tr class="filters">
+		                    	<th>Manage</th>
+		                        <th><input type="text" class="form-control" placeholder="MaterialName" disabled></th>
+		                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
+		                        <th><input type="text" class="form-control" placeholder="AmountOfOrder" disabled></th>
+		                        <th><input type="text" class="form-control" placeholder="Unit" disabled></th>
+		                    </tr>
+		                </thead>
+		                <tbody>
+		                </tbody>
+		            </table>
+		        </div>
+		    </div>
+		 </div>
+	</div>
+</div>	
+</html>

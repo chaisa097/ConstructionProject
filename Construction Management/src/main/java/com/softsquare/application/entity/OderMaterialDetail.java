@@ -16,7 +16,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class OderMaterialDetail  implements Serializable {
 
 	
-	private static final long serialVersionUID = -23497329779893078L;
+	private static final long serialVersionUID = 23497329779893078L;
 
 	@Id
     @GeneratedValue

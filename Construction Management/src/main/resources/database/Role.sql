@@ -1,6 +1,5 @@
 
-----------------//Start ROLE
--------//Create Table ROLE
+
 CREATE TABLE IF NOT EXISTS `ROLE` (
   `ROLEID` int(100) NOT NULL AUTO_INCREMENT,
   `ROLECODE` varchar(30) NOT NULL,
@@ -13,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `ROLE` (
   UNIQUE KEY `LOGIN` (`ROLECODE`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
--------//Insert Table ROLE
+
 INSERT INTO `ROLE` (`ROLEID`, `ROLECODE`, `ROLENAME`, `CREATE_USER`, `CREATE_DATE`, `UPDATE_USER`, `UPDATE_DATE`) VALUES
 (1, 'admin', 'administrator', 'admin', '2015-08-06 10:41:47.245609', 'admin', '2015-08-06 10:41:47.245609'),
 (2, 'PM', 'projectManagement', 'admin', '2015-08-06 10:41:47.245609', 'admin', '2015-08-06 10:41:47.245609'),
