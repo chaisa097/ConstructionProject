@@ -25,11 +25,11 @@ public class OrderMaterialDetailController {
 	
 	@Autowired
 	private OrderMaterialDetialService orderDetailService;
-	@Autowired
+
 	
 	
 	@RequestMapping(method=RequestMethod.GET)
-    public ModelAndView page(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialDetailMapping mapping){
+    public ModelAndView page(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialDetailMapping mapping ){
     	ModelAndView mav = new ModelAndView();
     	mav.setViewName("orderMaterialDetail");
     	if(BeanUtils.isNotNull(mapping.getOrderMaterialId())){
