@@ -2,11 +2,11 @@ package com.softsquare.application.domain;
 
 public class OrderMaterialDetailMapping {
 	
-	private Integer orderMaterialDatailId;
-	private Integer orderMaterialId;
+	private Integer   orderMaterialDatailId;
+	private Integer   orderMaterialId;
 	private Integer   materialId;
-	private String anotation;
-	private Integer  quantityOrder;
+	private String    anotation;
+	private Integer   quantityOrder;
 	
 	
 	public Integer getOrderMaterialDatailId() {

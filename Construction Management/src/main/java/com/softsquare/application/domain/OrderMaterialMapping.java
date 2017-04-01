@@ -9,8 +9,9 @@ public class OrderMaterialMapping {
 	private Integer orderMaterialId;
 	private Integer employeeId;
 	private String  orderMaterialNo;
-	private Date    orderMaterialDate;
+	private String    orderMaterialDate;
 	private String  status;
+	private String  address;
 	private String  employee;
 	
 	
@@ -32,10 +33,11 @@ public class OrderMaterialMapping {
 	public void setOrderMaterialNo(String orderMaterialNo) {
 		this.orderMaterialNo = orderMaterialNo;
 	}
-	public Date getOrderMaterialDate() {
+	
+	public String getOrderMaterialDate() {
 		return orderMaterialDate;
 	}
-	public void setOrderMaterialDate(Date orderMaterialDate) {
+	public void setOrderMaterialDate(String orderMaterialDate) {
 		this.orderMaterialDate = orderMaterialDate;
 	}
 	public String getStatus() {
@@ -49,6 +51,12 @@ public class OrderMaterialMapping {
 	}
 	public void setEmployee(String employee) {
 		this.employee = employee;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	

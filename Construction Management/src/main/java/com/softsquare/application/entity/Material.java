@@ -24,6 +24,9 @@ public class Material implements Serializable {
     @Column(name = "MATERIALID")
 	private Integer materialId;
 	
+
+	@Column(name = "MATERIALCODE", nullable = false)
+	private String  materialCode;
 	
 	@Column(name = "MATERIALNAME", nullable = false)
 	private String  materialName;
@@ -113,6 +116,14 @@ public class Material implements Serializable {
 
 	public void setUnit(Unit unit) {
 		this.unit = unit;
+	}
+
+	public String getMaterialCode() {
+		return materialCode;
+	}
+
+	public void setMaterialCode(String materialCode) {
+		this.materialCode = materialCode;
 	}
 	
 	

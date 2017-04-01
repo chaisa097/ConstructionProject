@@ -26,11 +26,12 @@ public class OrderMaterial extends BaseEntity implements Serializable  {
     @Column(name = "ORDER_MATERIALID")
 	private Integer orderMaterialId;
 	
-	@NotEmpty
+
 	@Column(name = "EMPLOYEEID", nullable = false)
 	private Integer employeeId;
+
 	
-	@Column(name = "ORDERMARERIAL_NO", nullable = false)
+	@Column(name = "ORDERMARERIAL_NO")
 	private String   orderMaterialNo;
 	
 	@Column(name = "ORDERMARERIAL_DATE", nullable = false)
@@ -39,11 +40,15 @@ public class OrderMaterial extends BaseEntity implements Serializable  {
 	@Column(name = "STATUS", nullable = false)
 	private String  status;
 	
+	@Column(name = "ADDRESS", nullable = false)
+	private String  address;
+	
+	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EMPLOYEEID", referencedColumnName = "EMPLOYEEID", insertable=false, updatable=false)
     private Employee employee;
 	
-
+	
 	public Integer getOrderMaterialId() {
 		return orderMaterialId;
 	}
@@ -82,6 +87,22 @@ public class OrderMaterial extends BaseEntity implements Serializable  {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
 	}
 	
 	
