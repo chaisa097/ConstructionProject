@@ -69,6 +69,7 @@
 					$("div[name='addEditData'] select[name='typeList']").prop('disabled', false).selectpicker('refresh');
 					$("div[name='addEditData'] select[name='materialList']").prop('disabled',  false).selectpicker('refresh');
 					$("div[name='addEditData'] input[name='quantityOrder']").prop('disabled', false);
+					$("div[name='addEditData'] input[name='anotation']").prop('disabled', false);
 					
 							
 				
@@ -77,11 +78,13 @@
 					$("div[name='addEditData'] select[name='typeList']").prop('disabled', false).selectpicker('refresh');
 					$("div[name='addEditData'] select[name='materialList']").prop('disabled',  false).selectpicker('refresh');
 					$("div[name='addEditData'] input[name='quantityOrder']").prop('disabled',  false);
+					$("div[name='addEditData'] input[name='anotation']").prop('disabled', false);
 				}else{
 					createOrUpdateMode(param);
 					$("div[name='addEditData'] select[name='typeList']").prop('disabled', true);
 					$("div[name='addEditData'] select[name='materialList']").prop('disabled', true);
 					$("div[name='addEditData'] input[name='quantityOrder']").prop('disabled',  true);
+					$("div[name='addEditData'] input[name='anotation']").prop('disabled', true);
 				}
 		}
 
@@ -90,7 +93,7 @@
 				$("div[name='addEditData'] select[name='typeList']").val('');
 				$("div[name='addEditData'] select[name='materialList']").val('');
 				$("div[name='addEditData'] input[name='quantityOrder']").val('');
-			
+				$("div[name='addEditData'] input[name='anotation']").val('');
 				 
 			 if(BeanUtils.equals(param, 'create')){
 				 $("div[name='statusSave']").attr('mode', 'create');

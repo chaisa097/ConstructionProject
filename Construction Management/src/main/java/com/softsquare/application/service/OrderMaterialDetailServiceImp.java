@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.softsquare.application.dao.OrderMaterialDetailDao;
 import com.softsquare.application.domain.OrderMaterialDetailMapping;
+import com.softsquare.application.domain.OrderMaterialMapping;
 import com.softsquare.application.entity.OderMaterialDetail;
 
 @Service
@@ -16,7 +17,8 @@ public class OrderMaterialDetailServiceImp  implements OrderMaterialDetialServic
 	@Override
 	public void saveOrdermaterialDetail(OrderMaterialDetailMapping mapping) throws Exception {
 		OderMaterialDetail orderdetail = new OderMaterialDetail();
-		orderdetail.setOrderMaterialId(mapping.getOrderMaterialId());
+		OrderMaterialMapping  map =  new OrderMaterialMapping();
+		orderdetail.setOrderMaterialId(map.getOrderMaterialId());
 		orderdetail.setMaterialId(mapping.getMaterialId());
 		orderdetail.setQuantityOrder(mapping.getQuantityOrder());
 		orderdetail.setAnotation(mapping.getAnotation());

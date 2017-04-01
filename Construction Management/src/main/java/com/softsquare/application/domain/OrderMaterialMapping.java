@@ -9,7 +9,7 @@ public class OrderMaterialMapping {
 	private Integer orderMaterialId;
 	private Integer employeeId;
 	private String  orderMaterialNo;
-	private String    orderMaterialDate;
+	private String  orderMaterialDate;
 	private String  status;
 	private String  address;
 	private String  employee;
