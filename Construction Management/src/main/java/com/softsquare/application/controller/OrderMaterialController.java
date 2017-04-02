@@ -39,9 +39,7 @@ public class OrderMaterialController {
 		
 	}
 	
-	
-	
-	
+    
 	@RequestMapping(params =  "method=search" , method=RequestMethod.POST)
 	public void search(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialMapping mapping) throws Throwable{
 		Gson gson = new Gson();

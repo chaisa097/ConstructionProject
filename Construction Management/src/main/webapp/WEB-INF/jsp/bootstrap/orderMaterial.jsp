@@ -8,55 +8,54 @@
 <div name="statusSave" hidden="true"></div>
 <div class="container">
 	<div class="form-group">
-     
+
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<lable class="headPanal">OrderMaterial</lable>
 			</div>
 		</div>
-		 <div class="col-md-12">
+		<div class="col-md-12">
 			<button type="button" class="btn btn-default" onclick="addRow()">
-						<span class="glyphicon glyphicon-pencil"></span>InsertData
-				</button> 		
-	     </div>
-		<div class="row" style="margin-top: 10px; margin-bottom: -5px" name="addEditData">				
-		 <div class="col-md-12">
-		
-		 
-		    <div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-		    <label>OrderDate</label>
-		    <input type="date" class="form-control" id="Correntdate"
-					placeholder="" name="orderMaterialDate" disabled>
-		    </div>
-		 		  
-		     <div class="col-md-4"></div>
-		  
-			<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-			<label>orderNo</label>
-				<input type="text" class="form-control" id="orderNo"
-					placeholder="orderNo." name="orderMaterialNo" disabled>
+				<span class="glyphicon glyphicon-pencil"></span>InsertData
+			</button>
+		</div>
+		<div class="row" style="margin-top: 10px; margin-bottom: -5px"
+			name="addEditData">
+			<div class="col-md-12">
+
+
+				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
+					<label>OrderDate</label> <input type="date" class="form-control"
+						id="orderMaterialDate" name="orderMaterialDate" disabled>
+				</div>
+
+				<div class="col-md-4"></div>
+
+				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
+					<label>orderNo</label> <input type="text" class="form-control"
+						id="orderNo" placeholder="orderNo." name="orderMaterialNo"
+						disabled>
+				</div>
+
+
 			</div>
-			
-			
-			</div>
-			 <div class="col-md-12">
-						
-			<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-		 	<label>ContactAddress</label>
+			<div class="col-md-12">
+
+				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
+					<label>ContactAddress</label>
 					<textarea id="address" class="form-control"
-									placeholder="ContactAddress" rows="3" cols="10" name="address"
-									disabled></textarea>
+						placeholder="ContactAddress" rows="3" cols="10" name="address"
+						disabled></textarea>
+				</div>
+
+				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
+				</div>
+				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
+					<label>Status</label> <input type="text" class="form-control"
+						id="Status" placeholder="Status" name="status" disabled>
+				</div>
 			</div>
 
-			<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-			</div>
-	         <div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-	         <label>Status</label>
-	          <input type="text" class="form-control" id="Status"
-					placeholder="Status" name="status" disabled>
-			</div>			
-		</div>
-		
 		</div>
 
 		<div class="panel-body" style="margin-top: -25px;">
@@ -74,7 +73,7 @@
 					<table class="table">
 						<thead>
 							<tr class="filters">
-							    <th><input type="text" class="form-control"
+								<th><input type="text" class="form-control"
 									placeholder="manage" disabled></th>
 								<th><input type="text" class="form-control"
 									placeholder="OrderNo" disabled></th>
@@ -82,7 +81,7 @@
 									placeholder="status" disabled></th>
 								<th><input type="text" class="form-control"
 									placeholder="OrderDate" disabled></th>
-							
+
 							</tr>
 						</thead>
 						<tbody>
@@ -91,7 +90,7 @@
 				</div>
 			</div>
 		</div>
-			
+
 	</div>
 </div>
 </html>

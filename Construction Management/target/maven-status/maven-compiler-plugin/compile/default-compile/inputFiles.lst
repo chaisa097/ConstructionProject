@@ -3,6 +3,7 @@ C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\calendar\CalendarService.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\WorkingServicelmp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ControllerDefault.java
+C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ViewOrderMaterialController.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\EmployeeService.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\EmployeeDaolmp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\CustomEmployee.java
@@ -50,7 +51,6 @@ C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\ComboBoxMapping.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\CreateProjectController.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\Project.java
-C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\OderMaterialDetailDao.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\OrderMaterialDetialService.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\calendar\CalendarDao.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\Material.java
@@ -109,6 +109,7 @@ C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\common\security\ApplicationSecurityConfig.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\Working.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ViewProjectController.java
+C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\OrderMaterialDetailDao.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\aspect\BaseEntityAspect.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\CalendarMapping.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\MaterialType.java

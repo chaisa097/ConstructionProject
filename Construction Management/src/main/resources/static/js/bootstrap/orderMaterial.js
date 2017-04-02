@@ -29,9 +29,12 @@
 			            	var data = [];
 			            	$.each(json, function(index, value) {
 			         			            		
-			            		  data.push('<tr provinceId="'+value.orderMaterialId+'"><td>'+
-			            				     '<a href='+domainSystem+'/orderMaterialDetail.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-info btn-xs"> '+
-	    								    '<span class="glyphicon glyphicon-plus"></span> Addmaterial '+
+			            		  data.push('<tr orderMaterialId="'+value.orderMaterialId+'"><td>'+
+			            				     '<a href='+domainSystem+'/orderMaterialDetail.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-success btn-xs"> '+
+	    								    '<span class="glyphicon glyphicon-plus"></span> AddMaterial '+
+	    							      	'</a> '+
+	    							      	'<a href='+domainSystem+'/orderMaterialDetail.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-info btn-xs"> '+
+	    								    '<span class="glyphicon glyphicon-eye-open"></span> View Order '+
 	    							      	'</a> '+
 						                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.orderMaterialId+'")> '+
 												 '<span class="glyphicon glyphicon-pencil"></span> EditHeader '+

@@ -7,7 +7,8 @@ public class OrderMaterialDetailMapping {
 	private Integer   materialId;
 	private String    anotation;
 	private Integer   quantityOrder;
-	
+	private String    material;
+	private String    order;
 	
 	public Integer getOrderMaterialDatailId() {
 		return orderMaterialDatailId;
@@ -38,6 +39,18 @@ public class OrderMaterialDetailMapping {
 	}
 	public void setQuantityOrder(Integer quantityOrder) {
 		this.quantityOrder = quantityOrder;
+	}
+	public String getMaterial() {
+		return material;
+	}
+	public void setMaterial(String material) {
+		this.material = material;
+	}
+	public String getOrder() {
+		return order;
+	}
+	public void setOrder(String order) {
+		this.order = order;
 	}
 
 	

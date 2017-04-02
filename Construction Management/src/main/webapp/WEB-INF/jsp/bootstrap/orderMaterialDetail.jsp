@@ -42,7 +42,9 @@
 		        <div class="panel panel-default filterable">
 		            <div class="panel-heading">
 		                <h3 class="panel-title">material List</h3>
-		               
+		               <div class="pull-right">
+		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Filter</button>
+		                </div>
 		            </div>
 		            <table class="table">
 		                <thead>
@@ -52,12 +54,17 @@
 		                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="AmountOfOrder" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Unit" disabled></th>
+		                        <th><input type="text" class="form-control" placeholder="Anotation" disabled></th>
 		                    </tr>
 		                </thead>
 		                <tbody>
 		                </tbody>
 		            </table>
 		        </div>
+		    
+		        
+		        
+		        
 		    </div>
 		 </div>
 	</div>

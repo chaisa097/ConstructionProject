@@ -6,11 +6,15 @@ import java.util.Map;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import com.softsquare.application.common.util.BeanUtils;
+import com.softsquare.application.domain.ManageRoleMapping;
 import com.softsquare.application.entity.OrderMaterial;
+import com.softsquare.application.entity.Role;
 
 @Repository()
 @Component
@@ -48,6 +52,7 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 		 ArrayList<OrderMaterial> orderList = (ArrayList<OrderMaterial>) criteria.list();
 		return orderList;
 	}
+	
 	
 	
 }
