@@ -3,9 +3,10 @@ package com.softsquare.application.service;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 
-
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,9 @@ import com.softsquare.application.common.util.LoginUtils;
 import com.softsquare.application.dao.LoginDao;
 import com.softsquare.application.dao.OrderMaterialDao;
 import com.softsquare.application.domain.OrderMaterialMapping;
+import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.entity.OrderMaterial;
+import com.softsquare.application.entity.Project;
 
 @Service
 public class OrderMaterialServiceImp implements OrderMaterialService{
@@ -45,7 +48,7 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 		System.out.println(dataLogin+"-------------------------------------------");
 		order.setEmployeeId((Integer) dataLogin.get("employeeId"));
 	    order.setStatus("Open");
-	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
 	    Date convertedDate = sdf.parse(ordermapping.getOrderMaterialDate());
 	    order.setOrderMaterialDate(convertedDate);
 	    order.setAddress(ordermapping.getAddress());
@@ -58,6 +61,37 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 		return orderdao.getOrder();
 	}
 	
+	@Override
+	public ArrayList<OrderMaterial> getOrderMaterialWaitStatus() {
+		return orderdao.getOrderWaitStatus();
+	}
+	
+	
+	@Override
+	public ArrayList<OrderMaterialMapping> findOrder(OrderMaterialMapping mapping) {
+		return orderdao.getFindOrder(mapping);
+	}
+	
+	
+	@Override
+	public void updateStatus(OrderMaterialMapping ordermapping) throws Exception {
+		OrderMaterial order =  orderdao.findOrderForUpdateStatus(ordermapping);
+		order.setStatus("waiting confirm");
+	    orderdao.updateOrder(order);
+	        
+	}
+	@Override
+	public void updateStatusConfirm(OrderMaterialMapping ordermapping) throws Exception {
+		OrderMaterial order =  orderdao.findOrderForUpdateStatus(ordermapping);
+		order.setStatus("Waiting Material");
+	    orderdao.updateOrder(order);    	          
+	}
+	@Override
+	public void updateStatusreject(OrderMaterialMapping ordermapping) throws Exception {
+		OrderMaterial order =  orderdao.findOrderForUpdateStatus(ordermapping);
+		order.setStatus("reject");
+	    orderdao.updateOrder(order);    	          
+	}
 	
 	
 	

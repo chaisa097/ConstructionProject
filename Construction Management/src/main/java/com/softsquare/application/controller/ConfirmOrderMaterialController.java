@@ -18,9 +18,9 @@ import com.softsquare.application.domain.OrderMaterialMapping;
 import com.softsquare.application.service.OrderMaterialDetialService;
 import com.softsquare.application.service.OrderMaterialService;
 @RestController
-@RequestMapping("/viewOrder.html")
+@RequestMapping("/confirmOrder.html")
 @Configurable
-public class ViewOrderMaterialController {
+public class ConfirmOrderMaterialController {
 	@Autowired
 	private OrderMaterialDetialService orderDetailService;
 	@Autowired
@@ -30,7 +30,7 @@ public class ViewOrderMaterialController {
 	@RequestMapping(method=RequestMethod.GET)
     public ModelAndView page(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialDetailMapping mapping ){
     	ModelAndView mav = new ModelAndView();
-    	mav.setViewName("viewOrder");
+    	mav.setViewName("confirmOrder");
     	if(BeanUtils.isNotNull(mapping.getOrderMaterialId())){
     		mav.addObject("headerId",mapping.getOrderMaterialId());
     	}
@@ -59,8 +59,15 @@ public class ViewOrderMaterialController {
 		}
 	}
 	
-	@RequestMapping(params =  "method=sendOrder" , method=RequestMethod.POST)
-    public void sendAndUpdateStatus(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialMapping order) throws Throwable{
-		orderService.updateStatus(order);
+	@RequestMapping(params =  "method=ConfirmOrder" , method=RequestMethod.POST)
+    public void confirmOrder(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialMapping order) throws Throwable{
+		orderService.updateStatusConfirm(order);
 	}
+	
+	@RequestMapping(params =  "method=rejectOrder" , method=RequestMethod.POST)
+    public void rejectOrder(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialMapping order) throws Throwable{
+		orderService.updateStatusreject(order);
+	}
+	
+	
 }

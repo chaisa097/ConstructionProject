@@ -60,7 +60,7 @@
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">	     
 	        	<li><a href="${domainSystem}stock.html">viewStock</a></li>
-	            <li><a href="${domainSystem}listProjectPM.html">Confirm OderMaterial</a></li>
+	            <li><a href="${domainSystem}listOrderPM.html">Confirm OderMaterial</a></li>
 	        </ul>
 	      </li>
 	      	  
@@ -68,11 +68,12 @@
 	      	  
 	      	      
 	     </c:if>
-	      <c:if test="${roleUserSystem eq ''}">
+	      <c:if test="${roleUserSystem eq 'St'}">
 	       <li class="dropdown">
 	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">ManageStock
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">
+	            <li><a href="${domainSystem}stock.html">viewStock</a></li>
 	        	<li><a href="${domainSystem}stock.html">ReceiveMaterial</a></li>
 	            <li><a href="${domainSystem}ListOwnnerMaterial.html">confirm ExportMaterial</a></li>
 	        </ul>
@@ -94,7 +95,7 @@
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">
 	        	<li><a href="${domainSystem}OrderMaterial.html">Order</a></li>
-	            <li><a href="${domainSystem}ListOwnnerMaterial.html">View OwnOrder</a></li>
+	        	<li><a href="${domainSystem}listOrder.html">List Order</a></li>
 	        </ul>
 	      </li>
 	      

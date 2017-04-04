@@ -9,5 +9,10 @@ public interface OrderMaterialService {
 
 	public void saveOrder(OrderMaterialMapping ordermapping) throws Exception;
 	public ArrayList<OrderMaterial> getOrderMaterial() ;
+	public ArrayList<OrderMaterialMapping> findOrder(OrderMaterialMapping mapping);
+	public void updateStatus(OrderMaterialMapping ordermapping) throws Exception;
+	public ArrayList<OrderMaterial> getOrderMaterialWaitStatus();
+	public void updateStatusConfirm(OrderMaterialMapping ordermapping) throws Exception ;
+	public void updateStatusreject(OrderMaterialMapping ordermapping) throws Exception;
 	
 }

@@ -10,9 +10,6 @@
 	   	
 	    	});
 	 
-		
-		
-		
 	 	BSBaseTable.callFiterTable();
 	    	searchFunction();
     });
@@ -27,26 +24,37 @@
 			        	, success: function(result){			        		
 			            	var json = $.parseJSON(result);
 			            	var data = [];
+			            	
 			            	$.each(json, function(index, value) {
+			            		
+			            		var d2 = new Date(value.orderMaterialDate),
+				    	        month = '' + (d2.getMonth() + 1),
+				    	        day = '' + d2.getDate(),
+				    	        year = d2.getFullYear();
+
+				            	if (month.length < 2) month = '0' + month;
+				            	if (day.length < 2) day = '0' + day;
+
+				            	var date = [year, month, day].join('-');
 			         			            		
 			            		  data.push('<tr orderMaterialId="'+value.orderMaterialId+'"><td>'+
 			            				     '<a href='+domainSystem+'/orderMaterialDetail.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-success btn-xs"> '+
 	    								    '<span class="glyphicon glyphicon-plus"></span> AddMaterial '+
 	    							      	'</a> '+
-	    							      	'<a href='+domainSystem+'/orderMaterialDetail.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-info btn-xs"> '+
+	    							      	'<a href='+domainSystem+'/viewOrder.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-info btn-xs"> '+
 	    								    '<span class="glyphicon glyphicon-eye-open"></span> View Order '+
 	    							      	'</a> '+
 						                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.orderMaterialId+'")> '+
 												 '<span class="glyphicon glyphicon-pencil"></span> EditHeader '+
 												'</button> '+
-												'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.orderMaterialId+'")> '+
+												'<button type="button" class="btn btn-danger btn-xs"  onclick=deleteRow("'+value.orderMaterialId+'")> '+
 													'<span class="glyphicon glyphicon-trash"></span> Delete '+
 												'</button> '+
 												
 											'</td> '+
 					                        '<td name=orderMaterialNo>'+value.orderMaterialNo+'</td> '+
 					                        '<td name=status>'+value.status+'</td> '+
-					                        '<td name=orderMaterialDate>'+value.orderMaterialDate+'</td></tr>');
+					                        '<td name=orderMaterialDate>'+(date)+'</td></tr>');
 			            	});
 			            	$('table.table tbody').html(data.join());	
 			            

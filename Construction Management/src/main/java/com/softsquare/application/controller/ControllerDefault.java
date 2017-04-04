@@ -21,11 +21,11 @@ public class ControllerDefault {
 		InputStream input = null;
 		String domainName = null;
 		
-		final String[] roleAll = new String[]{"admin","PM","Eng"};
+		final String[] roleAll = new String[]{"admin","PM","Eng","St"};
 		final String[] pageAdmin = new String[]{"home", "registerList", "register", "manageRole","province","createProject","listproject"};
-		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock"};
-		final String[] pageEngineer = new String[]{"home","stock","orderMaterial","orderMaterialDetail","viewOrder"};
-		
+		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","listOrderPM","confirmOrder"};
+		final String[] pageEngineer = new String[]{"home","stock","orderMaterial","orderMaterialDetail","viewOrder","listOrder"};
+		final String[] pageStocker = new String[]{"home","stock",};
 		final String[] pageNoLogin = new String[]{"index", "pageTest"};
 		int count = 0;
 		
@@ -58,6 +58,15 @@ public class ControllerDefault {
 									count = 1;
 								}
 							}
+						}else if(roleAll[3].equals(LoginUtils.getRole())){ //Engineer
+							for (String string : pageStocker) {
+								if(string.equals(mav.getViewName())){
+									count = 1;
+								}
+							}
+							
+							
+							
 						}else{
 							throw new Exception();
 						}
