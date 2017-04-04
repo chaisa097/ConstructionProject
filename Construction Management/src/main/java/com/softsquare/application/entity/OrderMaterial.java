@@ -17,7 +17,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "ORDER_MATERIAL")
-public class OrderMaterial extends BaseEntity implements Serializable  {
+public class OrderMaterial implements Serializable  {
 	
 	private static final long serialVersionUID = 6019490232774665003L;
 
