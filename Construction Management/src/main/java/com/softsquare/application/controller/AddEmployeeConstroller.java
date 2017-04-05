@@ -95,9 +95,9 @@ public class AddEmployeeConstroller {
 	 }
 	
 
-	@RequestMapping(params =  "method=SeachProject" , method=RequestMethod.POST)
-    public void updateProject(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping working) throws Throwable{
-		workingSevice.updateProject(working);
+	@RequestMapping(params =  "method=UpdateTotalSalary" , method=RequestMethod.POST)
+    public void updateProject(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping project) throws Throwable{
+		workingSevice.updatetotalHireEmployee(project);
 	}
 	
 	

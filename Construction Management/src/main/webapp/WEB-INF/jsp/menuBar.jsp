@@ -74,7 +74,7 @@
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">
 	            <li><a href="${domainSystem}stock.html">viewStock</a></li>
-	        	<li><a href="${domainSystem}stock.html">ReceiveMaterial</a></li>
+	        	<li><a href="${domainSystem}receiveMaterial.html">ReceiveMaterial</a></li>
 	            <li><a href="${domainSystem}ListOwnnerMaterial.html">confirm ExportMaterial</a></li>
 	        </ul>
 	      </li>

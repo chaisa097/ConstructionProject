@@ -65,7 +65,10 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 	public ArrayList<OrderMaterial> getOrderMaterialWaitStatus() {
 		return orderdao.getOrderWaitStatus();
 	}
-	
+	@Override
+	public ArrayList<OrderMaterial> getOrderMaterialWaitMaterialStatus() {
+		return orderdao.getOrderWaitMaterialStatus();
+	}
 	
 	@Override
 	public ArrayList<OrderMaterialMapping> findOrder(OrderMaterialMapping mapping) {

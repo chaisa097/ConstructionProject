@@ -147,31 +147,22 @@ function deleteRow(value){
 
 
     
- function calculate(){
-	
-	 
+ function calculate(){		 
 	 var totalSalary = 0;
 		$("table.table tbody tr").each(function(){
 			var value = $(this).find("#totalSalary").html();
-			 totalSalary += (value*1);
-			
-			 console.log(value);
-			
+			 totalSalary += (value*1);						
 		});
-	
-		console.info(totalSalary);
-		
-		var params = {method: 'SeachProject'};
+
+		var params = {method: 'UpdateTotalSalary',projectId:headerId};
 		
 		if(BeanUtils.isNotEmpty(params.method)){			
-			params.projectId = headerId
-			params.totalSalary  = totalSalary
+			params.totalHireEmployee  = totalSalary
 	    	$.ajax({
 	        	type: 'POST'
 	        	, url: application.contextPath+"/addEmployee.html"
 	        	, data: params
-	        	, success: function(result){
-	        			
+	        	, success: function(result){	        			
 	        		alert("calcuate Success");
 	        					        		
 	        	}
@@ -182,15 +173,6 @@ function deleteRow(value){
 
 
  
-
-
-
-
-
-
-
-
-
 
 
 function backFunction(){

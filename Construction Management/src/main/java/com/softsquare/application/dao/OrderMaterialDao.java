@@ -15,5 +15,6 @@ public interface OrderMaterialDao {
 	public void updateOrder(OrderMaterial order) throws Exception;
 	public OrderMaterial findOrderForUpdateStatus(OrderMaterialMapping mapping);
 	public ArrayList<OrderMaterial> getOrderWaitStatus();
+	public ArrayList<OrderMaterial> getOrderWaitMaterialStatus();
 	
 }

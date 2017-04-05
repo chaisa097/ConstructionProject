@@ -183,6 +183,7 @@
             <put-attribute name="pageToolBar" value="Back"/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
+        
            <definition name="confirmOrder" extends="ss.layout">
          	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/ConfirmOrderMaterial.jsp" />
@@ -191,5 +192,25 @@
             <put-attribute name="pageToolBar" value="Back"/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
+        
+         <definition name="receiveMaterial" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/receiveMaterial.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/receiveMaterial.js" />
+            <put-attribute name="pageToolBar" value="Back"/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+         
+          <definition name="addMaterialStock" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/addMaterialStock.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/addMaterialStock.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+         
+         
 
 </tiles-definitions>

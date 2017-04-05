@@ -35,8 +35,7 @@ public class EmployeeDaolmp  extends AbstractDao<Integer, Employee> implements E
 		            .add(Projections.property("departmentDetail.departmentId").as("departmentId"))
 		            .add(Projections.property("department.departmentCode").as("departmentCode"));
 		 criteria.setProjection(projections);	
-		
-		 
+		 criteria.add(Restrictions.or(Restrictions.eq("department.departmentCode","ENG"),Restrictions.eq("department.departmentCode","TECNI")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(Employee.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<Employee> employeeList = (ArrayList<Employee>) criteria.list();

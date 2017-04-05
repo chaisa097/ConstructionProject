@@ -25,7 +25,7 @@ public class ControllerDefault {
 		final String[] pageAdmin = new String[]{"home", "registerList", "register", "manageRole","province","createProject","listproject"};
 		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","listOrderPM","confirmOrder"};
 		final String[] pageEngineer = new String[]{"home","stock","orderMaterial","orderMaterialDetail","viewOrder","listOrder"};
-		final String[] pageStocker = new String[]{"home","stock",};
+		final String[] pageStocker = new String[]{"home","stock","receiveMaterial","addMaterialStock"};
 		final String[] pageNoLogin = new String[]{"index", "pageTest"};
 		int count = 0;
 		

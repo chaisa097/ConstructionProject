@@ -156,6 +156,7 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		Criteria criteria = getSession().createCriteria(Project.class, "project");
 		 ProjectionList projections = Projections.projectionList()
 				    .add(Projections.property("project.projectId").as("projectId"))
+				    .add(Projections.property("project.projectName").as("projectName"))
 		            .add(Projections.property("project.description").as("description"))
 		            .add(Projections.property("project.address").as("address"))
 		            .add(Projections.property("project.startDate").as("startDate"))
