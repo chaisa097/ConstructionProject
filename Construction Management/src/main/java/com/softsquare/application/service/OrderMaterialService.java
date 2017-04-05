@@ -14,5 +14,6 @@ public interface OrderMaterialService {
 	public ArrayList<OrderMaterial> getOrderMaterialWaitStatus();
 	public void updateStatusConfirm(OrderMaterialMapping ordermapping) throws Exception ;
 	public void updateStatusreject(OrderMaterialMapping ordermapping) throws Exception;
+	public ArrayList<OrderMaterial> getOrderMaterialWaitMaterialStatus() ;
 	
 }

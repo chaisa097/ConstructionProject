@@ -50,10 +50,9 @@ public class WorkingServicelmp implements WorkingService {
 	    workingDao.removeWorking(work);
 	}
 	@Override
-	public void updateProject(ProjectMapping mapping) throws Exception {
+	public void updatetotalHireEmployee(ProjectMapping mapping) throws Exception {
 		Project  pro = projectDao.findProejctForUpdate(mapping);
-		WorkingMapping wo = new WorkingMapping();
-	    pro.setTotalHireEmployee(wo.getTotalSalary());   
+	    pro.setTotalHireEmployee(mapping.getTotalHireEmployee());   
 		projectDao.updateProject(pro);
 	}
 	
