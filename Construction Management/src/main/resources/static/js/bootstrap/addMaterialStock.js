@@ -18,40 +18,75 @@
 		
 		
 		
-//		            searchHeader();
+		            searchMaterialReceive();
 			    	searchFunction();
 			   
     });
 	
 			
-//function searchHeader(){
-//	$.ajax({
-//	  	type: 'POST'
-//	  	, url: application.contextPath+"/viewOrder.html"
-//	  	, data: {method:'searchHeader',orderMaterialId:headerId}
-//	  	, success: function(result){
-//	    	var json = $.parseJSON(result);
-//
-//	        
-//	        var d2 = new Date(json[0].orderMaterialDate),
-//	        month = '' + (d2.getMonth() + 1),
-//	        day = '' + d2.getDate(),
-//	        year = d2.getFullYear();
-//
-//	    if (month.length < 2) month = '0' + month;
-//	    if (day.length < 2) day = '0' + day;
-//
-//	    var date = [year, month, day].join('-');
-//	    
-//		  	$("textarea[name='address']").val(json[0].address);
-//	      	$("input[name='orderMaterialNo']").val(json[0].orderMaterialNo);
-//	      	$("input[name='orderMaterialDate']").val(date); 
-//	     	$("input[name='status']").val(json[0].status); 
-//	  	}
-//	  });
-//}
+function  searchMaterialReceive(){
 	
+	var params = {method: 'searchReceiveMaterial'};
+	$.ajax({
+    	type: 'POST'
+    	, url: application.contextPath+"/AddMaterialStock.html"
+    	, data: params
+    	, success: function(result){			        		
+        	var json = $.parseJSON(result);
+        	var data = [];
+        	
+        	$.each(json, function(index, value) {        		          		
+        		  data.push('<tr receiveMateialDetialId="'+value.receiveMateialDetialId+'"><td>'+
+        				   '<button type="button" class="btn btn-info btn-xs" onclick=deleteRow("'+value.receiveMateialDetialId+'")> '+
+							'<span class="glyphicon glyphicon-trash"></span> Delete '+
+						   '</button> '+
+	                        '<td name=materialName>'+value.materialName+'</td> '+
+	                        '<td name=descrition>'+value.descrition+'</td> '+
+	                        '<td name=receiveQuantity>'+value.receiveQuantity+'</td> '+
+	                        '<td name=unitName>'+value.unitName+'</td> '+
+	                        '<td name=receivePrice>'+value.receivePrice+'</td></tr>');
+        	});
+        	$('table.table tbody').html(data.join());	
+        
+    	}
+    });
 	
+}
+	
+	function saveFunction(){
+		 if( BeanUtils.isNotEmpty($('div[name=addEditData] input[name=receiveQuantity]').val())){				                                                     		
+			var params = {};
+			var message = ""
+					
+			if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
+				params.method = 'save';
+				message = "AddMaterial success!!"
+				
+			}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
+				params.method = 'edit';				
+				message = "updateMaterial success!!"
+			}
+			if(BeanUtils.isNotEmpty(params.method)){
+				params.orderMaterialId = headerId
+				params.materialId = $('div[name=addEditData] select[name=materialList]').val();
+				params.receivePrice = $('div[name=addEditData] input[name=receivePrice]').val();
+				params.receiveQuantity = $('div[name=addEditData] input[name=receiveQuantity]').val();
+				
+		    	$.ajax({
+		        	type: 'POST'
+		        	, url: application.contextPath+"/AddMaterialStock.html"
+		        	, data: params
+		        	, success: function(result){
+		        		alert(message);
+		        
+		        	
+		        					        		
+		        	}
+		    	      
+		        });
+			}
+		 }
+	 }
 	
 	
 	
@@ -66,55 +101,40 @@ function searchFunction(){
 		            	var data = [];		         
 		            		$.each(json, function(index, value) {
 			            		  data.push('<tr orderMaterialDatailId="'+value.orderMaterialDatailId+'">'+
+			            				  '<td name=materialName>'+value.typeName+'</td> '+
 					                        '<td name=materialName>'+value.materialName+'</td> '+
 					                        '<td name=descrition>'+value.descrition+'</td> '+
 					                        '<td name=quantityOrder>'+value.quantityOrder+'</td> '+
 					                        '<td name=unitName>'+value.unitName+'</td>'+
 					                        '<td name=anotation>'+value.anotation+'</td></tr>');
 			            	});
-		            	$('table.table tbody').html(data.join());	
+		            	$('table.table1 tbody').html(data.join());	
 		            
 		        	}
 		        });
 	    }
 
+function UpdateFinished(){
+		 var params = {method: 'finishOrder', orderMaterialId:headerId};
+	    	$.ajax({
+	        	type: 'POST'
+	        	, url: application.contextPath+"/AddMaterialStock.html"
+	        	, data: params
+	        	, success: function(result){
+	        		alert("Add MaterialOrder Success!!");
+	        		back();
+	        	}
+	        });
+	
+ }
+function back(){
+	location.href = "receiveMaterial.html";
 
+}
 
-
-
-
-
-
-
-
-
-
-//function backFunction(){
-//	location.href = "OrderMaterial.html";
-//
-//}
-//
-//function SendOrder(){
-//		 var params = {method: 'sendOrder', orderMaterialId:headerId};
-//	    	$.ajax({
-//	        	type: 'POST'
-//	        	, url: application.contextPath+"/viewOrder.html"
-//	        	, data: params
-//	        	, success: function(result){
-//	        		alert("Send Success");
-//	        		back();
-//	        	}
-//	        });
-//	
-// }
-//function back(){
-//	location.href = "listOrder.html";
-//
-//}
-
-
-function Save(){			 
+function addRow(){			 
 	 disAndEnInputField('create');	 
+	 	 
 }
 
 function disAndEnInputField(param){
@@ -122,20 +142,21 @@ function disAndEnInputField(param){
 		 	createOrUpdateMode(param);
 			$("div[name='addEditData'] select[name='typeList']").prop('disabled', false).selectpicker('refresh');
 			$("div[name='addEditData'] select[name='materialList']").prop('disabled',  false).selectpicker('refresh');
-			$("div[name='addEditData'] input[name='quantityOrder']").prop('disabled', false);
-
+			$("div[name='addEditData'] input[name='receiveQuantity']").prop('disabled', false);
+			$("div[name='addEditData'] input[name='receivePrice']").prop('disabled', false);
 
 		}else if(BeanUtils.equals(param, 'update')){
 			createOrUpdateMode(param);
 			$("div[name='addEditData'] select[name='typeList']").prop('disabled', false).selectpicker('refresh');
 			$("div[name='addEditData'] select[name='materialList']").prop('disabled',  false).selectpicker('refresh');
-			$("div[name='addEditData'] input[name='quantityOrder']").prop('disabled',  false);
+			$("div[name='addEditData'] input[name='receiveQuantity']").prop('disabled',  false);
+			$("div[name='addEditData'] input[name='receivePrice']").prop('disabled',  false);
 		}else{
 			createOrUpdateMode(param);
 			$("div[name='addEditData'] select[name='typeList']").prop('disabled', true);
 			$("div[name='addEditData'] select[name='materialList']").prop('disabled', true);
-			$("div[name='addEditData'] input[name='quantityOrder']").prop('disabled',  true);
-		
+			$("div[name='addEditData'] input[name='receiveQuantity']").prop('disabled',  true);
+			$("div[name='addEditData'] input[name='receivePrice']").prop('disabled',  true);
 		}
 }
 
@@ -143,8 +164,8 @@ function createOrUpdateMode(param){
 	   	
 		$("div[name='addEditData'] select[name='typeList']").val('');
 		$("div[name='addEditData'] select[name='materialList']").val('');
-		$("div[name='addEditData'] input[name='quantityOrder']").val('');
-
+		$("div[name='addEditData'] input[name='receiveQuantity']").val('');
+		$("div[name='addEditData'] input[name='receivePrice']").val('');
 		 
 	 if(BeanUtils.equals(param, 'create')){
 		 $("div[name='statusSave']").attr('mode', 'create');

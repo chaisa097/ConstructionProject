@@ -21,16 +21,18 @@
 		 </div>
 		 <div class="panel-body" style="margin-top:-25px;">
 		  <div class="row">
-		 		<button type="button" class="btn btn-default" onclick="addRow()">
-					<span class="glyphicon glyphicon-edit"></span> Insert
-				</button> 
+		 		
 				      
 				<div class="row" style="margin-top:10px; margin-bottom:-5px" name="addEditData">
+				<div class="col-md-1"style="margin-top:10px; margin-bottom:5px">
+					
+				      <button type="button" class="btn btn-default" onclick="addRow()">
+					<span class="glyphicon glyphicon-pencil"></span>
+				</div>
 					<div class="col-md-3"style="margin-top:10px; margin-bottom:5px">
 						<input type="text" class="form-control" id="userName"  placeholder="UserName" name="name" disabled>
 					</div>
-						<div class="col-md-1">
-					</div>
+					
 					<div class="col-md-3"style="margin-top:10px; margin-bottom:5px">
 						<input type="password" class="form-control" id="password" placeholder="Password" name="password" disabled>
 					</div>
@@ -38,7 +40,7 @@
 					<div class="col-md-3"style="margin-top:10px; margin-bottom:5px">
 						<input type="password" class="form-control" id="rePassword"  placeholder="Re-Password" name="rePassword" disabled>
 					</div>
-					<div class="col-md-1">
+					<div class="col-md-2">
 					</div>
 				
 					<div class="col-md-3" style="margin-top:10px; margin-bottom:5px" >
