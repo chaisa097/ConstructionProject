@@ -22,7 +22,7 @@ public class ControllerDefault {
 		String domainName = null;
 		
 		final String[] roleAll = new String[]{"admin","PM","Eng","St"};
-		final String[] pageAdmin = new String[]{"home", "registerList", "register", "manageRole","province","createProject","listproject"};
+		final String[] pageAdmin = new String[]{"home", "registerList", "register", "manageRole","province","createProject","listproject","department"};
 		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","listOrderPM","confirmOrder"};
 		final String[] pageEngineer = new String[]{"home","stock","orderMaterial","orderMaterialDetail","viewOrder","listOrder"};
 		final String[] pageStocker = new String[]{"home","stock","receiveMaterial","addMaterialStock"};
