@@ -26,35 +26,41 @@ public class ReceiveMaterial implements Serializable {
 	@Id
     @GeneratedValue
     @Column(name = "RECEIVE_MATERIALID")
-	private Integer receiveMateialId;
+	private Integer receiveMaterialId;
 	
-	@NotEmpty
+
 	@Column(name = "EMPLOYEEID", unique=true, nullable = false)
-	private String  employeeId;
+	private Integer  employeeId;
 	
 	@Column(name = "RECEIVE_MATERIALNO", unique=true, nullable = false)
 	private String  receiveMaterialNo;
 	
 	@Column(name = "RECEIVE_DATE", unique=true, nullable = false)
-	private Date  receiveDate;
+	private Date    receiveDate;
+	
+	@Column(name = "ORDER_MATERIALID", unique=true, nullable = false)
+	private Integer  orderMaterialId;
      
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EMPLOYEEID", referencedColumnName = "EMPLOYEEID", insertable=false, updatable=false)
     private Employee employee;
 
-	public Integer getReceiveMateialId() {
-		return receiveMateialId;
+
+
+
+	public Integer getReceiveMaterialId() {
+		return receiveMaterialId;
 	}
 
-	public void setReceiveMateialId(Integer receiveMateialId) {
-		this.receiveMateialId = receiveMateialId;
+	public void setReceiveMaterialId(Integer receiveMaterialId) {
+		this.receiveMaterialId = receiveMaterialId;
 	}
 
-	public String getEmployeeId() {
+	public Integer getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(String employeeId) {
+	public void setEmployeeId(Integer employeeId) {
 		this.employeeId = employeeId;
 	}
 
@@ -82,6 +88,15 @@ public class ReceiveMaterial implements Serializable {
 		this.employee = employee;
 	}
 
+	public Integer getOrderMaterialId() {
+		return orderMaterialId;
+	}
+
+	public void setOrderMaterialId(Integer orderMaterialId) {
+		this.orderMaterialId = orderMaterialId;
+	}
+
+	
 	
 	
 	

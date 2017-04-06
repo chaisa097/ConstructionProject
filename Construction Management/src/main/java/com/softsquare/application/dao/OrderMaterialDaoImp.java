@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.OrderMaterialMapping;
 import com.softsquare.application.domain.ProjectMapping;
+import com.softsquare.application.entity.Login;
 import com.softsquare.application.entity.OrderMaterial;
 import com.softsquare.application.entity.Project;
 
@@ -35,6 +36,30 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 		 Map<String, Object> result = (Map<String,Object>) criteria.uniqueResult();
 		return result;
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Map<String, Object> findOrderId(int orderId) {
+		 Criteria criteria = getSession().createCriteria(OrderMaterial.class, "order");
+		 ProjectionList projections = Projections.projectionList()
+				 .add(Projections.property("order.orderMaterialId").as("orderMaterialId"))
+		            .add(Projections.property("order.orderMaterialNo").as("orderMaterialNo"))
+		            .add(Projections.property("order.address").as("address"))
+		            .add(Projections.property("order.orderMaterialDate").as("orderMaterialDate"))
+		            .add(Projections.property("order.status").as("status"));
+		 
+		 criteria.setProjection(projections);
+		 if(BeanUtils.isNotEmpty(orderId)){
+			 criteria.add(Restrictions.eq("order.orderMaterialId", orderId));			 
+		 }
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 Map<String, Object> OrderList = (Map<String, Object>) criteria.uniqueResult();
+		return OrderList;
+	}
+	
+	
+	
+	
 		
 	@Override
 	public void saveOrder(OrderMaterial order) throws Exception {
@@ -106,6 +131,8 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 		 ArrayList<OrderMaterialMapping> order = (ArrayList<OrderMaterialMapping>) criteria.list();
 		return order;
 	}
+	
+
 	
 	@Override
 	public OrderMaterial findOrderForUpdateStatus(OrderMaterialMapping mapping) {

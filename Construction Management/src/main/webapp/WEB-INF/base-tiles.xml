@@ -207,7 +207,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/addMaterialStock.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/addMaterialStock.js" />
-            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="pageToolBar" value="Save"/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
          

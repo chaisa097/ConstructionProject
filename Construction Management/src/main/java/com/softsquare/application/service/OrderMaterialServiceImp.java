@@ -89,6 +89,14 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 		order.setStatus("Waiting Material");
 	    orderdao.updateOrder(order);    	          
 	}
+	
+	@Override
+	public void updateStatusFinished(OrderMaterialMapping ordermapping) throws Exception {
+		OrderMaterial order =  orderdao.findOrderForUpdateStatus(ordermapping);
+		order.setStatus("Finished");
+	    orderdao.updateOrder(order);    	          
+	}
+	
 	@Override
 	public void updateStatusreject(OrderMaterialMapping ordermapping) throws Exception {
 		OrderMaterial order =  orderdao.findOrderForUpdateStatus(ordermapping);

@@ -15,10 +15,11 @@ import com.google.gson.Gson;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.OrderMaterialDetailMapping;
 import com.softsquare.application.domain.OrderMaterialMapping;
-import com.softsquare.application.domain.ProjectMapping;
+import com.softsquare.application.domain.ReceiveMaterialMapping;
 import com.softsquare.application.service.OrderMaterialDetialService;
 import com.softsquare.application.service.OrderMaterialService;
-
+import com.softsquare.application.service.ReceiveMaterialService;
+import com.softsquare.application.service.ReceiveMaterialDetailService;
 @RestController
 @RequestMapping("/AddMaterialStock.html")
 @Configurable
@@ -28,10 +29,13 @@ public class AddMaterialStockController {
 	private OrderMaterialDetialService orderDetailService;
 	@Autowired
 	private OrderMaterialService orderService;
-	
+	@Autowired
+	private ReceiveMaterialService receiveService;
+	@Autowired
+	 private  ReceiveMaterialDetailService reDetailServ;
 	
 	@RequestMapping(method=RequestMethod.GET)
-    public ModelAndView page(HttpServletRequest request, HttpServletResponse response , @ModelAttribute OrderMaterialDetailMapping mapping){		
+    public ModelAndView page(HttpServletRequest request, HttpServletResponse response ,ReceiveMaterialMapping mapping){		
     	ModelAndView mav = new ModelAndView();
     	mav.setViewName("addMaterialStock");
     	if(BeanUtils.isNotNull(mapping.getOrderMaterialId())){
@@ -39,7 +43,7 @@ public class AddMaterialStockController {
     	}
 	return ControllerDefault.DefaultModelAndView(mav, request);
 }
-	@RequestMapping(params =  "method=search" , method=RequestMethod.POST)
+	@RequestMapping(params =  "method=search", method=RequestMethod.POST)
     public void search(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialDetailMapping mapping) throws Throwable{
 		Gson gson = new Gson();
 		String  json = gson.toJson(orderDetailService.getOrderMaterialDetail(mapping));
@@ -50,10 +54,10 @@ public class AddMaterialStockController {
 		}
 	}
 	
-	@RequestMapping(params =  "method=searchHeader" , method=RequestMethod.POST)
-    public void searchHeader(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialMapping order) throws Throwable{
+	@RequestMapping(params =  "method=searchReceiveMaterial", method=RequestMethod.POST)
+    public void searchReceiveMaterial(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ReceiveMaterialMapping mapping) throws Throwable{
 		Gson gson = new Gson();
-		String  json = gson.toJson(orderService.findOrder(order));
+		String  json = gson.toJson(reDetailServ.ReceiveMaterialDetail());
 		try {
 			response.getWriter().write(json);
 		} catch (Exception e) {
@@ -61,6 +65,18 @@ public class AddMaterialStockController {
 		}
 	}
 	
+	
+	@RequestMapping(params = "method=save" , method=RequestMethod.POST)
+    public void save(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ReceiveMaterialMapping mapping) throws Throwable{
+	    receiveService.saveReceive(mapping);
+	}
+	
+	
+	
+	@RequestMapping(params =  "method=finishOrder" , method=RequestMethod.POST)
+    public void confirmOrder(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialMapping order) throws Throwable{
+		orderService.updateStatusFinished(order);
+	}
 	
 }
 	

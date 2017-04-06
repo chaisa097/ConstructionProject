@@ -21,51 +21,51 @@ public class ReceiveMaterialDetail implements Serializable  {
 	 */
 	private static final long serialVersionUID = -137846532461238687L;
 
-
 	@Id
     @GeneratedValue
     @Column(name = "RECEIVE_MATERIALDETAILID")
-	private Integer receiveMateialId;
+	private Integer receiveMateialDetialId;
 	
 	
-	@Column(name = "RECEIVE_MATERIALID", unique=true, nullable = false)
-	private String  receiveId;
+	@Column(name = "RECEIVEMATERIAL_ID", unique=true, nullable = false)
+	private Integer  receiveId;
 	
-	@Column(name = "MATERAILID", unique=true, nullable = false)
+	@Column(name = "MATERIALID", unique=true, nullable = false)
 	private String  materialId;
 	
-	@Column(name = "RECEIVE_PRICE", unique=true, nullable = false)
-	private String  receiveMaterialNo;
-	
 	@Column(name = "RECEIVE_QUANTITY", unique=true, nullable = false)
-	private String  receiveQuantity;
-
+	private Integer  receiveQuantity;
+     
+	@Column(name = "RECEIVE_PRICE", unique=true, nullable = false)
+	private Integer  receivePrice;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MATERIALID", referencedColumnName = "MATERIALID", insertable=false, updatable=false)
     private Material  material;
 	
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "RECEIVE_MATERIALID", referencedColumnName = "RECEIVE_MATERIALID", insertable=false, updatable=false)
-    private ReceiveMaterial receive;
+    @JoinColumn(name = "RECEIVEMATERIAL_ID", referencedColumnName = "RECEIVE_MATERIALID", insertable=false, updatable=false)
+	private ReceiveMaterial receive;
 
 
-	public Integer getReceiveMateialId() {
-		return receiveMateialId;
+	
+	public Integer getReceiveMateialDetialId() {
+		return receiveMateialDetialId;
 	}
 
 
-	public void setReceiveMateialId(Integer receiveMateialId) {
-		this.receiveMateialId = receiveMateialId;
+	public void setReceiveMateialDetialId(Integer receiveMateialDetialId) {
+		this.receiveMateialDetialId = receiveMateialDetialId;
 	}
 
 
-	public String getReceiveId() {
+	public Integer getReceiveId() {
 		return receiveId;
 	}
 
 
-	public void setReceiveId(String receiveId) {
+	public void setReceiveId(Integer receiveId) {
 		this.receiveId = receiveId;
 	}
 
@@ -80,23 +80,23 @@ public class ReceiveMaterialDetail implements Serializable  {
 	}
 
 
-	public String getReceiveMaterialNo() {
-		return receiveMaterialNo;
-	}
-
-
-	public void setReceiveMaterialNo(String receiveMaterialNo) {
-		this.receiveMaterialNo = receiveMaterialNo;
-	}
-
-
-	public String getReceiveQuantity() {
+	public Integer getReceiveQuantity() {
 		return receiveQuantity;
 	}
 
 
-	public void setReceiveQuantity(String receiveQuantity) {
+	public void setReceiveQuantity(Integer receiveQuantity) {
 		this.receiveQuantity = receiveQuantity;
+	}
+
+
+	public Integer getReceivePrice() {
+		return receivePrice;
+	}
+
+
+	public void setReceivePrice(Integer receivePrice) {
+		this.receivePrice = receivePrice;
 	}
 
 
@@ -118,9 +118,7 @@ public class ReceiveMaterialDetail implements Serializable  {
 	public void setReceive(ReceiveMaterial receive) {
 		this.receive = receive;
 	}
-	
-	
-	
-	
+
+
 	
 }

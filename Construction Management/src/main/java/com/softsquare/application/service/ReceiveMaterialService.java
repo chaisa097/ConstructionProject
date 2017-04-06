@@ -1,5 +1,8 @@
 package com.softsquare.application.service;
 
-public interface ReceiveMaterialService {
+import com.softsquare.application.domain.ReceiveMaterialMapping;
 
+public interface ReceiveMaterialService {
+	
+	public void saveReceive(ReceiveMaterialMapping mapping) throws Exception;
 }

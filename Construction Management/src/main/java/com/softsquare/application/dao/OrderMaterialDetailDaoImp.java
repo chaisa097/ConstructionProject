@@ -29,6 +29,7 @@ public class OrderMaterialDetailDaoImp extends AbstractDao<Integer, OderMaterial
 		  criteria.createAlias("orderDetail.order", "order");
 		  criteria.createAlias("orderDetail.material", "material");
 		  criteria.createAlias("material.unit", "unit");
+		  criteria.createAlias("material.type", "type");
 		 ProjectionList projections = Projections.projectionList()
 				 .add(Projections.property("orderDetail.orderMaterialDatailId").as("orderMaterialDatailId"))
 				     .add(Projections.property("order.orderMaterialId").as("orderMaterialId"))
@@ -37,7 +38,8 @@ public class OrderMaterialDetailDaoImp extends AbstractDao<Integer, OderMaterial
 		            .add(Projections.property("material.materialId").as("materialId"))
 		            .add(Projections.property("material.descrition").as("descrition"))
 		            .add(Projections.property("material.materialName").as("materialName"))
-		            .add(Projections.property("unit.unitName").as("unitName"));
+		            .add(Projections.property("unit.unitName").as("unitName"))
+		              .add(Projections.property("type.typeName").as("typeName"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("order.orderMaterialId",orderMapping.getOrderMaterialId()));
 		 criteria.setResultTransformer(Transformers.aliasToBean(Material.class));

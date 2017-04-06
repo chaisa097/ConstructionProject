@@ -95,12 +95,12 @@ $(document).ready(function(){
 
 function saveFunction(){
           
-			 if( BeanUtils.isNotEmpty($('div[name=addEditData] select[name="employeeList').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] input[name=amountOfMonth]').val())){				                                                     		
+			 if( BeanUtils.isNotEmpty($('div[name=addEditData] select[name=employeeList]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] input[name=amountOfMonth]').val())){				                                                     		
 				var params = {};
 				var message = ""
 						
 				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
-					params.method = 'save';
+					params.method ='save';
 					message = "AddEmployee success!!"
 					
 				}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
@@ -119,7 +119,7 @@ function saveFunction(){
 			        	, data: params
 			        	, success: function(result){
 			        		alert(message);
-			        		seachWorker()
+			        		
 			        	
 			        					        		
 			        	}

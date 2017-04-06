@@ -16,5 +16,7 @@ public interface OrderMaterialDao {
 	public OrderMaterial findOrderForUpdateStatus(OrderMaterialMapping mapping);
 	public ArrayList<OrderMaterial> getOrderWaitStatus();
 	public ArrayList<OrderMaterial> getOrderWaitMaterialStatus();
+	public Map<String, Object> findOrderId(int orderId) ;
+	
 	
 }
