@@ -13,12 +13,16 @@
 				</button> 
 			    	<div class="row" style="margin-top:10px; margin-bottom:5px" name="addEditData">
 					<div class="col-md-3">
-						<input type="text" id="departmentCode" class="form-control" placeholder="DepartmentCode" name="departmentCode" disabled>
+						<select class="selectpicker show-tick show-menu-arrow" id="pv"
+						name="departmentList" data-live-search="true" data-size="5"
+									data-header="Select Department" disabled></select>
 					</div>
 					<div class="col-md-3">
-						<input type="text" id="departmentName" class="form-control" placeholder="DepartmentName" name="departmentName" disabled>
+						<input type="text" id="depDetailName" class="form-control" placeholder="Department Detail Name" name="depDetailName" disabled>
 					 </div>
-					
+					<div class="col-md-3">
+						<input type="text" id="Salary" class="form-control" placeholder="Salary" name="Salary" disabled>
+					 </div>
 					
 				</div>
 		        <div class="panel panel-info filterable">
@@ -32,8 +36,9 @@
 		                <thead>
 		                    <tr class="filters">
 		                    	<th>Manage</th>
-		                        <th><input type="text" class="form-control" placeholder="Department Code" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Department Name" disabled></th>
+		                        <th><input type="text" class="form-control" placeholder="Department Detail Name" disabled></th>
+		                        <th><input type="text" class="form-control" placeholder="Salary" disabled></th>
 		                    </tr>
 		                </thead>
 		                <tbody>

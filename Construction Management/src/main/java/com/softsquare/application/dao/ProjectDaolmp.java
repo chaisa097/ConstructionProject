@@ -97,25 +97,7 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		
 		 }
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@SuppressWarnings("unchecked")	
 	@Override	
 	public ArrayList<ProjectMapping> findProjectId(ProjectMapping projectMapping) {
