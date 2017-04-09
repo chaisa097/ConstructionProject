@@ -20,7 +20,7 @@ public class ControllerDefault {
 		Properties prop = new Properties();
 		InputStream input = null;
 		String domainName = null;
-		
+    
 		final String[] roleAll = new String[]{"admin","pm","eng","st"};
 		final String[] pageAdmin = new String[]{"home", "registerList", "register", "manageRole","province","createProject","listproject"};
 		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","listOrderPM","confirmOrder","editStatusProject"};

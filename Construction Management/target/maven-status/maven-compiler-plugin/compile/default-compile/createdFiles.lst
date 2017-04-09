@@ -36,7 +36,6 @@ com\softsquare\application\service\TypeService.class
 com\softsquare\application\controller\OrderMaterialController.class
 com\softsquare\application\dao\RoleDao.class
 com\softsquare\application\dao\EmployeeDaolmp.class
-com\softsquare\application\domain\EmployeeDomain.class
 com\softsquare\application\dao\EmployeeDao.class
 com\softsquare\application\entity\OderMaterialDetail.class
 com\softsquare\application\service\OrderMaterialDetailServiceImp.class

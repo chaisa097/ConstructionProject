@@ -74,9 +74,6 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 	
 	
 	
-	
-		
-	
 	@Override	
 	public ArrayList<ProjectMapping> getProjectByEmployee(ProjectMapping projectMapping) {
 		 Criteria criteria = getSession().createCriteria(Project.class, "project");
@@ -144,22 +141,6 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		
 		 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	@SuppressWarnings("unchecked")	
 	@Override	
@@ -255,10 +236,6 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 	
 	
 	
-	
-	
-	
-	
 	@Override
 	public void saveProject(Project project) throws Exception {
 		save(project);
@@ -307,7 +284,6 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 //		 ArrayList<Project> projectList = (ArrayList<Project>) criteria.list();
 //		return projectList;
 //	}
-	
 	
 	
 	

@@ -39,6 +39,8 @@
 	        <a class="dropdown-toggle" id="manageData" data-toggle="dropdown" href="#">ManageData
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">
+	       		<li><a href="${domainSystem}department.html">Department</a></li>
+	       		<li><a href="${domainSystem}departmentdetail.html">Department Detail</a></li>
 	        	<li><a href="${domainSystem}province.html">Province</a></li>
 	            <li><a href="${domainSystem}createProject.html">CreateProject</a></li>
 	        	<li><a href="${domainSystem}listProject.html">ListProject</a></li>

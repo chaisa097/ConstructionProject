@@ -99,9 +99,6 @@ var BSBaseComboBox = function () {
 	        });
         },
         
-        
-        
-        
         getprovince: function (params, callBack) {
     		$.ajax({
 	        	type: 'GET'
@@ -116,10 +113,23 @@ var BSBaseComboBox = function () {
 	            	callBack(data.join());
 	        	}
 	        });
+        },
+        
+        getDepartment: function (params, callBack) {
+    		$.ajax({
+	        	type: 'GET'
+	        	, url: application.contextPath+"/combobox.html"
+	        	, data: params
+	        	, success: function(result){
+	            	var json = $.parseJSON(result);
+	            	var data = ['<option></option>'];
+	            	$.each(json, function(index, value) {
+	            		  data.push("<option title="+value.departmentCode+" value="+value.departmentId+" data-subtext="+value.departmentName+">"+value.departmentCode+"</option>");
+	            	});
+	            	callBack(data.join());
+	        	}
+	        });
         }
-        
-        
-        
-        
+
     };	
 }();
