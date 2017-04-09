@@ -1,6 +1,7 @@
 package com.softsquare.application.service;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,7 +53,7 @@ public class WorkingServicelmp implements WorkingService {
 	@Override
 	public void updatetotalHireEmployee(ProjectMapping mapping) throws Exception {
 		Project  pro = projectDao.findProejctForUpdate(mapping);
-	    pro.setTotalHireEmployee(mapping.getTotalHireEmployee());   
+	    pro.setTotalHireEmployee(mapping.getTotalHireEmployee());
 		projectDao.updateProject(pro);
 	}
 	

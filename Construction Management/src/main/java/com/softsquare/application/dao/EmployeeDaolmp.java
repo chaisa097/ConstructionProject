@@ -43,6 +43,31 @@ public class EmployeeDaolmp  extends AbstractDao<Integer, Employee> implements E
 	}
 	
 	@Override
+	public ArrayList<Employee> getAllEmployee() {
+		 Criteria criteria = getSession().createCriteria(Employee.class, "employee");
+		    criteria.createAlias("employee.departmentDetail", "departmentDetail");
+		    criteria.createAlias("departmentDetail.department", "department");
+		 ProjectionList projections = Projections.projectionList()				 
+		            .add(Projections.property("employee.employeeId").as("employeeId"))
+		            .add(Projections.property("employee.empFirstName").as("empFirstName"))
+		            .add(Projections.property("employee.empLastName").as("empLastName"))
+		            .add(Projections.property("employee.employeeCode").as("employeeCode"))
+		            .add(Projections.property("departmentDetail.depDetailName").as("depDetailName"))
+		            .add(Projections.property("departmentDetail.departmentId").as("departmentId"))
+		            .add(Projections.property("department.departmentCode").as("departmentCode"));
+		 criteria.setProjection(projections);	
+		 criteria.setResultTransformer(Transformers.aliasToBean(Employee.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<Employee> employeeList = (ArrayList<Employee>) criteria.list();
+		return employeeList;
+	}
+	
+	
+	
+	
+	
+	
+	@Override
 	public ArrayList<Employee> getProjectManager() {
 		         
 		 Criteria criteria = getSession().createCriteria(Employee.class, "employee");

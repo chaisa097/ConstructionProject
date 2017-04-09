@@ -21,5 +21,6 @@ public interface ProjectDao {
 	public ArrayList<ProjectMapping> getProject(ProjectMapping projectMapping);
 	public ArrayList<ProjectMapping> getProjectByEmployee(ProjectMapping projectMapping);
 	public Project findProejct(int Id) ;
-	
+	public Map<String, Object> findbugget(int id);
+	public ArrayList<Project> findProjectbyProjectId(int projectId) ;
 }

@@ -41,9 +41,9 @@
 			<div class="col-md-12">
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>ContactAddress</label>
+					<label>ContactOrderOwner</label>
 					<textarea id="address" class="form-control"
-						placeholder="ContactAddress" rows="3" cols="10" name="address"
+						placeholder="Address/Phone" rows="3" cols="10" name="address"
 						disabled></textarea>
 				</div>
 

@@ -32,6 +32,25 @@ var BSBaseComboBox = function () {
 	        });
         },
         
+        getAllEmployee: function (params, callBack) {
+    		$.ajax({
+	        	type: 'GET'
+	        	, url: application.contextPath+"/combobox.html"
+	        	, data: params
+	        	, success: function(result){
+	            	var json = $.parseJSON(result);
+	            	var data = ['<option></option>'];
+	            	$.each(json, function(index, value) {
+	            		  data.push("<option title="+value.empFirstName+" value="+value.employeeId+" data-subtext="+value.empFirstName + value.empLastName+">"+value.depDetailName+"</option>");
+	            	});
+	            	callBack(data.join());
+	        	}
+	        });
+        },
+        
+        
+        
+        
         getProjectManager: function (params, callBack) {
     		$.ajax({
 	        	type: 'GET'

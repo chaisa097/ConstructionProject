@@ -92,7 +92,7 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 		            .add(Projections.property("order.orderMaterialDate").as("orderMaterialDate"))
 		            .add(Projections.property("order.status").as("status"));
 		 criteria.setProjection(projections);
-		 criteria.add(Restrictions.or(Restrictions.eq("order.status","waiting confirm") , Restrictions.eq("order.status","Waiting Material"),Restrictions.eq("order.status","reject")));
+		 criteria.add(Restrictions.or(Restrictions.eq("order.status","waiting confirm") , Restrictions.eq("order.status","Waiting Material"),Restrictions.eq("order.status","reject"),Restrictions.eq("order.status","Finished")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(OrderMaterial.class));
 		 ArrayList<OrderMaterial> orderList = (ArrayList<OrderMaterial>) criteria.list();
 		return orderList;
@@ -108,7 +108,7 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 		            .add(Projections.property("order.orderMaterialDate").as("orderMaterialDate"))
 		            .add(Projections.property("order.status").as("status"));
 		 criteria.setProjection(projections);
-		 criteria.add(Restrictions.eq("order.status","Waiting Material"));
+		 criteria.add(Restrictions.or(Restrictions.eq("order.status","Finished") , Restrictions.eq("order.status","Waiting Material")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(OrderMaterial.class));
 		 ArrayList<OrderMaterial> orderList = (ArrayList<OrderMaterial>) criteria.list();
 		return orderList;

@@ -1,29 +1,6 @@
 		$(document).ready(function(){
    	    	BSBaseTable.callFiterTable();
-   	    	var params = {method: 'search'};
-	    	$.ajax({
-	        	type: 'POST'
-	        	, url: application.contextPath+"/province.html"
-	        	, data: params
-	        	, success: function(result){
-	            	var json = $.parseJSON(result);
-	            	var data = [];
-	            	$.each(json, function(index, value) {
-	            		  data.push('<tr provinceId="'+value.provinceId+'"><td>'+
-				                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.provinceId+'")> '+
-										 '<span class="glyphicon glyphicon-pencil"></span> Edit '+
-										'</button> '+
-										'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.provinceId+'")> '+
-											'<span class="glyphicon glyphicon-trash"></span> Delete '+
-										'</button> '+
-									'</td> '+
-			                        '<td name=provinceCode>'+value.provinceCode+'</td> '+
-			                        '<td name=provinceName>'+value.provinceName+'</td></tr>');
-	            	});
-	            	$('table.table tbody').html(data.join());	
-	            	disAndEnInputField('');
-	        	}
-	        });
+   	    	searchFunction();
 	    });
 	    
 		 function searchFunction(){
@@ -38,10 +15,10 @@
 			            	$.each(json, function(index, value) {
 			            		  data.push('<tr provinceId="'+value.provinceId+'"><td>'+
 						                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.provinceId+'")> '+
-												 '<span class="glyphicon glyphicon-pencil"></span> Edit '+
+												 '<span class="glyphicon glyphicon-pencil"></span> '+
 												'</button> '+
 												'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.provinceId+'")> '+
-													'<span class="glyphicon glyphicon-trash"></span> Delete '+
+													'<span class="glyphicon glyphicon-trash"></span>'+
 												'</button> '+
 											'</td> '+
 					                        '<td name=provinceCode>'+value.provinceCode+'</td> '+
@@ -53,7 +30,7 @@
 			        });
 		    }
 		 
-		 function saveFunction(){
+		 function save(){
 		
 			 if(BeanUtils.isNotEmpty($('div[name=addEditData] input[name=provinceCode]').val()) && BeanUtils.isNotEmpty($('div[name=addEditData] input[name=provinceName]').val())){
 				var params = {};

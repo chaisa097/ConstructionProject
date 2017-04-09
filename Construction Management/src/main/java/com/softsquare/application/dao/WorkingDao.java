@@ -1,6 +1,7 @@
 package com.softsquare.application.dao;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.domain.WorkingMapping;
@@ -13,6 +14,6 @@ public interface WorkingDao {
 	
 	public void saveWorking(Working working) throws Exception;
 	public void removeWorking(Working working) throws Exception ;
-
+	public Map<String, Object> findProejectIdByEmployeeId(int employeeId);
 	
 }

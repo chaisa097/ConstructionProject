@@ -34,7 +34,7 @@
 		            	$.each(json, function(index, value) {
 		            		  data.push('<tr orderMaterialDatailId="'+value.orderMaterialDatailId+'"><td>'+
 											'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.orderMaterialDatailId+'")> '+
-												'<span class="glyphicon glyphicon-trash"></span> Delete '+
+												'<span class="glyphicon glyphicon-trash"></span>'+
 											'</button> '+
 										'</td> '+
 				                        '<td name=materialName>'+value.materialName+'</td> '+
@@ -49,7 +49,7 @@
 		        });
 	    }
 		
-		function saveFunction(){
+		function Save(){
 
 			 if( BeanUtils.isNotEmpty($('div[name=addEditData] select[name=typeList]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] input[name=quantityOrder]').val())){				                                                     		
 				var params = {};

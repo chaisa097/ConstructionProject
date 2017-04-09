@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.softsquare.application.dao.MaterialDao;
+import com.softsquare.application.domain.MaterialMapping;
 import com.softsquare.application.entity.Material;
 
 
@@ -25,8 +26,17 @@ public class MaterialServiceImp implements MaterialService {
 	public ArrayList<Material> getMaterial(int typeId){
 		return materialDao.getMaterial(typeId);
 	}
-
+    
+	@Override
+	public ArrayList<Material> AllMaterial(){
+		return materialDao.getAllMaterial();
+	}
 	
+	
+	@Override
+	  public  ArrayList<MaterialMapping> findMaterial(MaterialMapping materialmap) {			
+		return materialDao.getMaterial(materialmap);
+	}
 	
 	
 }

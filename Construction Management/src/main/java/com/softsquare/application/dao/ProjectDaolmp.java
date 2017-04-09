@@ -18,6 +18,7 @@ import com.softsquare.application.common.util.LoginUtils;
 import com.softsquare.application.domain.LoginMapping;
 import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.entity.Login;
+import com.softsquare.application.entity.OrderMaterial;
 import com.softsquare.application.entity.Project;
 @Repository()
 @Component
@@ -57,8 +58,21 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		return projectList;
 		
 		 }
+	@SuppressWarnings("unchecked")
+	@Override
+	public Map<String, Object> findbugget(int id) {
+		 Criteria criteria = getSession().createCriteria(Project.class, "project");
+		 ProjectionList projections = Projections.projectionList()				  
+				  .add(Projections.property("project.projectId").as("projectId"))
+				  .add(Projections.property("project.totalExpense").as("totalExpense"));
+		 criteria.setProjection(projections);	
+		 criteria.add(Restrictions.eq("project.projectId",id));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 Map<String, Object> result = (Map<String,Object>) criteria.uniqueResult();
+		return result;
+	}
 	
-		
+	
 	
 	@Override	
 	public ArrayList<ProjectMapping> getProjectByEmployee(ProjectMapping projectMapping) {
@@ -78,7 +92,7 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		            .add(Projections.property("project.customerPhone").as("customerPhone"))		           
 		            .add(Projections.property("project.budget").as("budget"))
 		            .add(Projections.property("project.criticalBudget").as("criticalBudget"))
-		            .add(Projections.property("project.totalExpense").as("criBudget"))
+		            .add(Projections.property("project.totalExpense").as("totalExpense"))
 		            .add(Projections.property("project.percentStatus").as("percentStatus"))	
 		            .add(Projections.property("employee.empFirstName").as("empFirstName"))		       
 		            .add(Projections.property("employee.employeeId").as("employeeId"));	
@@ -97,7 +111,37 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		
 		 }
 	
-
+	
+	@Override	
+	public ArrayList<Project> findProjectbyProjectId(int projectId) {
+		 Criteria criteria = getSession().createCriteria(Project.class, "project");
+		 criteria.createAlias("project.province", "province");
+		 ProjectionList projections = Projections.projectionList()
+		            .add(Projections.property("project.projectId").as("projectId"))
+		            .add(Projections.property("project.projectName").as("projectName"))		         
+		            .add(Projections.property("province.provinceId").as("provinceId"))
+		            .add(Projections.property("project.description").as("description"))
+		            .add(Projections.property("project.address").as("address"))
+		            .add(Projections.property("project.startDate").as("startDate"))
+		            .add(Projections.property("project.finishDate").as("finishDate"))
+		            .add(Projections.property("project.customerName").as("customerName"))
+		            .add(Projections.property("project.customerPhone").as("customerPhone"))		           
+		            .add(Projections.property("project.budget").as("budget"))
+		            .add(Projections.property("project.criticalBudget").as("criticalBudget"))
+		            .add(Projections.property("project.totalExpense").as("totalExpense"))
+		            .add(Projections.property("project.totalHireEmployee").as("totalHireEmployee"))
+		            .add(Projections.property("project.totalUseMaterial").as("totalUseMaterial"))
+		            .add(Projections.property("project.percentStatus").as("percentStatus"));		           	       
+		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.eq("project.projectId",projectId ));			 
+		 criteria.setResultTransformer(Transformers.aliasToBean(Project.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		ArrayList<Project> projectList = (ArrayList<Project>) criteria.list();
+		return projectList;
+		
+		 
+	}
+	
 	@SuppressWarnings("unchecked")	
 	@Override	
 	public ArrayList<ProjectMapping> findProjectId(ProjectMapping projectMapping) {
@@ -192,10 +236,6 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 	
 	
 	
-	
-	
-	
-	
 	@Override
 	public void saveProject(Project project) throws Exception {
 		save(project);
@@ -244,7 +284,6 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 //		 ArrayList<Project> projectList = (ArrayList<Project>) criteria.list();
 //		return projectList;
 //	}
-	
 	
 	
 	

@@ -63,7 +63,7 @@ public class ComboboxController {
 	
 	
 	@RequestMapping(params =  "method=employee" , method=RequestMethod.GET)
-    public void registerEmployee(HttpServletRequest request, HttpServletResponse response  ){
+    public void AddEmployee(HttpServletRequest request, HttpServletResponse response  ){
 		ArrayList<Employee> employeeList =  employeeSerivce.getEmployee();
 		Gson gson = new Gson();
 		String  json = gson.toJson(employeeList);
@@ -74,6 +74,22 @@ public class ComboboxController {
 				e.printStackTrace();
 		}
 	}
+	
+	@RequestMapping(params =  "method=Allemployee" , method=RequestMethod.GET)
+    public void registerAllEmployee(HttpServletRequest request, HttpServletResponse response  ){
+		ArrayList<Employee> employeeList =  employeeSerivce.getAllEmployee();
+		Gson gson = new Gson();
+		String  json = gson.toJson(employeeList);
+		try {
+//			response.getWriter().write("{records:"+json+"}");
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
+	
+	
+	
 
 	@RequestMapping(params =  "method=projectManger" , method=RequestMethod.GET)
     public void projectManagerlist(HttpServletRequest request, HttpServletResponse response  ){
@@ -117,7 +133,18 @@ public class ComboboxController {
 	
 	
 	
-	
+	@RequestMapping(params =  "method=Allmaterial" , method=RequestMethod.GET)
+    public void Materialcombobox(HttpServletRequest request, HttpServletResponse response  ){
+		ArrayList<Material> materialList =  materialService.AllMaterial();		
+		Gson gson = new Gson();
+		String  json = gson.toJson(materialList);
+		try {
+//			response.getWriter().write("{records:"+json+"}");
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
 	
 	
 	@RequestMapping(params =  "method=province" , method=RequestMethod.GET)

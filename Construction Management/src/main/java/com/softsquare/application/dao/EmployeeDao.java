@@ -13,4 +13,5 @@ public interface EmployeeDao {
 	public  ArrayList<EmployeeMapping> findEmployee(EmployeeMapping employeeMapping);
 	public Employee getEmployeeForUpdate(EmployeeMapping mapping);
 	public ArrayList<Employee> getProjectManager();
+	public ArrayList<Employee> getAllEmployee();
 }

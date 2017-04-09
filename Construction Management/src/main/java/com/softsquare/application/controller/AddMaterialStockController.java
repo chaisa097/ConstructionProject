@@ -13,9 +13,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.softsquare.application.common.util.BeanUtils;
+import com.softsquare.application.domain.MaterialMapping;
 import com.softsquare.application.domain.OrderMaterialDetailMapping;
 import com.softsquare.application.domain.OrderMaterialMapping;
 import com.softsquare.application.domain.ReceiveMaterialMapping;
+import com.softsquare.application.service.MaterialService;
 import com.softsquare.application.service.OrderMaterialDetialService;
 import com.softsquare.application.service.OrderMaterialService;
 import com.softsquare.application.service.ReceiveMaterialService;
@@ -33,6 +35,9 @@ public class AddMaterialStockController {
 	private ReceiveMaterialService receiveService;
 	@Autowired
 	 private  ReceiveMaterialDetailService reDetailServ;
+	@Autowired
+	 private  MaterialService materialServ;
+	
 	
 	@RequestMapping(method=RequestMethod.GET)
     public ModelAndView page(HttpServletRequest request, HttpServletResponse response ,ReceiveMaterialMapping mapping){		
@@ -43,7 +48,7 @@ public class AddMaterialStockController {
     	}
 	return ControllerDefault.DefaultModelAndView(mav, request);
 }
-	@RequestMapping(params =  "method=search", method=RequestMethod.POST)
+	@RequestMapping(params =  "method=searchOrder", method=RequestMethod.POST)
     public void search(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialDetailMapping mapping) throws Throwable{
 		Gson gson = new Gson();
 		String  json = gson.toJson(orderDetailService.getOrderMaterialDetail(mapping));
@@ -57,13 +62,26 @@ public class AddMaterialStockController {
 	@RequestMapping(params =  "method=searchReceiveMaterial", method=RequestMethod.POST)
     public void searchReceiveMaterial(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ReceiveMaterialMapping mapping) throws Throwable{
 		Gson gson = new Gson();
-		String  json = gson.toJson(reDetailServ.ReceiveMaterialDetail());
+		String  json = gson.toJson(reDetailServ.ReceiveMaterialDetail(mapping));
 		try {
 			response.getWriter().write(json);
 		} catch (Exception e) {
 				e.printStackTrace();
 		}
 	}
+	
+	@RequestMapping(params =  "method=searchMaterial", method=RequestMethod.POST)
+    public void searchMaterial(HttpServletRequest request, HttpServletResponse response, @ModelAttribute MaterialMapping mapping) throws Throwable{
+		Gson gson = new Gson();
+		String  json = gson.toJson(materialServ.findMaterial(mapping));
+		try {
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
+	
+	
 	
 	
 	@RequestMapping(params = "method=save" , method=RequestMethod.POST)

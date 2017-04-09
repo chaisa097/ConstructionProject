@@ -3,6 +3,8 @@ package com.softsquare.application.service;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +53,7 @@ public class ProjectServicelmp implements ProjectService {
 	    pro.setCriticalBudget(project.getCriticalBudget());
 	    pro.setProvinceId(project.getProvinceId());
 	    pro.setEmployeeId(project.getEmployeeId());	  
-	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
 	    Date convertedStartDate = sdf.parse(project.getStartDate());
 	    Date convertedFinishDate = sdf.parse(project.getFinishDate());	    	    
         pro.setStartDate(convertedStartDate);
@@ -82,7 +84,7 @@ public class ProjectServicelmp implements ProjectService {
 	    pro.setCriticalBudget(project.getCriticalBudget());
 	    pro.setProvinceId(project.getProvinceId());
 	    pro.setEmployeeId(project.getEmployeeId());	  	    	    
-	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
 	    Date convertedStartDate = sdf.parse(project.getStartDate());
 	    Date convertedFinishDate = sdf.parse(project.getFinishDate());
         pro.setStartDate(convertedStartDate);

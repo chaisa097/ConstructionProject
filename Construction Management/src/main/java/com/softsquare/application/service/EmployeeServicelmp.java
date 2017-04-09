@@ -23,6 +23,10 @@ public class EmployeeServicelmp implements EmployeeService {
 		return employeedao.getEmployee();
 	}
 	@Override
+	public ArrayList<Employee> getAllEmployee() {
+		return employeedao.getAllEmployee();
+	}
+	@Override
 	public  ArrayList<EmployeeMapping> findEmployee(EmployeeMapping employeeMapping) {
 		return employeedao.findEmployee(employeeMapping);
 	}

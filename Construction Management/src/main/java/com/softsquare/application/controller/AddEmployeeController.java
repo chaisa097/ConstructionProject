@@ -15,19 +15,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.softsquare.application.common.util.BeanUtils;
-import com.softsquare.application.domain.LoginMapping;
 import com.softsquare.application.domain.ProjectMapping;
-import com.softsquare.application.domain.ProvinceMapping;
 import com.softsquare.application.domain.WorkingMapping;
-import com.softsquare.application.entity.Employee;
-import com.softsquare.application.service.EmployeeService;
 import com.softsquare.application.service.ProjectService;
 import com.softsquare.application.service.WorkingService;
 
 @RestController
 @RequestMapping("/addEmployee.html")
 @Configurable
-public class AddEmployeeConstroller {
+public class AddEmployeeController {
 
 	@Autowired
 	WorkingService workingSevice;

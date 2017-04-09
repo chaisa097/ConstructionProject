@@ -14,6 +14,9 @@
 					<div class="col-md-4">
 						<label class="control-label-required">Type</label>
 						<select class="selectpicker show-tick show-menu-arrow"  name="typeList" data-live-search="true" data-size="5" data-header="Select MaterialType" ></select>
+							 <button type="button" class="btn btn-info" onclick="search()">
+					  <span class="glyphicon glyphicon-search"></span>
+					  </button>
 					</div>
 				  	<div class="col-md-6"></div>
 				</div>
@@ -35,9 +38,9 @@
 		            <table class="table">
 		                <thead>
 		                    <tr class="filters">
+		                         <th><input type="text" class="form-control" placeholder="Type" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Name" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
-		                        <th><input type="text" class="form-control" placeholder="Type" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="TotalQuantity" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Unit" disabled></th>
 		                    </tr>

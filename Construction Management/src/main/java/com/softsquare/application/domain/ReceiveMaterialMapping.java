@@ -9,7 +9,7 @@ public class ReceiveMaterialMapping {
 	private Integer receiveMateialDetialId;
 	private Integer orderMaterialId;
 	private String  receiveId;
-	private String   materialId;
+	private Integer   materialId;
 	private String   receiveMaterialNo;
 	private Integer  receiveQuantity;
 	private Integer  receivePrice;
@@ -59,10 +59,11 @@ public class ReceiveMaterialMapping {
 	public void setReceiveId(String receiveId) {
 		this.receiveId = receiveId;
 	}
-	public String getMaterialId() {
+
+	public Integer getMaterialId() {
 		return materialId;
 	}
-	public void setMaterialId(String materialId) {
+	public void setMaterialId(Integer materialId) {
 		this.materialId = materialId;
 	}
 	public String getReceiveMaterialNo() {

@@ -11,34 +11,35 @@
 	<div class="form-group">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<lable class="headPanal">Create Construction Project</lable>
-				<div style="margin-top: 10px; margin-bottom: 2px">
-					<button type="button" class="btn btn-primary" onclick="save()">
-						<span class="glyphicon glyphicon-floppy-save"></span>
-					</button>
-
-				</div>
+				<lable class="headPanal">Progress Construction Project</lable>
 			</div>
 		</div>
-
 		<div class="panel-body" style="margin-top: -25px;">
 			<div class="row">
+				<div class="col-md-1" style="margin-top: 10px; margin-bottom: 10px">
+				   <button type="button" class="btn btn-primary" onclick="Save()">
+					<span class="glyphicon glyphicon-floppy-save"></span>
+					</button>
+                  </div>
 				<div class="panel panel-info">
 
 					<div class="panel-heading">
-						<lable class="headPanal"> Project Information</lable>	
+						<lable class="headPanal"> Project Information</lable>
 					</div>
+                      
 					<div class="row" style="margin-top: 10px; margin-bottom: -5px"
 						name="addEditData">
 						<div class="container">
 						
-				     <div style="margin-top:5px; margin-bottom:0px">
-							 <button type="button" class="btn btn-default" onclick="addRow()"
-					  style="margin-top: 10px; margin-bottom: 10px">
-					  <span class="glyphicon glyphicon-text-height"></span>
-				       </button>
-						</div>  
-						<br>         
+						   		<div class="col-md-4"
+								style="margin-top: 10px; margin-bottom: 10px">
+								<lable>CompleteStatus(0-100%)</lable>
+								<input id="percentStatus" class="form-control" type="number"
+									min="0" max="100" step="10" name="percentStatus" disabled>
+							</div>
+						
+						
+						
 							<div class="col-md-4"
 								style="margin-top: 10px; margin-bottom: 10px">
 								<lable>ProjectName</lable>
@@ -79,16 +80,6 @@
 									data-header="Select ProjectManager" disabled></select>
 
 							</div>
-
-
-							<div class="col-md-4"
-								style="margin-top: 10px; margin-bottom: 10px">
-								<lable>CompleteStatus(0-100%)</lable>
-								<input id="percentStatus" class="form-control" type="number"
-									min="0" max="100" step="10" name="percentStatus" disabled>
-							</div>
-
-
 
 							<div class="col-md-4"
 								style="margin-top: 10px; margin-bottom: 10px">
@@ -133,7 +124,7 @@
 							</div>
 						</div>
 					</div>
-
+			
 				</div>
 
 				<div class="panel panel-info">

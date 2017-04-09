@@ -8,7 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,9 +28,8 @@ public class Stock implements Serializable{
 	
 	@Column(name = "TOTAL_QUANTITY")
 	private Integer  totalQuatity;
-	
-	
-	@ManyToOne(fetch = FetchType.EAGER)
+
+	@OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "MATERIALID", referencedColumnName = "MATERIALID", insertable=false, updatable=false)
     private Material material;
 
@@ -73,6 +72,8 @@ public class Stock implements Serializable{
 	public void setMaterial(Material material) {
 		this.material = material;
 	}
+
+
 	
 	
 	
