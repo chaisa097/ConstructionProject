@@ -21,10 +21,10 @@ public class ControllerDefault {
 		InputStream input = null;
 		String domainName = null;
 		
-		final String[] roleAll = new String[]{"admin","PM","Eng","St"};
+		final String[] roleAll = new String[]{"admin","pm","eng","st"};
 		final String[] pageAdmin = new String[]{"home", "registerList", "register", "manageRole","province","createProject","listproject"};
-		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","listOrderPM","confirmOrder"};
-		final String[] pageEngineer = new String[]{"home","stock","orderMaterial","orderMaterialDetail","viewOrder","listOrder"};
+		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","listOrderPM","confirmOrder","editStatusProject"};
+		final String[] pageEngineer = new String[]{"home","stock","orderMaterial","orderMaterialDetail","viewOrder","listOrder","importMaterial","createRequisitionMaterial"};
 		final String[] pageStocker = new String[]{"home","stock","receiveMaterial","addMaterialStock"};
 		final String[] pageNoLogin = new String[]{"index", "pageTest"};
 		int count = 0;

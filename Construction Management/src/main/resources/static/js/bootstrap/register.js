@@ -9,8 +9,8 @@
    	    	});
    	   	    	    
 		    	
-		    	 var params = {method:'employee'};
-		 	     BSBaseComboBox.getEmployee(params,
+		    	 var params = {method:'Allemployee'};
+		 	     BSBaseComboBox.getAllEmployee(params,
 		 	    			 function(data){
 		 	   	$("div select[name=employeeList]").html(data).selectpicker('refresh');
 	   	   	
@@ -24,7 +24,7 @@
 		  
 		
 		
-	    function searchFunction(){
+	    function search(){
 	    	if(BeanUtils.isNotEmpty($('div#roleHeader select[name="roleList"] option:selected').val())){
 	    		var params = {method:'search', roleId: $('div#roleHeader select[name="roleList"] option:selected').val()};
 		    	$.ajax({
@@ -37,16 +37,16 @@
 		            	$.each(json, function(index, value) {
 		            		  data.push('<tr><td>'+
 					                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.userId+'")> '+
-												'<span class="glyphicon glyphicon-pencil"></span> Edit '+
+												'<span class="glyphicon glyphicon-pencil"></span>'+
 											'</button> '+
 											'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.userId+'")> '+
-												'<span class="glyphicon glyphicon-trash"></span> Delete '+
+												'<span class="glyphicon glyphicon-trash"></span> '+
 											'</button> '+
 										'</td> '+
-				                        '<td>'+value.userName+'</td> '+
-				                        '<td>'+value.role+'</td> '+	
-				                        '<td>'+value.empFirstName+'</td> '+	
-				                        '<td>'+value.empLastName+'</td></tr>');
+										'<td>'+value.empFirstName+'</td> '+	
+				                        '<td>'+value.empLastName+'</td> '+
+				                        '<td>'+value.userName+'</td> '+	
+				                        '<td>'+value.role+'</td></tr>');
 		            	});
 		            	$('table.table tbody').html(data.join());		  
 		        	}
@@ -54,7 +54,7 @@
 	    	}
 	    }
 	    
-	    function saveFunction(){
+	    function SaveFunction(){
 	    	var params = {};
 	    	if(BeanUtils.equals($("div[name='addEditData'] input[name='password']").val(), $("div[name='addEditData'] input[name='rePassword']").val())){
 	    		if(BeanUtils.isNotEmpty($("div[name='statusSave']").attr('status'))){

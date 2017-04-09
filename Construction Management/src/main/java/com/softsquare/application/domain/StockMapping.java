@@ -6,6 +6,10 @@ public class StockMapping {
      private  Integer  materialId;
      private  Integer  totalQuantity;
      private  String   material;
+     private  String   materialName;
+     private  Integer  typeId;
+     private  String  UnitName;
+     
      
 	public Integer getStockId() {
 		return stockId;
@@ -31,7 +35,27 @@ public class StockMapping {
 	public void setMaterial(String material) {
 		this.material = material;
 	}
-      
+	public String getMaterialName() {
+		return materialName;
+	}
+	public void setMaterialName(String materialName) {
+		this.materialName = materialName;
+	}
+	public Integer getTypeId() {
+		return typeId;
+	}
+	public void setTypeId(Integer typeId) {
+		this.typeId = typeId;
+	}
+	public String getUnitName() {
+		return UnitName;
+	}
+	public void setUnitName(String unitName) {
+		UnitName = unitName;
+	}
+	
+     
+     
      
 	
 	

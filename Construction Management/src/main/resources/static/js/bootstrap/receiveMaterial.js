@@ -25,7 +25,7 @@ $(document).ready(function(){
 				            	if (month.length < 2) month = '0' + month;
 				            	if (day.length < 2) day = '0' + day;
 
-				            	var date = [year, month, day].join('-');
+				            	var date = [day, month, year].join('-');
 			         			            		
 			            		  data.push('<tr orderMaterialId="'+value.orderMaterialId+'"><td>'+
 			            				     '<a href='+domainSystem+'/AddMaterialStock.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-success btn-xs"> '+

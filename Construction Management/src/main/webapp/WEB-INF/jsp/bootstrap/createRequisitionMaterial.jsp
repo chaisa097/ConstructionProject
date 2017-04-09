@@ -11,17 +11,12 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-			<button type="button" class="btn btn-primary" onclick="Save()">
-				<span class="glyphicon glyphicon-floppy-save"></span>
-			   </button>
-				
-			 
-				 <lable class="headPanal">   OrderMaterial</lable>
+				<lable class="headPanal">Requisition Material</lable>
 			</div>
 		</div>
-		<div class="col-md-1">
+		<div class="col-md-12">
 			<button type="button" class="btn btn-default" onclick="addRow()">
-				<span class="glyphicon glyphicon-text-height"></span>
+				<span class="glyphicon glyphicon-pencil"></span>
 			</button>
 		</div>
 		<div class="row" style="margin-top: 10px; margin-bottom: -5px"
@@ -30,14 +25,14 @@
 
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>OrderDate</label> <input type="date" class="form-control"
-						id="Date" name="orderMaterialDate" disabled>
+					<label>UsingMaterialDate</label> <input type="date" class="form-control"
+						id="orderMaterialDate" name="orderMaterialDate" disabled>
 				</div>
 
 				<div class="col-md-4"></div>
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>OrderNo</label> <input type="text" class="form-control"
+					<label>RquisitionNo</label> <input type="text" class="form-control"
 						id="orderNo" placeholder="orderNo." name="orderMaterialNo"
 						disabled>
 				</div>
@@ -47,7 +42,7 @@
 			<div class="col-md-12">
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>ContactOrderOwner</label>
+					<label>ContactOwnerRquisition</label>
 					<textarea id="address" class="form-control"
 						placeholder="Address/Phone" rows="3" cols="10" name="address"
 						disabled></textarea>
@@ -68,7 +63,7 @@
 
 				<div class="panel panel-default filterable">
 					<div class="panel-heading">
-						<h3 class="panel-title">OrderHeader List</h3>
+						<h3 class="panel-title">Requisition List</h3>
 						<div class="pull-right">
 							<button class="btn btn-default btn-xs btn-filter">
 								<span class="glyphicon glyphicon-filter"></span>Filter
@@ -81,11 +76,11 @@
 								<th><input type="text" class="form-control"
 									placeholder="manage" disabled></th>
 								<th><input type="text" class="form-control"
-									placeholder="OrderNo" disabled></th>
+									placeholder="RequisitionNo" disabled></th>
 								<th><input type="text" class="form-control"
 									placeholder="status" disabled></th>
 								<th><input type="text" class="form-control"
-									placeholder="OrderDate" disabled></th>
+									placeholder="RquisitionDate" disabled></th>
 
 							</tr>
 						</thead>

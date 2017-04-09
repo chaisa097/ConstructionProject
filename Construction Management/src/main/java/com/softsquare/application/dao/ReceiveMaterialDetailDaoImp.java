@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -26,7 +27,7 @@ public class ReceiveMaterialDetailDaoImp extends AbstractDao<Integer, ReceiveMat
 	}
 	
 	@Override
-	public ArrayList<ReceiveMaterialDetail> getReceiveMaterialDetail() {
+	public ArrayList<ReceiveMaterialDetail> getReceiveMaterialDetail(int receiveId) {
 		 Criteria criteria = getSession().createCriteria(ReceiveMaterialDetail.class, "receiveDetail");
 		 criteria.createAlias("receiveDetail.material", "material");
 		 criteria.createAlias("material.unit", "unit");
@@ -34,15 +35,22 @@ public class ReceiveMaterialDetailDaoImp extends AbstractDao<Integer, ReceiveMat
 				    .add(Projections.property("receiveDetail.receiveQuantity").as("receiveQuantity"))
 		            .add(Projections.property("receiveDetail.receivePrice").as("receivePrice"))
 			        .add(Projections.property("receiveDetail.receiveMateialDetialId").as("receiveMateialDetialId"))
+			        .add(Projections.property("receiveDetail.receiveId").as("receiveId"))
+			        .add(Projections.property("material.materialId").as("materialId"))
 		            .add(Projections.property("material.materialName").as("materialName"))
 		            .add(Projections.property("material.descrition").as("descrition"))
 		            .add(Projections.property("unit.unitName").as("unitName"));		            
 		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.eq("receiveDetail.receiveId",receiveId ));	
 		 criteria.setResultTransformer(Transformers.aliasToBean(ReceiveMaterialDetail.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<ReceiveMaterialDetail> resultList = (ArrayList<ReceiveMaterialDetail>) criteria.list();
 		return resultList;
 	}
+	
+	
+	
+	
 	
 	
 	

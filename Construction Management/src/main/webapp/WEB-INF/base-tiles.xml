@@ -64,7 +64,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/register.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/register.js" />
-            <put-attribute name="pageToolBar" value="Search|Save"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
@@ -73,7 +73,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/manageRole.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/manageRole.js" />
-            <put-attribute name="pageToolBar" value="Search|Save"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
          <definition name="province" extends="ss.layout">
@@ -81,7 +81,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/province.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/province.js" />
-            <put-attribute name="pageToolBar" value="Search|Save"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
@@ -99,7 +99,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/createProject.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/createProject.js" />
-            <put-attribute name="pageToolBar" value="Save"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
@@ -108,7 +108,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/listProjectPM.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/listProjectPM.js" />
-            <put-attribute name="pageToolBar" value="Search"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
@@ -117,7 +117,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/addEmployee.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/addEmployee.js" />
-            <put-attribute name="pageToolBar" value="Back|Save"/>
+            <put-attribute name="pageToolBar" value="Back"/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
@@ -130,12 +130,24 @@
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
+         <definition name="editStatusProject" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/editStatusProject.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/editStatusProject.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+        
+        
+        
            <definition name="stock" extends="ss.layout">
          	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/stock.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/stock.js" />
-            <put-attribute name="pageToolBar" value="Search"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
@@ -145,7 +157,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/orderMaterial.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/orderMaterial.js" />
-            <put-attribute name="pageToolBar" value="Save"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
@@ -154,7 +166,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/orderMaterialDetail.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/orderMaterialDetail.js" />
-            <put-attribute name="pageToolBar" value="Back|Save"/>
+            <put-attribute name="pageToolBar" value="Back"/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
@@ -172,7 +184,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/listOrder.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/listOrder.js" />
-            <put-attribute name="pageToolBar" value="Back"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
          <definition name="listOrderPM" extends="ss.layout">
@@ -180,7 +192,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/listOrderPM.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/listOrderPM.js" />
-            <put-attribute name="pageToolBar" value="Back"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
@@ -198,7 +210,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/receiveMaterial.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/receiveMaterial.js" />
-            <put-attribute name="pageToolBar" value="Back"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
          
@@ -207,10 +219,28 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/addMaterialStock.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/addMaterialStock.js" />
-            <put-attribute name="pageToolBar" value="Save"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
          
-         
+         <definition name="importMaterial" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/importMaterial.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/importMaterial.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+
+         <definition name="createRequisitionMaterial" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/createRequisitionMaterial.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/createRequisitionMaterial.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+
+
 
 </tiles-definitions>

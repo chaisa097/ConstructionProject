@@ -1,8 +1,5 @@
 		$(document).ready(function(){
-			
-			
-			
-			
+
 			 var params = {method:'Type'};
 		    	BSBaseComboBox. getType(params,function(data){
 		      	$("div select[name=typeList]").html(data).selectpicker('refresh');
@@ -13,7 +10,8 @@
 	 	BSBaseTable.callFiterTable();
 	    	searchFunction();
     });
-		
+
+
 	    
 		 function searchFunction(){
 		    		var params = {method: 'search'};
@@ -35,22 +33,21 @@
 				            	if (month.length < 2) month = '0' + month;
 				            	if (day.length < 2) day = '0' + day;
 
-				            	var date = [year, month, day].join('-');
+				            	var date = [day, month, year].join('-');
 			         			            		
 			            		  data.push('<tr orderMaterialId="'+value.orderMaterialId+'"><td>'+
 			            				     '<a href='+domainSystem+'/orderMaterialDetail.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-success btn-xs"> '+
-	    								    '<span class="glyphicon glyphicon-plus"></span> AddMaterial '+
+	    								    '<span class="glyphicon glyphicon-plus"></span>  material'+
 	    							      	'</a> '+
 	    							      	'<a href='+domainSystem+'/viewOrder.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-info btn-xs"> '+
-	    								    '<span class="glyphicon glyphicon-eye-open"></span> View Order '+
+	    							      	'<span class="glyphicon glyphicon-eye-open"></span> send '+
 	    							      	'</a> '+
 						                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.orderMaterialId+'")> '+
-												 '<span class="glyphicon glyphicon-pencil"></span> EditHeader '+
+												 '<span class="glyphicon glyphicon-pencil"></span> '+
 												'</button> '+
 												'<button type="button" class="btn btn-danger btn-xs"  onclick=deleteRow("'+value.orderMaterialId+'")> '+
-													'<span class="glyphicon glyphicon-trash"></span> Delete '+
+													'<span class="glyphicon glyphicon-trash"></span>'+
 												'</button> '+
-												
 											'</td> '+
 					                        '<td name=orderMaterialNo>'+value.orderMaterialNo+'</td> '+
 					                        '<td name=status>'+value.status+'</td> '+
@@ -63,7 +60,7 @@
 		    }
 
 
-function saveFunction(){
+function Save(){
 			 if( BeanUtils.isNotEmpty($('div[name=addEditData] input[name=orderMaterialDate]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] textarea[name=address]').val())){				                                                     		
 				var params = {};
 				var message = ""

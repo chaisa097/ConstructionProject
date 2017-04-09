@@ -5,13 +5,22 @@
 
 <html>
 <div name="statusSave" hidden="true"></div>
-   <div class="container">              	
-		    <div class="panel-body" style="margin-top:50px;">	
-		        <div class="row">		  
-		 		<button type="button" class="btn btn-default" onclick="addRow()">
-						<span class="glyphicon glyphicon-edit"></span> Insert
-				</button> 
+   <div class="container">
+		   
+		      <div class="panel-body" style="margin-top:-25px;">  
+		        <div class="row">	
+		        <div style="margin-top:2px; margin-bottom:30px">
+		        	 <button type="button" class="btn btn-primary" onclick="save()">
+					<span class="glyphicon glyphicon-floppy-save"></span>
+		 	        </button> 	  
+				</div>
 			    	<div class="row" style="margin-top:10px; margin-bottom:5px" name="addEditData">
+			    	<div class="col-md-1">
+					<button type="button" class="btn btn-default" onclick="addRow()">
+					<span class="glyphicon glyphicon-text-height"></span>
+		 	        </button> 	
+					</div>
+			    	
 					<div class="col-md-3">
 						<input type="text" id="provinceCode" class="form-control" placeholder="ProvinceCode" name="provinceCode" disabled>
 					</div>
@@ -42,6 +51,5 @@
 		        </div>
 		    </div>
 		 </div>
-	</div>
-
+		</div>
 </html>

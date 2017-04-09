@@ -18,20 +18,21 @@ $(document).ready(function(){
 	            	var json = $.parseJSON(result);
 	            	var data = [];
 	            	$.each(json, function(index, value) {
-	            		  data.push('<tr projectId="'+value.projectId+'"><td>'+
-	    		                    	'<button type="button" class="btn btn-primary btn-xs" onclick=viewRow("'+value.projectId+'")> '+
-	    									'<span class="glyphicon glyphicon-pencil"></span> Edit '+
-	    								'</button> '+
-	    								'<a href='+domainSystem+'/viewProject.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
-	    								  '<span class="glyphicon glyphicon-eye-open"></span> View '+
-	    								'</a> '+				
+	            		  data.push('<tr projectId="'+value.projectId+'"><td>'+			
 	    								'<a href='+domainSystem+'/addEmployee.html?projectId='+value.projectId+' class="btn btn-Success btn-xs"> '+
-	    								  '<span class="glyphicon glyphicon-plus"></span> Add Employee '+
+	    								  '<span class="glyphicon glyphicon-plus"></span>Employee '+
+	    								'</a> '+	
+	    								'<a href='+domainSystem+'/editStatusProject.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
+	    								  'UpdateProgress '+
+	    								'</a> '+
+	    								
+	    								'<a href='+domainSystem+'/viewProject.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
+	    								  '<span class="glyphicon glyphicon-eye-open"></span>'+
 	    								'</a> '+	
 	    							
-	    							
 	    	                        '<td name=projectName>'+value.projectName+'</td> '+
-	    	                        '<td name=provinceName>'+value.provinceName+'</td></tr>');
+	    	                        '<td name=provinceName>'+value.provinceName+'</td>'+
+	    	                        '<td name=provinceName>'+value.percentStatus+'%'+'</td></tr>');
 	            	});
 	            	$('table.table tbody').html(data.join());	
 	            
@@ -46,7 +47,7 @@ $(document).ready(function(){
 
 
 
-function searchFunction(){
+function search(){
 	
 	if(BeanUtils.isNotEmpty($('div#roleHeader select[name="provinceList"] option:selected').val())){
 	
@@ -61,19 +62,21 @@ function searchFunction(){
         	var data = [];
         	$.each(json, function(index, value) {
         		  data.push('<tr projectId="'+value.projectId+'"><td>'+
-		                    	'<button type="button" class="btn btn-primary btn-xs" onclick=viewRow("'+value.projectId+'")> '+
-									'<span class="glyphicon glyphicon-pencil"></span> Edit '+
-								'</button> '+
-								'<a href='+domainSystem+'/viewProject.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
-								  '<span class="glyphicon glyphicon-eye-open"></span> View '+
-								'</a> '+				
-								'<a href='+domainSystem+'/addEmployee.html?projectId='+value.projectId+' class="btn btn-Success btn-xs"> '+
-								  '<span class="glyphicon glyphicon-plus"></span> Add Employee '+
-								'</a> '+	
+        				  '<a href='+domainSystem+'/addEmployee.html?projectId='+value.projectId+' class="btn btn-Success btn-xs"> '+
+						  '<span class="glyphicon glyphicon-plus"></span>Employee '+
+						    '</a> '+	
+						  '<a href='+domainSystem+'/editStatusProject.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
+						   'UpdateProgress '+
+						  '</a> '+
+						
+						   '<a href='+domainSystem+'/viewProject.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
+						  '<span class="glyphicon glyphicon-eye-open"></span>'+
+					    	'</a> '+	
 							
 							
 	                        '<td name=projectName>'+value.projectName+'</td> '+
-	                        '<td name=provinceName>'+value.provinceName+'</td></tr>');
+	                        '<td name=provinceName>'+value.provinceName+'</td>'+
+	                        '<td name=provinceName>'+value.percentStatus+'%'+'</td></tr>');
         	});
         	$('table.table tbody').html(data.join());	
         

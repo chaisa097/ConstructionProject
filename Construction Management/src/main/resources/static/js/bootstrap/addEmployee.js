@@ -12,47 +12,49 @@ $(document).ready(function(){
 	  	, success: function(result){
 	    	var json = $.parseJSON(result);
 	      	$("input[name='projectName']").val(json[0].projectName);
-	          
+	      	$("input[name='totalHireEmployee']").val(json[0].totalHireEmployee);  
 	  	}
 	  });
 
-	 		
-	seachWorker(); 
+	searchFunction();
     BSBaseTable.callFiterTable();
 
 });
 
-//function searchFunction(){
-//	
-//	var params = {method: 'searchWorker'};
-//	params.projectId = headerId;
-//	$.ajax({
-//    	type: 'POST'
-//    	, url: application.contextPath+"/addEmployee.html"
-//    	, data: params
-//    	, success: function(result){
-//        	var json = $.parseJSON(result);
-//        	var data = [];
-//        	$.each(json, function(index, value) {
-//        	
-//        		  data.push('<tr workingId="'+value.workingId+'"><td>'+
-//		                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.workingId+'")> '+
-//								 '<span class="glyphicon glyphicon-pencil"></span> Edit '+
-//								'</button> '+
-//								'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.workingId+'")> '+
-//									'<span class="glyphicon glyphicon-trash"></span> Delete '+
-//								'</button> '+
-//							'</td> '+	   
-//							 '<td >'+value.empFirstName+'</td>'+
-//							 '<td >'+value.empLastName+'</td>'+
-//							 '<td >'+value.employeeCode+'</td>'+
-//	                        '<td >'+value.amountOfMonth+'</td></tr>');
-//        	});
-//        	$('table.table tbody').html(data.join());	
-//        	
-//    	}
-//    });
-//}
+function searchFunction(){
+	
+$.ajax({
+ 	type: 'POST'
+ 	, url: application.contextPath+"/addEmployee.html"
+ 	, data: {method: 'searchWorker', projectId:headerId}
+   
+ 	, success: function(result){
+     	var json = $.parseJSON(result);
+     	var data = [];
+     	$.each(json, function(index, value) {
+     		  data.push('<tr workingId="'+value.workingId+'"><td>'+
+		                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.workingId+'")> '+
+								 '<span class="glyphicon glyphicon-pencil"></span> '+
+								'</button> '+
+								'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.workingId+'")> '+
+									'<span class="glyphicon glyphicon-trash"></span>'+
+								'</button> '+
+							 '</td> '+	   
+							 '<td  id="empName" >'+value.empFirstName+' '+value.empLastName+'</td>'+
+							 '<td  id="employeeCode">'+value.depDetailName+'</td>'+
+							 '<td  id="salary">'+value.Salary+'</td>'+
+							 '<td  id="amountOfMonth">'+value.amountOfMonth+'</td>'+
+	                         '<td  id="totalSalary">'+(value.amountOfMonth*value.Salary)+'</td></tr>');
+     		
+     		  
+     		  
+     	});
+     	
+     	$('table.table tbody').html(data.join());       	
+ 	}
+ }); 
+
+}
 
    function seachWorker(){
 		
@@ -68,10 +70,10 @@ $(document).ready(function(){
          	   
          		  data.push('<tr workingId="'+value.workingId+'"><td>'+
  		                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.workingId+'")> '+
- 								 '<span class="glyphicon glyphicon-pencil"></span> Edit '+
+ 								 '<span class="glyphicon glyphicon-pencil"></span>'+
  								'</button> '+
  								'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.workingId+'")> '+
- 									'<span class="glyphicon glyphicon-trash"></span> Delete '+
+ 									'<span class="glyphicon glyphicon-trash"></span> '+
  								'</button> '+
  							 '</td> '+	   
  							 '<td  id="empName" >'+value.empFirstName+' '+value.empLastName+'</td>'+
@@ -93,7 +95,7 @@ $(document).ready(function(){
 
 
 
-function saveFunction(){
+function save(){
           
 			 if( BeanUtils.isNotEmpty($('div[name=addEditData] select[name=employeeList]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] input[name=amountOfMonth]').val())){				                                                     		
 				var params = {};
@@ -119,7 +121,7 @@ function saveFunction(){
 			        	, data: params
 			        	, success: function(result){
 			        		alert(message);
-			        		
+			        		seachWorker(); 
 			        	
 			        					        		
 			        	}
@@ -139,7 +141,7 @@ function deleteRow(value){
 	        	, url: application.contextPath+"/addEmployee.html"
 	        	, data: params
 	        	, success: function(result){
-	        		seachWorker(); 
+	        		searchFunction();
 	        	}
 	        });
 	 }

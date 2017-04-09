@@ -1,5 +1,6 @@
 		$(document).ready(function(){
    	    	BSBaseTable.callFiterTable();
+   	    	searchFunction();
 	    });
 	    
 		 function searchFunction(){
@@ -16,9 +17,7 @@
 						                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.roleId+'")> '+
 													'<span class="glyphicon glyphicon-pencil"></span> Edit '+
 												'</button> '+
-												'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.roleId+'")> '+
-													'<span class="glyphicon glyphicon-trash"></span> Delete '+
-												'</button> '+
+												
 											'</td> '+
 					                        '<td name=roleCode>'+value.roleCode+'</td> '+
 					                        '<td name=roleName>'+value.roleName+'</td></tr>');
@@ -29,7 +28,7 @@
 			        });
 		    }
 		 
-		 function saveFunction(){
+		 function save(){
 			 if(BeanUtils.isNotEmpty($('div[name=addEditData] input[name=roleCode]').val()) && BeanUtils.isNotEmpty($('div[name=addEditData] input[name=roleName]').val())){
 				var params = {};
 				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
@@ -92,7 +91,7 @@
 					$("div[name='addEditData'] input[name='roleName']").prop('disabled', false);
 				}else if(BeanUtils.equals(param, 'update')){
 					createOrUpdateMode(param);
-					$("div[name='addEditData'] input[name='roleCode']").prop('disabled', false);
+					$("div[name='addEditData'] input[name='roleCode']").prop('disabled', true);
 					$("div[name='addEditData'] input[name='roleName']").prop('disabled', false);
 				}else{
 					createOrUpdateMode(param);

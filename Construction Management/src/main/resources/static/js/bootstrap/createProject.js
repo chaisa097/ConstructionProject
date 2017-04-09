@@ -84,7 +84,7 @@
 	
 	
 
-function saveFunction(){
+function save(){
 //	console.info(startDate);
 			 if( BeanUtils.isNotEmpty($('div[name=addEditData] input[name=projectName]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] textarea[name=description]').val())){				                                                     		
 				var params = {};
@@ -120,6 +120,7 @@ function saveFunction(){
 			        	, data: params
 			        	, success: function(result){
 			        		alert(message);
+			        		back();
 			        		
 			        	}
 			        });
@@ -183,9 +184,12 @@ function saveFunction(){
 //          
 //      	}
 //      });
-//}
+//}         
   
-  
+   function back(){
+	location.href = "listProject.html";
+
+    }
 		 function addRow(){			 
 			 disAndEnInputField('create');
 		 }

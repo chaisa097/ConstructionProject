@@ -7,6 +7,7 @@ C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ViewOrderMaterialController.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\EmployeeService.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\EmployeeDaolmp.java
+C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\PMEditStatusProjectController.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\CustomEmployee.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\common\util\LoginUtils.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\EmployeeServicelmp.java
@@ -30,6 +31,7 @@ C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\ReceiveMaterialServiceImp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\ImageDaoImp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\OrderMaterialDetailDaoImp.java
+C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\CreateRequisitionController.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\OrderDetailDaoImp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\Province.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ConfirmOrderMaterialController.java
@@ -48,11 +50,13 @@ C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\Unit.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\MaterialTypeDaoImp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\calendar\CalendarServiceImp.java
+C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\StockServiceImp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\MaterialMapping.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ApplicationController.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\ProvinceDao.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\Calendar.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\StockController.java
+C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\StockDao.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\OrderDetailServiceImp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\common\util\DateUtils.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\ComboBoxMapping.java
@@ -69,6 +73,7 @@ C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\ReceiveMaterialDetail.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\common\util\UploadFilesUtils.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\RoleDaolmp.java
+C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\StockService.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\OrderMaterialService.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\report\ReportParameter.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\common\util\NumberUtils.java
@@ -85,6 +90,7 @@ C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\OrderMaterialDetailController.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\AddMaterialStockController.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\RoleDao.java
+C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\ImportMaterialServiceImp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\TypeServiceImp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\ProvinceMapping.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\Role.java
@@ -127,7 +133,9 @@ C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\ReceiveMaterialDetailService.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\CalendarMapping.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\MaterialType.java
+C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\ImportMaterialService.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\EmployeeMapping.java
+C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\StockDaoImp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\ProvinceDaolmp.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\report\JasperGenerateReport.java
 C:\Users\Computer\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\MaterialTypeDao.java

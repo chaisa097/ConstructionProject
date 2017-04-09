@@ -47,7 +47,7 @@
 	        </ul>
 	      </li>
 	      </c:if>
-	      <c:if test="${roleUserSystem eq 'PM'}">
+	      <c:if test="${roleUserSystem eq 'pm'}">
 	       <li class="dropdown">
 	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">ManageProject
 	        <span class="caret"></span></a>
@@ -68,7 +68,7 @@
 	      	  
 	      	      
 	     </c:if>
-	      <c:if test="${roleUserSystem eq 'St'}">
+	      <c:if test="${roleUserSystem eq 'st'}">
 	       <li class="dropdown">
 	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">ManageStock
 	        <span class="caret"></span></a>
@@ -80,7 +80,7 @@
 	      </li>
 	     </c:if>
 	      
-	      	 <c:if test="${roleUserSystem eq 'Eng'}">      
+	      	 <c:if test="${roleUserSystem eq 'eng'}">      
 	         <li class="dropdown">
 	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">Stock
 	        <span class="caret"></span></a>
@@ -107,7 +107,7 @@
 	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">ImportMaterial
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">
-	        	<li><a href="${domainSystem}stock.html">Requisition</a></li>
+	        	<li><a href="${domainSystem}importMaterial.html">Requisition</a></li>
 	            <li><a href="${domainSystem}ListOwnnerMaterial.html">View OwnRequisition</a></li>
 	        </ul>
 	      </li>	      
@@ -125,7 +125,7 @@
 	           <li><a>User Role : ${roleUserSystem}</a></li>
 	        </ul>
 	      </li>
-	       <li><a href="${domainSystem}logoutpage.html"> <img class="img-responsive img-circle" width="30" height="30" src="images/Logout.png"></a></li>
+	       <li><a href="${domainSystem}logoutpage.html"> <img class="img-responsive img-circle" width="30" height="30" src="images/IconLogout.jpg"></a></li>
       </ul>
       <!--    <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">

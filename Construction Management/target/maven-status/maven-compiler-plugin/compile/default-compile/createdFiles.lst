@@ -24,7 +24,6 @@ com\softsquare\application\dao\OrderMaterialDaoImp.class
 com\softsquare\application\entity\Project.class
 com\softsquare\application\common\util\BeanUtils.class
 com\softsquare\application\common\util\LoginUtils.class
-com\softsquare\application\controller\AddEmployeeConstroller.class
 com\softsquare\application\domain\OrderMaterialDetailMapping.class
 com\softsquare\application\service\MaterialService.class
 com\softsquare\application\dao\MaterialDaoImp.class

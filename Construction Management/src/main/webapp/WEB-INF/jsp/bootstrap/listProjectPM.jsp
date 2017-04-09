@@ -15,12 +15,14 @@
 					<div class="col-md-4">
 						<label class="control-label-required">Province</label>
 						<select class="selectpicker show-tick show-menu-arrow"  name="provinceList" data-live-search="true" data-size="5" data-header="Select Province" ></select>
+						 <button type="button" class="btn btn-info" onclick="search()">
+				     	<span class="glyphicon glyphicon-search"></span>
+					  </button>
 					</div>
 				  	<div class="col-md-6"></div>
 				</div>
 
 		 </div>
-		 		
 		        <div class="panel panel-info filterable">
 		            <div class="panel-heading">
 		                <h3 class="panel-title"> List Project </h3>
@@ -34,7 +36,7 @@
 		                    	<th>Manage</th>
 		                        <th><input type="text" class="form-control" placeholder="ProjectName" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Povince" disabled></th>
-		                   
+		                        <th><input type="text" class="form-control" placeholder="StatusProject" disabled></th>
 		                    </tr>
 		                </thead>
 		                <tbody>

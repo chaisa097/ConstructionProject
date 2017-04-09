@@ -12,15 +12,21 @@
 				
 			  </div>
 		 </div>
+		 
+		 <button type="button" class="btn btn-primary" onclick="Save()">
+			  <span class="glyphicon glyphicon-floppy-save"></span>
+		</button> 
+		
 		 <div class="panel-body" style="margin-top:-25px;">
 		  <div class="row">
-		 		<button type="button" class="btn btn-default" onclick="addRow()">
-					<span class="glyphicon glyphicon-plus"></span>InsertMaterial
-				</button> 
+		 		
 				      
 				<div class="row" style="margin-top:10px; margin-bottom:-5px" name="addEditData">
-					
-				
+					<div  class="col-md-1" style="margin-top:10px; margin-bottom:5px" >
+				    <button type="button" class="btn btn-default" onclick="addRow()">
+			  		<span class="glyphicon glyphicon-text-height"></span>
+			     	</button> 
+			     	</div>
 					<div class="col-md-3" style="margin-top:10px; margin-bottom:5px" >
 						<select class="typeList"  id="type"  name="typeList" data-live-search="true" data-size="5" data-header="Select Type" disabled></select>
 					</div>
@@ -29,7 +35,7 @@
 						<select class="selectpicker show-tick show-menu-arrow" id="type"  name="materialList" data-live-search="true" data-size="5" data-header="Select Material" disabled></select>
 					</div>
 					
-					<div class="col-md-3"  style="margin-top:10px; margin-bottom:20px">
+					<div class="col-md-2"  style="margin-top:10px; margin-bottom:20px">
 							<input type="number" id="" class="form-control" placeholder="Amount of Order" name="quantityOrder" disabled>
 					</div>
 					<div class="col-md-3"  style="margin-top:10px; margin-bottom:20px">
@@ -41,10 +47,7 @@
 				
 		        <div class="panel panel-default filterable">
 		            <div class="panel-heading">
-		                <h3 class="panel-title">material List</h3>
-		               <div class="pull-right">
-		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Filter</button>
-		                </div>
+		                <h3 class="panel-title">Material List</h3>
 		            </div>
 		            <table class="table">
 		                <thead>

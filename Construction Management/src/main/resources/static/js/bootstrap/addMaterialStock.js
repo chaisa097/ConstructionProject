@@ -7,26 +7,56 @@
 	
  	});
 	    	
-		    	$('.typeList').on('change', function(event){
-		    	    var params2 = {method:'Material', TypeId: event.currentTarget.value};
+		  
+		    	    var params2 = {method:'Allmaterial'};
 		    	    BSBaseComboBox.getMaterial(params2,function(data){
 		    	    	$("div select[name=materialList]").html(data).selectpicker('refresh');
-		    	 	
-
-		    	 });
+		    
 		    	  });
 		
-		
-		
 		            searchMaterialReceive();
-			    	searchFunction();
+		            searchOrder();
+		            
+		            
+		          
 			   
     });
+	
+	function searchOrder(){
+    	$.ajax({
+        	type: 'POST'
+        	, url: application.contextPath+"/AddMaterialStock.html"
+        	, data: {method: 'searchOrder', orderMaterialId:headerId}
+        	, success: function(result){			        		
+            	var json = $.parseJSON(result);
+            	var data = [];		         
+            		$.each(json, function(index, value) {
+	            		  data.push('<tr><td>'+
+								  '<button type="button" class="btn btn-info btn-xs"  onclick=selectRow("'+value.materialId+'")> '+
+									'<span class="glyphicon glyphicon-ok"></span> Receive '+
+							     	'</button> '+
+							      '</td> '+
+	            				  '<td name=materialName>'+value.typeName+'</td> '+
+			                        '<td name=materialName>'+value.materialName+'</td> '+
+			                        '<td name=descrition>'+value.descrition+'</td> '+
+			                        '<td name=quantityOrder>'+value.quantityOrder+'</td> '+
+			                        '<td name=unitName>'+value.unitName+'</td>'+
+			                        '<td name=anotation>'+value.anotation+'</td></tr>');
+	            	});
+            	$('table.table tbody').html(data.join());	
+            
+        	}
+        });
+}
+	
+	
+	
+	
 	
 			
 function  searchMaterialReceive(){
 	
-	var params = {method: 'searchReceiveMaterial'};
+	var params = {method: 'searchReceiveMaterial',orderMaterialId:headerId};
 	$.ajax({
     	type: 'POST'
     	, url: application.contextPath+"/AddMaterialStock.html"
@@ -36,24 +66,22 @@ function  searchMaterialReceive(){
         	var data = [];
         	
         	$.each(json, function(index, value) {        		          		
-        		  data.push('<tr receiveMateialDetialId="'+value.receiveMateialDetialId+'"><td>'+
-        				   '<button type="button" class="btn btn-info btn-xs" onclick=deleteRow("'+value.receiveMateialDetialId+'")> '+
-							'<span class="glyphicon glyphicon-trash"></span> Delete '+
-						   '</button> '+
+        		  data.push('<tr>'+
+        				  '<td></td>'+
 	                        '<td name=materialName>'+value.materialName+'</td> '+
 	                        '<td name=descrition>'+value.descrition+'</td> '+
 	                        '<td name=receiveQuantity>'+value.receiveQuantity+'</td> '+
-	                        '<td name=unitName>'+value.unitName+'</td> '+
+	                        '<td name=unitName>'+value.unitName+'</td> '+	      
 	                        '<td name=receivePrice>'+value.receivePrice+'</td></tr>');
         	});
-        	$('table.table tbody').html(data.join());	
+        	$('table.table-condensed  tbody').html(data.join());	
         
     	}
     });
 	
 }
 	
-	function saveFunction(){
+	function Save(){
 		 if( BeanUtils.isNotEmpty($('div[name=addEditData] input[name=receiveQuantity]').val())){				                                                     		
 			var params = {};
 			var message = ""
@@ -78,7 +106,7 @@ function  searchMaterialReceive(){
 		        	, data: params
 		        	, success: function(result){
 		        		alert(message);
-		        
+		        		 searchMaterialReceive();
 		        	
 		        					        		
 		        	}
@@ -88,31 +116,22 @@ function  searchMaterialReceive(){
 		 }
 	 }
 	
-	
-	
-	
-function searchFunction(){
-		    	$.ajax({
-		        	type: 'POST'
-		        	, url: application.contextPath+"/AddMaterialStock.html"
-		        	, data: {method: 'search', orderMaterialId:headerId}
-		        	, success: function(result){			        		
-		            	var json = $.parseJSON(result);
-		            	var data = [];		         
-		            		$.each(json, function(index, value) {
-			            		  data.push('<tr orderMaterialDatailId="'+value.orderMaterialDatailId+'">'+
-			            				  '<td name=materialName>'+value.typeName+'</td> '+
-					                        '<td name=materialName>'+value.materialName+'</td> '+
-					                        '<td name=descrition>'+value.descrition+'</td> '+
-					                        '<td name=quantityOrder>'+value.quantityOrder+'</td> '+
-					                        '<td name=unitName>'+value.unitName+'</td>'+
-					                        '<td name=anotation>'+value.anotation+'</td></tr>');
-			            	});
-		            	$('table.table1 tbody').html(data.join());	
-		            
-		        	}
-		        });
-	    }
+	function selectRow(value){
+    	disAndEnInputField('create');
+    	var params = {method: 'searchMaterial', materialId:value};
+    	$.ajax({
+        	type: 'POST'
+        	, url: application.contextPath+"/AddMaterialStock.html"
+        	, data: params
+        	, success: function(result){
+            	var json = $.parseJSON(result);
+            	$("div[name='addEditData'] select[name='typeList']").val(json[0].typeId).selectpicker('refresh'); 
+            	$("div[name='addEditData'] select[name='materialList']").val(json[0].materialId).selectpicker('refresh');
+        	}
+        });
+    }	
+		
+
 
 function UpdateFinished(){
 		 var params = {method: 'finishOrder', orderMaterialId:headerId};
@@ -132,16 +151,12 @@ function back(){
 
 }
 
-function addRow(){			 
-	 disAndEnInputField('create');	 
-	 	 
-}
 
 function disAndEnInputField(param){
 	 if(BeanUtils.equals(param, 'create')){
 		 	createOrUpdateMode(param);
-			$("div[name='addEditData'] select[name='typeList']").prop('disabled', false).selectpicker('refresh');
-			$("div[name='addEditData'] select[name='materialList']").prop('disabled',  false).selectpicker('refresh');
+			$("div[name='addEditData'] select[name='typeList']").prop('disabled', true).selectpicker('refresh');
+			$("div[name='addEditData'] select[name='materialList']").prop('disabled',  true).selectpicker('refresh');
 			$("div[name='addEditData'] input[name='receiveQuantity']").prop('disabled', false);
 			$("div[name='addEditData'] input[name='receivePrice']").prop('disabled', false);
 

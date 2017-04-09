@@ -12,19 +12,22 @@
 		  <div class="panel-heading"><lable class="headPanal">Receive Material</lable>
 			  </div>
 		 </div>		 
-		 
-		 <button type="button" class="btn btn-default" onclick="UpdateFinished()">
-					<span class="glyphicon glyphicon-ok-circle"></span>UpdateFinished
-				</button> 
 	   <div class="panel panel-default filterable">
-		            <div class="panel-heading">
-		                <h3 class="panel-title">Order material List</h3>
-		              
+	    <div class="pull-right">
+	    <button type="button" class="btn btn-success" onclick="UpdateFinished()">
+				     	<span class="glyphicon glyphicon-ok-circle"></span>Finished
+				        </button>
+				        </div>
+		            <div class="panel-heading">  		       
+		             <div> <h3 class="panel-title">Order material List</h3> 
+		             </div>         		              
+		                  
 		            </div>
-		            <table class="table1">
+		            <table class="table">
 		                <thead>
 		                    <tr class="filters">
-		                         <th><input type="text" class="form-control" placeholder="Type" disabled></th>
+		                        <th></th>
+		                        <th><input type="text" class="form-control" placeholder="Type" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="MaterialName" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="AmountOfOrder" disabled></th>
@@ -40,8 +43,8 @@
 		  <div class="row">
 				<div class="row" style="margin-top:10px; margin-bottom:-5px" name="addEditData">
 					<div class="col-md-1" style="margin-top:10px; margin-bottom:5px" >
-					<button type="button" class="btn btn-default" onclick="addRow()">
-					<span class="glyphicon glyphicon-pencil"></span>
+					<button type="button" class="btn btn-primary" onclick="Save()">
+					<span class="glyphicon glyphicon-floppy-save"></span>
 				</button> 
 				</div>
 					<div class="col-md-3" style="margin-top:10px; margin-bottom:5px" >
@@ -49,7 +52,7 @@
 					</div>
 			        
 					<div class="col-md-3"  style="margin-top:10px; margin-bottom:20px">
-						<select class="selectpicker show-tick show-menu-arrow" id="type"  name="materialList" data-live-search="true" data-size="5" data-header="Select Material" disabled></select>
+						<select class="selectpicker show-tick show-menu-arrow" id="material"  name="materialList" data-live-search="true" data-size="5" data-header="Select Material" disabled></select>
 					</div>
 					
 					<div class="col-md-3"  style="margin-top:10px; margin-bottom:20px">
@@ -64,14 +67,12 @@
 		        <div class="panel panel-default filterable">
 		            <div class="panel-heading">
 		                <h3 class="panel-title">Receive material List</h3>
-		               <div class="pull-right">
-		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Filter</button>
-		                </div>
+		               
 		            </div>
-		            <table class="table">
+		            <table class="table-condensed">
 		                <thead>
 		                    <tr class="filters">
-		                    	<th>Manage</th>
+		                    	<th></th>
 		                        <th><input type="text" class="form-control" placeholder="MaterialName" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="AmountOfReceive" disabled></th>

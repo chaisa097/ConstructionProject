@@ -31,7 +31,7 @@ public class ReceiveMaterialDetail implements Serializable  {
 	private Integer  receiveId;
 	
 	@Column(name = "MATERIALID", unique=true, nullable = false)
-	private String  materialId;
+	private Integer  materialId;
 	
 	@Column(name = "RECEIVE_QUANTITY", unique=true, nullable = false)
 	private Integer  receiveQuantity;
@@ -70,12 +70,12 @@ public class ReceiveMaterialDetail implements Serializable  {
 	}
 
 
-	public String getMaterialId() {
+	public Integer getMaterialId() {
 		return materialId;
 	}
 
 
-	public void setMaterialId(String materialId) {
+	public void setMaterialId(Integer materialId) {
 		this.materialId = materialId;
 	}
 

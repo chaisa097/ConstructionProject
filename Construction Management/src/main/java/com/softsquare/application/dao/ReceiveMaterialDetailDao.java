@@ -8,6 +8,6 @@ public interface ReceiveMaterialDetailDao {
 	
 	public void ReceiveMaterialDetailSave(ReceiveMaterialDetail receiveDetail) throws Exception ;
 	public void UpdateReceiveMaterialDetail(ReceiveMaterialDetail receiveDetail) throws Exception;
-	public ArrayList<ReceiveMaterialDetail> getReceiveMaterialDetail() ;
+	public ArrayList<ReceiveMaterialDetail> getReceiveMaterialDetail(int receiveId);
 
 }
