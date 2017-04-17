@@ -9,42 +9,51 @@
 <div class="container">
 	<div class="form-group">
 
-		<div class="panel panel-default">
+		<div class="panel panel-info">
 			<div class="panel-heading">
-				<lable class="headPanal">Requisition Material</lable>
-			</div>
-		</div>
-		<div class="col-md-12">
-			<button type="button" class="btn btn-default" onclick="addRow()">
-				<span class="glyphicon glyphicon-pencil"></span>
-			</button>
-		</div>
-		<div class="row" style="margin-top: 10px; margin-bottom: -5px"
-			name="addEditData">
+				<lable class="headPanal">Request Material</lable>			
+			<div class="container">
+			
+			<div class="col-md-1" style="margin-top: 10px; margin-bottom:25px">
+              	<button type="button" class="btn btn-primary" onclick="Save()">
+				<span class="glyphicon glyphicon-floppy-save"></span>
+			   </button>
+              </div>
+			
+			
+		
+		
+		<div class="row" style="margin-top: 10px; margin-bottom: -5px"name="addEditData">
 			<div class="col-md-12">
-
+              <div class="col-md-1">
+			<button type="button" class="btn btn-default" onclick="addRow()">
+				<span class="glyphicon glyphicon-text-height"></span>
+			</button>
+	    	</div>
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>UsingMaterialDate</label> <input type="date" class="form-control"
-						id="orderMaterialDate" name="orderMaterialDate" disabled>
+					<label>Use  Material Date</label> <input type="date" class="form-control"
+						id="orderMaterialDate" name="useMaterialDate" disabled>
 				</div>
 
 				<div class="col-md-4"></div>
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>RquisitionNo</label> <input type="text" class="form-control"
-						id="orderNo" placeholder="orderNo." name="orderMaterialNo"
+					<label>RequestNo</label> <input type="text" class="form-control"
+						id="requestNo" placeholder="requestNo" name="requestNo"
 						disabled>
 				</div>
 
 
 			</div>
 			<div class="col-md-12">
-
+             <div class="col-md-1">
+			
+		</div>
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>ContactOwnerRquisition</label>
-					<textarea id="address" class="form-control"
-						placeholder="Address/Phone" rows="3" cols="10" name="address"
+					<label>ContactOwnerRequest</label>
+					<textarea id="contactOwner" class="form-control"
+						placeholder="Address/Phone" rows="3" cols="10" name="contactOwner"
 						disabled></textarea>
 				</div>
 
@@ -54,33 +63,34 @@
 					<label>Status</label> <input type="text" class="form-control"
 						id="Status" placeholder="Status" name="status" disabled>
 				</div>
+				
+				
+				
 			</div>
 
 		</div>
-
+		</div>
+</div>
+</div>
 		<div class="panel-body" style="margin-top: -25px;">
 			<div class="row">
 
 				<div class="panel panel-default filterable">
 					<div class="panel-heading">
-						<h3 class="panel-title">Requisition List</h3>
-						<div class="pull-right">
-							<button class="btn btn-default btn-xs btn-filter">
-								<span class="glyphicon glyphicon-filter"></span>Filter
-							</button>
-						</div>
+						<h3 class="panel-title">Request List</h3>
+						
 					</div>
 					<table class="table">
 						<thead>
 							<tr class="filters">
 								<th><input type="text" class="form-control"
-									placeholder="manage" disabled></th>
+									placeholder="" disabled></th>
 								<th><input type="text" class="form-control"
-									placeholder="RequisitionNo" disabled></th>
+									placeholder="RequestNo" disabled></th>
 								<th><input type="text" class="form-control"
 									placeholder="status" disabled></th>
 								<th><input type="text" class="form-control"
-									placeholder="RquisitionDate" disabled></th>
+									placeholder="RquestDate" disabled></th>
 
 							</tr>
 						</thead>

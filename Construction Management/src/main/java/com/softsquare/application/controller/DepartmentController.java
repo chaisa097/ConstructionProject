@@ -20,7 +20,7 @@ import com.softsquare.application.service.ProvinceService;
 @RestController
 @RequestMapping("/department.html")
 @Configurable
-public class departmentController {
+public class DepartmentController {
 
 @Autowired
 DepartmentService depService;

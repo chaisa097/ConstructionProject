@@ -6,6 +6,7 @@
 <html>
 <div name="statusSave" hidden="true"></div>
 <div class="container">
+	<input type="image" src="images/back.jpg" onclick="back()"  width="48" height="48">
 	<div class="form-group">
 		<div class="panel panel-default">
 		  <div class="panel-heading"><lable class="headPanal">MaterialDetail</lable>
@@ -52,7 +53,7 @@
 		            <table class="table">
 		                <thead>
 		                    <tr class="filters">
-		                    	<th>Manage</th>
+		                    	<th></th>
 		                        <th><input type="text" class="form-control" placeholder="MaterialName" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="AmountOfOrder" disabled></th>

@@ -7,18 +7,16 @@
 <html>
 <div name="statusSave" hidden="true"></div>
 <div class="container">
-<button type="button" class="btn btn-default" onclick="ConfirmOrder()">
-					<span class="glyphicon glyphicon-ok"></span> Confirm Order
-				   </button> 
-		<button type="button" class="btn btn-default" onclick="rejectOrder()">
-					<span class="glyphicon glyphicon-remove"></span> reject Order
-				   </button> 		   
-				   
-				   
+			<input type="image" src="images/back.jpg" onclick="back()"  width="48" height="48">   
 	<div class="form-group">
 	
 		<div class="col-md-12">
-			
+			<button type="button" class="btn btn-success" onclick="ConfirmOrder()">
+					<span class="glyphicon glyphicon-ok"></span> Confirm Order
+				   </button> 
+		<button type="button" class="btn btn-danger" onclick="rejectOrder()">
+					<span class="glyphicon glyphicon-remove"></span> reject Order
+				   </button> 
 		</div>
 			<div class="col-md-12">
 
@@ -57,8 +55,10 @@
 
 		 <div class="panel panel-default filterable">
 		            <div class="panel-heading">
-		                <h3 class="panel-title">MaterialDetail</h3>
-		              
+		                <h3 class="panel-title">Material Detail</h3>
+		               <div class="pull-right">
+		           	<input type="image" src="images/stock.png" onclick="viewStock()"  width="70" height="60">
+				   </div>
 		            </div>
 		            <table class="table">
 		                <thead>

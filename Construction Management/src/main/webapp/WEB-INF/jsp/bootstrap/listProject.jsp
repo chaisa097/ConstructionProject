@@ -10,7 +10,9 @@
 	<div class="form-group">
 		<div class="panel-body" style="margin-top: -25px;">
 			<div class="row">
-
+                 <button type="button" class="btn btn-success" onclick="createProject()">
+					<span class="glyphicon glyphicon-plus"></span> Create Project
+				   </button> 
 				<div class="panel panel-info filterable">
 					<div class="panel-heading">
 						<h3 class="panel-title">List Project</h3>
@@ -35,7 +37,7 @@
 						</tbody>
 					</table>
 				</div>
-
+                  
 
 				
 

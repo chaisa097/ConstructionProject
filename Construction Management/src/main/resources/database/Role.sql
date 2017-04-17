@@ -15,6 +15,6 @@ CREATE TABLE IF NOT EXISTS `ROLE` (
 
 INSERT INTO `ROLE` (`ROLEID`, `ROLECODE`, `ROLENAME`, `CREATE_USER`, `CREATE_DATE`, `UPDATE_USER`, `UPDATE_DATE`) VALUES
 (1, 'admin', 'administrator', 'admin', '2015-08-06 10:41:47.245609', 'admin', '2015-08-06 10:41:47.245609'),
-(2, 'PM', 'projectManagement', 'admin', '2015-08-06 10:41:47.245609', 'admin', '2015-08-06 10:41:47.245609'),
-(3, 'Eng', 'engineer', 'admin', '2015-08-06 10:41:47.245609', 'admin', '2015-08-06 10:41:47.245609'),
-(4, 'St', 'stocker', 'admin', '2015-08-06 10:41:47.245609', 'admin', '2015-08-06 10:41:47.245609');
+(2, 'pm', 'projectManagement', 'admin', '2015-08-06 10:41:47.245609', 'admin', '2015-08-06 10:41:47.245609'),
+(3, 'eng', 'engineer', 'admin', '2015-08-06 10:41:47.245609', 'admin', '2015-08-06 10:41:47.245609'),
+(4, 'st', 'stocker', 'admin', '2015-08-06 10:41:47.245609', 'admin', '2015-08-06 10:41:47.245609');

@@ -11,7 +11,9 @@ import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import com.softsquare.application.domain.MaterialMapping;
 import com.softsquare.application.domain.StockMapping;
+import com.softsquare.application.entity.Material;
 import com.softsquare.application.entity.ReceiveMaterial;
 import com.softsquare.application.entity.Stock;
 @Repository()
@@ -47,6 +49,25 @@ public class StockDaoImp  extends AbstractDao<Integer, Stock> implements StockDa
 		return result;
 	}
 	
+	@Override
+	public ArrayList<StockMapping> getMaterialinStock(StockMapping mapping) {
+		 Criteria criteria = getSession().createCriteria(Stock.class, "stock");
+		  criteria.createAlias("stock.material", "material");
+		  criteria.createAlias("material.type", "type");
+		  criteria.createAlias("material.unit", "unit");
+		 ProjectionList projections = Projections.projectionList()
+				    .add(Projections.property("stock.materialId").as("materialId"))
+		            .add(Projections.property("stock.totalQuatity").as("totalQuatity"))
+		            .add(Projections.property("type.typeId").as("typeId"))
+		            .add(Projections.property("material.materialCode").as("materialCode"))
+		            .add(Projections.property("material.materialName").as("materialName"));		 
+		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.eq("stock.materialId",mapping.getMaterialId()));
+		 criteria.setResultTransformer(Transformers.aliasToBean(Material.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<StockMapping> materialList = (ArrayList<StockMapping>) criteria.list();		 
+		return materialList;
+	}
 	
 	
 	@Override

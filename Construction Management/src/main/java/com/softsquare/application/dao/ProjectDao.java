@@ -23,4 +23,5 @@ public interface ProjectDao {
 	public Project findProejct(int Id) ;
 	public Map<String, Object> findbugget(int id);
 	public ArrayList<Project> findProjectbyProjectId(int projectId) ;
+	public ArrayList<Project> getProject() ;
 }

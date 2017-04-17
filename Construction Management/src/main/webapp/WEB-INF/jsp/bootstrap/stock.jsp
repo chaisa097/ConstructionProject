@@ -24,10 +24,7 @@
 		 </div>
 		 <div class="panel-body" style="margin-top:-25px;">
 		  <div class="row">
-		 		
-			
-			
-				
+
 		        <div class="panel panel-default filterable">
 		            <div class="panel-heading">
 		                <h3 class="panel-title">Material List</h3>

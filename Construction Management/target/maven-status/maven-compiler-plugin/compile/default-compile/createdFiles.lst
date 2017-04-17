@@ -115,7 +115,6 @@ com\softsquare\application\dao\MaterialTypeDao.class
 com\softsquare\application\domain\LoginMapping.class
 com\softsquare\application\report\ReportController.class
 com\softsquare\application\controller\OrderMaterialDetailController.class
-com\softsquare\application\controller\ListProjectAdminontroller.class
 com\softsquare\application\service\OrderMaterialDetialService.class
 com\softsquare\application\domain\grid\GridRecord.class
 com\softsquare\application\controller\EngineerProjectController.class

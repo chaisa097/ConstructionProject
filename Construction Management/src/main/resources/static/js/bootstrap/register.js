@@ -77,7 +77,7 @@
 			        	, success: function(result){		        
 			        		$('div#roleHeader select[name="roleList"]').val(roleId).selectpicker('refresh');
 			        		clearValue();
-			        		searchFunction();
+			        		search();
 			        		disAndEnInputField();
 			        	}
 			        });
@@ -108,7 +108,7 @@
 	        	, url: application.contextPath+"/register.html"
 	        	, data: params
 	        	, success: function(result){
-	        		searchFunction();
+	        		search();
 	        	}
 	        });
 	    }

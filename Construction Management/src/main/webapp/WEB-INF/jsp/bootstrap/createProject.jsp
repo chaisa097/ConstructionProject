@@ -9,6 +9,7 @@
 <div name="statusSave" hidden="true"></div>
 <div class="container">
 	<div class="form-group">
+	<input type="image" src="images/back.jpg" onclick="back()"  width="48" height="48">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<lable class="headPanal">Create Construction Project</lable>
@@ -103,6 +104,15 @@
 								<input type="date" class="form-control" name="finishDate"
 									id="finishDate" disabled>
 							</div>
+							
+							<div class="col-md-4"
+								style="margin-top: 10px; margin-bottom: 10px">
+								<lable>Critical Budget(0-100%)</lable>
+								<input type="number" class="form-control" min="0" max="100"
+									step="5" name="criticalBudget" id="criticalBudget" disabled>
+							</div>
+							
+							
 						</div>
 
 					</div>
@@ -111,7 +121,7 @@
 
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<lable class="headPanal"> customer Information</lable>
+						<lable class="headPanal"> Customer Information</lable>
 					</div>
 					<div class="row" style="margin-top: 10px; margin-bottom: -5px"
 						name="addEditData">
@@ -131,52 +141,21 @@
 									placeholder="Customer Phone" name="customerPhone"
 									id="customerPhone" disabled>
 							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="panel panel-info">
-					<div class="panel-heading">
-						<lable class="headPanal"> budget of project</lable>
-					</div>
-					<div class="row" style="margin-top: 10px; margin-bottom: -5px"
-						name="addEditData">
-						<div class="container">
+							
 							<div class="col-md-4"
 								style="margin-top: 10px; margin-bottom: 10px">
 								<lable>Budget</lable>
 								<input type="number" class="form-control" placeholder="Budget"
 									name="budget" id="bugget" disabled>
 							</div>
-
-							<div class="col-md-4"
-								style="margin-top: 10px; margin-bottom: 10px">
-								<lable>TotalHireEmployee/Baht</lable>
-								<input type="number" class="form-control"
-									name="totalHireEmployee" id="totalHireEmployee" disabled>
-							</div>
-							<div class="col-md-4"
-								style="margin-top: 10px; margin-bottom: 10px">
-								<lable>TotalUsedMaterial/Baht</lable>
-								<input type="number" class="form-control"
-									name="totalUseMaterial" id="totalUseMaterial" disabled>
-							</div>
-							<div class="col-md-4"
-								style="margin-top: 10px; margin-bottom: 10px">
-								<lable>TotalExpenseInConstruction/Baht</lable>
-								<input type="number" class="form-control" name="totalExpense"
-									id="totalExpense" disabled>
-							</div>
-							<div class="col-md-4"
-								style="margin-top: 10px; margin-bottom: 10px">
-								<lable>Critical Budget(0-100%)</lable>
-								<input type="number" class="form-control" min="0" max="100"
-									step="5" name="criticalBudget" id="criticalBudget" disabled>
-							</div>
+							
+							
 						</div>
 					</div>
+
 				</div>
+
+			
 
 			</div>
 		</div>

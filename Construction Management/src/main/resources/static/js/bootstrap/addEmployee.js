@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-	
 	BSBaseComboBox.getEmployee({method:'employee'} ,function(data){
 	   	$("div select[name=employeeList]").html(data).selectpicker('refresh');
 	});
@@ -26,7 +25,7 @@ function searchFunction(){
 $.ajax({
  	type: 'POST'
  	, url: application.contextPath+"/addEmployee.html"
- 	, data: {method: 'searchWorker', projectId:headerId}
+ 	, data: {method: 'searchWorker',projectId:headerId}
    
  	, success: function(result){
      	var json = $.parseJSON(result);
@@ -177,7 +176,7 @@ function deleteRow(value){
  
 
 
-function backFunction(){
+function back(){
 	location.href = "listProjectPM.html";
 	
 	
@@ -223,6 +222,3 @@ function createOrUpdateMode(param){
 		 $("div[name='statusSave']").attr('mode', '');
 	 }
 }
-
-
-

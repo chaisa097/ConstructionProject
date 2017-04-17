@@ -11,25 +11,27 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-			<button type="button" class="btn btn-primary" onclick="Save()">
+				 <lable class="headPanal">Order Material</lable>
+			</div>
+			<div class="col-md-1" style="margin-top: 10px; margin-bottom:25px">
+              	<button type="button" class="btn btn-primary" onclick="Save()">
 				<span class="glyphicon glyphicon-floppy-save"></span>
 			   </button>
-				
-			 
-				 <lable class="headPanal">   OrderMaterial</lable>
-			</div>
-		</div>
-		<div class="col-md-1">
-			<button type="button" class="btn btn-default" onclick="addRow()">
-				<span class="glyphicon glyphicon-text-height"></span>
-			</button>
-		</div>
+              </div>
+		
+		<div class="container">
 		<div class="row" style="margin-top: 10px; margin-bottom: -5px"
 			name="addEditData">
 			<div class="col-md-12">
 
+             <div class="col-md-1">
+				<button type="button" class="btn btn-default" onclick="addRow()">
+				<span class="glyphicon glyphicon-text-height"></span>
+			  </button>
+		     </div>
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
+				
 					<label>OrderDate</label> <input type="date" class="form-control"
 						id="Date" name="orderMaterialDate" disabled>
 				</div>
@@ -45,9 +47,10 @@
 
 			</div>
 			<div class="col-md-12">
-
+                <div class="col-md-1">
+                </div>
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>ContactOrderOwner</label>
+					<label>Contact OrderOwner</label>
 					<textarea id="address" class="form-control"
 						placeholder="Address/Phone" rows="3" cols="10" name="address"
 						disabled></textarea>
@@ -60,9 +63,11 @@
 						id="Status" placeholder="Status" name="status" disabled>
 				</div>
 			</div>
-
+          
 		</div>
-
+		</div>
+		</div>   
+              
 		<div class="panel-body" style="margin-top: -25px;">
 			<div class="row">
 
@@ -78,8 +83,7 @@
 					<table class="table">
 						<thead>
 							<tr class="filters">
-								<th><input type="text" class="form-control"
-									placeholder="manage" disabled></th>
+								<th></th>
 								<th><input type="text" class="form-control"
 									placeholder="OrderNo" disabled></th>
 								<th><input type="text" class="form-control"

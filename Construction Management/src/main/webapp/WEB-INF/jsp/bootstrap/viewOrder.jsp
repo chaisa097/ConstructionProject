@@ -7,6 +7,7 @@
 <html>
 <div name="statusSave" hidden="true"></div>
 <div class="container">
+	<input type="image" src="images/back.jpg" onclick="backFunction()"  width="48" height="48">
 	<div class="form-group">
 	
 		<div class="col-md-12">
@@ -25,7 +26,7 @@
 				<div class="col-md-4"></div>
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>orderNo</label> <input type="text" class="form-control"
+					<label>OrderNo</label> <input type="text" class="form-control"
 						id="orderNo" placeholder="orderNo" name="orderMaterialNo"
 						disabled>
 				</div>
@@ -35,7 +36,7 @@
 			<div class="col-md-12">
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>ContactOrderOwner</label>
+					<label>Contact OrderOwner</label>
 					<textarea id="address" class="form-control"
 						placeholder="Address/Phone" rows="3" cols="10" name="address"
 						disabled></textarea>
@@ -51,7 +52,7 @@
 
 		 <div class="panel panel-default filterable">
 		            <div class="panel-heading">
-		                <h3 class="panel-title">MaterialDetail</h3>
+		                <h3 class="panel-title">Material Detail</h3>
 		              
 		            </div>
 		            <table class="table">

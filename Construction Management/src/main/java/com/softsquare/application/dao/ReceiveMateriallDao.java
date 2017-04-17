@@ -11,6 +11,6 @@ public interface ReceiveMateriallDao {
 	public Map<String, Object> findNoReceiveMax() ;
 	public Map<String, Object> findReceiveIdByNoId(String No);
 	public ReceiveMaterial findReceiveForUpdate (int Id);
-	public Map<String, Object> findOrderId(int Id);
+	public Map<String, Object> findreceiveByorderId(int Id);
 
 }

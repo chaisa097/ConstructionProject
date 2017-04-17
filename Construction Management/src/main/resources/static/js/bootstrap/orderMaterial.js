@@ -1,12 +1,6 @@
 		$(document).ready(function(){
 
-			 var params = {method:'Type'};
-		    	BSBaseComboBox. getType(params,function(data){
-		      	$("div select[name=typeList]").html(data).selectpicker('refresh');
-			
-	   	
-	    	});
-	 
+		
 	 	BSBaseTable.callFiterTable();
 	    	searchFunction();
     });
@@ -37,10 +31,10 @@
 			         			            		
 			            		  data.push('<tr orderMaterialId="'+value.orderMaterialId+'"><td>'+
 			            				     '<a href='+domainSystem+'/orderMaterialDetail.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-success btn-xs"> '+
-	    								    '<span class="glyphicon glyphicon-plus"></span>  material'+
+	    								    '<span class="glyphicon glyphicon-plus"></span>  Material'+
 	    							      	'</a> '+
 	    							      	'<a href='+domainSystem+'/viewOrder.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-info btn-xs"> '+
-	    							      	'<span class="glyphicon glyphicon-eye-open"></span> send '+
+	    							      	'<span class="glyphicon glyphicon-eye-open"></span> Send '+
 	    							      	'</a> '+
 						                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.orderMaterialId+'")> '+
 												 '<span class="glyphicon glyphicon-pencil"></span> '+

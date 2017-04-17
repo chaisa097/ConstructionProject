@@ -10,10 +10,12 @@ import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.softsquare.application.common.util.BeanUtils;
+import com.softsquare.application.common.util.LoginUtils;
 import com.softsquare.application.domain.OrderMaterialMapping;
 import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.entity.Login;
@@ -23,7 +25,8 @@ import com.softsquare.application.entity.Project;
 @Repository()
 @Component
 public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   implements OrderMaterialDao{
-	
+	@Autowired
+	 private LoginDao  loginDao;	
 	
 	@SuppressWarnings("unchecked")
 	@Override
@@ -73,14 +76,36 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 		            .add(Projections.property("order.orderMaterialId").as("orderMaterialId"))
 		            .add(Projections.property("order.orderMaterialNo").as("orderMaterialNo"))
 		            .add(Projections.property("order.address").as("address"))
+		            .add(Projections.property("order.employeeId").as("employeeId"))
 		            .add(Projections.property("order.orderMaterialDate").as("orderMaterialDate"))
 		            .add(Projections.property("order.status").as("status"));
-		 criteria.setProjection(projections);			
-		 criteria.add(Restrictions.or(Restrictions.eq("order.status","Open") , Restrictions.eq("order.status","reject")));
+		 criteria.setProjection(projections);	
+		 Map<String, Object> dataLogin = loginDao.findByLOGID(LoginUtils.getUsername());
+		 criteria.add(Restrictions.or(Restrictions.eq("order.status","Open") , Restrictions.eq("order.status","Reject")));
+		 criteria.add(Restrictions.and(Restrictions.eq("order.employeeId",dataLogin.get("employeeId"))));
 		 criteria.setResultTransformer(Transformers.aliasToBean(OrderMaterial.class));
 		 ArrayList<OrderMaterial> orderList = (ArrayList<OrderMaterial>) criteria.list();
 		return orderList;
 	}
+	
+	@Override
+	public ArrayList<OrderMaterial> getPMConfirmOrderWaitStatus() {
+		 Criteria criteria = getSession().createCriteria(OrderMaterial.class, "order");
+		 ProjectionList projections = Projections.projectionList()
+		            .add(Projections.property("order.orderMaterialId").as("orderMaterialId"))
+		            .add(Projections.property("order.orderMaterialNo").as("orderMaterialNo"))
+		            .add(Projections.property("order.address").as("address"))
+		            .add(Projections.property("order.employeeId").as("employeeId"))
+		            .add(Projections.property("order.orderMaterialDate").as("orderMaterialDate"))
+		            .add(Projections.property("order.status").as("status"));
+		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.or(Restrictions.eq("order.status","Waiting Confirm")));
+		 criteria.setResultTransformer(Transformers.aliasToBean(OrderMaterial.class));
+		 ArrayList<OrderMaterial> orderList = (ArrayList<OrderMaterial>) criteria.list();
+		return orderList;
+	}
+	
+	
 	
 	@Override
 	public ArrayList<OrderMaterial> getOrderWaitStatus() {
@@ -89,10 +114,13 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 		            .add(Projections.property("order.orderMaterialId").as("orderMaterialId"))
 		            .add(Projections.property("order.orderMaterialNo").as("orderMaterialNo"))
 		            .add(Projections.property("order.address").as("address"))
+		            .add(Projections.property("order.employeeId").as("employeeId"))
 		            .add(Projections.property("order.orderMaterialDate").as("orderMaterialDate"))
 		            .add(Projections.property("order.status").as("status"));
 		 criteria.setProjection(projections);
-		 criteria.add(Restrictions.or(Restrictions.eq("order.status","waiting confirm") , Restrictions.eq("order.status","Waiting Material"),Restrictions.eq("order.status","reject"),Restrictions.eq("order.status","Finished")));
+		 Map<String, Object> dataLogin = loginDao.findByLOGID(LoginUtils.getUsername());
+		 criteria.add(Restrictions.or(Restrictions.eq("order.status","Waiting Confirm") , Restrictions.eq("order.status","Waiting Material"),Restrictions.eq("order.status","reject"),Restrictions.eq("order.status","Finished")));
+		 criteria.add(Restrictions.and(Restrictions.eq("order.employeeId",dataLogin.get("employeeId"))));
 		 criteria.setResultTransformer(Transformers.aliasToBean(OrderMaterial.class));
 		 ArrayList<OrderMaterial> orderList = (ArrayList<OrderMaterial>) criteria.list();
 		return orderList;
@@ -105,6 +133,7 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 		            .add(Projections.property("order.orderMaterialId").as("orderMaterialId"))
 		            .add(Projections.property("order.orderMaterialNo").as("orderMaterialNo"))
 		            .add(Projections.property("order.address").as("address"))
+		            .add(Projections.property("order.employeeId").as("employeeId"))
 		            .add(Projections.property("order.orderMaterialDate").as("orderMaterialDate"))
 		            .add(Projections.property("order.status").as("status"));
 		 criteria.setProjection(projections);
@@ -124,7 +153,6 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 		            .add(Projections.property("order.address").as("address"))
 		            .add(Projections.property("order.orderMaterialDate").as("orderMaterialDate"))
 		            .add(Projections.property("order.status").as("status"));
-		 
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("order.orderMaterialId",mapping.getOrderMaterialId() ));	
 		 criteria.setResultTransformer(Transformers.aliasToBean(OrderMaterial.class));

@@ -5,7 +5,7 @@
 	      	$("div select[name=typeList]").html(data).selectpicker('refresh');
 		
 	
- 	});
+ 	  });
    	      		BSBaseTable.callFiterTable();
 		   });
 	
@@ -33,7 +33,6 @@
 		        });
 	    	}
 	    }
-	
 	
 	
 	

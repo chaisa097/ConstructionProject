@@ -19,7 +19,10 @@ public class StockServiceImp implements StockService {
 	public ArrayList<StockMapping> findAllStock(StockMapping mapping){
 		return stockDao.findAllStock(mapping);
 	}
-	
+	@Override 
+	public ArrayList<StockMapping> getMaterialinStock(StockMapping mapping){
+		return stockDao.getMaterialinStock(mapping);
+	}
 	
 	
 }

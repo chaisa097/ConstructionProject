@@ -17,11 +17,13 @@ import com.softsquare.application.entity.Department;
 import com.softsquare.application.entity.Employee;
 import com.softsquare.application.entity.Material;
 import com.softsquare.application.entity.MaterialType;
+import com.softsquare.application.entity.Project;
 import com.softsquare.application.entity.Province;
 import com.softsquare.application.entity.Role;
 import com.softsquare.application.service.DepartmentService;
 import com.softsquare.application.service.EmployeeService;
 import com.softsquare.application.service.MaterialService;
+import com.softsquare.application.service.ProjectService;
 import com.softsquare.application.service.RoleService;
 import com.softsquare.application.service.ProvinceService;
 import com.softsquare.application.service.TypeService;
@@ -46,7 +48,8 @@ public class ComboboxController {
 	private TypeService typeSerivce;
 	@Autowired
 	private MaterialService materialService;
-	
+	@Autowired
+	private ProjectService projectServ;
 	
 	@RequestMapping(params =  "method=role" , method=RequestMethod.POST)
     public void register(HttpServletRequest request, HttpServletResponse response){
@@ -138,6 +141,20 @@ public class ComboboxController {
 		ArrayList<Material> materialList =  materialService.AllMaterial();		
 		Gson gson = new Gson();
 		String  json = gson.toJson(materialList);
+		try {
+//			response.getWriter().write("{records:"+json+"}");
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
+	
+	
+	@RequestMapping(params =  "method=Project" , method=RequestMethod.GET)
+    public void Projectcombobox(HttpServletRequest request, HttpServletResponse response  ){
+		ArrayList<Project> projectList =  projectServ.getProject();
+		Gson gson = new Gson();
+		String  json = gson.toJson(projectList);
 		try {
 //			response.getWriter().write("{records:"+json+"}");
 			response.getWriter().write(json);

@@ -22,8 +22,12 @@ $(document).ready(function(){
 	    								'<a href='+domainSystem+'/addEmployee.html?projectId='+value.projectId+' class="btn btn-Success btn-xs"> '+
 	    								  '<span class="glyphicon glyphicon-plus"></span>Employee '+
 	    								'</a> '+	
+	    								
+	    								'<a href='+domainSystem+'/listRequestMaterialPM.html?projectId='+value.projectId+' class="btn btn-warning btn-xs"> '+
+	    								  '<span class="glyphicon glyphicon-list-alt"></span> Approve RequestMaterial'+
+	    								'</a> '+	
 	    								'<a href='+domainSystem+'/editStatusProject.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
-	    								  'UpdateProgress '+
+	    								'<span class="glyphicon glyphicon-hourglass"></span>Progress '+
 	    								'</a> '+
 	    								
 	    								'<a href='+domainSystem+'/viewProject.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
@@ -32,7 +36,7 @@ $(document).ready(function(){
 	    							
 	    	                        '<td name=projectName>'+value.projectName+'</td> '+
 	    	                        '<td name=provinceName>'+value.provinceName+'</td>'+
-	    	                        '<td name=provinceName>'+value.percentStatus+'%'+'</td></tr>');
+	    	                        '<td name=percentStatus>'+value.percentStatus+'%'+'</td></tr>');
 	            	});
 	            	$('table.table tbody').html(data.join());	
 	            
@@ -64,10 +68,14 @@ function search(){
         		  data.push('<tr projectId="'+value.projectId+'"><td>'+
         				  '<a href='+domainSystem+'/addEmployee.html?projectId='+value.projectId+' class="btn btn-Success btn-xs"> '+
 						  '<span class="glyphicon glyphicon-plus"></span>Employee '+
-						    '</a> '+	
-						  '<a href='+domainSystem+'/editStatusProject.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
-						   'UpdateProgress '+
-						  '</a> '+
+						'</a> '+	
+						
+						'<a href='+domainSystem+'/listRequestMaterialPM.html?projectId='+value.projectId+' class="btn btn-warning btn-xs"> '+
+						  '<span class="glyphicon glyphicon-list-alt"></span> Approve RequestMaterial'+
+						'</a> '+	
+						'<a href='+domainSystem+'/editStatusProject.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
+						'<span class="glyphicon glyphicon-hourglass"></span>Progress '+
+						'</a> '+
 						
 						   '<a href='+domainSystem+'/viewProject.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
 						  '<span class="glyphicon glyphicon-eye-open"></span>'+
@@ -82,5 +90,5 @@ function search(){
         
     	}
     });
-}
+   }
 }

@@ -28,8 +28,8 @@ $(document).ready(function(){
 				            	var date = [day, month, year].join('-');
 			         			            		
 			            		  data.push('<tr orderMaterialId="'+value.orderMaterialId+'"><td>'+
-			            				     '<a href='+domainSystem+'/AddMaterialStock.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-success btn-xs"> '+
-		    								    '<span class="glyphicon glyphicon-bell"></span> Receive '+
+			            				     '<a href='+domainSystem+'/AddMaterialStock.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-warning btn-xs"> '+
+		    								    '<span class="glyphicon glyphicon-bell"></span>Receive '+
 		    							      	'</a> '+
 					                        '<td name=orderMaterialNo>'+value.orderMaterialNo+'</td> '+
 					                        '<td name=status>'+value.status+'</td> '+

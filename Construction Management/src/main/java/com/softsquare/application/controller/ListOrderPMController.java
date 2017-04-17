@@ -33,7 +33,7 @@ public class ListOrderPMController {
 	@RequestMapping(params =  "method=searchOrder" , method=RequestMethod.POST)
 	public void search(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialMapping mapping) throws Throwable{
 		Gson gson = new Gson();
-		String  json = gson.toJson(OrderServ.getOrderMaterialWaitStatus());
+		String  json = gson.toJson(OrderServ.getPmConfirmOrderMaterialWaitStatus());
 //		System.out.print(json);
 		try {
 			response.getWriter().write(json);

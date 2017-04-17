@@ -117,6 +117,8 @@
 			 }
 		 }
 		
-		  
+		 function createProject(){
+				location.href = "createProject.html";
+			}
 		 
 		  

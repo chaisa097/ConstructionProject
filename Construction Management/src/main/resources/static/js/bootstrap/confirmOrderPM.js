@@ -57,7 +57,7 @@ function searchFunction(){
 		        	}
 		        });
 	    }
-function backFunction(){
+function back(){
 	location.href = "listOrderPM.html";
 
 }
@@ -89,7 +89,10 @@ function rejectOrder(){
 
 }
 
+function viewStock(){
+	location.href = "stock.html";
 
+}
 
 
 

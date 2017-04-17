@@ -22,10 +22,10 @@ public class ControllerDefault {
 		String domainName = null;
     
 		final String[] roleAll = new String[]{"admin","pm","eng","st"};
-		final String[] pageAdmin = new String[]{"home", "registerList", "register", "manageRole","province","createProject","listproject"};
-		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","listOrderPM","confirmOrder","editStatusProject"};
-		final String[] pageEngineer = new String[]{"home","stock","orderMaterial","orderMaterialDetail","viewOrder","listOrder","importMaterial","createRequisitionMaterial"};
-		final String[] pageStocker = new String[]{"home","stock","receiveMaterial","addMaterialStock"};
+		final String[] pageAdmin = new String[]{"home", "registerList", "register", "manageRole","province","createProject","listproject","department","departmentdetail"};
+		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","listOrderPM","confirmOrder","editStatusProject","listRequestMaterialPM","confirmRequestMaterial"};
+		final String[] pageEngineer = new String[]{"home","stock","orderMaterial","orderMaterialDetail","viewOrder","listOrder","importMaterial","createRequestMaterial","requestMaterialDetail","viewRequestMaterial","listRequestMaterial"};
+		final String[] pageStocker = new String[]{"home","stock","receiveMaterial","addMaterialStock","requestMaterialStock","exportMaterial"};
 		final String[] pageNoLogin = new String[]{"index", "pageTest"};
 		int count = 0;
 		

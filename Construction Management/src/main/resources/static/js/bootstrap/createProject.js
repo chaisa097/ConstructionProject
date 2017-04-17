@@ -58,9 +58,6 @@
 	  	$("div[name='addEditData'] input[name='customerName']").val(json[0].customerName);
 	  	$("div[name='addEditData'] input[name='customerPhone']").val(json[0].customerPhone);
 	  	$("div[name='addEditData'] input[name='budget']").val(json[0].budget);
-	  	$("div[name='addEditData'] input[name='totalHireEmployee']").val(json[0].totalHireEmployee);
-	  	$("div[name='addEditData'] input[name='totalUseMaterial']").val(json[0].totalUseMaterial);
-	  	$("div[name='addEditData'] input[name='totalExpense']").val(json[0].totalExpense);
 	  	$("div[name='addEditData'] input[name='criticalBudget']").val(json[0].criticalBudget);   		
 	          
 	      	}
@@ -110,9 +107,6 @@ function save(){
 					params.customerName = $('div[name=addEditData] input[name=customerName]').val();
 					params.customerPhone = $('div[name=addEditData] input[name=customerPhone]').val();
 					params.budget =	$('div[name=addEditData] input[name=budget]').val();
-					params.totalHireEmployee =	$('div[name=addEditData] input[name=totalHireEmployee]').val();
-					params.totalUseMaterial =	$('div[name=addEditData] input[name=totalUseMaterial]').val();
-					params.totalExpense =	$('div[name=addEditData] input[name=totalExpense]').val();
 					params.criticalBudget=	$('div[name=addEditData] input[name=criticalBudget]').val();			
 			    	$.ajax({
 			        	type: 'POST'

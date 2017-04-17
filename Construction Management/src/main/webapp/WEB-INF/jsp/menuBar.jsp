@@ -26,27 +26,33 @@
 	   <div class="collapse navbar-collapse">
 	    <ul class="nav navbar-nav">
 	     <c:if test="${roleUserSystem eq 'admin'}">
-	    <li class="dropdown">
-	        <a class="dropdown-toggle"  id="manageUser" data-toggle="dropdown" href="#">Manage User and Role
-	        <span class="caret"></span></a>
-	        <ul class="dropdown-menu">
-	        	<li><a href="${domainSystem}register.html">Register</a></li>
-	        	<li><a href="${domainSystem}manageRole.html">Manage Role</a></li>
-	        </ul>
-	      </li>
-	      
+	      <li class="dropdown">
+	         <li class="nav-item">
+         <a class="nav-link" href="${domainSystem}register.html">Manage User</a>
+          </li>
+  <!--  
+	      <li class="nav-item">
+        <a class="nav-link" href="${domainSystem}manageRole.html">ManageRole</a>
+         </li>
+ -->
 	      <li class="dropdown">
 	        <a class="dropdown-toggle" id="manageData" data-toggle="dropdown" href="#">ManageData
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">
-	       		<li><a href="${domainSystem}department.html">Department</a></li>
-	       		<li><a href="${domainSystem}departmentdetail.html">Department Detail</a></li>
 	        	<li><a href="${domainSystem}province.html">Province</a></li>
-	            <li><a href="${domainSystem}createProject.html">CreateProject</a></li>
-	        	<li><a href="${domainSystem}listProject.html">ListProject</a></li>
-	  	      
-	        
+	           <li class="divider"></li>
+	        	 <li><a href="${domainSystem}listProject.html">Project</a></li>
+	        	<li class="divider"></li>
+	           <li><a href="${domainSystem}department.html">Department</a></li>
+	       		<li class="divider"></li>
+	       		<li><a href="${domainSystem}departmentdetail.html">Position</a></li>
+	       	
 	        </ul>
+	          
+	       
+	   
+	        
+	        
 	      </li>
 	      </c:if>
 	      <c:if test="${roleUserSystem eq 'pm'}">
@@ -57,60 +63,57 @@
 	        	<li><a href="${domainSystem}listProjectPM.html">Own Project</a></li>
 	        </ul>
 	      </li>
-	      	  <li class="dropdown">
-	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">ManageOrder
-	        <span class="caret"></span></a>
-	        <ul class="dropdown-menu">	     
-	        	<li><a href="${domainSystem}stock.html">viewStock</a></li>
-	            <li><a href="${domainSystem}listOrderPM.html">Confirm OderMaterial</a></li>
-	        </ul>
-	      </li>
-	      	  
-	      	  
-	      	  
-	      	      
+	      
+	        <li class="nav-item">
+         <a class="nav-link" href="${domainSystem}stock.html">Stock</a>
+          </li>
+          
+          
+           <li class="nav-item">
+         <a class="nav-link" href="${domainSystem}listOrderPM.html">Confirm OderMaterial</a>
+          </li>
+	      
 	     </c:if>
+	     
 	      <c:if test="${roleUserSystem eq 'st'}">
-	       <li class="dropdown">
-	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">ManageStock
-	        <span class="caret"></span></a>
-	        <ul class="dropdown-menu">
-	            <li><a href="${domainSystem}stock.html">viewStock</a></li>
-	        	<li><a href="${domainSystem}receiveMaterial.html">ReceiveMaterial</a></li>
-	            <li><a href="${domainSystem}ListOwnnerMaterial.html">confirm ExportMaterial</a></li>
-	        </ul>
-	      </li>
+	       <li class="nav-item">
+         <a class="nav-link" href="${domainSystem}stock.html">Stock</a>
+          </li>
+	      
+	       <li class="nav-item">
+         <a class="nav-link" href="${domainSystem}receiveMaterial.html">Receive Material</a>
+          </li>
+	      
+	       <li class="nav-item">
+         <a class="nav-link" href="${domainSystem}requestMaterialStock.html">Request Material</a>
+          </li>
 	     </c:if>
 	      
 	      	 <c:if test="${roleUserSystem eq 'eng'}">      
-	         <li class="dropdown">
-	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">Stock
-	        <span class="caret"></span></a>
-	        <ul class="dropdown-menu">
-	        	<li><a href="${domainSystem}stock.html">viewStock</a></li>
-	         
-	        </ul>
-	      </li>
+	        
 	      
+	        <li class="nav-item">
+         <a class="nav-link" href="${domainSystem}stock.html">Stock</a>
+          </li>
+          
 	       <li class="dropdown">
-	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">OrderMaterial
+	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">Order Material
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">
 	        	<li><a href="${domainSystem}OrderMaterial.html">Order</a></li>
-	        	<li><a href="${domainSystem}listOrder.html">List Order</a></li>
+	        	<li class="divider"></li>
+	        	<li><a href="${domainSystem}listOrder.html">Own Order</a></li>
 	        </ul>
 	      </li>
 	      
-	      
-	      
-	      
-	      
+
 	      <li class="dropdown">
-	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">ImportMaterial
+	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">Import Material
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">
-	        	<li><a href="${domainSystem}importMaterial.html">Requisition</a></li>
-	            <li><a href="${domainSystem}ListOwnnerMaterial.html">View OwnRequisition</a></li>
+	        	<li><a href="${domainSystem}importMaterial.html">Request Material</a></li>
+	        	<li class="divider"></li>
+	            <li><a href="${domainSystem}listRequestMaterial.html">Own RequestMaterial</a></li>
 	        </ul>
 	      </li>	      
 	      </c:if>

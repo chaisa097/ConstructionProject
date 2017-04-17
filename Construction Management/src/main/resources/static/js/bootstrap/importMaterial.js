@@ -11,11 +11,8 @@
 	            	var data = [];
 	            	$.each(json, function(index, value) {
 	            		  data.push('<tr projectId="'+value.projectId+'"><td>'+
-										'<a href='+domainSystem+'/createRequisitionMaterial.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
-										  '<span class="glyphicon glyphicon-file"></span>RequisitionMaterial'+
-										'</a> '+	
-										'<a href='+domainSystem+'/createRequisitionMaterial.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
-										  '<span class="glyphicon glyphicon-list-alt"></span>ReceiveMaterial'+
+										'<a href='+domainSystem+'/createRequestMaterial.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
+										  '<span class="glyphicon glyphicon-file"></span> Request Material'+
 										'</a> '+	
 			                        '<td name=projectName>'+value.projectName+'</td> '+
 			                        '<td name=budget>'+value.budget+'</td> '+

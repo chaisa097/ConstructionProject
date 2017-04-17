@@ -7,7 +7,7 @@
 <div name="statusSave" hidden="true"></div>
 <div class="container">
 	<div class="form-group">
-							 		
+		<input type="image" src="images/back.jpg" onclick="back()"  width="48" height="48">		 		
 		          <div class="panel panel-info">
 		            <div class="panel-heading">
 		                <h3 class="panel-title">  Information of Construction Project </h3>

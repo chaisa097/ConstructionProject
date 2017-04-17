@@ -40,9 +40,10 @@ public class RecieveMaterialDaoImp extends AbstractDao<Integer, ReceiveMaterial>
 		 Map<String, Object> result = (Map<String,Object>) criteria.uniqueResult();
 		return result;
 	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
-	public Map<String, Object> findOrderId(int Id) {
+	public Map<String, Object> findreceiveByorderId(int Id) {
 		 Criteria criteria = getSession().createCriteria(ReceiveMaterial.class, "receive");
 		 ProjectionList projections = Projections.projectionList()				  
 				  .add(Projections.property("receive.receiveMaterialId").as("receiveMaterialId"))

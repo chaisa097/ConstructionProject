@@ -65,6 +65,12 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 	public ArrayList<OrderMaterial> getOrderMaterialWaitStatus() {
 		return orderdao.getOrderWaitStatus();
 	}
+	
+	@Override
+	public ArrayList<OrderMaterial> getPmConfirmOrderMaterialWaitStatus() {
+		return orderdao.getPMConfirmOrderWaitStatus();
+	}
+	
 	@Override
 	public ArrayList<OrderMaterial> getOrderMaterialWaitMaterialStatus() {
 		return orderdao.getOrderWaitMaterialStatus();
@@ -79,7 +85,7 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 	@Override
 	public void updateStatus(OrderMaterialMapping ordermapping) throws Exception {
 		OrderMaterial order =  orderdao.findOrderForUpdateStatus(ordermapping);
-		order.setStatus("waiting confirm");
+		order.setStatus("Waiting Confirm");
 	    orderdao.updateOrder(order);
 	        
 	}
@@ -100,7 +106,7 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 	@Override
 	public void updateStatusreject(OrderMaterialMapping ordermapping) throws Exception {
 		OrderMaterial order =  orderdao.findOrderForUpdateStatus(ordermapping);
-		order.setStatus("reject");
+		order.setStatus("Reject");
 	    orderdao.updateOrder(order);    	          
 	}
 	

@@ -17,5 +17,6 @@ public interface ProjectService {
 	public void updateProject(ProjectMapping project) throws Exception;
 	 public  ArrayList<ProjectMapping> findProject(ProjectMapping projectMapping);
 	 public  ArrayList<ProjectMapping> getAllProject(ProjectMapping projectMapping);
+		public ArrayList<Project> getProject();
 			
 }

@@ -53,7 +53,7 @@ var date2 = [year, month, day].join('-');
 
 
 
-function backFunction(){
+function back(){
 	location.href = "listProjectPM.html";
 		
 }

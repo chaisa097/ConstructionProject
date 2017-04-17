@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.softsquare.application.dao.ProjectDao;
 import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.entity.Project;
+import com.softsquare.application.entity.Province;
 
 
 @Service
@@ -42,6 +43,12 @@ public class ProjectServicelmp implements ProjectService {
 		return projectListDao.findProjectId(projectMapping);
 	}
 	
+	@Override
+	public ArrayList<Project> getProject() {
+		return  projectListDao.getProject();
+	}
+	
+	
 	
 	@Override
 	public void saveProject(ProjectMapping project) throws Exception {
@@ -61,9 +68,10 @@ public class ProjectServicelmp implements ProjectService {
 	    pro.setPercentStatus(project.getPercentStatus());
 	    pro.setCustomerName(project.getCustomerName());
 	    pro.setCustomerPhone(project.getCustomerPhone());
-	    pro.setTotalExpense(project.getTotalExpense());
-	    pro.setTotalHireEmployee(project.getTotalHireEmployee());
-	    pro.setTotalUseMaterial(project.getTotalUseMaterial());
+	    int valueDefualt= 0;
+	    pro.setTotalExpense(valueDefualt);
+	    pro.setTotalHireEmployee(valueDefualt);
+	    pro.setTotalUseMaterial(valueDefualt);
 	    projectListDao.saveProject(pro);
 	}
 
@@ -92,9 +100,6 @@ public class ProjectServicelmp implements ProjectService {
 	    pro.setPercentStatus(project.getPercentStatus());
 	    pro.setCustomerName(project.getCustomerName());
 	    pro.setCustomerPhone(project.getCustomerPhone());
-	    pro.setTotalExpense(project.getTotalExpense());
-	    pro.setTotalHireEmployee(project.getTotalHireEmployee());
-	    pro.setTotalUseMaterial(project.getTotalUseMaterial());
 	    projectListDao.updateProject(pro);
 	}
 

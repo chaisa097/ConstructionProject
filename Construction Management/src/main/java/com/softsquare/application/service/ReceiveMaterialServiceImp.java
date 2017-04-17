@@ -18,21 +18,18 @@ import com.softsquare.application.entity.ReceiveMaterial;
 import com.softsquare.application.entity.ReceiveMaterialDetail;
 import com.softsquare.application.entity.Stock;
 import com.softsquare.application.dao.LoginDao;
-import com.softsquare.application.dao.MaterialDao;
 import com.softsquare.application.dao.OrderMaterialDao;
 @Service 
 public class ReceiveMaterialServiceImp implements ReceiveMaterialService{
 
 	@Autowired
 	ReceiveMateriallDao receivematerialDao;
-	
 	@Autowired
 	ReceiveMaterialDetailDao receiveDetailDao;
 	@Autowired
 	LoginDao  loginDao;
 	@Autowired
 	OrderMaterialDao  orderDao;
-	
 	@Autowired
 	StockDao stockdao;
 	
@@ -40,43 +37,41 @@ public class ReceiveMaterialServiceImp implements ReceiveMaterialService{
 	public void saveReceive(ReceiveMaterialMapping mapping) throws Exception {
 	 
 	   ReceiveMaterial  receive = new ReceiveMaterial();
-	   Map<String, Object> orderId = orderDao.findOrderId(mapping.getOrderMaterialId());
+	      Map<String, Object> orderId = orderDao.findOrderId(mapping.getOrderMaterialId());
 	      receive.setOrderMaterialId((Integer) orderId.get("orderMaterialId"));
-	   Map<String, Object> dataLogin = loginDao.findByLOGID(LoginUtils.getUsername());
+	      Map<String, Object> dataLogin = loginDao.findByLOGID(LoginUtils.getUsername());
 		  receive.setEmployeeId((Integer) dataLogin.get("employeeId"));
-	    Date  correntdate = new Date();
+	      Date  correntdate = new Date();
 	      receive.setReceiveDate(correntdate);
-	    Map<String, Object>  No  = receivematerialDao.findNoReceiveMax();
+	      Map<String, Object>  No  = receivematerialDao.findNoReceiveMax();
 	   
 	   if(BeanUtils.isNull(No.get("receiveMaterialNo"))){
 		   receive.setReceiveMaterialNo("000001");	      
 	   }else{
-		  Integer ReceiveMaterialNo = Integer.parseInt((String) No.get("receiveMaterialNo"))+1;
-		  String ReceiveNoString = String.format("%06d", ReceiveMaterialNo);
-		  receive.setReceiveMaterialNo(ReceiveNoString);
+		   Integer ReceiveMaterialNo = Integer.parseInt((String) No.get("receiveMaterialNo"))+1;
+		   String ReceiveNoString = String.format("%06d", ReceiveMaterialNo);
+		   receive.setReceiveMaterialNo(ReceiveNoString);
 		  }  
-	   Map<String, Object> orderMaterialId  = receivematerialDao.findOrderId(mapping.getOrderMaterialId());
+	   Map<String, Object> orderMaterialId  = receivematerialDao.findreceiveByorderId(mapping.getOrderMaterialId());
 	    
 	   if(BeanUtils.isNotEmpty(orderMaterialId)){
-		   Map<String, Object>  id = receivematerialDao.findOrderId(mapping.getOrderMaterialId());
-		   ReceiveMaterial  receiveObj = receivematerialDao.findReceiveForUpdate((int) id.get("receiveMaterialId"));
-		   receivematerialDao.UpdateReceiveMaterial(receiveObj); 
-		   ReceiveMaterialDetail rematerial = new ReceiveMaterialDetail();
-		   rematerial.setMaterialId(mapping.getMaterialId());
-		   rematerial.setReceiveQuantity(mapping.getReceiveQuantity());
-		   rematerial.setReceivePrice(mapping.getReceivePrice());
-		   rematerial.setReceiveId((Integer) id.get("receiveMaterialId"));
+		    Map<String, Object>  id = receivematerialDao.findreceiveByorderId(mapping.getOrderMaterialId());
+		    ReceiveMaterial  receiveObj = receivematerialDao.findReceiveForUpdate((int) id.get("receiveMaterialId"));
+		    receivematerialDao.UpdateReceiveMaterial(receiveObj); 
+		    ReceiveMaterialDetail rematerial = new ReceiveMaterialDetail();
+		    rematerial.setMaterialId(mapping.getMaterialId());
+		    rematerial.setReceiveQuantity(mapping.getReceiveQuantity());
+		    rematerial.setReceivePrice(mapping.getReceivePrice());
+		    rematerial.setReceiveId((Integer) id.get("receiveMaterialId"));
 	        receiveDetailDao.ReceiveMaterialDetailSave(rematerial);
 	        
 	        
 	        Map<String, Object>  material  = stockdao.findMaterialIdInStock(mapping.getMaterialId());
-	        System.out.println(material+"99999999999999999999999");
 	        ArrayList<Stock> StockArry = stockdao.FindMaterialInStock(mapping.getMaterialId());
-	        System.out.println(StockArry.size()+"----------------------");
+	        
 	        if(BeanUtils.isNotEmpty(material)){
 	        	if(StockArry.size() == 1){
 	        	 Stock stock = StockArry.get(0);
-	    		System.out.println("aaaaaaaaaaaaaa : "+stock.getTotalQuatity());
 	    		if(BeanUtils.isNotNull(stock.getTotalQuatity())){
 	    			stock.setTotalQuatity(stock.getTotalQuatity()+mapping.getReceiveQuantity());
 	    		}else{
@@ -84,16 +79,17 @@ public class ReceiveMaterialServiceImp implements ReceiveMaterialService{
 	    		}
 	    		  stockdao.updateStock(stock);
 	    	}
-	       }else{
+	        }else{
 	        	   Stock newstock = new Stock();
 				  newstock.setMaterialId(mapping.getMaterialId());
 				  newstock.setTotalQuatity(mapping.getReceiveQuantity());
 				  stockdao.saveStock(newstock);
-	        }
+	         }
 	          	
 	   }else{
+		   
 		   receivematerialDao.ReceiveMaterialSave(receive);
-		   Map<String, Object>  id = receivematerialDao.findOrderId(mapping.getOrderMaterialId());
+		   Map<String, Object>  id = receivematerialDao.findreceiveByorderId(mapping.getOrderMaterialId());
 		   ReceiveMaterialDetail rematerial = new ReceiveMaterialDetail();
 		   rematerial.setMaterialId(mapping.getMaterialId());
 		   rematerial.setReceiveQuantity(mapping.getReceiveQuantity());
@@ -104,31 +100,32 @@ public class ReceiveMaterialServiceImp implements ReceiveMaterialService{
 	        Map<String, Object>  material  = stockdao.findMaterialIdInStock(mapping.getMaterialId());
 	        System.out.println(material);
 	        ArrayList<Stock> StockArry = stockdao.FindMaterialInStock(mapping.getMaterialId());
-	        System.out.println(StockArry.size()+"++++++++++++++++++++++++");
+	        
 	        if(BeanUtils.isNotEmpty(material)){
 	        	if(StockArry.size() == 1){
 	        	 Stock stock = StockArry.get(0);
-	    		System.out.println("aaaaaaaaaaaaaa : "+stock.getTotalQuatity());
 	    		if(BeanUtils.isNotNull(stock.getTotalQuatity())){
 	    			stock.setTotalQuatity(stock.getTotalQuatity()+mapping.getReceiveQuantity());
+	    			
 	    		}else{
 	    		    stock.setTotalQuatity(mapping.getReceiveQuantity());
 	    		}
 	    		  stockdao.updateStock(stock);
-	    	}
+	    	 }
 	         }else{
-	        	   Stock newstock = new Stock();
+	         	  Stock newstock = new Stock();
 				  newstock.setMaterialId(mapping.getMaterialId());
 				  newstock.setTotalQuatity(mapping.getReceiveQuantity());
 				  stockdao.saveStock(newstock);
-	        }
+	         }
 	   
 	   
 	   
-	       }
-	  
 	    }
-	}
+	  
+	   
+    }
+}
   
 
 	

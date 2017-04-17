@@ -9,6 +9,7 @@
 <div name="statusSave" hidden="true"></div>
 <div class="container">
 	<div class="form-group">
+	<input type="image" src="images/back.jpg" onclick="back()"  width="48" height="48">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<lable class="headPanal">Progress Construction Project</lable>

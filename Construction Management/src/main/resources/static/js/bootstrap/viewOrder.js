@@ -79,3 +79,8 @@ function back(){
 	location.href = "listOrder.html";
 
 }
+
+function backFunction(){
+	location.href = "OrderMaterial.html";
+
+}

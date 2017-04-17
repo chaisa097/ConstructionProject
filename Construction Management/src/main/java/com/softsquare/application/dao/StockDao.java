@@ -13,6 +13,7 @@ public interface StockDao {
 	public void saveStock(Stock stock) throws Exception;
 	public Map<String, Object> findMaterialIdInStock(int Id);
 	public ArrayList<StockMapping> findAllStock(StockMapping mapping) ;
+	public ArrayList<StockMapping> getMaterialinStock(StockMapping mapping); 
 	
 	
 	

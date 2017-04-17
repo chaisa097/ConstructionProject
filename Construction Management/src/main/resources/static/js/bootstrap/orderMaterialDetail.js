@@ -157,7 +157,10 @@
 		}
 
 		
-		
+		function back(){
+			location.href = "OrderMaterial.html";
+
+		}
 		
 		
 		

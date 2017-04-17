@@ -21,8 +21,7 @@ public class ReceiveMaterialDetailServiceImp implements ReceiveMaterialDetailSer
 	
 	@Override
 	public ArrayList<ReceiveMaterialDetail> ReceiveMaterialDetail(ReceiveMaterialMapping mapping){
-		Map<String, Object> receive = receiveDao.findOrderId(mapping.getOrderMaterialId());
-		System.out.println(receive+"000000000000000000000000000000000");
+		Map<String, Object> receive = receiveDao.findreceiveByorderId(mapping.getOrderMaterialId());
 		return receiveDetailDao.getReceiveMaterialDetail((int) receive.get("receiveMaterialId"));
 	}
 	

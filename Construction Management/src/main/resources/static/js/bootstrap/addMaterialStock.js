@@ -13,14 +13,21 @@
 		    	    	$("div select[name=materialList]").html(data).selectpicker('refresh');
 		    
 		    	  });
-		
+             
+		    	   
+		    	    
+		    	    
 		            searchMaterialReceive();
 		            searchOrder();
 		            
-		            
+		          
 		          
 			   
     });
+	
+	
+	
+	
 	
 	function searchOrder(){
     	$.ajax({
@@ -32,8 +39,8 @@
             	var data = [];		         
             		$.each(json, function(index, value) {
 	            		  data.push('<tr><td>'+
-								  '<button type="button" class="btn btn-info btn-xs"  onclick=selectRow("'+value.materialId+'")> '+
-									'<span class="glyphicon glyphicon-ok"></span> Receive '+
+								  '<button type="button" id="button'+value.materialId+'" class="btn btn-info btn-xs" onclick=selectRow("'+value.materialId+'")> '+
+									'<span class="glyphicon glyphicon-ok"></span>'+
 							     	'</button> '+
 							      '</td> '+
 	            				  '<td name=materialName>'+value.typeName+'</td> '+
@@ -127,6 +134,8 @@ function  searchMaterialReceive(){
             	var json = $.parseJSON(result);
             	$("div[name='addEditData'] select[name='typeList']").val(json[0].typeId).selectpicker('refresh'); 
             	$("div[name='addEditData'] select[name='materialList']").val(json[0].materialId).selectpicker('refresh');
+            	  document.getElementById("button"+value).style.visibility = "hidden";
+
         	}
         });
     }	

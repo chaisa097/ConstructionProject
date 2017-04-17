@@ -115,6 +115,23 @@ var BSBaseComboBox = function () {
 	        });
         },
         
+        getProject: function (params, callBack) {
+    		$.ajax({
+	        	type: 'GET'
+	        	, url: application.contextPath+"/combobox.html"
+	        	, data: params
+	        	, success: function(result){
+	            	var json = $.parseJSON(result);
+	            	var data = ['<option></option>'];
+	            	$.each(json, function(index, value) {
+	            		  data.push("<option title="+value.projectName+" value="+value.projectId+" data-subtext="+value.provinceName +">"+value.projectName+"</option>");
+	            	});
+	            	callBack(data.join());
+	        	}
+	        });
+        },
+        
+        
         getDepartment: function (params, callBack) {
     		$.ajax({
 	        	type: 'GET'

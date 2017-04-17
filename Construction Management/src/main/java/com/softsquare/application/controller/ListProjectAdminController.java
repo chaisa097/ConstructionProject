@@ -18,7 +18,7 @@ import com.softsquare.application.service.ProjectService;
 @RestController
 @RequestMapping("/listProject.html")
 @Configurable
-public class ListProjectAdminontroller {
+public class ListProjectAdminController {
 
 	@Autowired
 	ProjectService listprojectSevice;
