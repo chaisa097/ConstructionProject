@@ -26,6 +26,7 @@ public class StockDaoImp  extends AbstractDao<Integer, Stock> implements StockDa
 		 ProjectionList projections = Projections.projectionList()
 		            .add(Projections.property("stock.stockId").as("stockId"))
 		            .add(Projections.property("stock.materialId").as("materialId"))
+		            .add(Projections.property("stock.price").as("price"))
 		            .add(Projections.property("stock.totalQuatity").as("totalQuatity"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("stock.materialId",Id));
@@ -41,6 +42,7 @@ public class StockDaoImp  extends AbstractDao<Integer, Stock> implements StockDa
 		 ProjectionList projections = Projections.projectionList()
 		            .add(Projections.property("stock.stockId").as("stockId"))
 		            .add(Projections.property("stock.materialId").as("materialId"))
+		            .add(Projections.property("stock.price").as("price"))
 		            .add(Projections.property("stock.totalQuatity").as("totalQuatity"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("stock.materialId",Id));

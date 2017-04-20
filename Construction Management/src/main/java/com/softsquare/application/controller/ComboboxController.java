@@ -14,12 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 import com.softsquare.application.entity.Department;
+import com.softsquare.application.entity.DepartmentDetail;
 import com.softsquare.application.entity.Employee;
 import com.softsquare.application.entity.Material;
 import com.softsquare.application.entity.MaterialType;
 import com.softsquare.application.entity.Project;
 import com.softsquare.application.entity.Province;
 import com.softsquare.application.entity.Role;
+import com.softsquare.application.service.DepartmentDetailService;
 import com.softsquare.application.service.DepartmentService;
 import com.softsquare.application.service.EmployeeService;
 import com.softsquare.application.service.MaterialService;
@@ -43,7 +45,8 @@ public class ComboboxController {
 
 	@Autowired
 	private DepartmentService departmentSerivce;
-	
+	@Autowired
+	private DepartmentDetailService  depdetailService;
 	@Autowired
 	private TypeService typeSerivce;
 	@Autowired
@@ -136,6 +139,8 @@ public class ComboboxController {
 	
 	
 	
+	
+	
 	@RequestMapping(params =  "method=Allmaterial" , method=RequestMethod.GET)
     public void Materialcombobox(HttpServletRequest request, HttpServletResponse response  ){
 		ArrayList<Material> materialList =  materialService.AllMaterial();		
@@ -190,6 +195,18 @@ public class ComboboxController {
 		}
 	}
 	
+	@RequestMapping(params =  "method=departmentDetial", method=RequestMethod.GET)
+    public void departmentDetiallist(@RequestParam("departmentId") int Id,HttpServletRequest request, HttpServletResponse response  ){
+		ArrayList<DepartmentDetail> depDetailList =  depdetailService.AllDepartmentDetail(Id);	
+		Gson gson = new Gson();
+		String  json = gson.toJson(depDetailList);
+		try {
+//			response.getWriter().write("{records:"+json+"}");
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
 	
 	
 //	@RequestMapping(params =  "method=period" , method=RequestMethod.POST)

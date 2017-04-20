@@ -8,14 +8,14 @@ public class EmployeeMapping {
      private String  empFirstName;
      private String  empLastName;
      private String  citizenId;
-     private String  province;
+     private Integer  provinceId;
      private String  subDistrict;
      private String  district;
-     private Date    birthDay;
-     private Date   statsHireDate;
+     private String   birthDay;
+     private Date    startHireDate;
      private Integer departmentDetailId;
      private String  departmentDetail;
-     
+     private String  gender;
      
 	public Integer getEmployeeId() {
 		return employeeId;
@@ -47,11 +47,12 @@ public class EmployeeMapping {
 	public void setCitizenId(String citizenId) {
 		this.citizenId = citizenId;
 	}
-	public String getProvince() {
-		return province;
+	
+	public Integer getProvinceId() {
+		return provinceId;
 	}
-	public void setProvince(String province) {
-		this.province = province;
+	public void setProvinceId(Integer provinceId) {
+		this.provinceId = provinceId;
 	}
 	public String getSubDistrict() {
 		return subDistrict;
@@ -65,17 +66,17 @@ public class EmployeeMapping {
 	public void setDistrict(String district) {
 		this.district = district;
 	}
-	public Date getBirthDay() {
+	public String getBirthDay() {
 		return birthDay;
 	}
-	public void setBirthDay(Date birthDay) {
+	public void setBirthDay(String birthDay) {
 		this.birthDay = birthDay;
 	}
-	public Date getStatsHireDate() {
-		return statsHireDate;
+	public Date getStartHireDate() {
+		return startHireDate;
 	}
-	public void setStatsHireDate(Date statsHireDate) {
-		this.statsHireDate = statsHireDate;
+	public void setStartHireDate(Date startHireDate) {
+		this.startHireDate = startHireDate;
 	}
 	public Integer getDepartmentDetailId() {
 		return departmentDetailId;
@@ -89,6 +90,15 @@ public class EmployeeMapping {
 	public void setDepartmentDetail(String departmentDetail) {
 		this.departmentDetail = departmentDetail;
 	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+     
+     
+
      
      
 	

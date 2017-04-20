@@ -31,12 +31,9 @@ public class Material implements Serializable {
 	@Column(name = "MATERIALNAME", nullable = false)
 	private String  materialName;
 	
-	@Column(name = "DESCRITION", nullable = false)
+	@Column(name = "DESCRIPTION", nullable = false)
 	private String  descrition;
-	
-	@Column(name = "PRICE", nullable = false)
-	private Integer  price;
-	
+
 	@Column(name = "TYPEID", nullable = false)
 	private Integer typeId;
 	
@@ -52,7 +49,6 @@ public class Material implements Serializable {
     @JoinColumn(name = "UNITID", referencedColumnName = "UNITID", insertable=false, updatable=false)
     private Unit unit;
 	
-	
 
 	public Integer getMaterialId() {
 		return materialId;
@@ -60,6 +56,14 @@ public class Material implements Serializable {
 
 	public void setMaterialId(Integer materialId) {
 		this.materialId = materialId;
+	}
+
+	public String getMaterialCode() {
+		return materialCode;
+	}
+
+	public void setMaterialCode(String materialCode) {
+		this.materialCode = materialCode;
 	}
 
 	public String getMaterialName() {
@@ -76,14 +80,6 @@ public class Material implements Serializable {
 
 	public void setDescrition(String descrition) {
 		this.descrition = descrition;
-	}
-
-	public Integer getPrice() {
-		return price;
-	}
-
-	public void setPrice(Integer price) {
-		this.price = price;
 	}
 
 	public Integer getTypeId() {
@@ -117,14 +113,9 @@ public class Material implements Serializable {
 	public void setUnit(Unit unit) {
 		this.unit = unit;
 	}
+	
+	
 
-	public String getMaterialCode() {
-		return materialCode;
-	}
-
-	public void setMaterialCode(String materialCode) {
-		this.materialCode = materialCode;
-	}
 	
 	
 	

@@ -4,7 +4,8 @@ CREATE TABLE IF NOT EXISTS `EMPLOYEE` (
   `EMPLOYEE_FIRSTNAME` varchar(20) NOT NULL,
   `EMPLOYEE_LASTNAME` varchar(20) NOT NULL,
   `CITIZENID` varchar(13) NOT NULL,
-  `PROVINCE` varchar(20) NOT NULL,
+  `GENDER` varchar(6) NOT NULL,
+  `PROVINCEID` int(100) NOT NULL,
   `DISTRICT` varchar(20) NOT NULL,
   `SUB_DISTRICT` varchar(20) NOT NULL,
   `DEPARTMENTDETAIL_ID` int(100) NOT NULL,
@@ -15,15 +16,15 @@ CREATE TABLE IF NOT EXISTS `EMPLOYEE` (
    foreign key (DEPARTMENTDETAIL_ID) references DEPARTMENTDETAIL(DEPARTMENTDETAILID)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
-INSERT INTO `EMPLOYEE` (`EMPLOYEEID`,`EMPLOYEE_CODE` ,`EMPLOYEE_FIRSTNAME`, `EMPLOYEE_LASTNAME`, `CITIZENID`,`PROVINCE`,`DISTRICT` ,
+INSERT INTO `EMPLOYEE` (`EMPLOYEEID`,`EMPLOYEE_CODE` ,`EMPLOYEE_FIRSTNAME`, `EMPLOYEE_LASTNAME`, `CITIZENID`, `GENDER`,`PROVINCEID`,`DISTRICT` ,
 `SUB_DISTRICT`, `DEPARTMENTDETAIL_ID`,`BIRTHDAY`,  `STATS_HIRE_DATE`) VALUES
-(1,'MM001' ,'สมชาย', 'ตราตึง','1200000333336','เชียงราย','เเม่จัน','เเม่จัน',5,'1995-02-06','2017-11-02'),
+(1,'MM001' ,'สมชาย', 'ตราตึง','1200000333336', 'Male'  ,1,'เเม่จัน','เเม่จัน',5,'1995-02-06','2017-11-02'),
 
-(2,'EE001' ,'สิริโฉม', 'ทรัพย์ทวี','1300000000007','เชียงใหม่','เมือง','ภูเเล',1,'1995-02-06','2017-11-02'),
+(2,'EE001' ,'สิริโฉม', 'ทรัพย์ทวี','1300000000007','Female' ,2,'เมือง','ภูเเล',1,'1995-02-06','2017-11-02'),
 
-(3,'EE002','ชาติชาย', 'ทองดี','1700000333336','เชียงราย','เเม่จัน','เเม่จัน',1,'1995-02-06','2017-11-02'),
+(3,'EE002','ชาติชาย', 'ทองดี','1700000333336', 'Male',2,'เเม่จัน','เเม่จัน',1,'1995-02-06','2017-11-02'),
 
-(4,'CT001', 'ชาญชัย', 'ทวี','1833200000007','เชียงใหม่','เมือง','ภูเเล',2,'1995-02-06','2017-11-02'),
+(4,'CT001', 'ชาญชัย', 'ทวี','1833200000007','Male' , 2,'เมือง','ภูเเล',2,'1995-02-06','2017-11-02'),
 
-(5,'SB001', 'เพญสรี', 'ไทยทรัพย์','1300000000007','เชียงใหม่','เมือง','ภูเเล',6,'1995-02-06','2017-11-02');
+(5,'SB001', 'เพญสรี', 'ไทยทรัพย์','1300000000007','Female' , 3,'เมือง','ภูเเล',6,'1995-02-06','2017-11-02');
 

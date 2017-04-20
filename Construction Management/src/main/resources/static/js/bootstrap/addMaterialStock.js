@@ -39,8 +39,8 @@
             	var data = [];		         
             		$.each(json, function(index, value) {
 	            		  data.push('<tr><td>'+
-								  '<button type="button" id="button'+value.materialId+'" class="btn btn-info btn-xs" onclick=selectRow("'+value.materialId+'")> '+
-									'<span class="glyphicon glyphicon-ok"></span>'+
+								  '<button type="button" id="button'+value.materialId+'" class="btn btn-default btn-xs" onclick=selectRow("'+value.materialId+'")> '+
+									'<span class="glyphicon glyphicon-plus"></span>'+
 							     	'</button> '+
 							      '</td> '+
 	            				  '<td name=materialName>'+value.typeName+'</td> '+

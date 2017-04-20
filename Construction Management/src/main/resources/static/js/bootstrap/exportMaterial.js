@@ -32,8 +32,8 @@ function searchFunction(){
 		            	var data = [];		         
 		            		$.each(json, function(index, value) {
 		            			 data.push('<tr><td>'+
-										  '<button type="button" id="button'+value.materialId+'" class="btn btn-Success btn-xs" onclick=selectRow("'+value.materialId+'")> '+
-											'<span class="glyphicon glyphicon-ok"></span> '+
+										  '<button type="button" id="button'+value.materialId+'" class="btn btn-default btn-xs" onclick=selectRow("'+value.materialId+'")> '+
+											'<span class="glyphicon glyphicon-minus"></span> '+
 									     	'</button> '+
 									      '</td> '+
 			            				    '<td name=typeName>'+value.typeName+'</td> '+

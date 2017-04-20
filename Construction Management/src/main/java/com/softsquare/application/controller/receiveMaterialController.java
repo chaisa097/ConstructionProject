@@ -44,4 +44,19 @@ public class receiveMaterialController {
 		
 	}
 	
+	@RequestMapping(params =  "method=search" , method=RequestMethod.POST)
+	public void searchOrderFinished(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialMapping mapping) throws Throwable{
+		Gson gson = new Gson();
+		String  json = gson.toJson(OrderServ.getOrderFinish());
+//		System.out.print(json);
+		try {
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
 }

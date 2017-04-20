@@ -15,7 +15,7 @@
 			            	$.each(json, function(index, value) {
 			            		  data.push('<tr roldId="'+value.roleId+'"><td>'+
 						                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.roleId+'")> '+
-													'<span class="glyphicon glyphicon-pencil"></span> Edit '+
+													'<span class="glyphicon glyphicon-pencil"></span> '+
 												'</button> '+
 												
 											'</td> '+

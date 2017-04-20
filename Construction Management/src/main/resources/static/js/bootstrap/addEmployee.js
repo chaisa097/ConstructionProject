@@ -10,8 +10,8 @@ $(document).ready(function(){
 	  	, data: {method:'search', projectId:headerId}
 	  	, success: function(result){
 	    	var json = $.parseJSON(result);
-	      	$("input[name='projectName']").val(json[0].projectName);
-	      	$("input[name='totalHireEmployee']").val(json[0].totalHireEmployee);  
+	      	$("#projectName").html(json[0].projectName);
+	      	$("#totalHireEmployee").html(json[0].totalHireEmployee);  
 	  	}
 	  });
 
@@ -165,6 +165,7 @@ function deleteRow(value){
 	        	, data: params
 	        	, success: function(result){	        			
 	        		alert("calcuate Success");
+	        		location.reload();
 	        					        		
 	        	}
 	        });

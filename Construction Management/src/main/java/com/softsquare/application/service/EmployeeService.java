@@ -12,5 +12,6 @@ public interface EmployeeService {
 	public  ArrayList<EmployeeMapping> findEmployee(EmployeeMapping employeeMapping);
 	public ArrayList<Employee> getProjectManager();
 	public ArrayList<Employee> getAllEmployee();
+	public void saveEmployee(EmployeeMapping mapping) throws Exception;
 	
 }

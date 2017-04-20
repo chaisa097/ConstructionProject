@@ -43,6 +43,8 @@ public class ExportMaterialServiceImp implements ExportMaterialService {
 		export.setEmployeeId((Integer) dataLogin.get("employeeId"));
 		  Map<String, Object> request = requestDao.findRequestId(exportmapping.getRequestMaterialId());
 		export.setRequestMaterialId((Integer) request.get("requestMaterialId"));
+	    export.setProjectId((Integer) request.get("projectId"));
+	    export.setStatus("Open");
 		Map<String, Object>  No  = exportMaterialDao.findNoExportMax();
 		  if(BeanUtils.isNull(No.get("exportMaterialNo"))){
 	    export.setExportMaterialNo("000001");
@@ -56,7 +58,8 @@ public class ExportMaterialServiceImp implements ExportMaterialService {
 		  
 		  if(BeanUtils.isNotEmpty(exportMaterialId)){
 			  Map<String, Object> Id = exportMaterialDao.findExportbyRequestId(exportmapping.getRequestMaterialId());
-			 ExportMaterial  exportObj =  exportMaterialDao.findExportMaterialForUpdate((int) Id.get("exportMaterialId"));
+			 ExportMaterial  exportObj =  exportMaterialDao.findExportMaterialForUpdate(exportmapping.getRequestMaterialId());
+			 System.out.println(exportObj+"+++++++++++++++++++++++++++++++++++++");
 			 exportMaterialDao.updateExport(exportObj);
 			ExportMaterialDetail exportdetail = new ExportMaterialDetail();
 			 exportdetail.setMaterialId(exportmapping.getMaterialId());
@@ -73,9 +76,9 @@ public class ExportMaterialServiceImp implements ExportMaterialService {
 	    	 }
 		  }
 		  else{
-			  exportMaterialDao.saveExport(export);
-			  Map<String, Object> Id = exportMaterialDao.findExportbyRequestId(exportmapping.getRequestMaterialId());
-			  ExportMaterialDetail exportdetail = new ExportMaterialDetail();
+			     exportMaterialDao.saveExport(export);
+			     Map<String, Object> Id = exportMaterialDao.findExportbyRequestId(exportmapping.getRequestMaterialId());
+			    ExportMaterialDetail exportdetail = new ExportMaterialDetail();
 				 exportdetail.setMaterialId(exportmapping.getMaterialId());
 				 exportdetail.setExportId((int) Id.get("exportMaterialId"));
 				 exportdetail.setExportQuantity(exportmapping.getExportQuantity());

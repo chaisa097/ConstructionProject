@@ -11,4 +11,7 @@ public interface DepartmentDetailDao {
 	public void saveDepartmentDetail(DepartmentDetail dep) throws Exception ;
 	public void removeDepartmentDetail(DepartmentDetail dep) throws Exception;
 	public void updateDepartmentDetail(DepartmentDetail dep) throws Exception;
+	public ArrayList<DepartmentDetailMapping> findDepartmentDetail(DepartmentDetailMapping mapping );
+	public ArrayList<DepartmentDetail> AllDepartmentDetail(int departmentId );
+	
 }

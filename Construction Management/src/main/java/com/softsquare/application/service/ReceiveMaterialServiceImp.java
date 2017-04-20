@@ -74,8 +74,10 @@ public class ReceiveMaterialServiceImp implements ReceiveMaterialService{
 	        	 Stock stock = StockArry.get(0);
 	    		if(BeanUtils.isNotNull(stock.getTotalQuatity())){
 	    			stock.setTotalQuatity(stock.getTotalQuatity()+mapping.getReceiveQuantity());
+	    			 stock.setPrice(mapping.getReceivePrice());
 	    		}else{
 	    		    stock.setTotalQuatity(mapping.getReceiveQuantity());
+	    		    stock.setPrice(mapping.getReceivePrice());
 	    		}
 	    		  stockdao.updateStock(stock);
 	    	}
@@ -83,6 +85,7 @@ public class ReceiveMaterialServiceImp implements ReceiveMaterialService{
 	        	   Stock newstock = new Stock();
 				  newstock.setMaterialId(mapping.getMaterialId());
 				  newstock.setTotalQuatity(mapping.getReceiveQuantity());
+				  newstock.setPrice(mapping.getReceivePrice());
 				  stockdao.saveStock(newstock);
 	         }
 	          	
@@ -106,9 +109,12 @@ public class ReceiveMaterialServiceImp implements ReceiveMaterialService{
 	        	 Stock stock = StockArry.get(0);
 	    		if(BeanUtils.isNotNull(stock.getTotalQuatity())){
 	    			stock.setTotalQuatity(stock.getTotalQuatity()+mapping.getReceiveQuantity());
+	    			 stock.setPrice(mapping.getReceivePrice());
 	    			
 	    		}else{
 	    		    stock.setTotalQuatity(mapping.getReceiveQuantity());
+	    		    stock.setPrice(mapping.getReceivePrice());
+	 
 	    		}
 	    		  stockdao.updateStock(stock);
 	    	 }
@@ -116,6 +122,7 @@ public class ReceiveMaterialServiceImp implements ReceiveMaterialService{
 	         	  Stock newstock = new Stock();
 				  newstock.setMaterialId(mapping.getMaterialId());
 				  newstock.setTotalQuatity(mapping.getReceiveQuantity());
+				  newstock.setPrice(mapping.getReceivePrice());
 				  stockdao.saveStock(newstock);
 	         }
 	   

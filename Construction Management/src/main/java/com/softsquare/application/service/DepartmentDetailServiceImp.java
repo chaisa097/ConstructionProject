@@ -25,6 +25,14 @@ public class DepartmentDetailServiceImp implements DepartmentDetailService {
 	public ArrayList<DepartmentDetail> getDepartmentDetail() {
 		return depDetailDao.getDepartmentDetail();
 	}
+	@Override
+	public ArrayList<DepartmentDetailMapping> findDepartmentDetail(DepartmentDetailMapping mapping ) {
+		return depDetailDao.findDepartmentDetail(mapping);
+	}
+	@Override
+	public ArrayList<DepartmentDetail> AllDepartmentDetail(int departmentId ){
+		 return depDetailDao.AllDepartmentDetail(departmentId);
+	}
 
 	@Override
 	public void saveDepartmentDetail(DepartmentDetailMapping mapping)
@@ -49,8 +57,7 @@ public class DepartmentDetailServiceImp implements DepartmentDetailService {
 	}
 
 	@Override
-	public void updateDepartmentDetail(DepartmentDetailMapping mapping)
-			throws Exception {
+	public void updateDepartmentDetail(DepartmentDetailMapping mapping) throws Exception {
 		DepartmentDetail depDetail = depDetailDao.getDepartmentDetailForUpdate(mapping);
 		depDetail.setDepDetailName((mapping.getDepDetailName()));
 		depDetail.setSalary(mapping.getSalary());

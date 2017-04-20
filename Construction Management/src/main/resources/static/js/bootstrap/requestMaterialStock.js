@@ -36,7 +36,7 @@ function search(){
         		
         		  data.push('<tr requestMaterialId="'+value.requestMaterialId+'"><td>'+
         				  '<a href='+domainSystem+'/ExportMaterial.html?requestMaterialId='+value.requestMaterialId+' class="btn btn-Success btn-xs"> '+
-						  '<span class="glyphicon glyphicon-export"></span> Export Material '+
+						  'Export  Material '+
 						   '</a> '+	
 	                        '<td name=projectName>'+value.projectName+'</td> '+
 	                        '<td name=projectName>'+value.requestMaterialNo+'</td> '+

@@ -8,46 +8,59 @@
 <div class="container">
 	<input type="image" src="images/back.jpg" onclick="back()"  width="48" height="48">
 	<div class="form-group">
-		<div class="panel panel-default">
+		<div class="panel panel-info">
 		  <div class="panel-heading"><lable class="headPanal">MaterialDetail</lable>
 				
 			  </div>
 		 </div>
 		 
-		 <button type="button" class="btn btn-primary" onclick="Save()">
-			  <span class="glyphicon glyphicon-floppy-save"></span>
-		</button> 
-		
 		 <div class="panel-body" style="margin-top:-25px;">
 		  <div class="row">
-		 		
+		 		<div class="panel panel-warning">
+		  <div class="panel-heading">
+
 				      
-				<div class="row" style="margin-top:10px; margin-bottom:-5px" name="addEditData">
-					<div  class="col-md-1" style="margin-top:10px; margin-bottom:5px" >
-				    <button type="button" class="btn btn-default" onclick="addRow()">
-			  		<span class="glyphicon glyphicon-text-height"></span>
-			     	</button> 
+				<div class="row" style="margin-top:10px; margin-bottom:15px" name="addEditData">
+				
+					<div  class="col-md-1" style="margin-top:10px; margin-bottom:5px">
+				  	<input type="image" src="images/add.png"  onclick="addRow()"   width="80" height="48">
 			     	</div>
-					<div class="col-md-3" style="margin-top:10px; margin-bottom:5px" >
+			     	
+					<div class="col-md-3" style="margin-top:5px; margin-bottom:5px">
+					<label class="control-label-required">Type</label>
 						<select class="typeList"  id="type"  name="typeList" data-live-search="true" data-size="5" data-header="Select Type" disabled></select>
 					</div>
 			        
-					<div class="col-md-3"  style="margin-top:10px; margin-bottom:20px">
+					<div class="col-md-3" style="margin-top:5px; margin-bottom:5px" >
+					<label>Material</label>
 						<select class="selectpicker show-tick show-menu-arrow" id="type"  name="materialList" data-live-search="true" data-size="5" data-header="Select Material" disabled></select>
 					</div>
+				
 					
-					<div class="col-md-2"  style="margin-top:10px; margin-bottom:20px">
-							<input type="number" id="" class="form-control" placeholder="Amount of Order" name="quantityOrder" disabled>
+					
+					<div class="col-md-2" style="margin-top:5px; margin-bottom:5px" >
+						<label>Quantity</label>
+						<input type="number" id="" class="form-control" placeholder="Amount of Order" name="quantityOrder" disabled>
 					</div>
-					<div class="col-md-3"  style="margin-top:10px; margin-bottom:20px">
-							<input type="text" id="" class="form-control" placeholder="Anotation" name="anotation" disabled>
+				
+					<div class="col-md-3" style="margin-top:5px; margin-bottom:5px" >
+					<label>Anotation</label>
+					<input type="text" id="" class="form-control" placeholder="Anotation" name="anotation" disabled>
+							
 					</div>
+						<div class="col-md-11" style="margin-top:10px; margin-bottom:5px" >
+						</div>
+					<div class="col-md-1" style="margin-top:10px; margin-bottom:-5px" >
+				    <input type="image" src="images/Save2.png"  onclick="Save()"   width="40" height="40">  
+			        </div>
 					
 				</div>
-			
+			  </div>
+		 </div>
 				
 		        <div class="panel panel-default filterable">
 		            <div class="panel-heading">
+		            
 		                <h3 class="panel-title">Material List</h3>
 		            </div>
 		            <table class="table">

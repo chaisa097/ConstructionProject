@@ -13,32 +13,34 @@
 		<input type="image" src="images/back.jpg" onclick="back()"  width="48" height="48">
 				<div class="panel panel-info">
 					<div class="panel-heading">
-						<lable class="headPanal"> Project </lable>
-								<input id="projectName" type="text" class="form-control"
-									placeholder="Project Name" name="projectName" disabled>
+					<lable class="headPanal"><p id="projectName"></p></lable>
+									
 					</div>
                     </div>
+                    
+                    	<div class="panel panel-warning">
+					        <div class="panel-heading">
            
-						<button type="button" class="btn btn-primary" onclick="save()">
-							<span class="glyphicon glyphicon-floppy-save"></span>
-						</button>
-
-
 						<div class="row" style="margin-top: 10px; margin-bottom: -5px"
 							name="addEditData">
+							
+						
+									
+					
+							
+							
 							<div class="col-md-1"
 								style="margin-top: 10px; margin-bottom: 5px"></div>
 
 							<div class="col-md-1"
-								style="margin-top: 10px; margin-bottom: 5px">
+								style="margin-top: 20px; margin-bottom: 5px">
 
-								<button type="button" class="btn btn-default" onclick="addRow()">
-									<span class="glyphicon glyphicon-text-height"></span>
-								</button>
+								<input type="image" src="images/add.png"  onclick="addRow()"   width="80" height="48">
 							</div>
 
 							<div class="col-md-3"
 								style="margin-top: 10px; margin-bottom: 20px">
+								<label  class="control-label-required" >Employee</label>
 								<select class="selectpicker show-tick show-menu-arrow"
 									id="employee" name="employeeList" data-live-search="true"
 									data-size="5" data-header="Select Employee" disabled></select>
@@ -46,14 +48,19 @@
 
 							<div class="col-md-3"
 								style="margin-top: 10px; margin-bottom: 5px">
+								<label>Amount Of Month</label>
 								<input type="text" class="form-control" id="amountOfmonth"
 									placeholder="amountOfMonth" name="amountOfMonth" disabled>
 							</div>
-
+                           		  <div class="col-md-2" style="margin-top:30px; margin-bottom:20px">
+		        	   <input type="image" src="images/Save2.png"  onclick="save()"   width="40" height="40">  
+				      </div>
+					
 
 						</div>
 
-
+                       </div>
+                    </div>
 
 
 
@@ -92,9 +99,9 @@
 								<lable class="headPanal"> Total Employee Hire:</lable>
 							</div>
 							
-							<div class="col-md-3">
-							<input id="projectName" type="text" class="form-control"
-									placeholder="totalHireEmployee" name="totalHireEmployee" disabled>
+							<div class="col-md-2">
+							
+								<lable class="headPanal"><p id="totalHireEmployee"></p></lable>
 							</div>
 						
 				</div>

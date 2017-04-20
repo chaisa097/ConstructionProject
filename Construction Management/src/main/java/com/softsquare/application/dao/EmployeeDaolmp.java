@@ -1,6 +1,7 @@
 package com.softsquare.application.dao;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import org.hibernate.Criteria;
 import org.hibernate.criterion.ProjectionList;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.EmployeeMapping;
 import com.softsquare.application.entity.Employee;
+
 
 
 
@@ -40,6 +42,23 @@ public class EmployeeDaolmp  extends AbstractDao<Integer, Employee> implements E
 		 ArrayList<Employee> employeeList = (ArrayList<Employee>) criteria.list();
 		return employeeList;
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Map<String, Object> findNoMax() {
+		 Criteria criteria = getSession().createCriteria(Employee.class, "employee");
+		 ProjectionList projections = Projections.projectionList()				  
+		            .add(Projections.max("employee.employeeCode").as("employeeCode"));		         		 
+		 criteria.setProjection(projections);		
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 Map<String, Object> result = (Map<String,Object>) criteria.uniqueResult();
+		return result;
+	}
+	
+
+	
+	
+	
 	
 	@Override
 	public ArrayList<Employee> getAllEmployee() {
@@ -140,6 +159,24 @@ public class EmployeeDaolmp  extends AbstractDao<Integer, Employee> implements E
 		 Employee employeeList = (Employee) criteria.uniqueResult();
 		return employeeList;
 	}
+	
+	
+	@Override
+	public void saveEmployee(Employee emp) throws Exception {
+		save(emp);
+	}
+
+	@Override
+	public void removeEmployee(Employee emp) throws Exception {
+		delete(emp);
+	}
+
+	@Override
+	public void updateEmployee(Employee emp) throws Exception {
+		merge(emp);
+	}
+	
+	
 	
 
 }

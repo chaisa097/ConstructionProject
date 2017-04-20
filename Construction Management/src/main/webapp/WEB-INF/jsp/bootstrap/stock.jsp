@@ -7,7 +7,7 @@
 <div name="statusSave" hidden="true"></div>
 <div class="container">
 	<div class="form-group">
-		<div class="panel panel-default">		
+		<div class="panel panel-warning">		
 		 <div class="panel-heading"><lable class="headPanal">Stock</lable>
 				<div class="row" id="roleHeader">					 
 					<div class="col-md-2"></div>

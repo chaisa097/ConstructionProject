@@ -37,8 +37,8 @@ public class Employee implements Serializable {
 	@Column(name = "CITIZENID")
 	private String  citizenId;
 
-	@Column(name = "PROVINCE")
-	private String  province;
+	@Column(name = "PROVINCEID")
+	private Integer  provinceId;
 	
 	@Column(name = "DISTRICT")
 	private String  district;
@@ -49,8 +49,11 @@ public class Employee implements Serializable {
 	@Column(name = "BIRTHDAY")
 	private Date  birthDay;
 	
+	@Column(name = "GENDER")
+	private String  gender;
+	
 	@Column(name = "STATS_HIRE_DATE")
-	private Date  statsHireDate;
+	private Date  startHireDate;
 	
 	@Column(name = "DEPARTMENTDETAIL_ID")
 	private Integer  departmentDetailId;
@@ -58,7 +61,7 @@ public class Employee implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DEPARTMENTDETAIL_ID", referencedColumnName = "DEPARTMENTDETAILID", insertable=false, updatable=false)
     private DepartmentDetail departmentDetail;
-	
+
 	public Integer getEmployeeId() {
 		return employeeId;
 	}
@@ -99,12 +102,13 @@ public class Employee implements Serializable {
 		this.citizenId = citizenId;
 	}
 
-	public String getProvince() {
-		return province;
+	
+	public Integer getProvinceId() {
+		return provinceId;
 	}
 
-	public void setProvince(String province) {
-		this.province = province;
+	public void setProvinceId(Integer provinceId) {
+		this.provinceId = provinceId;
 	}
 
 	public String getDistrict() {
@@ -131,12 +135,20 @@ public class Employee implements Serializable {
 		this.birthDay = birthDay;
 	}
 
-	public Date getStatsHireDate() {
-		return statsHireDate;
+	public String getGender() {
+		return gender;
 	}
 
-	public void setStatsHireDate(Date statsHireDate) {
-		this.statsHireDate = statsHireDate;
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public Date getStartHireDate() {
+		return startHireDate;
+	}
+
+	public void setStartHireDate(Date startHireDate) {
+		this.startHireDate = startHireDate;
 	}
 
 	public Integer getDepartmentDetailId() {
@@ -156,7 +168,6 @@ public class Employee implements Serializable {
 	}
 	
 	
-
 
 
 	

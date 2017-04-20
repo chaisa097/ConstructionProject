@@ -30,11 +30,11 @@
 	         <li class="nav-item">
          <a class="nav-link" href="${domainSystem}register.html">Manage User</a>
           </li>
-  <!--  
+
 	      <li class="nav-item">
         <a class="nav-link" href="${domainSystem}manageRole.html">ManageRole</a>
          </li>
- -->
+
 	      <li class="dropdown">
 	        <a class="dropdown-toggle" id="manageData" data-toggle="dropdown" href="#">ManageData
 	        <span class="caret"></span></a>
@@ -46,7 +46,11 @@
 	           <li><a href="${domainSystem}department.html">Department</a></li>
 	       		<li class="divider"></li>
 	       		<li><a href="${domainSystem}departmentdetail.html">Position</a></li>
-	       	
+	       		<li class="divider"></li>
+	       		<li><a href="${domainSystem}employee.html">Employee</a></li>
+	       			<li class="divider"></li>
+	       		<li><a href="${domainSystem}type.html">MaterialType</a></li>
+	       		
 	        </ul>
 	          
 	       

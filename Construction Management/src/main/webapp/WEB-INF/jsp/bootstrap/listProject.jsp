@@ -11,7 +11,7 @@
 		<div class="panel-body" style="margin-top: -25px;">
 			<div class="row">
                  <button type="button" class="btn btn-success" onclick="createProject()">
-					<span class="glyphicon glyphicon-plus"></span> Create Project
+					<span class="glyphicon glyphicon-plus"></span> New Project
 				   </button> 
 				<div class="panel panel-info filterable">
 					<div class="panel-heading">
@@ -25,7 +25,7 @@
 					<table class="table">
 						<thead>
 							<tr class="filters">
-								<th>Manage</th>
+								<th></th>
 								<th><input type="text" class="form-control"
 									placeholder="ProjectName" disabled></th>
 								<th><input type="text" class="form-control"
@@ -37,14 +37,7 @@
 						</tbody>
 					</table>
 				</div>
-                  
-
-				
-
-
-
-
-
+              
 
 			</div>
 		</div>

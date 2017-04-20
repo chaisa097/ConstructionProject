@@ -40,7 +40,6 @@ C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\OderMaterialDetail.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\ReceiveMaterialService.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\ProjectMapping.java
-C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\EmployeeDomain.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ManageRoleController.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\ExportMaterialDetailDao.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ControllerDefault.java
@@ -97,6 +96,7 @@ C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\RequestMaterialStockController.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ViewRequestMaterialController.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\calendar\CalendarServiceImp.java
+C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\MaterialTypeController.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\StockService.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\OrderMaterialDetailDaoImp.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\AbstractDao.java
@@ -146,6 +146,7 @@ C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\OrderDetailDaoImp.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\common\hibernate\HibernateConfiguration.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\LoginDao.java
+C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\CreateEmployeeController.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\LoginDaoImp.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\StockServiceImp.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\WorkingMapping.java
@@ -194,5 +195,6 @@ C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\ComboBoxMapping.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\ExportMaterial.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\ProjectService.java
+C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\EmployeeController.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\OrderMaterialDetailService.java
 C:\Users\BcSystem\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ApplicationController.java

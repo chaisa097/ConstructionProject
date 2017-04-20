@@ -220,7 +220,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/department.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/department.js" />
-            <put-attribute name="pageToolBar" value="Search|Save|Back"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
@@ -229,7 +229,7 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/departmentdetail.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/departmentdetail.js" />
-            <put-attribute name="pageToolBar" value="Search|Save|Back"/>
+            <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
          
@@ -311,6 +311,33 @@
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/exportMaterial.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
             <put-attribute name="pageJsIncluded" value="/js/bootstrap/exportMaterial.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+         <definition name="employeeList" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/employeeList.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/employeeList.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+          <definition name="createEmployee" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/createEmployee.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/createEmployee.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+        <definition name="type" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/type.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/type.js" />
             <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>

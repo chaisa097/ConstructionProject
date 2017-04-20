@@ -6,24 +6,40 @@
 <html>
 <div name="statusSave" hidden="true"></div>
    <div class="container">              	
-		    <div class="panel-body" style="margin-top:50px;">	
+		    <div class="panel-body" style="margin-top:20px;">	
 		        <div class="row">		  
-		 		<button type="button" class="btn btn-default" onclick="addRow()">
-						<span class="glyphicon glyphicon-edit"></span> Insert
-				</button> 
+		             <div class="panel panel-info">
+		       <div class="panel-heading">
+		                <h3 class="panel-title">Department</h3>
+		              
+		                </div>
+		              
+		                
 			    	<div class="row" style="margin-top:10px; margin-bottom:5px" name="addEditData">
-					<div class="col-md-3">
+			    	
+			    	
+			    	<div class="col-md-1" style="margin-top:3px; margin-bottom:5px" >
+			    	<input type="image" src="images/add.png"  onclick="addRow()"   width="80" height="48">
+			    	</div>
+			    	
+					<div class="col-md-3" style="margin-top:1px; margin-bottom:5px" >
+					<label>DepartmentCode</label>
 						<input type="text" id="departmentCode" class="form-control" placeholder="DepartmentCode" name="departmentCode" disabled>
 					</div>
-					<div class="col-md-3">
+					<div class="col-md-3" style="margin-top:1px; margin-bottom:5px" >
+					<label>DepartmentName</label>
 						<input type="text" id="departmentName" class="form-control" placeholder="DepartmentName" name="departmentName" disabled>
 					 </div>
-					
-					
+					 
+                     <div class="col-md-2" style="margin-top:10px; margin-bottom:5px">
+		        	<input type="image" src="images/Save2.png"  onclick="save()"   width="40" height="40">  
+				   </div>
+				</div>
+				
 				</div>
 		        <div class="panel panel-info filterable">
 		            <div class="panel-heading">
-		                <h3 class="panel-title">Department</h3>
+		                <h3 class="panel-title">Department List</h3>
 		                <div class="pull-right">
 		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Filter</button>
 		                </div>
@@ -31,7 +47,7 @@
 		            <table class="table">
 		                <thead>
 		                    <tr class="filters">
-		                    	<th>Manage</th>
+		                    	<th></th>
 		                        <th><input type="text" class="form-control" placeholder="Department Code" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Department Name" disabled></th>
 		                    </tr>

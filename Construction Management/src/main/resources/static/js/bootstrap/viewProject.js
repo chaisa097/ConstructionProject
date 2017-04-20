@@ -18,7 +18,7 @@ var params = {method: 'search'};
     if (month.length < 2) month = '0' + month;
     if (day.length < 2) day = '0' + day;
 
-    var date = [year, month, day].join('-');
+    var date = [day, month, year].join('/');
     
     var d2 = new Date(json[0].finishDate),
     month = '' + (d2.getMonth() + 1),
@@ -28,21 +28,21 @@ var params = {method: 'search'};
 if (month.length < 2) month = '0' + month;
 if (day.length < 2) day = '0' + day;
 
-var date2 = [year, month, day].join('-');
+var date2 = [ day, month, year].join('/');
     	
-      	$("input[name='projectName']").val(json[0].projectName);
-      	$(" textarea[name='description']").val(json[0].description);
-      	$(" textarea[name='address']").val(json[0].address);      
-      	$(" input[name='percentStatus']").val(json[0].percentStatus);
-      	$(" input[name='startDate']").val(date);
-      	$(" input[name='finishDate']").val(date2);
-      	$(" input[name='customerName']").val(json[0].customerName);
-      	$(" input[name='customerPhone']").val(json[0].customerPhone);
-      	$(" input[name='budget']").val(json[0].budget);
-      	$(" input[name='totalHireEmployee']").val(json[0].totalHireEmployee);
-      	$(" input[name='totalUseMaterial']").val(json[0].totalUseMaterial);
-      	$(" input[name='totalExpense']").val(json[0].totalExpense);
-      	$(" input[name='criticalBudget']").val(json[0].criticalBudget);    		
+      	$("#projectName").html(json[0].projectName);
+      	$("#description").html(json[0].description);
+      	$("#address").html(json[0].address);      
+      	$("#percentStatus").html(json[0].percentStatus);
+      	$("#startDate").html(date);
+      	$("#finishDate").html(date2);
+      	$("#customerName").html(json[0].customerName);
+      	$("#customerPhone").html(json[0].customerPhone);
+      	$("#budget").html(json[0].budget);
+      	$("#totalHireEmployee").html(json[0].totalHireEmployee);
+      	$("#totalUseMaterial").html(json[0].totalUseMaterial);
+      	$("#totalExpense").html(json[0].totalExpense);
+      	$("#criticalBudget").html(json[0].criticalBudget);    		
       
   	}
   });

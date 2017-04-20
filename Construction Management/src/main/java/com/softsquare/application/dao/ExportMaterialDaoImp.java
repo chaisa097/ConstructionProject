@@ -63,12 +63,14 @@ public class ExportMaterialDaoImp extends AbstractDao<Integer,ExportMaterial> im
 		 ProjectionList projections = Projections.projectionList()
 				 .add(Projections.property("export.requestMaterialId").as("requestMaterialId"))
 				 .add(Projections.property("export.employeeId").as("employeeId"))
+				 .add(Projections.property("export.projectId").as("projectId"))
+				 .add(Projections.property("export.status").as("status"))
 				 .add(Projections.property("export.exportMaterialNo").as("exportMaterialNo"))
 				 .add(Projections.property("export.exportDate").as("exportDate"))
 		         .add(Projections.property("export.exportMaterialId").as("exportMaterialId"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("export.requestMaterialId", Id));
-		 criteria.setResultTransformer(Transformers.aliasToBean(ReceiveMaterial.class));
+		 criteria.setResultTransformer(Transformers.aliasToBean(ExportMaterial.class));
 		 ExportMaterial resultList =  (ExportMaterial) criteria.uniqueResult();
 		return resultList;
 	}

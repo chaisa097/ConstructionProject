@@ -1,12 +1,11 @@
 package com.softsquare.application.service;
 
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Locale;
 import java.util.Map;
 
-import org.apache.tomcat.jni.Local;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +14,8 @@ import com.softsquare.application.common.util.LoginUtils;
 import com.softsquare.application.dao.LoginDao;
 import com.softsquare.application.dao.OrderMaterialDao;
 import com.softsquare.application.domain.OrderMaterialMapping;
-import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.entity.OrderMaterial;
-import com.softsquare.application.entity.Project;
+
 
 @Service
 public class OrderMaterialServiceImp implements OrderMaterialService{
@@ -48,9 +46,8 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 		System.out.println(dataLogin+"-------------------------------------------");
 		order.setEmployeeId((Integer) dataLogin.get("employeeId"));
 	    order.setStatus("Open");
-	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
-	    Date convertedDate = sdf.parse(ordermapping.getOrderMaterialDate());
-	    order.setOrderMaterialDate(convertedDate);
+	    Date correntDate = new Date();
+	    order.setOrderMaterialDate(correntDate);
 	    order.setAddress(ordermapping.getAddress());
 	    orderdao.saveOrder(order);
 	    
@@ -75,6 +72,11 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 	public ArrayList<OrderMaterial> getOrderMaterialWaitMaterialStatus() {
 		return orderdao.getOrderWaitMaterialStatus();
 	}
+	@Override
+	public ArrayList<OrderMaterial> getOrderFinish(){
+		return orderdao.getOrderFinish();
+	}
+	
 	
 	@Override
 	public ArrayList<OrderMaterialMapping> findOrder(OrderMaterialMapping mapping) {

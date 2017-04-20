@@ -22,68 +22,68 @@
 		                <tbody>
 		                
 		                     <tr>
-                             <td>ProjectName</td> 
-                             <td><input type="text" class="form-control"  name="projectName"  disabled></td>                                    
+                             <td>ProjectName</td>
+                             <td><p id="projectName"></p></td>                                    
                             </tr>
                           
 		                   <tr>
                              <td>Description</td>
-                              <td> <textarea   class="form-control"  rows="3" cols="10"   name="description"  disabled></textarea> </td>                            
+                              <td><p id="description"></p> </td>                            
                           </tr>                                                                            
 		                  <tr>
                              <td>Address</td>
-                              <td> <textarea   class="form-control" rows="3" cols="10"   name="address"  disabled></textarea> </td>                            
+                              <td><p id="address"></p></td>                            
                           </tr>
 		               
 		                    <tr>
                              <td>CompleteStatus(1-100%) </td>
                          
-                              <td><input type ="text" min ="0" max="100" step ="10"  class="form-control"  name="percentStatus"  disabled > </td>                            
+                              <td><p id="percentStatus" ></p></td>                            
                           </tr>
 		                						
 				          
 		                   <tr>
                              <td>StartDate</td>
-                              <td><input type="date"  class="form-control"  name="startDate"   disabled  > </td>                            
+                              <td><p id="startDate"></p> </td>                            
                           </tr>
                           
                           <tr>
                              <td>FinishDate</td>
-                              <td><input type="date"   class="form-control"  name="finishDate"   disabled > </td>                            
+                              <td><p id="finishDate"></p> </td>                            
                           </tr>
                           
                            <tr>
                              <td>CustomerName</td>
-                              <td><input type="text" class="form-control" name="customerName"  disabled> </td>                            
+                              <td><p id="customerName"></p> </td>                            
                           </tr>
                               <tr>
                           
                               <tr>
                              <td>CustomerPhone</td>
-                              <td><input type="text" class="form-control" name="customerPhone" disabled></td>                            
+                              <td><p id="customerPhone"></p></td>                            
                           </tr>
                           
                           
                             <tr>
                              <td>Budget</td>
-                              <td><input type="text" class="form-control" name="budget" disabled></td>                            
+                              <td><p id="budget"></p></td>                            
                           </tr>
                                                 
                               <tr>
                              <td>TotalHireEmployee/Baht</td>
-                              <td><input type="number" class="form-control" name="totalHireEmployee"  disabled> </td>                            
+                              <td><p id="totalHireEmployee"></p> </td>                            
                              </tr>
                             <tr>                          
                              <td>TotalUsedMaterial/Baht</td>
-                              <td><input type="number" class="form-control" name="totalUseMaterial"  disabled> </td>                            
+                              <td><p id="totalUseMaterial"></p> </td>                            
                           </tr>
                            <tr>                                                           
                              <td>TotalExpenseInConstruction/Baht</td>
-                              <td><input type="number" class="form-control" name="totalExpense"  disabled> </td>                            
+                              <td><p id="totalExpense"></p></td>                            
                           </tr>
                           <tr>                                                           
                              <td>Critical Budget(1-100%)</td>
-                              <td><input type="number" class="form-control" name="criticalBudget"  disabled> </td>                            
+                              <td><p id="criticalBudget"></p> </td>                            
                           </tr>
                           
                                         

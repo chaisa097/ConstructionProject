@@ -40,7 +40,13 @@ public class ExportMaterial implements Serializable {
 	
 	@Column(name = "REQUEST_MATERIALID", unique=true, nullable = false)
 	private Integer  requestMaterialId;
-     
+	
+	@Column(name = "REQUEST_PROJECTID", unique=true, nullable = false)
+	private Integer  projectId;
+
+	@Column(name = "STATUS", unique=true, nullable = false)
+	private String status;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EMPLOYEEID", referencedColumnName = "EMPLOYEEID", insertable=false, updatable=false)
     private Employee employee;
@@ -92,6 +98,25 @@ public class ExportMaterial implements Serializable {
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
 	}
+
+	public Integer getProjectId() {
+		return projectId;
+	}
+
+	public void setProjectId(Integer projectId) {
+		this.projectId = projectId;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	
+	
 	
     
 }

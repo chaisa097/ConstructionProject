@@ -65,5 +65,21 @@ DepartmentDetailService depDetailService;
 	
 			
 		}
+		
+		@RequestMapping(params =  "method=searchDepartmentforUpdate" , method=RequestMethod.POST)
+		public void searchDepartmentforUpdate(HttpServletRequest request, HttpServletResponse response, @ModelAttribute DepartmentDetailMapping mapping) throws Throwable{
+			Gson gson = new Gson();
+			String  json = gson.toJson(depDetailService.findDepartmentDetail(mapping));
+//			System.out.print(json);
+			try {
+				response.getWriter().write(json);
+			} catch (Exception e) {
+					e.printStackTrace();
+			}
+	
+			
+		}
+		
+		
 		}	
 

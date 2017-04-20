@@ -86,10 +86,9 @@ function save(){
 			 if( BeanUtils.isNotEmpty($('div[name=addEditData] input[name=projectName]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] textarea[name=description]').val())){				                                                     		
 				var params = {};
 				var message = ""
-				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
 					params.method = 'save';
 					message = "create success!!"
-				}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
+				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
 					params.method = 'edit';				
 					params.projectId = headerId
 					message = "update success!!"
@@ -189,24 +188,7 @@ function save(){
 		 }
 		 
 		 function disAndEnInputField(param){
-			 if(BeanUtils.equals(param, 'create')){
-				 	createOrUpdateMode(param);
-					$("div[name='addEditData'] input[name='projectName']").prop('disabled', false);
-					$("div[name='addEditData'] textarea[name='description']").prop('disabled', false);
-					$("div[name='addEditData'] select[name='provinceList']").prop('disabled', false).selectpicker('refresh');
-					$("div[name='addEditData'] textarea[name='address']").prop('disabled', false);
-					$("div[name='addEditData'] select[name='employeeList']").prop('disabled', false).selectpicker('refresh');
-					$("div[name='addEditData'] input[name='percentStatus']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='startDate']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='finishDate']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='customerName']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='customerPhone']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='budget']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='totalHireEmployee']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='totalUseMaterial']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='totalExpense']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='criticalBudget']").prop('disabled', false);
-				}else if(BeanUtils.equals(param, 'update')){
+			 if(BeanUtils.equals(param, 'update')){
 					createOrUpdateMode(param);
 					$("div[name='addEditData'] input[name='projectName']").prop('disabled', false);
 					$("div[name='addEditData'] textarea[name='description']").prop('disabled', false);

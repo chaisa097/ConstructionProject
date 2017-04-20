@@ -60,7 +60,7 @@ var BSBaseComboBox = function () {
 	            	var json = $.parseJSON(result);
 	            	var data = ['<option></option>'];
 	            	$.each(json, function(index, value) {
-	            		  data.push("<option title="+value.empFirstName+" value="+value.employeeId+" data-subtext="+value.empFirstName + value.empLastName+">"+value.depDetailName+"</option>");
+	            		  data.push("<option title="+value.empFirstName+" value="+value.employeeId+" data-subtext="+value.depDetailName+">"+value.empFirstName +" "+ value.empLastName+"</option>");
 	            	});
 	            	callBack(data.join());
 	        	}
@@ -130,6 +130,23 @@ var BSBaseComboBox = function () {
 	        	}
 	        });
         },
+        
+        getDepartmentDetail: function (params, callBack) {
+    		$.ajax({
+	        	type: 'GET'
+	        	, url: application.contextPath+"/combobox.html"
+	        	, data: params
+	        	, success: function(result){
+	            	var json = $.parseJSON(result);
+	            	var data = ['<option></option>'];
+	            	$.each(json, function(index, value) {
+	            		  data.push("<option title="+value.depDetailName+" value="+value.depDetailId+">"+value.depDetailName+"</option>");
+	            	});
+	            	callBack(data.join());
+	        	}
+	        });
+        },
+        
         
         
         getDepartment: function (params, callBack) {

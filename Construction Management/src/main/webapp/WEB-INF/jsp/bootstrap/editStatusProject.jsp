@@ -15,15 +15,12 @@
 				<lable class="headPanal">Progress Construction Project</lable>
 			</div>
 		</div>
-		<div class="panel-body" style="margin-top: -25px;">
+		<div class="col-md-1" style="margin-top: -15px; margin-bottom:20px">
+   <input type="image" src="images/Save2.png" onclick="Save()" width="48" height="48">
+           </div>
+		<div class="panel-body" style="margin-top:40px;">
 			<div class="row">
-				<div class="col-md-1" style="margin-top: 10px; margin-bottom: 10px">
-				   <button type="button" class="btn btn-primary" onclick="Save()">
-					<span class="glyphicon glyphicon-floppy-save"></span>
-					</button>
-                  </div>
 				<div class="panel panel-info">
-
 					<div class="panel-heading">
 						<lable class="headPanal"> Project Information</lable>
 					</div>
@@ -35,7 +32,7 @@
 						   		<div class="col-md-4"
 								style="margin-top: 10px; margin-bottom: 10px">
 								<lable>CompleteStatus(0-100%)</lable>
-								<input id="percentStatus" class="form-control" type="number"
+								<input id="percentStatus" class="form-control" type="range"
 									min="0" max="100" step="10" name="percentStatus" disabled>
 							</div>
 						

@@ -14,4 +14,9 @@ public interface EmployeeDao {
 	public Employee getEmployeeForUpdate(EmployeeMapping mapping);
 	public ArrayList<Employee> getProjectManager();
 	public ArrayList<Employee> getAllEmployee();
+	public void saveEmployee(Employee emp) throws Exception;
+	public void removeEmployee(Employee emp) throws Exception;
+	public void updateEmployee(Employee emp) throws Exception;
+	public Map<String, Object> findNoMax();
+	
 }

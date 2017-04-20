@@ -9,19 +9,15 @@
 <div name="statusSave" hidden="true"></div>
 <div class="container">
 	<div class="form-group">
-	<input type="image" src="images/back.jpg" onclick="back()"  width="48" height="48">
-		<div class="panel panel-default">
+	<input type="image" src="images/back4.ico" onclick="back()"  width="48" height="48">
+		<div class="panel panel-info">
 			<div class="panel-heading">
-				<lable class="headPanal">Create Construction Project</lable>
+				<lable class="headPanal">Construction Project</lable>
 				<div style="margin-top: 10px; margin-bottom: 2px">
-					<button type="button" class="btn btn-primary" onclick="save()">
-						<span class="glyphicon glyphicon-floppy-save"></span>
-					</button>
-
 				</div>
 			</div>
 		</div>
-
+    
 		<div class="panel-body" style="margin-top: -25px;">
 			<div class="row">
 				<div class="panel panel-info">
@@ -31,28 +27,20 @@
 					</div>
 					<div class="row" style="margin-top: 10px; margin-bottom: -5px"
 						name="addEditData">
-						<div class="container">
-						
-				     <div style="margin-top:5px; margin-bottom:0px">
-							 <button type="button" class="btn btn-default" onclick="addRow()"
-					  style="margin-top: 10px; margin-bottom: 10px">
-					  <span class="glyphicon glyphicon-text-height"></span>
-				       </button>
-						</div>  
-						<br>         
+						<div class="container"> 
+						      
 							<div class="col-md-4"
 								style="margin-top: 10px; margin-bottom: 10px">
 								<lable>ProjectName</lable>
 								<input id="projectName" type="text" class="form-control"
-									placeholder="Project Name" name="projectName" disabled>
+									placeholder="Project Name" name="projectName">
 							</div>
 
 							<div class="col-md-4"
 								style="margin-top: 10px; margin-bottom: 10px">
 								<lable>Description</lable>
 								<textarea id="description" class="form-control"
-									placeholder="Description" rows="3" cols="10" name="description"
-									disabled></textarea>
+									placeholder="Description" rows="3" cols="10" name="description"></textarea>
 							</div>
 
 							<div class="col-md-4"
@@ -60,24 +48,24 @@
 								<lable>Address</lable>
 								<textarea id="address" class="form-control"
 									placeholder="Address of Construction Site" rows="3" cols="10"
-									name="address" disabled></textarea>
+									name="address"></textarea>
 							</div>
 
 							<div class="col-md-4"
-								style="margin-top: 10px; margin-bottom: 10px">
+								style="margin-top: 20px; margin-bottom: 10px">
 								<lable>Province</lable>
 								<select class="selectpicker show-tick show-menu-arrow" id="pv"
 									name="provinceList" data-live-search="true" data-size="5"
-									data-header="Select Province" disabled></select>
+									data-header="Select Province" ></select>
 
 							</div>
 
 							<div class="col-md-4"
-								style="margin-top: 10px; margin-bottom: 10px">
+								style="margin-top: 20px; margin-bottom: 10px">
 								<lable> ProjectManager</lable>
 								<select class="selectpicker show-tick show-menu-arrow" id="emp"
 									name="employeeList" data-live-search="true" data-size="5"
-									data-header="Select ProjectManager" disabled></select>
+									data-header="Select ProjectManager" ></select>
 
 							</div>
 
@@ -86,7 +74,7 @@
 								style="margin-top: 10px; margin-bottom: 10px">
 								<lable>CompleteStatus(0-100%)</lable>
 								<input id="percentStatus" class="form-control" type="number"
-									min="0" max="100" step="10" name="percentStatus" disabled>
+									min="0" max="100" step="10" name="percentStatus" >
 							</div>
 
 
@@ -95,21 +83,21 @@
 								style="margin-top: 10px; margin-bottom: 10px">
 								<lable>StartDate</lable>
 								<input type="date" class="form-control" name="startDate"
-									id="startDate" disabled>
+									id="startDate" >
 							</div>
 
 							<div class="col-md-4"
 								style="margin-top: 10px; margin-bottom: 10px">
 								<lable>FinishDate</lable>
 								<input type="date" class="form-control" name="finishDate"
-									id="finishDate" disabled>
+									id="finishDate">
 							</div>
 							
 							<div class="col-md-4"
 								style="margin-top: 10px; margin-bottom: 10px">
 								<lable>Critical Budget(0-100%)</lable>
 								<input type="number" class="form-control" min="0" max="100"
-									step="5" name="criticalBudget" id="criticalBudget" disabled>
+									step="5" name="criticalBudget" id="criticalBudget">
 							</div>
 							
 							
@@ -131,7 +119,7 @@
 								<lable>CustomerName</lable>
 								<input type="text" class="form-control"
 									placeholder="Customer Name" name="customerName"
-									id="customerName" disabled>
+									id="customerName" >
 							</div>
 
 							<div class="col-md-4"
@@ -139,26 +127,33 @@
 								<lable>CustomerPhone</lable>
 								<input type="text" class="form-control"
 									placeholder="Customer Phone" name="customerPhone"
-									id="customerPhone" disabled>
+									id="customerPhone" >
 							</div>
 							
 							<div class="col-md-4"
 								style="margin-top: 10px; margin-bottom: 10px">
 								<lable>Budget</lable>
 								<input type="number" class="form-control" placeholder="Budget"
-									name="budget" id="bugget" disabled>
+									name="budget" id="bugget" >
 							</div>
 							
-							
+							 
 						</div>
 					</div>
-
+                    
 				</div>
 
 			
 
 			</div>
+			<div class="pull-right">
+		<input type="image" src="images/Save2.png"  onclick="save()"   width="48" height="48">
 		</div>
+		</div>
+		
 	</div>
+	
+	
+	
 </div>
 </html>

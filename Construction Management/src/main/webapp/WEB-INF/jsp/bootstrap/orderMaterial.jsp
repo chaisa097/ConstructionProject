@@ -9,69 +9,48 @@
 <div class="container">
 	<div class="form-group">
 
-		<div class="panel panel-default">
+		<div class="panel panel-warning">
 			<div class="panel-heading">
 				 <lable class="headPanal">Order Material</lable>
-			</div>
-			<div class="col-md-1" style="margin-top: 10px; margin-bottom:25px">
-              	<button type="button" class="btn btn-primary" onclick="Save()">
-				<span class="glyphicon glyphicon-floppy-save"></span>
-			   </button>
-              </div>
-		
-		<div class="container">
-		<div class="row" style="margin-top: 10px; margin-bottom: -5px"
-			name="addEditData">
-			<div class="col-md-12">
-
-             <div class="col-md-1">
-				<button type="button" class="btn btn-default" onclick="addRow()">
-				<span class="glyphicon glyphicon-text-height"></span>
-			  </button>
+			 
+		<div class="row" style="margin-top: 10px; margin-bottom: -5px"name="addEditData">
+               <div class="col-md-2" style="margin-top: 10px; margin-bottom: 5px">
+			 
+             </div>
+  
+             <div class="col-md-1" style="margin-top: 20px; margin-bottom: 5px">
+				 	<input type="image" src="images/add.png"  onclick="addRow()"   width="80" height="48">
 		     </div>
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-				
-					<label>OrderDate</label> <input type="date" class="form-control"
-						id="Date" name="orderMaterialDate" disabled>
+			
+					<label>OrderMaterial Date:</label><p id="date"></p>
 				</div>
-
-				<div class="col-md-4"></div>
-
-				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>OrderNo</label> <input type="text" class="form-control"
-						id="orderNo" placeholder="orderNo." name="orderMaterialNo"
-						disabled>
-				</div>
-
-
-			</div>
-			<div class="col-md-12">
-                <div class="col-md-1">
-                </div>
+                   	
+     <div class="col-md-12" style="margin-top: 5px; margin-bottom: 0px">
+              </div>
+               <div class="col-md-3" style="margin-top: 5px; margin-bottom: 0px">
+			 
+             </div>
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
 					<label>Contact OrderOwner</label>
 					<textarea id="address" class="form-control"
 						placeholder="Address/Phone" rows="3" cols="10" name="address"
 						disabled></textarea>
 				</div>
-
-				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-				</div>
-				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>Status</label> <input type="text" class="form-control"
-						id="Status" placeholder="Status" name="status" disabled>
-				</div>
+                   <div class="col-md-1" style="margin-top: 20px; margin-bottom: 5px">
+                  	<input type="image" src="images/Save2.png"  onclick="Save()"   width="40" height="40">
+                  	</div>  
 			</div>
-          
-		</div>
+
+        </div>
 		</div>
 		</div>   
               
 		<div class="panel-body" style="margin-top: -25px;">
 			<div class="row">
 
-				<div class="panel panel-default filterable">
+				<div class="panel panel-info filterable">
 					<div class="panel-heading">
 						<h3 class="panel-title">OrderHeader List</h3>
 						<div class="pull-right">
@@ -101,5 +80,4 @@
 		</div>
 
 	</div>
-</div>
 </html>

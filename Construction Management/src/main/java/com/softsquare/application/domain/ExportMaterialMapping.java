@@ -4,12 +4,12 @@ package com.softsquare.application.domain;
 public class ExportMaterialMapping {
 
 	
-	private Integer exportMaterialId;
+	private Integer  exportMaterialId;
 	private Integer  employeeId;
-	private String  exportMaterialNo;
+	private String   exportMaterialNo;
 	private String   exportDate;
 	private Integer  requestMaterialId;
-	private String employee;
+	private String   employee;
 	private Integer  exportMateialDetialId;
 	private Integer  exportId;
 	private Integer  materialId;

@@ -41,7 +41,8 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 	public Map<String, Object> findRequestId(int requestId) {
 		 Criteria criteria = getSession().createCriteria(RequestMaterial.class, "request");
 		 ProjectionList projections = Projections.projectionList()
-				 .add(Projections.property("request.requestMaterialId").as("requestMaterialId"));
+				 .add(Projections.property("request.requestMaterialId").as("requestMaterialId"))
+		         .add(Projections.property("request.projectId").as("projectId")); 
 		 criteria.setProjection(projections);
 		 if(BeanUtils.isNotEmpty(requestId)){
 			 criteria.add(Restrictions.eq("request.requestMaterialId",requestId));			 

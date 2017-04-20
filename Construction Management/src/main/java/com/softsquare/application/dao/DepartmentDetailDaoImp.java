@@ -32,10 +32,47 @@ public  class DepartmentDetailDaoImp extends AbstractDao<Integer, DepartmentDeta
 		 ProjectionList projections = Projections.projectionList()				 
 		            .add(Projections.property("depDetail.depDetailId").as("depDetailId"))
 		            .add(Projections.property("depDetail.depDetailName").as("depDetailName"))
+		            .add(Projections.property("depDetail.departmentId").as("departmentId"))
 		            .add(Projections.property("depDetail.Salary").as("Salary"))
 		            .add(Projections.property("department.departmentCode").as("departmentCode"));
 		 criteria.setProjection(projections);	
-		 criteria.setResultTransformer(Transformers.aliasToBean(Employee.class));
+		 criteria.setResultTransformer(Transformers.aliasToBean(DepartmentDetail.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<DepartmentDetail> depList = (ArrayList<DepartmentDetail>) criteria.list();
+		return depList;
+	}
+	
+	@Override
+	public ArrayList<DepartmentDetailMapping> findDepartmentDetail(DepartmentDetailMapping mapping ) {
+		 Criteria criteria = getSession().createCriteria(DepartmentDetail.class, "depDetail");
+		    criteria.createAlias("depDetail.department", "department");
+		 ProjectionList projections = Projections.projectionList()				 
+		            .add(Projections.property("depDetail.depDetailId").as("depDetailId"))
+		            .add(Projections.property("depDetail.depDetailName").as("depDetailName"))
+		            .add(Projections.property("depDetail.departmentId").as("departmentId"))
+		            .add(Projections.property("depDetail.Salary").as("Salary"))
+		            .add(Projections.property("department.departmentCode").as("departmentCode"));
+		 criteria.setProjection(projections);	
+		 criteria.add(Restrictions.eq("depDetail.depDetailId", mapping.getDepDetailId()));	
+		 criteria.setResultTransformer(Transformers.aliasToBean(DepartmentDetail.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<DepartmentDetailMapping> depList = (ArrayList<DepartmentDetailMapping>) criteria.list();
+		return depList;
+	}
+	
+	@Override
+	public ArrayList<DepartmentDetail> AllDepartmentDetail(int departmentId ) {
+		 Criteria criteria = getSession().createCriteria(DepartmentDetail.class, "depDetail");
+		    criteria.createAlias("depDetail.department", "department");
+		 ProjectionList projections = Projections.projectionList()				 
+		            .add(Projections.property("depDetail.depDetailId").as("depDetailId"))
+		            .add(Projections.property("depDetail.depDetailName").as("depDetailName"))
+		            .add(Projections.property("depDetail.Salary").as("Salary"))
+		            .add(Projections.property("department.departmentCode").as("departmentCode"))
+		           .add(Projections.property("department.departmentId").as("departmentId"));
+		 criteria.setProjection(projections);	
+		 criteria.add(Restrictions.eq("departmentId", departmentId));	
+		 criteria.setResultTransformer(Transformers.aliasToBean(DepartmentDetail.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<DepartmentDetail> depList = (ArrayList<DepartmentDetail>) criteria.list();
 		return depList;
@@ -49,10 +86,9 @@ public  class DepartmentDetailDaoImp extends AbstractDao<Integer, DepartmentDeta
 		            .add(Projections.property("depDetail.depDetailId").as("depDetailId"))
 		            .add(Projections.property("depDetail.depDetailName").as("depDetailName"))
 		            .add(Projections.property("depDetail.Salary").as("Salary"))
-		             .add(Projections.property("depDetail.departmentId").as("departmentId"));
-
+		            .add(Projections.property("depDetail.departmentId").as("departmentId"));
 		 criteria.setProjection(projections);
-		 if(BeanUtils.isNotEmpty(mapping.getDepDetailName())){
+		 if(BeanUtils.isNotEmpty(mapping.getDepDetailId())){
 			 criteria.add(Restrictions.eq("depDetail.depDetailId", mapping.getDepDetailId()));			 
 		 }
 		 criteria.setResultTransformer(Transformers.aliasToBean(DepartmentDetail.class));

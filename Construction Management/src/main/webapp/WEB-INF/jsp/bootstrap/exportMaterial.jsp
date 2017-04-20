@@ -8,14 +8,14 @@
 <div class="container">
 	<div class="form-group">
 		
-		 <div class="panel panel-default">
+		 <div class="panel panel-info">
 		  <div class="panel-heading"><lable class="headPanal">Export Material</lable>
 			  </div>
 		 </div>		 
-	   <div class="panel panel-default filterable">
+	   <div class="panel panel-warning filterable">
 	    <div class="pull-right">
 	    <button type="button" class="btn btn-success" onclick="UpdateFinished()">
-				     	<span class="glyphicon glyphicon-ok-circle"></span>Finished
+				     	<span class="glyphicon glyphicon-ok"></span> Finished
 				        </button>
 				        </div>
 		            <div class="panel-heading">  		       
@@ -42,11 +42,7 @@
 		 <div class="panel-body" style="margin-top:-25px;">
 		  <div class="row">
 				<div class="row" style="margin-top:10px; margin-bottom:-5px" name="addEditData">
-					<div class="col-md-1" style="margin-top:10px; margin-bottom:5px" >
-					<button type="button" class="btn btn-primary" onclick="Save()">
-					<span class="glyphicon glyphicon-floppy-save"></span>
-				</button> 
-				</div>
+					
 					<div class="col-md-3" style="margin-top:10px; margin-bottom:5px" >
 						<select class="typeList"  id="type"  name="typeList" data-live-search="true" data-size="5" data-header="Select Type" disabled></select>
 					</div>
@@ -67,6 +63,7 @@
 							<input type="number" id="" class="form-control" placeholder="Amount of Export" min="0" name="exportQuantity" disabled>
 					</div>
 					
+					<input type="image" src="images/Save2.png" onclick="Save()" width="48" height="48">
 				</div>
 				
 		        <div class="panel panel-default filterable">

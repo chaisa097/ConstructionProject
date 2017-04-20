@@ -28,6 +28,9 @@ public class Stock implements Serializable{
 	
 	@Column(name = "TOTAL_QUANTITY")
 	private Integer  totalQuatity;
+	
+	@Column(name = "PRICE")
+	private Integer  price;
 
 	@OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "MATERIALID", referencedColumnName = "MATERIALID", insertable=false, updatable=false)
@@ -71,6 +74,16 @@ public class Stock implements Serializable{
 
 	public void setMaterial(Material material) {
 		this.material = material;
+	}
+
+
+	public Integer getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(Integer price) {
+		this.price = price;
 	}
 
 

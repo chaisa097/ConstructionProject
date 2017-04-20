@@ -3,6 +3,15 @@
 		
 	 	BSBaseTable.callFiterTable();
 	    	searchFunction();
+	    	
+	    	
+	    	n =  new Date();
+	    	y = n.getFullYear();
+	    	m = n.getMonth() + 1;
+	    	d = n.getDate();
+	    	document.getElementById("date").innerHTML = d  + "/" + m + "/" + y;
+	    	
+	    	
     });
 
 
@@ -55,7 +64,7 @@
 
 
 function Save(){
-			 if( BeanUtils.isNotEmpty($('div[name=addEditData] input[name=orderMaterialDate]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] textarea[name=address]').val())){				                                                     		
+			 if(BeanUtils.isNotEmpty($('div[name=addEditData] textarea[name=address]').val())){				                                                     		
 				var params = {};
 				var message = ""
 				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
@@ -66,8 +75,7 @@ function Save(){
 					message = "update success!!"
 				}
 				
-				if(BeanUtils.isNotEmpty(params.method)){
-					params.orderMaterialDate = $('div[name=addEditData] input[name=orderMaterialDate]').val();				
+				if(BeanUtils.isNotEmpty(params.method)){				
 					params.address = $('div[name=addEditData] textarea[name=address]').val();
 						
 			    	$.ajax({

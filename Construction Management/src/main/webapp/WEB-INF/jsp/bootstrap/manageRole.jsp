@@ -11,19 +11,17 @@
 		 
 		 
 		 
+		 
 		  <div class="row">
-		 	 <button type="button" class="btn btn-primary" onclick="save()">
-					<span class="glyphicon glyphicon-floppy-save"></span>
-		 	        </button> 	
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">Role</h3>
+
+					</div>
 				<div class="row" style="margin-top:10px; margin-bottom:-5px" name="addEditData">
 				
 				   <div class="col-md-1">
 				     </div>
-					<div class="col-md-1" style="margin-top:10px; margin-bottom:5px">
-					 <button type="button" class="btn btn-default" onclick="addRow()">
-					<span class="glyphicon glyphicon-text-height"></span>
-		 	        </button> 							
-					</div>
 					
 					<div class="col-md-3" style="margin-top:10px; margin-bottom:5px">
 						<input id="roleCode" id="roleCode" type="text" class="form-control" placeholder="Role Code" name="roleCode" disabled>
@@ -32,6 +30,11 @@
 						<input id="roleName" id="roleName"  type="text" class="form-control" placeholder="Role Name" name="roleName" disabled>
 					</div>
 					
+					  <div class="col-md-2" style="margin-top:10px; margin-bottom:20px">
+		        	<input type="image" src="images/Save2.png"  onclick="SaveFunction()"   width="40" height="40">  
+				   </div>
+					
+				</div>
 				</div>
 		        <div class="panel panel-info filterable">
 		            <div class="panel-heading">
@@ -43,7 +46,7 @@
 		            <table class="table">
 		                <thead>
 		                    <tr class="filters">
-		                    	<th>Manage</th>
+		                    	<th></th>
 		                        <th><input  type="text" class="form-control" placeholder="Role Code" disabled></th>
 		                        <th><input  type="text" class="form-control" placeholder="Role Name" disabled></th>
 		                    </tr>
@@ -55,4 +58,5 @@
 		    </div>
 		 </div>
 	</div>	
+	</div>
 </html>
