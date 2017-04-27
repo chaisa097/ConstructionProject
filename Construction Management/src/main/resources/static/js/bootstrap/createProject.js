@@ -15,6 +15,76 @@
 	   	
 	   	
 	    	});
+	 	     
+	 	 
+
+	 	     
+	 	    $('#proName').on('input', function() {
+	 	 
+	 			var input=$(this);
+	 			var is_name=input.val();
+	 			if(is_name){input.removeClass("invalid").addClass("valid");}
+	 			else{input.removeClass("valid").addClass("invalid");}
+         
+	 		});
+	 	     
+	 	   $('#address').on('input', function() {
+	 			var input=$(this);
+	 			var is_name=input.val();
+	 			if(is_name){input.removeClass("invalid").addClass("valid");}
+	 			else{input.removeClass("valid").addClass("invalid");}
+	 		});
+	 	   
+	 	  $('#critical').on('input', function() {
+	 			var input=$(this);
+	 			var is_name=input.val();
+	 			if(is_name){input.removeClass("invalid").addClass("valid");}
+	 			else{input.removeClass("valid").addClass("invalid");}
+	 		});
+	 	     
+	 	  $('#descript').on('input', function() {
+	 			var input=$(this);
+	 			var is_name=input.val();
+	 			if(is_name){input.removeClass("invalid").addClass("valid");}
+	 			else{input.removeClass("valid").addClass("invalid");}
+	 		});
+	 	   
+	 	 $('#finishDate').on('input', function() {
+	 			var input=$(this);
+	 			var is_name=input.val();
+	 			if(is_name){input.removeClass("invalid").addClass("valid");}
+	 			else{input.removeClass("valid").addClass("invalid");}
+	 		});
+	 	 
+	 	$('#startDate').on('input', function() {
+ 			var input=$(this);
+ 			var is_name=input.val();
+ 			if(is_name){input.removeClass("invalid").addClass("valid");}
+ 			else{input.removeClass("valid").addClass("invalid");}
+ 		});
+	 	 
+		$('#cusName').on('input', function() {
+ 			var input=$(this);
+ 			var is_name=input.val();
+ 			if(is_name){input.removeClass("invalid").addClass("valid");}
+ 			else{input.removeClass("valid").addClass("invalid");}
+ 		});
+		
+		
+		$('#cusPhone').on('input', function() {
+ 			var input=$(this);
+ 			var is_name=input.val();
+ 			if(is_name){input.removeClass("invalid").addClass("valid");}
+ 			else{input.removeClass("valid").addClass("invalid");}
+ 		});
+		
+		$('#budget').on('input', function() {
+ 			var input=$(this);
+ 			var is_name=input.val();
+ 			if(is_name){input.removeClass("invalid").addClass("valid");}
+ 			else{input.removeClass("valid").addClass("invalid");}
+ 		});
+	 	     
 	 		 if( BeanUtils.isNotEmpty(headerId)){				     
 	 	    var params = {method: 'searchData'};
 			 disAndEnInputField('update');
@@ -64,19 +134,21 @@
 	      });
 	 	     
 	 	     
-	 	     
-	 		 }
-	 	     
-	 	     
-	 	     
+	 }
+	 		 
+	 		 
+	 		 
+	 		 
+	 		 
 	 	     
 	   });
 	
 	
 	
-	
-	
-	
+	function show_value(x)
+	{
+	 document.getElementById("slider_value").innerHTML=x;
+	}
 	
 	
 	
@@ -179,7 +251,7 @@ function save(){
 //      });
 //}         
   
-   function back(){
+  function back(){
 	location.href = "listProject.html";
 
     }

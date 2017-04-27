@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +24,14 @@ public class ProjectServicelmp implements ProjectService {
 
 	@Autowired
 	private ProjectDao projectListDao;
-
+	
+	
+	@Override
+	public ArrayList<Project> countProject(){	
+		return projectListDao.CountProject();
+		
+	}
+	
 	
 	@Override
 	public  ArrayList<ProjectMapping> findProjectbyEmployee(ProjectMapping projectMapping) {

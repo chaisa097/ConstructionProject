@@ -38,7 +38,7 @@ public class ReceiveMaterialDetailDaoImp extends AbstractDao<Integer, ReceiveMat
 			        .add(Projections.property("receiveDetail.receiveId").as("receiveId"))
 			        .add(Projections.property("material.materialId").as("materialId"))
 		            .add(Projections.property("material.materialName").as("materialName"))
-		            .add(Projections.property("material.descrition").as("descrition"))
+		            .add(Projections.property("material.description").as("description"))
 		            .add(Projections.property("unit.unitName").as("unitName"));		            
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("receiveDetail.receiveId",receiveId ));	

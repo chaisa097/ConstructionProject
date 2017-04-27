@@ -1,6 +1,6 @@
 package com.softsquare.application.domain;
 
-public class ProvinceMapping {
+public class ProvinceMapping extends PagingMaping {
 	
 	   private Integer provinceId;
 	   private String  provinceCode;

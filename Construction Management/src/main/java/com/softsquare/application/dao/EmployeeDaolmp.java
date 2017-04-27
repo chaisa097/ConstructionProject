@@ -134,7 +134,17 @@ public class EmployeeDaolmp  extends AbstractDao<Integer, Employee> implements E
 		return employeeList;
 	}
 	
-
+	@Override
+	public  ArrayList<Employee> CountEmployee() {
+		Criteria criteria = getSession().createCriteria(Employee.class, "employee");		 
+		 ProjectionList projections = Projections.projectionList()
+				 	.add(Projections.count("employee.employeeId").as("employeeId"));           
+		 criteria.setProjection(projections);
+		 criteria.setResultTransformer(Transformers.aliasToBean(EmployeeMapping.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<Employee> employeeList =  (ArrayList<Employee>) criteria.list();
+		return employeeList;
+	}
 	
 	@Override
 	public Employee getEmployeeForUpdate(EmployeeMapping mapping) {

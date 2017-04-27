@@ -36,7 +36,7 @@
 				            	if (month.length < 2) month = '0' + month;
 				            	if (day.length < 2) day = '0' + day;
 
-				            	var date = [day, month, year].join('-');
+				            	var date = [day, month, year].join('/');
 			         			            		
 			            		  data.push('<tr orderMaterialId="'+value.orderMaterialId+'"><td>'+
 			            				     '<a href='+domainSystem+'/orderMaterialDetail.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-success btn-xs"> '+
@@ -85,7 +85,7 @@ function Save(){
 			        	, success: function(result){
 			        		alert(message);
 			        		searchFunction();
-			        		
+			        		 disAndEnInputField('');
 			        	}
 			        });
 				}

@@ -13,12 +13,18 @@
 		    	
 		    	
 			    	$('.typeList').on('change', function(event){
-			    	    var params2 = {method:'Material', TypeId: event.currentTarget.value};
+			    	    var params2 = {method:'MaterialStock', TypeId: event.currentTarget.value};
 			    	    BSBaseComboBox.getMaterial(params2,function(data){
 			    	    	$("div select[name=materialList]").html(data).selectpicker('refresh');
-			    	 	
-
+			    	   
+			    	    	
+			    	    	
 			    	 });
+			    	    
+			    	    
+			    	  
+			 
+			    	    
 			    	  });
 			    	
 			    	searchFunction();

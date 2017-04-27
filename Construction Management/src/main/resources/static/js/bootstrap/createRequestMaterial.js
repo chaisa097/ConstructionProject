@@ -55,13 +55,13 @@ function Save(){
 			 if( BeanUtils.isNotEmpty($('div[name=addEditData] input[name=useMaterialDate]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] textarea[name=contactOwner]').val())){				                                                     		
 				var params = {};
 				var message = ""
-				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
+			       if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
 					params.method = 'save';
 					message = "create success!!"
-				}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
+			       }else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
 					params.method = 'edit';				
 					message = "update success!!"
-				}
+				   }
 				
 				if(BeanUtils.isNotEmpty(params.method)){
 					params.projectId = headerId
@@ -75,30 +75,31 @@ function Save(){
 			        	, success: function(result){
 			        		alert(message);
 			        		searchFunction();
-			        		
+			        	
 			        	}
 			        });
 				}
 			 }
-		 }
-
+}
+		 
 
 function addRow(){			 
 	 disAndEnInputField('create');
 }
 
+
+
 function disAndEnInputField(param){
-	 if(BeanUtils.equals(param, 'create')){
-		 	createOrUpdateMode(param);
-			$("div[name='addEditData'] input[name='useMaterialDate']").prop('disabled', false);
-			$("div[name='addEditData'] input[name='requestNo']").prop('disabled', true);
-			$("div[name='addEditData'] input[name='status']").prop('disabled', true);
-			$("div[name='addEditData'] textarea[name='contactOwner']").prop('disabled', false);
-		
-		
 	
-		
-		}else if(BeanUtils.equals(param, 'update')){
+	 if(BeanUtils.equals(param, 'update')){
+		createOrUpdateMode(param);
+		$("div[name='addEditData'] input[name='useMaterialDate']").prop('disabled', false);
+		$("div[name='addEditData'] input[name='requestNo']").prop('disabled', true);
+		$("div[name='addEditData'] input[name='status']").prop('disabled', true);
+		$("div[name='addEditData'] textarea[name='contactOwner']").prop('disabled', false);
+	
+	
+	  } else if(BeanUtils.equals(param, 'update')){
 			createOrUpdateMode(param);
 			$("div[name='addEditData'] input[name='useMaterialDate']").prop('disabled', false);
 			$("div[name='addEditData'] input[name='requestNo']").prop('disabled', true);

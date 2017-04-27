@@ -24,9 +24,9 @@ import com.softsquare.application.entity.Province;
 @Component
 public  class DepartmentDetailDaoImp extends AbstractDao<Integer, DepartmentDetail> implements DepartmentDetailDao {
 	
-
+// find All Department detail 
 	@Override
-	public ArrayList<DepartmentDetail> getDepartmentDetail() {
+	public ArrayList<DepartmentDetail> findAllDepartmentDetail() {
 		 Criteria criteria = getSession().createCriteria(DepartmentDetail.class, "depDetail");
 		    criteria.createAlias("depDetail.department", "department");
 		 ProjectionList projections = Projections.projectionList()				 
@@ -37,7 +37,7 @@ public  class DepartmentDetailDaoImp extends AbstractDao<Integer, DepartmentDeta
 		            .add(Projections.property("department.departmentCode").as("departmentCode"));
 		 criteria.setProjection(projections);	
 		 criteria.setResultTransformer(Transformers.aliasToBean(DepartmentDetail.class));
-		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);// use  mapping "createAlias " get column on parent 
 		 ArrayList<DepartmentDetail> depList = (ArrayList<DepartmentDetail>) criteria.list();
 		return depList;
 	}
@@ -60,6 +60,7 @@ public  class DepartmentDetailDaoImp extends AbstractDao<Integer, DepartmentDeta
 		return depList;
 	}
 	
+	// list All department Detail 
 	@Override
 	public ArrayList<DepartmentDetail> AllDepartmentDetail(int departmentId ) {
 		 Criteria criteria = getSession().createCriteria(DepartmentDetail.class, "depDetail");
@@ -78,24 +79,26 @@ public  class DepartmentDetailDaoImp extends AbstractDao<Integer, DepartmentDeta
 		return depList;
 	}
 	
-
+    // this method for return only one result 
 	@Override
-	public DepartmentDetail getDepartmentDetailForUpdate(DepartmentDetailMapping mapping) {
-		 Criteria criteria = getSession().createCriteria(DepartmentDetail.class, "depDetail");
-		 ProjectionList projections = Projections.projectionList()
+	public DepartmentDetail getDepartmentDetailForUpdate(DepartmentDetailMapping mapping) {	
+	
+		 Criteria criteria = getSession().createCriteria(DepartmentDetail.class, "depDetail");//get from entity
+		 ProjectionList projections = Projections.projectionList()// find value of each column in database
 		            .add(Projections.property("depDetail.depDetailId").as("depDetailId"))
 		            .add(Projections.property("depDetail.depDetailName").as("depDetailName"))
 		            .add(Projections.property("depDetail.Salary").as("Salary"))
 		            .add(Projections.property("depDetail.departmentId").as("departmentId"));
 		 criteria.setProjection(projections);
+		 // check for when receive value form front end should not  empty
 		 if(BeanUtils.isNotEmpty(mapping.getDepDetailId())){
 			 criteria.add(Restrictions.eq("depDetail.depDetailId", mapping.getDepDetailId()));			 
 		 }
 		 criteria.setResultTransformer(Transformers.aliasToBean(DepartmentDetail.class));
-		 DepartmentDetail depList = (DepartmentDetail) criteria.uniqueResult();
+		 DepartmentDetail depList = (DepartmentDetail) criteria.uniqueResult();// get one object
 		return depList;
 	}
-	
+	 
 	
 			
 	@Override

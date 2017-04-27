@@ -45,7 +45,7 @@
 							      '</td> '+
 	            				  '<td name=materialName>'+value.typeName+'</td> '+
 			                        '<td name=materialName>'+value.materialName+'</td> '+
-			                        '<td name=descrition>'+value.descrition+'</td> '+
+			                        '<td name=description>'+value.description+'</td> '+
 			                        '<td name=quantityOrder>'+value.quantityOrder+'</td> '+
 			                        '<td name=unitName>'+value.unitName+'</td>'+
 			                        '<td name=anotation>'+value.anotation+'</td></tr>');
@@ -76,7 +76,7 @@ function  searchMaterialReceive(){
         		  data.push('<tr>'+
         				  '<td></td>'+
 	                        '<td name=materialName>'+value.materialName+'</td> '+
-	                        '<td name=descrition>'+value.descrition+'</td> '+
+	                        '<td name=description>'+value.description+'</td> '+
 	                        '<td name=receiveQuantity>'+value.receiveQuantity+'</td> '+
 	                        '<td name=unitName>'+value.unitName+'</td> '+	      
 	                        '<td name=receivePrice>'+value.receivePrice+'</td></tr>');

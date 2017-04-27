@@ -22,9 +22,9 @@ public class ControllerDefault {
 		String domainName = null;
     
 		final String[] roleAll = new String[]{"admin","pm","eng","st"};
-		final String[] pageAdmin = new String[]{"home", "registerList", "register", "manageRole","province","createProject","listproject","department","departmentdetail","employeeList","createEmployee","type"};
-		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","listOrderPM","confirmOrder","editStatusProject","listRequestMaterialPM","confirmRequestMaterial"};
-		final String[] pageEngineer = new String[]{"home","stock","orderMaterial","orderMaterialDetail","viewOrder","listOrder","importMaterial","createRequestMaterial","requestMaterialDetail","viewRequestMaterial","listRequestMaterial"};
+		final String[] pageAdmin = new String[]{"home", "registerList", "register", "manageRole","province","createProject","listproject","department","departmentdetail","employeeList","createEmployee","type","unit","material"};
+		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","listOrderPM","confirmOrder","editStatusProject","listRequestMaterialPM","confirmRequestMaterial","listExportMaterial"};
+		final String[] pageEngineer = new String[]{"home","stock","orderMaterial","orderMaterialDetail","viewOrder","listOrder","importMaterial","createRequestMaterial","requestMaterialDetail","viewRequestMaterial","listRequestMaterial","listExportMaterialEngineer","viewExportMaterial"};
 		final String[] pageStocker = new String[]{"home","stock","receiveMaterial","addMaterialStock","requestMaterialStock","exportMaterial"};
 		final String[] pageNoLogin = new String[]{"index", "pageTest"};
 		int count = 0;
@@ -35,7 +35,7 @@ public class ControllerDefault {
 				mav.addObject("userNameUserSystem", "");
 				mav.addObject("roleUserSystem", "");
 			}else{
-				
+				// check Use can view page 
 				if(BeanUtils.isNotEmpty(LoginUtils.getRole()) && BeanUtils.isNotEmpty(LoginUtils.getUsername())){
 					try{
 						//Strat Condition zone add page of role
@@ -58,15 +58,12 @@ public class ControllerDefault {
 									count = 1;
 								}
 							}
-						}else if(roleAll[3].equals(LoginUtils.getRole())){ //Engineer
+						}else if(roleAll[3].equals(LoginUtils.getRole())){ //Stocker 
 							for (String string : pageStocker) {
 								if(string.equals(mav.getViewName())){
 									count = 1;
 								}
-							}
-							
-							
-							
+							}							
 						}else{
 							throw new Exception();
 						}

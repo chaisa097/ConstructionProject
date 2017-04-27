@@ -15,7 +15,9 @@ import com.google.gson.Gson;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.OrderMaterialDetailMapping;
 import com.softsquare.application.domain.RequestMaterialDetailMapping;
+import com.softsquare.application.domain.StockMapping;
 import com.softsquare.application.service.RequestMaterialDetailService;
+import com.softsquare.application.service.StockService;
 
 
 @RestController
@@ -25,6 +27,9 @@ public class RequestMaterialDetailController {
 
 	@Autowired
 	RequestMaterialDetailService requestDetailService;
+	
+	@Autowired
+	 private  StockService stockServ;
 	
 	@RequestMapping(method=RequestMethod.GET)
     public ModelAndView page(HttpServletRequest request, HttpServletResponse response, @ModelAttribute RequestMaterialDetailMapping mapping){
@@ -58,5 +63,15 @@ public class RequestMaterialDetailController {
 		requestDetailService.removeRequestDetail(mapping);
 	}
 	
+	@RequestMapping(params =  "method=searchQuatityInstock", method=RequestMethod.POST)
+    public void searchMaterial(HttpServletRequest request, HttpServletResponse response, @ModelAttribute StockMapping mapping) throws Throwable{
+		Gson gson = new Gson();
+		String  json = gson.toJson(stockServ.getMaterialinStock(mapping));
+		try {
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
 	
 }

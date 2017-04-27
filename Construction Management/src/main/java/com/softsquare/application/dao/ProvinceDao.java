@@ -12,7 +12,8 @@ public interface ProvinceDao {
 	public void saveProvince(Province province) throws Exception ;
 	public void removeProvince(Province province) throws Exception;
 	public void updateProvince(Province province) throws Exception;
-	
+	public ArrayList<ProvinceMapping> findProvince(ProvinceMapping mapping);
+	public Integer findProvincePaging(ProvinceMapping mapping) ;
 	
 	
 

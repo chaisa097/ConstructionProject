@@ -23,7 +23,7 @@ public class DepartmentDetailServiceImp implements DepartmentDetailService {
 
 	@Override
 	public ArrayList<DepartmentDetail> getDepartmentDetail() {
-		return depDetailDao.getDepartmentDetail();
+		return depDetailDao.findAllDepartmentDetail();
 	}
 	@Override
 	public ArrayList<DepartmentDetailMapping> findDepartmentDetail(DepartmentDetailMapping mapping ) {

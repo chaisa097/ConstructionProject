@@ -75,5 +75,14 @@ public class EmployeeServicelmp implements EmployeeService {
 		
 		
 	}
+	@Override
+	public  ArrayList<Employee> CountEmployee(){
+		
+		return  employeedao.CountEmployee();
+	}
+	
+	
+	
+	
 	
 }

@@ -14,8 +14,10 @@ import org.springframework.stereotype.Repository;
 
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.common.util.LoginUtils;
+import com.softsquare.application.domain.ExportMaterialMapping;
 import com.softsquare.application.domain.OrderMaterialMapping;
 import com.softsquare.application.domain.RequestMaterialMapping;
+import com.softsquare.application.entity.ExportMaterial;
 import com.softsquare.application.entity.OrderMaterial;
 import com.softsquare.application.entity.RequestMaterial;
 
@@ -42,7 +44,8 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 		 Criteria criteria = getSession().createCriteria(RequestMaterial.class, "request");
 		 ProjectionList projections = Projections.projectionList()
 				 .add(Projections.property("request.requestMaterialId").as("requestMaterialId"))
-		         .add(Projections.property("request.projectId").as("projectId")); 
+		         .add(Projections.property("request.projectId").as("projectId"))
+		         .add(Projections.property("request.employeeId").as("employeeId")); 
 		 criteria.setProjection(projections);
 		 if(BeanUtils.isNotEmpty(requestId)){
 			 criteria.add(Restrictions.eq("request.requestMaterialId",requestId));			 
@@ -115,6 +118,8 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 		 ArrayList<RequestMaterial> RequestMaterialList = (ArrayList<RequestMaterial>) criteria.list();
 		return RequestMaterialList;
 	}
+	
+	
 	
 	
 	
@@ -191,4 +196,29 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 		 RequestMaterial  resultList =  (RequestMaterial ) criteria.uniqueResult();
 		return resultList;
 	}
+	
+	
+	@Override
+	public RequestMaterial findRequestMaterialForUpdateStatus(int id) {
+		Criteria criteria = getSession().createCriteria(RequestMaterial.class, "request");
+		 ProjectionList projections = Projections.projectionList()
+				 .add(Projections.property("request.requestMaterialId").as("requestMaterialId"))
+				 .add(Projections.property("request.employeeId").as("employeeId"))
+				 .add(Projections.property("request.projectId").as("projectId"))
+		          .add(Projections.property("request.requestMaterialNo").as("requestMaterialNo"))
+		          .add(Projections.property("request.requestDate").as("requestDate"))
+		          .add(Projections.property("request.contactOwner").as("contactOwner"))
+		          .add(Projections.property("request.useMaterialDate").as("useMaterialDate"))
+				 .add(Projections.property("request.status").as("status"));
+		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.eq("request.requestMaterialId",id));
+		 criteria.setResultTransformer(Transformers.aliasToBean(RequestMaterial .class));
+		 RequestMaterial  resultList =  (RequestMaterial ) criteria.uniqueResult();
+		return resultList;
+	}
+	
+	
+	
+	
+	
 }

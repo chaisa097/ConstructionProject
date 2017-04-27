@@ -57,8 +57,7 @@ function searchFunction(){
 		        });
 	    }
 function backFunction(){
-	location.href = "listRequestMaterialPM.html";
-
+	location.href = "listRequestMaterial.html";
 }
 
 function SendRequest(){
@@ -69,7 +68,7 @@ function SendRequest(){
 	        	, data: params
 	        	, success: function(result){
 	        		alert("Send Success");
-//	        		back();
+	        		backFunction();
 	        	}
 	        });
 	

@@ -24,4 +24,5 @@ public interface ProjectDao {
 	public Map<String, Object> findbugget(int id);
 	public ArrayList<Project> findProjectbyProjectId(int projectId) ;
 	public ArrayList<Project> getProject() ;
+	public ArrayList<Project> CountProject(); 
 }

@@ -67,6 +67,8 @@
 				<add-attribute value="/js/script/grid/GridConvert.js" />
 				<add-attribute value="/js/bootstrap/combobox/bs-base-combobox.js" />
 				<add-attribute value="/js/bootstrap/table/bs-base-table.js" />
+				<add-attribute value="/js/bootstrap/paging/jquery.bootpag.min.js" />
+				<add-attribute value="/js/bootstrap/paging/pagingConstant.js" />
 				<!--<add-attribute value="/Bootstrap-calendar/public_html/moment.min.js" />
 				<add-attribute value="/Bootstrap-calendar/public_html/fullcalendar.min.js" /> 
 				<add-attribute value="/js/script/calendar/calendar.js" />-->

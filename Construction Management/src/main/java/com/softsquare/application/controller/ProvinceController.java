@@ -51,7 +51,7 @@ ProvinceService provinceService;
 		@RequestMapping(params =  "method=search" , method=RequestMethod.POST)
 		public void search(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProvinceMapping mapping) throws Throwable{
 			Gson gson = new Gson();
-			String  json = gson.toJson(provinceService.getProvince());
+			String  json = gson.toJson(provinceService.findProvince(mapping));
 //			System.out.print(json);
 			try {
 				response.getWriter().write(json);

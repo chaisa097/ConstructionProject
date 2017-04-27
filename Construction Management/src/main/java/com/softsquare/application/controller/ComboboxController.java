@@ -21,6 +21,8 @@ import com.softsquare.application.entity.MaterialType;
 import com.softsquare.application.entity.Project;
 import com.softsquare.application.entity.Province;
 import com.softsquare.application.entity.Role;
+import com.softsquare.application.entity.Stock;
+import com.softsquare.application.entity.Unit;
 import com.softsquare.application.service.DepartmentDetailService;
 import com.softsquare.application.service.DepartmentService;
 import com.softsquare.application.service.EmployeeService;
@@ -29,6 +31,7 @@ import com.softsquare.application.service.ProjectService;
 import com.softsquare.application.service.RoleService;
 import com.softsquare.application.service.ProvinceService;
 import com.softsquare.application.service.TypeService;
+import com.softsquare.application.service.UnitService;
 
 
 @RestController
@@ -53,6 +56,9 @@ public class ComboboxController {
 	private MaterialService materialService;
 	@Autowired
 	private ProjectService projectServ;
+	
+	@Autowired
+	private UnitService unitServ;
 	
 	@RequestMapping(params =  "method=role" , method=RequestMethod.POST)
     public void register(HttpServletRequest request, HttpServletResponse response){
@@ -124,9 +130,25 @@ public class ComboboxController {
 		}
 	}
 	
-	@RequestMapping(params =  "method=Material" , method=RequestMethod.GET)
-    public void Materiallist(@RequestParam("TypeId") int typeId,HttpServletRequest request, HttpServletResponse response  ){
-		ArrayList<Material> materialList =  materialService.getMaterial(typeId);		
+	@RequestMapping(params =  "method=Unit" , method=RequestMethod.GET)
+    public void Unitlist(HttpServletRequest request, HttpServletResponse response  ){
+		ArrayList<Unit> unitList =  unitServ.getUnit();
+		Gson gson = new Gson();
+		String  json = gson.toJson(unitList);
+		try {
+//			response.getWriter().write("{records:"+json+"}");
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
+	
+	
+	
+	@RequestMapping(params =  "method=MaterialStock" , method=RequestMethod.GET)
+    public void MaterialStock(@RequestParam("TypeId") int typeId,HttpServletRequest request, HttpServletResponse response  ){
+		ArrayList<Stock> materialList =  materialService.getMaterialformStock(typeId);	
+
 		Gson gson = new Gson();
 		String  json = gson.toJson(materialList);
 		try {
@@ -137,6 +159,19 @@ public class ComboboxController {
 		}
 	}
 	
+	@RequestMapping(params =  "method=Material" , method=RequestMethod.GET)
+    public void Materiallist(@RequestParam("TypeId") int typeId,HttpServletRequest request, HttpServletResponse response  ){
+		ArrayList<Material> materialList =  materialService.getMaterial(typeId);	
+
+		Gson gson = new Gson();
+		String  json = gson.toJson(materialList);
+		try {
+//			response.getWriter().write("{records:"+json+"}");
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
 	
 	
 	

@@ -32,7 +32,7 @@ public class Material implements Serializable {
 	private String  materialName;
 	
 	@Column(name = "DESCRIPTION", nullable = false)
-	private String  descrition;
+	private String  description;
 
 	@Column(name = "TYPEID", nullable = false)
 	private Integer typeId;
@@ -75,11 +75,11 @@ public class Material implements Serializable {
 	}
 
 	public String getDescrition() {
-		return descrition;
+		return description;
 	}
 
 	public void setDescrition(String descrition) {
-		this.descrition = descrition;
+		this.description = descrition;
 	}
 
 	public Integer getTypeId() {

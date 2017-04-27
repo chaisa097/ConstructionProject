@@ -14,12 +14,14 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.ExportMaterialMapping;
+import com.softsquare.application.domain.OrderMaterialMapping;
 import com.softsquare.application.domain.ReceiveMaterialMapping;
 import com.softsquare.application.domain.RequestMaterialDetailMapping;
 import com.softsquare.application.domain.StockMapping;
 import com.softsquare.application.service.ExportMaterialDetailService;
 import com.softsquare.application.service.ExportMaterialService;
 import com.softsquare.application.service.RequestMaterialDetailService;
+import com.softsquare.application.service.RequestMaterialService;
 import com.softsquare.application.service.StockService;
 
 @RestController
@@ -30,6 +32,10 @@ public class ExportMaterialController {
     
 	@Autowired
 	 private RequestMaterialDetailService requestDetailService;
+	
+	@Autowired
+	 private RequestMaterialService  requestService;
+	
 	
 	@Autowired
 	 private ExportMaterialService exportMaterialService;
@@ -90,6 +96,12 @@ public class ExportMaterialController {
 		}
 	}
 	
-	
+	@RequestMapping(params =  "method=sendExport" , method=RequestMethod.POST)
+    public void UpdateStatus(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ExportMaterialMapping mapping) throws Throwable{
+		exportMaterialService.updateStatus(mapping);
+		
+		
+		
+	}
 	
 }

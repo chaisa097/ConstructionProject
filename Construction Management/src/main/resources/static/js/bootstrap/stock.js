@@ -24,9 +24,10 @@
 		            		  data.push('<tr>'+
 		            				   ' <td>'+value.typeName+'</td> '+	
 				                        '<td>'+value.materialName+'</td> '+
-				                        '<td>'+value.descrition+'</td> '+
+				                        '<td>'+value.description+'</td> '+
 				                        '<td>'+value.totalQuatity+'</td> '+	
-				                        '<td>'+value.unitName+'</td></tr>');
+				                        '<td>'+value.unitName+'</td> '+	
+				                        '<td>'+value.price+'</td></tr>');
 		            	});
 		            	$('table.table tbody').html(data.join());		  
 		        	}

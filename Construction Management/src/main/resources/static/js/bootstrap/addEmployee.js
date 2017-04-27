@@ -223,3 +223,5 @@ function createOrUpdateMode(param){
 		 $("div[name='statusSave']").attr('mode', '');
 	 }
 }
+
+

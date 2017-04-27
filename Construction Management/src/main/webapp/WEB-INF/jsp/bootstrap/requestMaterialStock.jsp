@@ -4,6 +4,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
+<head>
+ <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+ <link rel="stylesheet" href="dist/css/sb-admin-2.css">
+<link rel="stylesheet" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+  <script src="webjars/jquery/2.1.1/jquery.min.js"></script>
+    <script src="metisMenu/metisMenu.min.js"></script>
+  <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</head>
 <div name="statusSave" hidden="true"></div>
 <div class="container">
 	<div class="form-group">	
@@ -12,8 +20,8 @@
 	
 				<div class="row" id="roleHeader">
 					<div class="col-md-2"></div>
-					<div class="col-md-4">
-						<label class="control-label-required">Project</label>
+					<div class="col-md-5">
+						<label class="control-label-required">Form Project</label>
 						<select class="selectpicker show-tick show-menu-arrow"  name="projectList" data-live-search="true" data-size="5" data-header="Select Project" ></select>
 						 <button type="button" class="btn btn-info" onclick="search()">
 				     	<span class="glyphicon glyphicon-search"></span>

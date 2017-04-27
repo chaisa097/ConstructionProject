@@ -63,12 +63,6 @@ public class ApplicationController {
     	return ControllerDefault.DefaultModelAndView(mav, httpServletRequest);
     }
     
-    @RequestMapping(value="/home.html",method=RequestMethod.GET)
-    public ModelAndView home(HttpServletRequest httpServletRequest){
-    	ModelAndView mav = new ModelAndView();
-    	mav.setViewName("home");
-    	return ControllerDefault.DefaultModelAndView(mav, httpServletRequest);
-    }
             
     @RequestMapping(value="/error.html",method=RequestMethod.GET)
     public ModelAndView error(HttpServletRequest httpServletRequest){

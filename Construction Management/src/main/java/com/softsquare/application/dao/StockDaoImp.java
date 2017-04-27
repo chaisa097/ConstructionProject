@@ -93,8 +93,9 @@ public class StockDaoImp  extends AbstractDao<Integer, Stock> implements StockDa
 		            .add(Projections.property("stock.stockId").as("stockId"))
 		            .add(Projections.property("stock.materialId").as("materialId"))
 		            .add(Projections.property("stock.totalQuatity").as("totalQuatity"))
+		            .add(Projections.property("stock.price").as("price"))
 		            .add(Projections.property("material.materialName").as("materialName"))
-		            .add(Projections.property("material.descrition").as("descrition"))
+		            .add(Projections.property("material.description").as("description"))
 		            .add(Projections.property("type.typeName").as("typeName"))
 		            .add(Projections.property("type.typeId").as("typeId"))
 	                .add(Projections.property("unit.unitName").as("unitName"));

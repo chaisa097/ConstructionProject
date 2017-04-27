@@ -1,6 +1,8 @@
 package com.softsquare.application.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +25,17 @@ public class ProvinceServicelmp implements ProvinceService {
 	@Override
 	public ArrayList<Province> getProvince() {
 		return provinceDao.getProvince();
+	}
+	
+	/*paging*/
+	@Override
+	public Map<String,Object> findProvince(ProvinceMapping mapping) {
+		
+		Map<String,Object> record = new HashMap<String, Object>();
+		record.put("records", provinceDao.findProvince(mapping));
+		record.put("totalRecord", provinceDao.findProvincePaging(mapping));
+		
+		return record;
 	}
 	
 	@Override

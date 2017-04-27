@@ -26,10 +26,15 @@ public class ImportMaterialServiceImp implements ImportMaterialService {
 	@Autowired
 	private ProjectDao projectDao;
 	
+	// list Only project of engineer can view 
 	@Override
 	public ArrayList<Project> findProjectOfEngineer(){
+		
+         // find Login Id of engineer by username
 		  Map<String, Object> dataLogin = loginDao.findByLOGID(LoginUtils.getUsername());
+		 // find  projectId of employee in working entity
 	      Map<String, Object>  project = workingDao.findProejectIdByEmployeeId((int) dataLogin.get("employeeId"));
+	      // get ProjectId that employee find in projectName in projectEntity
 		return projectDao.findProjectbyProjectId((int) project.get("projectId"));
 	}
 	

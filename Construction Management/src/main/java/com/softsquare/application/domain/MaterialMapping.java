@@ -5,12 +5,11 @@ public class MaterialMapping {
 	 private  Integer materialId;
 	 private  String  description;
 	 private  String   materialCode;
-	 private Integer  price;
-	 private Integer typeId;
+	 private  String   materialName;
+	 private Integer   typeId;
 	 private Integer  unitId;
-	 private String type;
-	 private String unit;
-	 
+	 private String   type;
+	 private String   unit;
 	 
 	public Integer getMaterialId() {
 		return materialId;
@@ -18,24 +17,23 @@ public class MaterialMapping {
 	public void setMaterialId(Integer materialId) {
 		this.materialId = materialId;
 	}
-	
-	public String getMaterialCode() {
-		return materialCode;
-	}
-	public void setMaterialCode(String materialCode) {
-		this.materialCode = materialCode;
-	}
 	public String getDescription() {
 		return description;
 	}
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Integer getPrice() {
-		return price;
+	public String getMaterialCode() {
+		return materialCode;
 	}
-	public void setPrice(Integer price) {
-		this.price = price;
+	public void setMaterialCode(String materialCode) {
+		this.materialCode = materialCode;
+	}
+	public String getMaterialName() {
+		return materialName;
+	}
+	public void setMaterialName(String materialName) {
+		this.materialName = materialName;
 	}
 	public Integer getTypeId() {
 		return typeId;
@@ -61,6 +59,9 @@ public class MaterialMapping {
 	public void setUnit(String unit) {
 		this.unit = unit;
 	}
+	 
+	 
+
 	 
 	 
 	 

@@ -30,8 +30,6 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 	public void saveOrder(OrderMaterialMapping ordermapping) throws Exception {
 	   OrderMaterial  order  = new OrderMaterial();
 	    Map<String, Object>  No  = orderdao.findNoMax();
-	    System.out.println(No+"----------------------------------");
-	    System.out.println(No.get("orderMaterialNo"));
 	   if(BeanUtils.isNull(No.get("orderMaterialNo"))){		 
 		   order.setOrderMaterialNo("000001");	    	
 	    }
@@ -43,7 +41,6 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 	   }
 			
 		Map<String, Object> dataLogin = loginDao.findByLOGID(LoginUtils.getUsername());
-		System.out.println(dataLogin+"-------------------------------------------");
 		order.setEmployeeId((Integer) dataLogin.get("employeeId"));
 	    order.setStatus("Open");
 	    Date correntDate = new Date();

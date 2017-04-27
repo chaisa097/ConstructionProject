@@ -19,6 +19,25 @@ $(document).ready(function(){
 			   
     });
 
+function back(){
+	location.href = "requestMaterialStock.html";
+
+}
+
+function ExportMaterial(){
+	 var params = {method: 'sendExport', requestMaterialId:headerId};
+   	$.ajax({
+       	type: 'POST'
+       	, url: application.contextPath+"/ExportMaterial.html"
+       	, data: params
+       	, success: function(result){
+       		alert("send Export Material To Engineer successfully");
+       		back();
+       	}
+       });
+
+}
+
 
 
 
@@ -38,7 +57,7 @@ function searchFunction(){
 									      '</td> '+
 			            				    '<td name=typeName>'+value.typeName+'</td> '+
 					                        '<td name=materialName>'+value.materialName+'</td> '+
-					                        '<td name=descrition>'+value.descrition+'</td> '+
+					                        '<td name=description>'+value.description+'</td> '+
 					                        '<td name=quantityOrder>'+value.quantityRequest+'</td> '+
 					                        '<td name=anotation>'+value.unitName+'</td></tr>');
 			            	});
@@ -73,7 +92,7 @@ function Save(){
 				
 		if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
 			params.method = 'save';
-			message = "Export One Material!!"
+			message = "One Material!!"
 			
 		}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
 			params.method ='edit';				
@@ -114,7 +133,7 @@ function  searchExportMaterial(){
         		  data.push('<tr>'+
         				  '<td></td>'+
 	                        '<td name=materialName>'+value.materialName+'</td> '+
-	                        '<td name=descrition>'+value.descrition+'</td> '+
+	                        '<td name=description>'+value.description+'</td> '+
 	                        '<td name=exportQuantity>'+value.exportQuantity+'</td> '+      
 	                        '<td name=unitName>'+value.unitName+'</td></tr>');
         	});

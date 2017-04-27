@@ -4,10 +4,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
+ <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+ <link rel="stylesheet" href="dist/css/sb-admin-2.css">
+  <link rel="stylesheet" href="metisMenu/metisMenu.min.css">
 <link rel="stylesheet" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
   <script src="webjars/jquery/2.1.1/jquery.min.js"></script>
-  <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
- 
+    <script src="metisMenu/metisMenu.min.js"></script>
+ <script src="dist/js/sb-admin-2.js"></script>
     <body>
     <a download id="downloadFile" hidden></a>
     <div class="nav-div-header-menu" style="position:fixed; width:100%; z-index:300" >
@@ -23,6 +26,12 @@
 		  </button>
 	      <a class="navbar-brand" href="${domainSystem}">CONSTRUCTION MANAGEMENT</a>
 	    </div>
+	     <ul class="nav navbar-nav">
+	      <li class="nav-item">
+         <a class="nav-link" href="${domainSystem}home.html">Home</a>
+          </li>
+          </ul>
+	    
 	   <div class="collapse navbar-collapse">
 	    <ul class="nav navbar-nav">
 	     <c:if test="${roleUserSystem eq 'admin'}">
@@ -34,7 +43,7 @@
 	      <li class="nav-item">
         <a class="nav-link" href="${domainSystem}manageRole.html">ManageRole</a>
          </li>
-
+        
 	      <li class="dropdown">
 	        <a class="dropdown-toggle" id="manageData" data-toggle="dropdown" href="#">ManageData
 	        <span class="caret"></span></a>
@@ -50,14 +59,13 @@
 	       		<li><a href="${domainSystem}employee.html">Employee</a></li>
 	       			<li class="divider"></li>
 	       		<li><a href="${domainSystem}type.html">MaterialType</a></li>
-	       		
-	        </ul>
-	          
-	       
-	   
-	        
-	        
+	       			<li class="divider"></li>
+	       		<li><a href="${domainSystem}unit.html">Unit</a></li>
+	       			<li class="divider"></li>
+	       		<li><a href="${domainSystem}material.html">Material</a></li>
+	        </ul> 
 	      </li>
+	      
 	      </c:if>
 	      <c:if test="${roleUserSystem eq 'pm'}">
 	       <li class="dropdown">
@@ -94,6 +102,20 @@
 	     </c:if>
 	      
 	      	 <c:if test="${roleUserSystem eq 'eng'}">      
+	    <!--   
+	        <li class="dropdown">
+	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#"> OwnProject
+	        <span class="caret"></span></a>
+	        <ul class="dropdown-menu">
+	        	<li><a href="${domainSystem}importMaterial.html">Own Project</a></li>
+	        	<li class="divider"></li>
+	            <li><a href="${domainSystem}listRequestMaterial.html">RequestMaterial List</a></li>
+	        </ul>
+	      </li>	 
+	       -->  
+	         <li class="nav-item">
+         <a class="nav-link" href="${domainSystem}importMaterial.html">Own Project</a>
+          </li>
 	        
 	      
 	        <li class="nav-item">
@@ -101,30 +123,21 @@
           </li>
           
 	       <li class="dropdown">
-	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">Order Material
+	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">Order Material Into Stock
 	        <span class="caret"></span></a>
 	        <ul class="dropdown-menu">
-	        	<li><a href="${domainSystem}OrderMaterial.html">Order</a></li>
+	        	<li><a href="${domainSystem}OrderMaterial.html">Order Material</a></li>
 	        	<li class="divider"></li>
-	        	<li><a href="${domainSystem}listOrder.html">Own Order</a></li>
+	        	<li><a href="${domainSystem}listOrder.html">History of OrderMaterial</a></li>
 	        </ul>
 	      </li>
 	      
 
-	      <li class="dropdown">
-	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">Import Material
-	        <span class="caret"></span></a>
-	        <ul class="dropdown-menu">
-	        	<li><a href="${domainSystem}importMaterial.html">Request Material</a></li>
-	        	<li class="divider"></li>
-	            <li><a href="${domainSystem}listRequestMaterial.html">Own RequestMaterial</a></li>
-	        </ul>
-	      </li>	      
+	           
 	      </c:if>
 	     
 	    </ul>
-	    
-	    
+
 	  <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
 	        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="	glyphicon glyphicon-user"></i>

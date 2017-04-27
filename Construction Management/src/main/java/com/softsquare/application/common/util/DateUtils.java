@@ -13,6 +13,8 @@ import java.util.Map;
 import com.softsquare.application.common.util.configurer.DateUtilsConfigurer;
 
 public class DateUtils {
+	
+	
 	private static DateUtilsConfigurer DATE_UTILS_CONFIGURER;
 	public static final long MILLISECONDS_PER_HOUR = 60 * 60 * 1000;
 	public static final long MILLISECONDS_PER_DAY = 24 * MILLISECONDS_PER_HOUR;

@@ -18,5 +18,6 @@ public interface ProjectService {
 	 public  ArrayList<ProjectMapping> findProject(ProjectMapping projectMapping);
 	 public  ArrayList<ProjectMapping> getAllProject(ProjectMapping projectMapping);
 		public ArrayList<Project> getProject();
+		public ArrayList<Project> countProject();
 			
 }

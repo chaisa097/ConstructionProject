@@ -14,6 +14,9 @@
 										'<a href='+domainSystem+'/createRequestMaterial.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
 										  '<span class="glyphicon glyphicon-file"></span> Request Material'+
 										'</a> '+	
+										'<a href='+domainSystem+'/listExportMaterialEngineer.html?projectId='+value.projectId+' class="btn btn-warning btn-xs"> '+
+										  '<span class="glyphicon glyphicon-th-list"></span>  Check import Material'+
+										'</a> '+	
 			                        '<td name=projectName>'+value.projectName+'</td> '+
 			                        '<td name=budget>'+value.budget+'</td> '+
 			                        '<td name=totalUseMaterial>'+value.totalUseMaterial+'</td> '+
@@ -22,13 +25,9 @@
 	            	$('table.table tbody').html(data.join());	
 	            
 	        	}
-	        });
-	 	     
-	 	   	 
-	
-	
-	BSBaseTable.callFiterTable();
-	
+	        });	 	     
+	 	   	 	
+	BSBaseTable.callFiterTable();	
 	
 });
 	
@@ -95,6 +94,9 @@
 //			 }
 //		 }
 		
-		  
+	function listRequestMaterial(){
+		location.href = "listRequestMaterial.html";
+
+	    }
 		 
 		  

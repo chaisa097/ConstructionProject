@@ -15,10 +15,10 @@
         </definition> 
         --> 
 		<definition name="home" extends="ss.layout">
-            <put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
-            <put-attribute name="localization" value="" />
+		  	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+            <put-attribute name="body" value="/WEB-INF/jsp/bootstrap/home.jsp" />
             <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
-            <put-attribute name="pageJsIncluded" value="/js/render/empty.js" />
+               <put-attribute name="pageJsIncluded" value="/js/bootstrap/home.js" />
             <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition> 
@@ -342,5 +342,55 @@
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
+        
+        <definition name="unit" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/unit.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/unit.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+
+        <definition name="listExportMaterial" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/listExportMaterial.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/listExportMaterial.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+        
+        <definition name="listExportMaterialEngineer" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/listExportMaterialEngineer.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/listExportMaterialEngineer.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+        
+        
+         <definition name="material" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/material.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/material.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+        <definition name="viewExportMaterial" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/viewExportMaterial.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/viewExportMaterial.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
+        
+
 
 </tiles-definitions>

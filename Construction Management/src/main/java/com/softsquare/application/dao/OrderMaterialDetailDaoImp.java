@@ -36,7 +36,7 @@ public class OrderMaterialDetailDaoImp extends AbstractDao<Integer, OderMaterial
 				     .add(Projections.property("orderDetail.anotation").as("anotation"))
 				    .add(Projections.property("orderDetail.quantityOrder").as("quantityOrder"))
 		            .add(Projections.property("material.materialId").as("materialId"))
-		            .add(Projections.property("material.descrition").as("descrition"))
+		            .add(Projections.property("material.description").as("description"))
 		            .add(Projections.property("material.materialName").as("materialName"))
 		            .add(Projections.property("unit.unitName").as("unitName"))
 		              .add(Projections.property("type.typeName").as("typeName"));

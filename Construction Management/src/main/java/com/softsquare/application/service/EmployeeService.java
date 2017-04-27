@@ -13,5 +13,6 @@ public interface EmployeeService {
 	public ArrayList<Employee> getProjectManager();
 	public ArrayList<Employee> getAllEmployee();
 	public void saveEmployee(EmployeeMapping mapping) throws Exception;
+	public  ArrayList<Employee> CountEmployee();
 	
 }

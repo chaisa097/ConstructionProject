@@ -6,7 +6,7 @@ import com.softsquare.application.domain.DepartmentDetailMapping;
 import com.softsquare.application.entity.DepartmentDetail;
 
 public interface DepartmentDetailDao {
-	public ArrayList<DepartmentDetail> getDepartmentDetail();
+	public ArrayList<DepartmentDetail> findAllDepartmentDetail();
 	public DepartmentDetail getDepartmentDetailForUpdate(DepartmentDetailMapping mapping);
 	public void saveDepartmentDetail(DepartmentDetail dep) throws Exception ;
 	public void removeDepartmentDetail(DepartmentDetail dep) throws Exception;

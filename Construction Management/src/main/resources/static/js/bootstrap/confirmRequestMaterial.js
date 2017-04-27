@@ -47,7 +47,7 @@ function searchFunction(){
 		            		$.each(json, function(index, value) {
 			            		  data.push('<tr orderMaterialDatailId="'+value.orderMaterialDatailId+'">'+
 					                        '<td name=materialName>'+value.materialName+'</td> '+
-					                        '<td name=descrition>'+value.descrition+'</td> '+
+					                        '<td name=description>'+value.description+'</td> '+
 					                        '<td name=quantityOrder>'+value.quantityRequest+'</td> '+
 					                        '<td name=anotation>'+value.unitName+'</td></tr>');
 			            	});

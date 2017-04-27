@@ -64,12 +64,31 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		 Criteria criteria = getSession().createCriteria(Project.class, "project");
 		 ProjectionList projections = Projections.projectionList()				  
 				  .add(Projections.property("project.projectId").as("projectId"))
+				  .add(Projections.property("project.totalHireEmployee").as("totalHireEmployee"))
+				  .add(Projections.property("project.totalUseMaterial").as("totalUseMaterial"))
 				  .add(Projections.property("project.totalExpense").as("totalExpense"));
+
 		 criteria.setProjection(projections);	
 		 criteria.add(Restrictions.eq("project.projectId",id));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 Map<String, Object> result = (Map<String,Object>) criteria.uniqueResult();
 		return result;
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<Project> CountProject() {
+		 Criteria criteria = getSession().createCriteria(Project.class, "project");
+		 ProjectionList projections = Projections.projectionList()				  
+				   .add(Projections.count("project.projectId").as("projectId"))
+		           .add(Projections.sum("project.budget").as("budget"))
+		           .add(Projections.sum("project.totalExpense").as("totalExpense"));
+		 criteria.setProjection(projections);		 
+		 criteria.setResultTransformer(Transformers.aliasToBean(Project.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		ArrayList<Project> projectList = (ArrayList<Project>) criteria.list();
+		return projectList;
 	}
 	
 	

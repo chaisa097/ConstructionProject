@@ -4,6 +4,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
+<head>
+ <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+ <link rel="stylesheet" href="dist/css/sb-admin-2.css">
+<link rel="stylesheet" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+  <script src="webjars/jquery/2.1.1/jquery.min.js"></script>
+    <script src="metisMenu/metisMenu.min.js"></script>
+  <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</head>
 <div name="statusSave" hidden="true"></div>   
 <div class="container">
 	<div class="form-group">
@@ -13,11 +21,6 @@
 			  </div>
 		 </div>		 
 	   <div class="panel panel-warning filterable">
-	    <div class="pull-right">
-	    <button type="button" class="btn btn-success" onclick="UpdateFinished()">
-				     	<span class="glyphicon glyphicon-ok"></span> Finished
-				        </button>
-				        </div>
 		            <div class="panel-heading">  		       
 		             <div> <h3 class="panel-title">Request material List</h3> 
 		             </div>         		              
@@ -85,6 +88,8 @@
 		            </table>
 		        </div>
 		    </div>
+		    
+		       <button type="button" onclick="ExportMaterial()" class="btn  btn-warning btn-lg btn-block"><span class="glyphicon glyphicon-send"></span> Export Material To Engineer</button>
 		 </div>
 	</div>
 </div>	

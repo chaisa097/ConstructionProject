@@ -14,6 +14,8 @@ public class ExportMaterialMapping {
 	private Integer  exportId;
 	private Integer  materialId;
 	private Integer  exportQuantity;
+	private Integer  projectId;
+	private Integer  totalExport;
 	
 	public Integer getExportMaterialId() {
 		return exportMaterialId;
@@ -74,6 +76,18 @@ public class ExportMaterialMapping {
 	}
 	public void setExportQuantity(Integer exportQuantity) {
 		this.exportQuantity = exportQuantity;
+	}
+	public Integer getProjectId() {
+		return projectId;
+	}
+	public void setProjectId(Integer projectId) {
+		this.projectId = projectId;
+	}
+	public Integer getTotalExport() {
+		return totalExport;
+	}
+	public void setTotalExport(Integer totalExport) {
+		this.totalExport = totalExport;
 	}
 	
 	

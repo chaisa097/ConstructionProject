@@ -30,8 +30,12 @@ $(document).ready(function(){
 	    								'<span class="glyphicon glyphicon-hourglass"></span>Progress '+
 	    								'</a> '+
 	    								
+	    								'<a href='+domainSystem+'/listExportMaterial.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
+	    								  '<span class="glyphicon glyphicon-eye-open"></span> Material Used'+
+	    							    	'</a> '+	
+	    								
 	    								'<a href='+domainSystem+'/viewProject.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
-	    								  '<span class="glyphicon glyphicon-eye-open"></span>'+
+	    								  '<span class="glyphicon glyphicon-eye-open"></span> Project'+
 	    								'</a> '+	
 	    							
 	    	                        '<td name=projectName>'+value.projectName+'</td> '+
@@ -76,6 +80,11 @@ function search(){
 						'<a href='+domainSystem+'/editStatusProject.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
 						'<span class="glyphicon glyphicon-hourglass"></span>Progress '+
 						'</a> '+
+						
+						 '<a href='+domainSystem+'/listExportMaterial?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
+						  '<span class="glyphicon glyphicon-eye-open"></span> ExportMaterial'+
+					    	'</a> '+	
+							
 						
 						   '<a href='+domainSystem+'/viewProject.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
 						  '<span class="glyphicon glyphicon-eye-open"></span>'+

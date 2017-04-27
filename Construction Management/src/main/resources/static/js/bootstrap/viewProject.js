@@ -29,7 +29,7 @@ if (month.length < 2) month = '0' + month;
 if (day.length < 2) day = '0' + day;
 
 var date2 = [ day, month, year].join('/');
-    	
+
       	$("#projectName").html(json[0].projectName);
       	$("#description").html(json[0].description);
       	$("#address").html(json[0].address);      

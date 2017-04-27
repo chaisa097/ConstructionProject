@@ -83,6 +83,26 @@ var BSBaseComboBox = function () {
 	        });
         },
         
+        getUnit: function (params, callBack) {
+    		$.ajax({
+	        	type: 'GET'
+	        	, url: application.contextPath+"/combobox.html"
+	        	, data: params
+	        	, success: function(result){
+	            	var json = $.parseJSON(result);
+	            	var data = ['<option></option>'];
+	            	$.each(json, function(index, value) {
+	            		  data.push("<option title="+value.unitName+" value="+value.unitId+" >"+value.unitName+"</option>");
+	            	});
+	            	callBack(data.join());
+	        	}
+	        });
+        },
+        
+        
+        
+        
+        
         getMaterial: function (params, callBack) {
     		$.ajax({
 	        	type: 'GET'
@@ -92,7 +112,7 @@ var BSBaseComboBox = function () {
 	            	var json = $.parseJSON(result);
 	            	var data = ['<option></option>'];
 	            	$.each(json, function(index, value) {
-	            		  data.push("<option title="+value.materialName+" value="+value.materialId+" data-subtext="+value.materialCode+" >"+value.materialName+"</option>");
+	            		  data.push("<option title="+value.materialName+"" +value.totalQuatity+""+value.unitName+  " value="+value.materialId+ " data-subtext="+value.totalQuatity+""+value.unitName+" >"+value.materialName+"</option>");
 	            	});
 	            	callBack(data.join());
 	        	}

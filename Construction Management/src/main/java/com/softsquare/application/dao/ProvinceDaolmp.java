@@ -31,7 +31,35 @@ public  class ProvinceDaolmp extends AbstractDao<Integer, Province> implements P
 		return provinceList;
 	}
 	
+	@Override
+	public ArrayList<ProvinceMapping> findProvince(ProvinceMapping mapping) {
+		 Criteria criteria = getSession().createCriteria(Province.class, "province");
+		 ProjectionList projections = Projections.projectionList()
+		            .add(Projections.property("province.provinceId").as("provinceId"))
+		            .add(Projections.property("province.provinceCode").as("provinceCode"))
+		            .add(Projections.property("province.provinceName").as("provinceName"));
 	
+		 criteria.setProjection(projections);
+		 criteria.setResultTransformer(Transformers.aliasToBean(Province.class));
+		 
+		//set Paging
+			if(BeanUtils.isNotNull(mapping.gridStore_start) && BeanUtils.isNotNull(mapping.gridStore_limit)){
+				criteria.setFirstResult(mapping.gridStore_start).setMaxResults(mapping.gridStore_limit);
+			}
+		 ArrayList<ProvinceMapping> provinceList = (ArrayList<ProvinceMapping>) criteria.list();
+		return provinceList;
+	}
+	
+	/*paging total Records*/
+	@Override
+	public Integer findProvincePaging(ProvinceMapping mapping) {
+		Criteria criteria = getSession().createCriteria(Province.class, "province");
+		 ProjectionList projections = Projections.projectionList()
+				 	.add(Projections.property("province.provinceId").as("provinceId"));
+		            
+		 criteria.setProjection(projections);
+		 return Integer.parseInt(criteria.setProjection(Projections.rowCount()).uniqueResult().toString());
+	}
 
 	@Override
 	public Province getProvinceForUpdate(ProvinceMapping mapping) {

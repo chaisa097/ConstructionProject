@@ -45,75 +45,107 @@ public class ExportMaterial implements Serializable {
 	private Integer  projectId;
 
 	@Column(name = "STATUS", unique=true, nullable = false)
-	private String status;
+	private String  status;
+	
+	@Column(name = "TOTAL_EXPORT", unique=true, nullable = false)
+	private Integer  totalExport;
+
 	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EMPLOYEEID", referencedColumnName = "EMPLOYEEID", insertable=false, updatable=false)
     private Employee employee;
 
+
 	public Integer getExportMaterialId() {
 		return exportMaterialId;
 	}
+
 
 	public void setExportMaterialId(Integer exportMaterialId) {
 		this.exportMaterialId = exportMaterialId;
 	}
 
+
 	public Integer getEmployeeId() {
 		return employeeId;
 	}
+
 
 	public void setEmployeeId(Integer employeeId) {
 		this.employeeId = employeeId;
 	}
 
+
 	public String getExportMaterialNo() {
 		return exportMaterialNo;
 	}
+
 
 	public void setExportMaterialNo(String exportMaterialNo) {
 		this.exportMaterialNo = exportMaterialNo;
 	}
 
+
 	public Date getExportDate() {
 		return exportDate;
 	}
+
 
 	public void setExportDate(Date exportDate) {
 		this.exportDate = exportDate;
 	}
 
+
 	public Integer getRequestMaterialId() {
 		return requestMaterialId;
 	}
+
 
 	public void setRequestMaterialId(Integer requestMaterialId) {
 		this.requestMaterialId = requestMaterialId;
 	}
 
-	public Employee getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
 
 	public Integer getProjectId() {
 		return projectId;
 	}
 
+
 	public void setProjectId(Integer projectId) {
 		this.projectId = projectId;
 	}
+
 
 	public String getStatus() {
 		return status;
 	}
 
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+
+	public Integer getTotalExport() {
+		return totalExport;
+	}
+
+
+	public void setTotalExport(Integer totalExport) {
+		this.totalExport = totalExport;
+	}
+
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	
 
 	
 	
