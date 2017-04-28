@@ -14,7 +14,7 @@
 		    	
 			    	$('.typeList').on('change', function(event){
 			    	    var params2 = {method:'Material', TypeId: event.currentTarget.value};
-			    	    BSBaseComboBox.getMaterial(params2,function(data){
+			    	    BSBaseComboBox.getOrderMaterial(params2,function(data){
 			    	    	$("div select[name=materialList]").html(data).selectpicker('refresh');
 			    	 	
 
@@ -38,7 +38,7 @@
 											'</button> '+
 										'</td> '+
 				                        '<td name=materialName>'+value.materialName+'</td> '+
-				                        '<td name=descrition>'+value.descrition+'</td> '+
+				                        '<td name=descrition>'+value.description+'</td> '+
 				                        '<td name=quantityOrder>'+value.quantityOrder+'</td> '+
 				                        '<td name=unitName>'+value.unitName+'</td>'+
 				                        '<td name=anotation>'+value.anotation+'</td></tr>');

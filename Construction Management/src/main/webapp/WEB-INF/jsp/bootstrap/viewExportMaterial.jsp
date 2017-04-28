@@ -18,7 +18,7 @@
 	<div class="form-group">
 	
 		<div class="col-md-12">
-			<button type="button" class="btn btn-success" onclick="SendOrder()">
+			<button type="button" class="btn btn-success" onclick="confirmExport()">
 					<span class="glyphicon glyphicon-ok"></span>  OK
 				   </button> 
 		</div>
@@ -26,15 +26,15 @@
 
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>ExportDate</label> <input type="date" class="form-control"
-						id="orderMaterialDate" name="orderMaterialDate" disabled>
+					<label>ExportDate</label> <input type="text" class="form-control"
+						id="exportDate" name="exportDate" disabled>
 				</div>
 
 				<div class="col-md-4"></div>
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
 					<label>ExportNo</label> <input type="text" class="form-control"
-						id="orderNo" placeholder="orderNo" name="orderMaterialNo"
+						id="exportNo" placeholder="exportNo" name="exportMaterialNo"
 						disabled>
 				</div>
 
@@ -44,7 +44,7 @@
 
 				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
 					<label>Project</label> <input type="text" class="form-control"
-						id="orderNo" placeholder="orderNo" name="orderMaterialNo"
+						id="projectName" placeholder="projectName" name="projectName"
 						disabled>
 				</div>
 
@@ -66,9 +66,8 @@
 		                    <tr class="filters">
 		                        <th><input type="text" class="form-control" placeholder="MaterialName" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
-		                        <th><input type="text" class="form-control" placeholder="AmountOfOrder" disabled></th>
+		                        <th><input type="text" class="form-control" placeholder="AmountOfExport" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Unit" disabled></th>
-		                        <th><input type="text" class="form-control" placeholder="Anotation" disabled></th>
 		                    </tr>
 		                </thead>
 		                <tbody>

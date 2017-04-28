@@ -23,7 +23,7 @@
 					<span class="glyphicon glyphicon-duplicate"></span> History Of RequestMaterial
 				   </button> 
 				   
-				   <button type="button" class="btn btn-warning" onclick="SendOrder()">
+				   <button type="button" class="btn btn-warning" onclick="exportMaterialConfirm()">
 					<span class="glyphicon glyphicon-duplicate"></span>  History Of ImportMaterial
 				   </button> 
 			<div class="row">

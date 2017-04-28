@@ -13,6 +13,8 @@ public interface ExportMaterialService {
 	public void updatetotalUseMaterial(ProjectMapping mapping) throws Exception;
 	public void updateStatus(ExportMaterialMapping mapping) throws Exception;
 	public ArrayList<ExportMaterial> ListExportMaterialEngineer(ExportMaterialMapping mapping);
-	public ArrayList<ExportMaterial> listExportMaterial(ExportMaterialMapping mapping);
+	public ArrayList<ExportMaterial> listExportMaterial(int id);
+	public void updateStatusConfirm(int id) throws Exception;
+	public ArrayList<ExportMaterial> listAllExportMaterial();
 
 }

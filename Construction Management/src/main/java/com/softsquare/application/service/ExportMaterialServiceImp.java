@@ -134,12 +134,16 @@ public class ExportMaterialServiceImp implements ExportMaterialService {
 	public ArrayList<ExportMaterial> ListExportMaterialEngineer(ExportMaterialMapping mapping) {
 		return exportMaterialDao.ListExportMaterialEngineer(mapping);
 	}
-
+	
+	
 	@Override
-	public ArrayList<ExportMaterial> listExportMaterial(ExportMaterialMapping mapping) {
-		return exportMaterialDao.listExportMaterial(mapping);
+	public ArrayList<ExportMaterial> listExportMaterial(int id) {
+		return exportMaterialDao.listExportMaterial(id);
 	}
-
+	@Override
+	public ArrayList<ExportMaterial> listAllExportMaterial(){
+		return exportMaterialDao.listAllExportMaterial();
+   }
 	@Override
 	public void updatetotalUseMaterial(ProjectMapping mapping) throws Exception {
 		Project pro = projectDao.findProejctForUpdate(mapping);
@@ -159,6 +163,15 @@ public class ExportMaterialServiceImp implements ExportMaterialService {
 		RequestMaterial reqMaterial = requestDao.findRequestMaterialForUpdateStatus(mapping.getRequestMaterialId());
 		reqMaterial.setStatus("Finished");
 		requestDao.updateRequest(reqMaterial);
+
+	}
+	
+	
+	@Override
+	public void updateStatusConfirm(int id) throws Exception {
+		ExportMaterial export = exportMaterialDao.getExportMaterialStatusForUpdate(id);
+		export.setStatus("confirmed");
+		exportMaterialDao.updateExport(export);
 
 	}
 

@@ -24,6 +24,10 @@ public class ExportMaterialDetailServiceImp  implements ExportMaterialDetailServ
 		  Map<String, Object> exportMaterialId = exportMaterialDao.findExportbyRequestId(mapping.getRequestMaterialId());
 		return exportMaterialDetailDao.getExportMaterialDetail((int) exportMaterialId.get("exportMaterialId"));
 	}
+	@Override
+	public ArrayList<ExportMaterialDetail> listExportMaterialDetail(int id){
+		return exportMaterialDetailDao.getExportMaterialDetail(id);
+	}
 	
 	
 }

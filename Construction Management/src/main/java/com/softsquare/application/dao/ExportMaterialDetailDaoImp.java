@@ -10,6 +10,7 @@ import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import com.softsquare.application.domain.ExportMaterialMapping;
 import com.softsquare.application.entity.ExportMaterialDetail;
 import com.softsquare.application.entity.ReceiveMaterialDetail;
 
@@ -44,6 +45,27 @@ public class ExportMaterialDetailDaoImp extends AbstractDao<Integer,ExportMateri
 		            .add(Projections.property("unit.unitName").as("unitName"));		            
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("exportDetail.exportId",exportId ));	
+		 criteria.setResultTransformer(Transformers.aliasToBean(ReceiveMaterialDetail.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<ExportMaterialDetail> resultList = (ArrayList<ExportMaterialDetail>) criteria.list();
+		return resultList;
+	}
+	
+	@Override
+	public ArrayList<ExportMaterialDetail> listExportMaterialDetail(int id) {
+		 Criteria criteria = getSession().createCriteria(ExportMaterialDetail.class, "exportDetail");
+		 criteria.createAlias("exportDetail.material", "material");
+		 criteria.createAlias("material.unit", "unit");
+		 ProjectionList projections = Projections.projectionList()				
+				    .add(Projections.property("exportDetail.exportQuantity").as("exportQuantity"))
+			        .add(Projections.property("exportDetail.exportMateialDetialId").as("exportMateialDetialId"))
+			        .add(Projections.property("exportDetail.exportId").as("exportId"))
+			        .add(Projections.property("material.materialId").as("materialId"))
+		            .add(Projections.property("material.materialName").as("materialName"))
+		            .add(Projections.property("material.description").as("description"))
+		            .add(Projections.property("unit.unitName").as("unitName"));		            
+		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.eq("exportDetail.exportId",id ));	
 		 criteria.setResultTransformer(Transformers.aliasToBean(ReceiveMaterialDetail.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<ExportMaterialDetail> resultList = (ArrayList<ExportMaterialDetail>) criteria.list();

@@ -99,4 +99,9 @@
 
 	    }
 		 
+	
+	function exportMaterialConfirm(){
+		location.href = "exportMaterialConfirm.html";
+
+	    }
 		  

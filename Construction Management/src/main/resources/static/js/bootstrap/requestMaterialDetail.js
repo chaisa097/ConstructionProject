@@ -44,7 +44,7 @@
 											'</button> '+
 										'</td> '+
 				                        '<td name=materialName>'+value.materialName+'</td> '+
-				                        '<td name=descrition>'+value.descrition+'</td> '+
+				                        '<td name=descrition>'+value.description+'</td> '+
 				                        '<td name=quantityOrder>'+value.quantityRequest+'</td> '+
 				                        '<td name=anotation>'+value.unitName+'</td></tr>');
 		            	});

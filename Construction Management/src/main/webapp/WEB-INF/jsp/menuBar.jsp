@@ -68,13 +68,11 @@
 	      
 	      </c:if>
 	      <c:if test="${roleUserSystem eq 'pm'}">
-	       <li class="dropdown">
-	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">ManageProject
-	        <span class="caret"></span></a>
-	        <ul class="dropdown-menu">
-	        	<li><a href="${domainSystem}listProjectPM.html">Own Project</a></li>
-	        </ul>
-	      </li>
+	      
+	      
+	        <li class="nav-item">
+         <a class="nav-link" href="${domainSystem}listProjectPM.html">ManageProject</a>
+          </li>
 	      
 	        <li class="nav-item">
          <a class="nav-link" href="${domainSystem}stock.html">Stock</a>
@@ -156,8 +154,9 @@
 	        <ul class="dropdown-menu">
 	          <li><a href="?lang=en">English</a></li>
 	          <li><a href="?lang=th">Thai</a></li>
-	        </ul>
+	        </ul>--[-
 	      </li>
+	      
       </ul>
 	 -->
 	  </div>

@@ -110,7 +110,26 @@ public class ExportMaterialDaoImp extends AbstractDao<Integer,ExportMaterial> im
 	}
 	
 	
-	
+	@Override
+	public ExportMaterial getExportMaterialStatusForUpdate (int exportId) {
+		 Criteria criteria = getSession().createCriteria(ExportMaterial.class, "export");
+		 ProjectionList projections = Projections.projectionList()
+				 .add(Projections.property("export.exportMaterialId").as("exportMaterialId"))
+				 .add(Projections.property("export.employeeId").as("employeeId"))
+				 .add(Projections.property("export.exportMaterialNo").as("exportMaterialNo"))
+				 .add(Projections.property("export.exportDate").as("exportDate"))
+				 .add(Projections.property("export.requestMaterialId").as("requestMaterialId"))
+				 .add(Projections.property("export.projectId").as("projectId"))
+				 .add(Projections.property("export.status").as("status"))
+				 .add(Projections.property("export.totalExport").as("totalExport"));
+		 criteria.setProjection(projections);
+		 if(BeanUtils.isNotEmpty(exportId)){
+			 criteria.add(Restrictions.eq("export.exportMaterialId", exportId));
+		 }
+		 criteria.setResultTransformer(Transformers.aliasToBean(ExportMaterial.class));
+		 ExportMaterial resultList =  (ExportMaterial) criteria.uniqueResult();
+		return resultList;
+	}
 	
 	
 	
@@ -154,8 +173,9 @@ public class ExportMaterialDaoImp extends AbstractDao<Integer,ExportMaterial> im
 	}
 	
 	@Override
-	public ArrayList<ExportMaterial> listExportMaterial(ExportMaterialMapping mapping) {
+	public ArrayList<ExportMaterialMapping> listExport(ExportMaterialMapping mapping) {
 		 Criteria criteria = getSession().createCriteria(ExportMaterial.class, "export");
+		  criteria.createAlias("export.project", "project");
 		 ProjectionList projections = Projections.projectionList()
 				 .add(Projections.property("export.exportMaterialId").as("exportMaterialId"))
 				 .add(Projections.property("export.employeeId").as("employeeId"))
@@ -164,12 +184,68 @@ public class ExportMaterialDaoImp extends AbstractDao<Integer,ExportMaterial> im
 				 .add(Projections.property("export.requestMaterialId").as("requestMaterialId"))
 				 .add(Projections.property("export.projectId").as("projectId"))
 				 .add(Projections.property("export.status").as("status"))
-				 .add(Projections.property("export.totalExport").as("totalExport"));
+				 .add(Projections.property("export.totalExport").as("totalExport"))
+		 .add(Projections.property("project.projectName").as("projectName"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("export.exportMaterialId",mapping.getExportId()));
 		 criteria.setResultTransformer(Transformers.aliasToBean(ExportMaterial.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<ExportMaterialMapping> ExportMaterialList = (ArrayList<ExportMaterialMapping>) criteria.list();
+		return ExportMaterialList;
+	}
+	
+	
+	
+	
+	
+	
+	@Override
+	public ArrayList<ExportMaterial> listExportMaterial(int id) {
+		 Criteria criteria = getSession().createCriteria(ExportMaterial.class, "export");
+		  criteria.createAlias("export.project", "project");
+		 ProjectionList projections = Projections.projectionList()
+				 .add(Projections.property("export.exportMaterialId").as("exportMaterialId"))
+				 .add(Projections.property("export.employeeId").as("employeeId"))
+				 .add(Projections.property("export.exportMaterialNo").as("exportMaterialNo"))
+				 .add(Projections.property("export.exportDate").as("exportDate"))
+				 .add(Projections.property("export.requestMaterialId").as("requestMaterialId"))
+				 .add(Projections.property("export.projectId").as("projectId"))
+				 .add(Projections.property("export.status").as("status"))
+				 .add(Projections.property("export.totalExport").as("totalExport"))
+		 .add(Projections.property("project.projectName").as("projectName"));
+		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.eq("export.exportMaterialId",id));
+		 criteria.setResultTransformer(Transformers.aliasToBean(ExportMaterial.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<ExportMaterial> ExportMaterialList = (ArrayList<ExportMaterial>) criteria.list();
 		return ExportMaterialList;
 	}
+	
+	@Override
+	public ArrayList<ExportMaterial> listAllExportMaterial() {
+		 Criteria criteria = getSession().createCriteria(ExportMaterial.class, "export");
+		  criteria.createAlias("export.project", "project");
+		 ProjectionList projections = Projections.projectionList()
+				 .add(Projections.property("export.exportMaterialId").as("exportMaterialId"))
+				 .add(Projections.property("export.employeeId").as("employeeId"))
+				 .add(Projections.property("export.exportMaterialNo").as("exportMaterialNo"))
+				 .add(Projections.property("export.exportDate").as("exportDate"))
+				 .add(Projections.property("export.requestMaterialId").as("requestMaterialId"))
+				 .add(Projections.property("export.projectId").as("projectId"))
+				 .add(Projections.property("export.status").as("status"))
+				 .add(Projections.property("export.totalExport").as("totalExport"))
+		         .add(Projections.property("project.projectName").as("projectName"));
+		 criteria.setProjection(projections);
+		 Map<String, Object> dataLogin = loginDao.findByLOGID(LoginUtils.getUsername());
+		 criteria.add(Restrictions.eq("export.employeeId",(int)dataLogin.get("employeeId")));
+		 System.out.println((int)dataLogin.get("employeeId"));
+		 criteria.setResultTransformer(Transformers.aliasToBean(ExportMaterial.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<ExportMaterial> ExportMaterialList = (ArrayList<ExportMaterial>) criteria.list();
+		return ExportMaterialList;
+	}
+	
+	
+	
 	
 }

@@ -16,5 +16,8 @@ public interface ExportMaterialDao {
 	public ArrayList<ExportMaterial> FindExportMaterialbyProjectId(ExportMaterialMapping mapping);
 	public ExportMaterial getExportMaterialForUpdate (ExportMaterialMapping mapping);
 	public ArrayList<ExportMaterial> ListExportMaterialEngineer(ExportMaterialMapping mapping);
-	public ArrayList<ExportMaterial> listExportMaterial(ExportMaterialMapping mapping) ;
+	public ArrayList<ExportMaterial> listExportMaterial(int id);
+	public ArrayList<ExportMaterialMapping> listExport(ExportMaterialMapping mapping);
+	public ExportMaterial getExportMaterialStatusForUpdate (int exportId);
+	public ArrayList<ExportMaterial> listAllExportMaterial();
 }

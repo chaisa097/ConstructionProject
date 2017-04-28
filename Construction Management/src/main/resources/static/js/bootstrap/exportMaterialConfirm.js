@@ -1,4 +1,4 @@
-	$(document).ready(function(){
+		$(document).ready(function(){
 			
 	    	searchFunction();
 	    	 BSBaseTable.callFiterTable();
@@ -6,10 +6,10 @@
 		
 	    
 		 function searchFunction(){
-		    		var params = {method: 'search',projectId:headerId};
+		    		var params = {method: 'search'};
 			    	$.ajax({
 			        	type: 'POST'
-			        	, url: application.contextPath+"/listExportMaterialEngineer.html"
+			        	, url: application.contextPath+"/exportMaterialConfirm.html"
 			        	, data: params
 			        	, success: function(result){			        		
 			            	var json = $.parseJSON(result);
@@ -26,10 +26,7 @@
 
 				            	var date = [day, month, year].join('-');
 			            		
-			            		  data.push('<tr exportMaterialId="'+value.exportMaterialId+'"><td>'+			
-		    								'<a href='+domainSystem+'/viewExportMaterial.html?exportMaterialId='+value.exportMaterialId+' class="btn btn-warning btn-xs"> '+
-		    								  'check Material '+
-		    								'</a> '+	
+			            		  data.push('<tr projectId="'+value.projectId+'"><td>'+			
 					                        '<td name=exportMaterialNo>'+value.exportMaterialNo+'</td> '+
 					                        '<td name=exportDate>'+date+'</td> '+
 					                        '<td id="totalExport">'+value.totalExport+'</td></tr>');
