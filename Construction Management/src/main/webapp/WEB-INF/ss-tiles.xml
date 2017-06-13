@@ -6,7 +6,7 @@
 
         <!-- Templates -->
         <definition name="ss.layout" template="/WEB-INF/jsp/template/baseLayout.jsp">
-            <put-attribute name="title" value="PBL_MFU" />
+            <put-attribute name="title" value="Contruction Management System" />
             <put-attribute name="defaultLocalization" value="/WEB-INF/jsp/common/CommonMessage-localization.jsp"></put-attribute>
             <put-list-attribute name="ssStyleSheets">
             	<add-attribute value="webjars/bootstrap-select/1.11.2/css/bootstrap-select.min.css" />

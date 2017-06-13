@@ -31,6 +31,7 @@
 		    								  '<span class="glyphicon glyphicon-eye-open"></span> '+
 		    								'</a> '+	
 					                        '<td name=exportMaterialNo>'+value.exportMaterialNo+'</td> '+
+					                        '<td name=employeeName>'+value.empFirstName+' '+value.empLastName+'</td> '+
 					                        '<td name=exportDate>'+date+'</td> '+
 					                        '<td id="totalExport">'+value.totalExport+'</td></tr>');
 			            	});

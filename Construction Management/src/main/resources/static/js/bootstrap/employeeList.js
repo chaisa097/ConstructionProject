@@ -21,7 +21,7 @@ function search(){
         				  '<button type="button" class="btn btn-info btn-xs" onclick=viewRow("'+value.employeeId+'")> '+
 							'<span class="glyphicon glyphicon-eye-open"></span>'+
 						'</button> '+
-						'<a href='+domainSystem+'/createProject.html?projectId='+value.employeeId+' class="btn btn-primary btn-xs"> '+
+						'<a href='+domainSystem+'/createEmployee.html?employeeId='+value.employeeId+' class="btn btn-primary btn-xs"> '+
 						  '<span class="glyphicon glyphicon-pencil"></span> '+
 						'</a> '+				
 					   '<button type="button" class="btn btn-danger btn-xs"  onclick=deleteRow("'+value.employeeId+'")> '+

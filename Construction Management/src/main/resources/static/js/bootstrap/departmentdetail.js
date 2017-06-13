@@ -60,6 +60,7 @@ $(document).ready(function(){
 			        	, data: params
 			        	, success: function(result){
 			        		searchFunction();
+			        		disAndEnInputField('');
 			        	}
 			        });
 				}

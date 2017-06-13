@@ -9,7 +9,7 @@ $(document).ready(function(){
  	
 	  
 	    	    var params2 = {method:'Allmaterial'};
-	    	    BSBaseComboBox.getMaterial(params2,function(data){
+	    	    BSBaseComboBox.getExportMaterial(params2,function(data){
 	    	    	$("div select[name=materialList]").html(data).selectpicker('refresh');
 	    
 	    	  });

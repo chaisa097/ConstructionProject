@@ -136,6 +136,7 @@ public class ExportMaterialDaoImp extends AbstractDao<Integer,ExportMaterial> im
 	@Override
 	public ArrayList<ExportMaterial> FindExportMaterialbyProjectId(ExportMaterialMapping mapping) {
 		 Criteria criteria = getSession().createCriteria(ExportMaterial.class, "export");
+		 criteria.createAlias("export.employee", "employee");
 		 ProjectionList projections = Projections.projectionList()
 				 .add(Projections.property("export.exportMaterialId").as("exportMaterialId"))
 				 .add(Projections.property("export.employeeId").as("employeeId"))
@@ -144,10 +145,13 @@ public class ExportMaterialDaoImp extends AbstractDao<Integer,ExportMaterial> im
 				 .add(Projections.property("export.requestMaterialId").as("requestMaterialId"))
 				 .add(Projections.property("export.projectId").as("projectId"))
 				 .add(Projections.property("export.status").as("status"))
+				 .add(Projections.property("employee.empFirstName").as("empFirstName"))
+				 .add(Projections.property("employee.empLastName").as("empLastName"))
 				 .add(Projections.property("export.totalExport").as("totalExport"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.and(Restrictions.eq("export.projectId",mapping.getProjectId()), Restrictions.eq("export.status","Confirmed")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(ExportMaterial.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<ExportMaterial> ExportMaterialList = (ArrayList<ExportMaterial>) criteria.list();
 		return ExportMaterialList;
 	}

@@ -81,15 +81,15 @@
 								<thead>
 									<tr class="filters">
 										<th></th>
-										<th><input type="text" class="form-control"
+										<th ><input type="text" class="form-control"
 											placeholder="EmployeeName" disabled></th>
 										<th><input type="text" class="form-control"
 											placeholder="Position" disabled></th>
-										<th><input type="text" class="form-control"
+										<th ><input type="text" class="form-control"
 											placeholder="Salary" disabled></th>
-										<th><input type="text" class="form-control"
+										<th ><input type="text" class="form-control"
 											placeholder="AmountOfWorking/month" disabled></th>
-										<th><input type="text" class="form-control"
+										<th ><input   style="text-align:right" type="text" class="form-control"
 											placeholder="Total/people" disabled></th>
 									</tr>
 								</thead>

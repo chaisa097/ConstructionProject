@@ -15,10 +15,9 @@
 </head>
 <div name="statusSave" hidden="true"></div>
 <div class="container">
-	<div class="form-group">
+		
+	
 		<div class="panel-body" style="margin-top: -25px;">
-		
-		
 		<button type="button" class="btn btn-primary" onclick="listRequestMaterial()">
 					<span class="glyphicon glyphicon-duplicate"></span> History Of RequestMaterial
 				   </button> 
@@ -26,6 +25,9 @@
 				   <button type="button" class="btn btn-warning" onclick="exportMaterialConfirm()">
 					<span class="glyphicon glyphicon-duplicate"></span>  History Of ImportMaterial
 				   </button> 
+		
+
+	<div class="form-group"  style="margin-top: 15px; margin-bottom:5px">
 			<div class="row">
 
 				<div class="panel panel-info filterable">

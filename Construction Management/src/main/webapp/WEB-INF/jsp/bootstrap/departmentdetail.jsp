@@ -18,7 +18,7 @@
 		        <div class="row">		  
 		    <div class="panel panel-info">
 		       <div class="panel-heading">
-		                <h3 class="panel-title">DepartmentDetail</h3>
+		                <h3 class="panel-title">Position</h3>
 		              
 		               </div>
 			    	<div class="row" style="margin-top:10px; margin-bottom:5px" name="addEditData">

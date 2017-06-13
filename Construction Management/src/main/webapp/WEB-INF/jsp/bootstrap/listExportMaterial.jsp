@@ -31,6 +31,7 @@
 		                    <tr class="filters">
 		                    	<th></th>
 		                        <th><input type="text" class="form-control" placeholder="ExportMaterialNo Form Stock" disabled></th>
+		                          <th><input type="text" class="form-control" placeholder="EmployeeName" disabled></th>
 		                          <th><input type="text" class="form-control" placeholder="Date" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Total Import Material:One request/Bath" disabled></th>
 		                      

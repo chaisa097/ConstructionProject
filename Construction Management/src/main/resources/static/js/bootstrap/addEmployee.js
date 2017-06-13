@@ -42,8 +42,8 @@ $.ajax({
 							 '<td  id="empName" >'+value.empFirstName+' '+value.empLastName+'</td>'+
 							 '<td  id="employeeCode">'+value.depDetailName+'</td>'+
 							 '<td  id="salary">'+value.Salary+'</td>'+
-							 '<td  id="amountOfMonth">'+value.amountOfMonth+'</td>'+
-	                         '<td  id="totalSalary">'+(value.amountOfMonth*value.Salary)+'</td></tr>');
+							 '<td  id="amountOfMonth" style="text-align:center">'+value.amountOfMonth+'</td>'+
+	                         '<td  id="totalSalary" style="text-align:right" >'+(value.amountOfMonth*value.Salary)+'</td></tr>');
      		
      		  
      		  

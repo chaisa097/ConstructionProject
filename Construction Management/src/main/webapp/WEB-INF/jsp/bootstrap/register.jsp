@@ -75,7 +75,7 @@
 						  <div class="col-md-1" style="margin-top:10px; margin-bottom:20px">
 						  </div>
 						
-							  <div class="col-md-2" style="margin-top:30px; margin-bottom:20px">
+							  <div class="col-md-2" style="margin-top:10px; margin-bottom:20px">
 		        	<input type="image" src="images/Save2.png"  onclick="SaveFunction()"   width="40" height="40">  
 				   </div>
 					
@@ -88,7 +88,7 @@
 		</div>
 				
         </div>
-			<div class="form-group">
+			<div class="form-group" style="margin-top: -25px; margin-bottom:-25px">
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						<div class="row" id="roleHeader">
