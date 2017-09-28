@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.EmployeeMapping;
+import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.service.EmployeeService;
 
 @RestController
@@ -39,7 +41,27 @@ public class CreateEmployeeController {
 	
          
 	}
+	@RequestMapping(params =  "method=edit" , method=RequestMethod.POST)
+    public void edit(HttpServletRequest request, HttpServletResponse response, @ModelAttribute EmployeeMapping mapping) throws Throwable{
+		employeeServ.updateEmployee(mapping);
+	}
+
 	
+	@RequestMapping(params =  "method=searchData" , method=RequestMethod.POST)
+    public void SeachDatapage(HttpServletRequest request, HttpServletResponse response, @ModelAttribute EmployeeMapping mapping) throws Throwable{
+	Gson gson = new Gson();	
+		
+		String  json = gson.toJson(employeeServ.findEmployeeByID(mapping));
+	
+
+		 try {
+			response.getWriter().write(json);
+		 } catch (Exception e) {
+				e.printStackTrace();
+		 }
+
+		
+	 }
 	
 	
 }

@@ -12,6 +12,8 @@
   }
 
 .form-signin-heading {
+  margin-top: 20px;
+  color:white;
   text-align:center;
   margin-bottom: 30px;
 }
@@ -36,7 +38,7 @@ input[type="password"] {
 }
 
 .colorgraph {
-  height: 7px;
+  height: 1px;
   border-top: 0;
   background: #c4e17f;
   border-radius: 5px;

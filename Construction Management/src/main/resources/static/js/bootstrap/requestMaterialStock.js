@@ -6,6 +6,10 @@ $(document).ready(function(){
 		
    	
     	});
+	    	
+	    	
+	    	
+	    	
 	    	BSBaseTable.callFiterTable();  	
 });
 

@@ -12,12 +12,11 @@
 	 	     BSBaseComboBox.getProjectManager(params,function(data){
 	 	   	$("div select[name=employeeList]").html(data).selectpicker('refresh');
 	   	
-	   	
+	 	   
 	   	
 	    	});
 	 	     
 	 	 
-
 	 	     
 	 	    $('#proName').on('input', function() {
 	 	 
@@ -83,6 +82,9 @@
  			var is_name=input.val();
  			if(is_name){input.removeClass("invalid").addClass("valid");}
  			else{input.removeClass("valid").addClass("invalid");}
+ 			
+ 	    
+ 			
  		});
 	 	     
 	 		 if( BeanUtils.isNotEmpty(headerId)){				     
@@ -157,13 +159,12 @@ function save(){
 //	console.info(startDate);
 			 if( BeanUtils.isNotEmpty($('div[name=addEditData] input[name=projectName]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] textarea[name=description]').val())){				                                                     		
 				var params = {};
-				var message = ""
+				
 					params.method = 'save';
-					message = "create success!!"
+					
 				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
 					params.method = 'edit';				
 					params.projectId = headerId
-					message = "update success!!"
 				}
 				
 				if(BeanUtils.isNotEmpty(params.method)){
@@ -184,8 +185,8 @@ function save(){
 			        	, url: application.contextPath+"/createProject.html"
 			        	, data: params
 			        	, success: function(result){
-			        		alert(message);
-			        		back();
+			        		 alert("Save successs");
+			        		 back();
 			        		
 			        	}
 			        });

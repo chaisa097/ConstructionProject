@@ -13,5 +13,5 @@ public interface DepartmentDetailDao {
 	public void updateDepartmentDetail(DepartmentDetail dep) throws Exception;
 	public ArrayList<DepartmentDetailMapping> findDepartmentDetail(DepartmentDetailMapping mapping );
 	public ArrayList<DepartmentDetail> AllDepartmentDetail(int departmentId );
-	
+	public ArrayList<DepartmentDetail> getDepartmentDetail();
 }

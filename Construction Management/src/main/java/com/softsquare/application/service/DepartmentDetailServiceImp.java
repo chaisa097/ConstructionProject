@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.softsquare.application.dao.DepartmentDetailDao;
 import com.softsquare.application.domain.DepartmentDetailMapping;
+import com.softsquare.application.entity.Department;
 import com.softsquare.application.entity.DepartmentDetail;
 
 
@@ -34,6 +35,10 @@ public class DepartmentDetailServiceImp implements DepartmentDetailService {
 		 return depDetailDao.AllDepartmentDetail(departmentId);
 	}
 
+	@Override
+	public ArrayList<DepartmentDetail> getAllDartmentDetail() {
+		return depDetailDao.getDepartmentDetail();
+	}
 	@Override
 	public void saveDepartmentDetail(DepartmentDetailMapping mapping)
 			throws Exception {

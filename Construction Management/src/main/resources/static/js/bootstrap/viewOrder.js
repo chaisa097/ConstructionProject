@@ -25,12 +25,12 @@ function searchHeader(){
 	    if (month.length < 2) month = '0' + month;
 	    if (day.length < 2) day = '0' + day;
 
-	    var date = [year, month, day].join('-');
+	    var date = [day, month, year].join('-');
+	     	$("#address").html(json[0].address);  
+	     	$("#orderMaterialNo").html(json[0].orderMaterialNo);  
+	     	$("#orderMaterialDate").html(date); 
+	     	$("#status").html(json[0].status); 
 	    
-		  	$("textarea[name='address']").val(json[0].address);
-	      	$("input[name='orderMaterialNo']").val(json[0].orderMaterialNo);
-	      	$("input[name='orderMaterialDate']").val(date); 
-	     	$("input[name='status']").val(json[0].status); 
 	  	}
 	  });
 }

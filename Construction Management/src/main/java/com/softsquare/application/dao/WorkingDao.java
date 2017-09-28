@@ -15,5 +15,6 @@ public interface WorkingDao {
 	public void saveWorking(Working working) throws Exception;
 	public void removeWorking(Working working) throws Exception ;
 	public Map<String, Object> findProejectIdByEmployeeId(int employeeId);
+	public ArrayList<Working> findWorkbyEmployeeId(int workerId );
 	
 }

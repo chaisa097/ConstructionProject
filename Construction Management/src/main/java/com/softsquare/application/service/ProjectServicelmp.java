@@ -49,6 +49,7 @@ public class ProjectServicelmp implements ProjectService {
 		
 	
 		return projectListDao.findProjectId(projectMapping);
+		
 	}
 	
 	@Override
@@ -93,21 +94,7 @@ public class ProjectServicelmp implements ProjectService {
 	@Override
 	public void updateProject(ProjectMapping project) throws Exception {
 		Project pro =  projectListDao.findProejctForUpdate(project);
-		pro.setProjectName(project.getProjectName());
-		pro.setDescription(project.getDescription());
-		pro.setAddress(project.getAddress());
-	    pro.setBudget(project.getBudget());
-	    pro.setCriticalBudget(project.getCriticalBudget());
-	    pro.setProvinceId(project.getProvinceId());
-	    pro.setEmployeeId(project.getEmployeeId());	  	    	    
-	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
-	    Date convertedStartDate = sdf.parse(project.getStartDate());
-	    Date convertedFinishDate = sdf.parse(project.getFinishDate());
-        pro.setStartDate(convertedStartDate);
-	    pro.setFinishDate(convertedFinishDate);
 	    pro.setPercentStatus(project.getPercentStatus());
-	    pro.setCustomerName(project.getCustomerName());
-	    pro.setCustomerPhone(project.getCustomerPhone());
 	    projectListDao.updateProject(pro);
 	}
 

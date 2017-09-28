@@ -24,10 +24,10 @@ function searchHeader(){
 	    if (day.length < 2) day = '0' + day;
 
 	    var date = [day, month, year].join('/');
-		  	$("input[name='exportDate']").val(date);
-	      	$("input[name='exportMaterialNo']").val(json[0].exportMaterialNo);
-	      	$("input[name='status']").val(json[0].status); 
-	     	$("input[name='projectName']").val(json[0].projectName); 
+	     	$("#projectName").html(json[0].projectName);  
+	     	$("#exportMaterialNo").html(json[0].exportMaterialNo);  
+	     	$("#exportDate").html(date); 
+	     	$("#status").html(json[0].status); 
 	  	}
 	  });
 }

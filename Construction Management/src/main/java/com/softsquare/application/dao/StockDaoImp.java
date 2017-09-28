@@ -50,7 +50,7 @@ public class StockDaoImp  extends AbstractDao<Integer, Stock> implements StockDa
 		 Map<String, Object> result = (Map<String,Object>) criteria.uniqueResult();
 		return result;
 	}
-	
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<StockMapping> getMaterialinStock(StockMapping mapping) {
 		 Criteria criteria = getSession().createCriteria(Stock.class, "stock");

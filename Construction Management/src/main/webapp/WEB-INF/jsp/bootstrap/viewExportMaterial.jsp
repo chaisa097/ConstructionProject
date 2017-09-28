@@ -6,78 +6,142 @@
 
 <html>
 <head>
- <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
- <link rel="stylesheet" href="dist/css/sb-admin-2.css">
-<link rel="stylesheet" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
-  <script src="webjars/jquery/2.1.1/jquery.min.js"></script>
-    <script src="metisMenu/metisMenu.min.js"></script>
-  <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+ <meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet"
+	href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="bower_components/font-awesome/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="bower_components/Ionicons/css/ionicons.min.css">
+<!-- daterange picker -->
+<link rel="stylesheet"
+	href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+<!-- bootstrap datepicker -->
+<link rel="stylesheet"
+	href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="plugins/iCheck/all.css">
+<!-- Bootstrap Color Picker -->
+<link rel="stylesheet"
+	href="bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+<!-- Bootstrap time Picker -->
+<link rel="stylesheet"
+	href="plugins/timepicker/bootstrap-timepicker.min.css">
+<!-- Select2 -->
+<link rel="stylesheet"
+	href="bower_components/select2/dist/css/select2.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+<!-- DataTables -->
+<link rel="stylesheet"
+	href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+
 </head>
 <div name="statusSave" hidden="true"></div>
-<div class="container">
-	<div class="form-group">
-	
-		<div class="col-md-12">
-			<button type="button" class="btn btn-success" onclick="confirmExport()">
-					<span class="glyphicon glyphicon-ok"></span>  OK
-				   </button> 
-		</div>
-			<div class="col-md-12">
 
+		
+		 <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="margin-top:-89px;" >
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+       Import
+        <small>Material</small>
+        To
+      <small>Own Project</small>
+        
+      </h1>
+      <ol class="breadcrumb">
+         <li><a href="${domainSystem}listExportMaterialEngineer.html"><i class="fa fa-opencart"></i>Check Material</a></li>
+         <li><a href="${domainSystem}viewExportMaterial.html"><i class="fa fa-file-o"></i>Import Material</a></li>
+        <li class="active">View Order</li>
+      </ol>
+    </section>
 
-				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>ExportDate</label> <input type="text" class="form-control"
-						id="exportDate" name="exportDate" disabled>
+    <!-- Main content -->
+    <section class="content">
+      <!-- /.box -->
+       <div class="panel panel-info filterable">
+           <div class="box">
+            <div class="box-header">
+               <div class="row">
+               
+                    <div class="col-xs-1">
+					<h4>No :</h4>
+					</div>
+					<div class="col-xs-9">
+					<h4  style="margin-left:-30px;" id="exportMaterialNo"> </h4>
+					</div>
+
+					<div class="col-xs-1">
+					<h4> Date :</h4>
+					</div>
+					<div class="col-xs-1">
+					<h4 style="margin-left:-30px;" id="exportDate"> </h4>
+					</div>
+					
+					<div class="col-xs-1">
+					<h4> Status :</h4>
+					</div>
+					<div class="col-xs-2">
+					<h4 style="margin-left:-30px;" id="status"> </h4>
+					</div>
+					
+					<div class="col-xs-2">
+					<h4>  ProjectName :</h4>
+					</div>
+					<div class="col-xs-2">
+					<h4 style="margin-left:-30px;" id="projectName"> </h4>
+					</div>
+			
+
+            </div>
+             <div class="box-footer">
 				</div>
-
-				<div class="col-md-4"></div>
-
-				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>ExportNo</label> <input type="text" class="form-control"
-						id="exportNo" placeholder="exportNo" name="exportMaterialNo"
-						disabled>
-				</div>
-
 
 			</div>
-			<div class="col-md-12">
-
-				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>Project</label> <input type="text" class="form-control"
-						id="projectName" placeholder="projectName" name="projectName"
-						disabled>
-				</div>
-
-				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-				</div>
-				<div class="col-md-4" style="margin-top: 10px; margin-bottom: 5px">
-					<label>Status</label> <input type="text" class="form-control"
-						id="Status" placeholder="Status" name="status" disabled>
-				</div>
-			</div>
-
-		 <div class="panel panel-default filterable">
-		            <div class="panel-heading">
-		                <h3 class="panel-title">Material Detail</h3>
-		              
-		            </div>
-		            <table class="table">
-		                <thead>
-		                    <tr class="filters">
+			
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table  class="table">
+                <thead>
+                <tr class="filters">
 		                        <th><input type="text" class="form-control" placeholder="MaterialName" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
-		                        <th><input type="text" class="form-control" placeholder="AmountOfExport" disabled></th>
+		                        <th><input type="text" class="form-control" placeholder="AmountOfimport" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Unit" disabled></th>
-		                    </tr>
-		                </thead>
-		                <tbody>
-		                </tbody>
-		            </table>
-		        </div>
-		    </div>
-		 </div>
-
+                </tr>
+                </thead>
+               <tbody>
+		       </tbody>
+              </table>
+            </div>
+            
+              <div class="box-footer">
+               <div class="pull-right">
+		            	<button type="button" class="btn btn-warning" onclick="confirmExport()">
+					Confirm 
+				   </button> 
+		              </div>
+              
+              
+				</div>
+            <!-- /.box-body -->
+            </div>
+             <!-- /.box -->
+          </div>
+         
+  
+    </section>
+    <!-- /.content -->
+  </div>
 </html>
-		
-		
-		

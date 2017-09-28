@@ -1,5 +1,17 @@
 		$(document).ready(function(){
 			
+			$.ajax({
+			  	type: 'POST'
+			  	, url: application.contextPath+"/listExportMaterial.html"
+			  	, data: {method:'searchTotalUseMaterial', projectId:headerId}
+			  	, success: function(result){
+			    	var json = $.parseJSON(result);
+			      	$("#projectName").html(json[0].projectName);
+			      	 var  UseMaterial =json[0].totalUseMaterial.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
+			      	$("#totalUseMaterial").html(UseMaterial);  
+			  	}
+			  });
+
 	    	searchFunction();
 	    	 BSBaseTable.callFiterTable();
     });
@@ -36,8 +48,7 @@
 					                        '<td id="totalExport">'+value.totalExport+'</td></tr>');
 			            	});
 			            	$('table.table tbody').html(data.join());
-			            	calculate()
-			            
+
 			        	}
 			        });
 		    }
@@ -58,7 +69,9 @@
 			        	type: 'POST'
 			        	, url: application.contextPath+"/listExportMaterial.html"
 			        	, data: params
-			        	, success: function(result){	        				        	
+			        	, success: function(result){	 
+			        		alert("calcuate Success");
+			        		location.reload();
 			        					        		
 			        	}
 			        });

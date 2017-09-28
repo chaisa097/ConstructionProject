@@ -18,5 +18,6 @@ public interface EmployeeDao {
 	public void updateEmployee(Employee emp) throws Exception;
 	public Map<String, Object> findNoMax();
 	public  ArrayList<Employee> CountEmployee();
+	public  ArrayList<EmployeeMapping> findEmployeeById(EmployeeMapping employeeMapping);
 	
 }

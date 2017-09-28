@@ -39,7 +39,7 @@ public class CreateProjectController {
 		
 	}
 	
-	@RequestMapping(params =  "method=edit" , method=RequestMethod.POST)
+	@RequestMapping(params =  "method=edit", method=RequestMethod.POST)
     public void edit(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping mapping) throws Throwable{
 		listprojectSevice.updateProject(mapping);
 	}

@@ -76,19 +76,18 @@
 			            	
 			            	
 			            	$('table.table tbody').html(data.join());	
-			            	disAndEnInputField('');
+			            	
 			        	}
 			        });
 		    }
 		 
 		 function save(){
-		
+				
 			 if(BeanUtils.isNotEmpty($('div[name=addEditData] input[name=provinceCode]').val()) && BeanUtils.isNotEmpty($('div[name=addEditData] input[name=provinceName]').val())){
 				var params = {};
-				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'save')){
+			
 					params.method = 'save';
-				
-				
+					
 				if(BeanUtils.isNotEmpty(params.method)){
 					params.provinceCode = $('div[name=addEditData] input[name=provinceCode]').val();
 					params.provinceName = $('div[name=addEditData] input[name=provinceName]').val();
@@ -99,7 +98,7 @@
 			        	, success: function(result){
 			        		searchFunction(lastPage,1);
 			        		$('div[name=addEditData] input[name=provinceCode]').attr('provinceId', '')
-			        		$("div#save").modal();
+			        		alert("Save success");
 			        	}
 			        });
 			    	
@@ -108,7 +107,7 @@
 			    	
 				}
 				
-				}
+	
 				
 				else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'edit')){
 					params.method = 'edit';
@@ -139,10 +138,10 @@
 			 }
 		 }
 		 
-		 function addRow(){
-			 disAndEnInputField('save');
-		 }
-		 
+//		 function addRow(){
+//			 disAndEnInputField('save');
+//		 }
+//		 
 		 function editRow(value){
 			 disAndEnInputField('edit');
 			 $('div[name=addEditData] input[name=provinceCode]').val($('tbody tr[provinceId="'+value+'"] td[name=provinceCode]').html());
@@ -173,11 +172,7 @@
 		 }
 		 
 		 function disAndEnInputField(param){
-			 if(BeanUtils.equals(param,'save')){
-				 	createOrUpdateMode(param);
-					$("div[name='addEditData'] input[name='provinceCode']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='provinceName']").prop('disabled', false);
-				}else if(BeanUtils.equals(param,'edit')){
+			if(BeanUtils.equals(param,'edit')){
 					createOrUpdateMode(param);
 					$("div[name='addEditData'] input[name='provinceCode']").prop('disabled', false);
 					$("div[name='addEditData'] input[name='provinceName']").prop('disabled', false);

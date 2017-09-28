@@ -11,7 +11,8 @@ $(document).ready(function(){
 	  	, success: function(result){
 	    	var json = $.parseJSON(result);
 	      	$("#projectName").html(json[0].projectName);
-	      	$("#totalHireEmployee").html(json[0].totalHireEmployee);  
+	      	 var  totalHire =json[0].totalHireEmployee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
+	      	$("#totalHireEmployee").html(totalHire);  
 	  	}
 	  });
 
@@ -42,11 +43,9 @@ $.ajax({
 							 '<td  id="empName" >'+value.empFirstName+' '+value.empLastName+'</td>'+
 							 '<td  id="employeeCode">'+value.depDetailName+'</td>'+
 							 '<td  id="salary">'+value.Salary+'</td>'+
-							 '<td  id="amountOfMonth" style="text-align:center">'+value.amountOfMonth+'</td>'+
+							 '<td  id="amountOfMonth">'+value.amountOfMonth+'/'+'month' + '</td>'+
 	                         '<td  id="totalSalary" style="text-align:right" >'+(value.amountOfMonth*value.Salary)+'</td></tr>');
-     		
-     		  
-     		  
+	  
      	});
      	
      	$('table.table tbody').html(data.join());       	
@@ -79,13 +78,13 @@ $.ajax({
  							 '<td  id="employeeCode">'+value.depDetailName+'</td>'+
  							 '<td  id="salary">'+value.Salary+'</td>'+
  							 '<td  id="amountOfMonth">'+value.amountOfMonth+'</td>'+
- 	                         '<td  id="totalSalary">'+(value.amountOfMonth*value.Salary)+'</td></tr>');
+ 	                         '<td  id="totalSalary" style="text-align:right">'+(value.amountOfMonth*value.Salary)+'</td></tr>');
          		
          		  
          		  
          	});
          	$('table.table tbody').html(data.join());
-         	calculate();
+       
      	}
      }); 
 	
@@ -100,11 +99,11 @@ function save(){
 				var params = {};
 				var message = ""
 						
-				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
+				
 					params.method ='save';
 					message = "AddEmployee success!!"
 					
-				}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
+			 if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
 					params.method = 'edit';				
 					message = "updateEmployee success!!"
 				}
@@ -183,18 +182,10 @@ function back(){
 	
 }
 
-function addRow(){			 
-	 disAndEnInputField('create');
-}
+
 
 function disAndEnInputField(param){
-	 if(BeanUtils.equals(param, 'create')){
-		 	createOrUpdateMode(param);
-			
-			$("div[name='addEditData'] select[name='employeeList']").prop('disabled', false).selectpicker('refresh');
-			$("div[name='addEditData'] input[name='amountOfMonth']").prop('disabled', false);
-		
-		}else if(BeanUtils.equals(param, 'update')){
+    if(BeanUtils.equals(param, 'update')){
 			createOrUpdateMode(param);
 		
 			

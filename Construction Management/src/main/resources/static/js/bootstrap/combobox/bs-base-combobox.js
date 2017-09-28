@@ -112,7 +112,7 @@ var BSBaseComboBox = function () {
 	            	var json = $.parseJSON(result);
 	            	var data = ['<option></option>'];
 	            	$.each(json, function(index, value) {
-	            		  data.push("<option title="+value.materialName+"" +value.totalQuatity+""+value.unitName+  " value="+value.materialId+ " data-subtext="+value.totalQuatity+""+value.unitName+" >"+value.materialName+"</option>");
+	            		  data.push("<option title="+value.materialName+'/' +value.totalQuatity+''+value.unitName+  " value="+value.materialId+ " data-subtext="+value.totalQuatity+""+value.unitName+" >"+value.materialName+"</option>");
 	            	});
 	            	callBack(data.join());
 	        	}
@@ -200,7 +200,21 @@ var BSBaseComboBox = function () {
 	        });
         },
         
-        
+        getDepartmentDetailByEdit: function (params, callBack) {
+    		$.ajax({
+	        	type: 'GET'
+	        	, url: application.contextPath+"/combobox.html"
+	        	, data: params
+	        	, success: function(result){
+	            	var json = $.parseJSON(result);
+	            	var data = ['<option></option>'];
+	            	$.each(json, function(index, value) {
+	            		  data.push("<option title="+value.depDetailName+" value="+value.depDetailId+">"+value.depDetailName+"</option>");
+	            	});
+	            	callBack(data.join());
+	        	}
+	        });
+        },
         
         getDepartment: function (params, callBack) {
     		$.ajax({

@@ -61,6 +61,19 @@ public class Employee implements Serializable {
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DEPARTMENTDETAIL_ID", referencedColumnName = "DEPARTMENTDETAILID", insertable=false, updatable=false)
     private DepartmentDetail departmentDetail;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PROVINCEID", referencedColumnName = "PROVINCEID", insertable=false, updatable=false)
+    private Province province;
+	
+
+	public Province getProvince() {
+		return province;
+	}
+
+	public void setProvince(Province province) {
+		this.province = province;
+	}
 
 	public Integer getEmployeeId() {
 		return employeeId;

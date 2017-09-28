@@ -79,6 +79,18 @@ public  class DepartmentDetailDaoImp extends AbstractDao<Integer, DepartmentDeta
 		return depList;
 	}
 	
+	@Override
+	public ArrayList<DepartmentDetail> getDepartmentDetail() {
+		 Criteria criteria = getSession().createCriteria(DepartmentDetail.class, "depDetail");
+		 ProjectionList projections = Projections.projectionList()
+		            .add(Projections.property("depDetail.depDetailId").as("depDetailId"))
+		            .add(Projections.property("depDetail.depDetailName").as("depDetailName"))
+		            .add(Projections.property("depDetail.Salary").as("Salary"));
+		 criteria.setProjection(projections);
+		 criteria.setResultTransformer(Transformers.aliasToBean(DepartmentDetail.class));
+		 ArrayList<DepartmentDetail> departmentDetailList = (ArrayList<DepartmentDetail>) criteria.list();
+		return departmentDetailList;
+	}
     // this method for return only one result 
 	@Override
 	public DepartmentDetail getDepartmentDetailForUpdate(DepartmentDetailMapping mapping) {	

@@ -60,13 +60,9 @@
 	    	 if(BeanUtils.isNotEmpty($('div[name=addEditData] input[name=materialCode]').val()) && BeanUtils.isNotEmpty($('div[name=addEditData] input[name=materialName]').val())){
 	    		 
 	    			var params = {};
-					var message = ""
-							
-					if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
 						params.method ='save';
-						message = "add success!!"
 						
-					}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
+				   if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
 						params.method = 'edit';	
 						params.materialId = $('div[name=addEditData] input[name=materialName]').attr('materialId');
 						message = "update success!!"
@@ -83,10 +79,9 @@
 			        	, url: application.contextPath+"/material.html"
 			        	, data: params
 			        	, success: function(result){		        
-			        		alert(message);
 			        		search();
 			        		$('div[name=addEditData] input[name=materialName]').attr('materialId', '')
-			        		disAndEnInputField(param);
+			        
 			        	}
 			        });
 	    		}
@@ -124,23 +119,13 @@
 	        });
 	    }
 		
-		function addRow(){			 
-			 disAndEnInputField('create');
-		}
+//		function addRow(){			 
+//			 disAndEnInputField('create');
+//		}
 
 		function disAndEnInputField(param){
-			 if(BeanUtils.equals(param, 'create')){
-				 	createOrUpdateMode(param);
-					
-					$("div[name='addEditData'] select[name='unitList']").prop('disabled', false).selectpicker('refresh');
-					$("div[name='addEditData'] select[name='typeList']").prop('disabled', false).selectpicker('refresh');
-					$("div[name='addEditData'] input[name='materialCode']").prop('disabled', false);
-					$("div[name='addEditData'] textarea[name='description']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='materialName']").prop('disabled', false);
-				}else if(BeanUtils.equals(param, 'update')){
+			if(BeanUtils.equals(param, 'update')){
 					createOrUpdateMode(param);
-				
-					
 					$("div[name='addEditData'] select[name='unitList']").prop('disabled', false).selectpicker('refresh');
 					$("div[name='addEditData'] select[name='typeList']").prop('disabled', false).selectpicker('refresh');
 					$("div[name='addEditData'] input[name='materialCode']").prop('disabled', false);

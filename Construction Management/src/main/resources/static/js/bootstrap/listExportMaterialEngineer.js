@@ -28,7 +28,7 @@
 			            		
 			            		  data.push('<tr exportMaterialId="'+value.exportMaterialId+'"><td>'+			
 		    								'<a href='+domainSystem+'/viewExportMaterial.html?exportMaterialId='+value.exportMaterialId+' class="btn btn-warning btn-xs"> '+
-		    								  'check Material '+
+		    								  ' View Detail '+
 		    								'</a> '+	
 					                        '<td name=exportMaterialNo>'+value.exportMaterialNo+'</td> '+
 					                        '<td name=exportDate>'+date+'</td> '+

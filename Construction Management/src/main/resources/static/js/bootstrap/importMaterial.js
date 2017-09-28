@@ -11,15 +11,26 @@
 	            	var data = [];
 	            	$.each(json, function(index, value) {
 	            		  data.push('<tr projectId="'+value.projectId+'"><td>'+
-										'<a href='+domainSystem+'/createRequestMaterial.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
-										  '<span class="glyphicon glyphicon-file"></span> Request Material'+
-										'</a> '+	
-										'<a href='+domainSystem+'/listExportMaterialEngineer.html?projectId='+value.projectId+' class="btn btn-warning btn-xs"> '+
-										  '<span class="glyphicon glyphicon-th-list"></span>  Check import Material'+
-										'</a> '+	
+										
+										'<ul style="margin-top:1px;" class="nav navbar-nav">'+
+	    						        '<li class="dropdown">'+
+	    						          '<a href="#" class="dropdown-toggle" data-toggle="dropdown" >'+'<span style="font-size:20px;margin-top:-10px;" class="glyphicon glyphicon-th-list pull-right"></span>'+'</a>'+
+	    						          '<ul class="dropdown-menu">'+
+	    						          '<li>'+ '<a href='+domainSystem+'/createRequestMaterial.html?projectId='+value.projectId+' > '+
+	    								  '<span class="glyphicon glyphicon-folder-open"></span>Request Material '+
+	    								'</a> '+'</li>'+
+    						             ' <li class="divider">'+'</li>'+
+    						             '<li>'+ '<a href='+domainSystem+'/listExportMaterialEngineer.html?projectId='+value.projectId+' > '+
+	    								  '<span class="glyphicon glyphicon glyphicon-import"></span>Check Import Material '+
+	    								'</a> '+'</li>'+
+	    						          '</ul>'+
+	    						        '</li>'+
+	    						      '</ul>'+
+										
+										
 			                        '<td name=projectName>'+value.projectName+'</td> '+
-			                        '<td name=budget>'+value.budget+'</td> '+
-			                        '<td name=totalUseMaterial>'+value.totalUseMaterial+'</td> '+
+			                        '<td name=budget>'+value.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'THB' +'</td> '+
+			                        '<td name=totalUseMaterial>'+value.totalUseMaterial.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ 'THB'+  '  </td> '+
 			                        '<td name=percentStatus>'+value.percentStatus+'%'+'</td></tr>');
 	            	});
 	            	$('table.table tbody').html(data.join());	

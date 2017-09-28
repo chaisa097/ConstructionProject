@@ -25,7 +25,6 @@
 					                        '<td name=typeName>'+value.typeName+'</td></tr>');
 			            	});
 			            	$('table.table tbody').html(data.join());	
-			            	disAndEnInputField('');
 			        	}
 			        });
 		    }
@@ -34,9 +33,8 @@
 		
 			 if(BeanUtils.isNotEmpty($('div[name=addEditData] input[name=typeCode]').val()) && BeanUtils.isNotEmpty($('div[name=addEditData] input[name=typeName]').val())){
 				var params = {};
-				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'save')){
 					params.method = 'save';
-				}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'edit')){
+				 if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'edit')){
 					params.method = 'edit';
 					params.typeId = $('div[name=addEditData] input[name=typeCode]').attr('typeId');
 				}
@@ -57,9 +55,9 @@
 			 }
 		 }
 		 
-		 function addRow(){
-			 disAndEnInputField('save');
-		 }
+//		 function addRow(){
+//			 disAndEnInputField('save');
+//		 }
 		 
 		 function editRow(value){
 			 disAndEnInputField('edit');
@@ -86,11 +84,7 @@
 		
 		 
 		 function disAndEnInputField(param){
-			 if(BeanUtils.equals(param,'save')){
-				 	createOrUpdateMode(param);
-					$("div[name='addEditData'] input[name='typeCode']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='typeName']").prop('disabled', false);
-				}else if(BeanUtils.equals(param,'edit')){
+			if(BeanUtils.equals(param,'edit')){
 					createOrUpdateMode(param);
 					$("div[name='addEditData'] input[name='typeCode']").prop('disabled', false);
 					$("div[name='addEditData'] input[name='typeName']").prop('disabled', false);

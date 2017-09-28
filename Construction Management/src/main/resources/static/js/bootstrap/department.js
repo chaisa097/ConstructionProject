@@ -22,7 +22,7 @@
 					                        '<td name=departmentName>'+value.departmentName+'</td></tr>');
 			            	});
 			            	$('table.table tbody').html(data.join());	
-			            	disAndEnInputField('');
+			           
 			        	}
 			        });
 		    }
@@ -31,9 +31,8 @@
 		
 			 if(BeanUtils.isNotEmpty($('div[name=addEditData] input[name=departmentCode]').val()) && BeanUtils.isNotEmpty($('div[name=addEditData] input[name=departmentName]').val())){
 				var params = {};
-				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'save')){
 					params.method = 'save';
-				}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'edit')){
+				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'edit')){
 					params.method = 'edit';
 					params.departmentId = $('div[name=addEditData] input[name=departmentCode]').attr('departmentId');
 				}
@@ -85,11 +84,7 @@
 		 }
 		 
 		 function disAndEnInputField(param){
-			 if(BeanUtils.equals(param,'save')){
-				 	createOrUpdateMode(param);
-					$("div[name='addEditData'] input[name='departmentCode']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='departmentName']").prop('disabled', false);
-				}else if(BeanUtils.equals(param,'edit')){
+		 if(BeanUtils.equals(param,'edit')){
 					createOrUpdateMode(param);
 					$("div[name='addEditData'] input[name='departmentCode']").prop('disabled', true);
 					$("div[name='addEditData'] input[name='departmentName']").prop('disabled', false);

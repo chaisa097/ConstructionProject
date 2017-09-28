@@ -13,7 +13,8 @@ public class EmployeeMapping {
      private String  district;
      private String   birthDay;
      private Date    startHireDate;
-     private Integer departmentDetailId;
+     private Integer depDetailId;
+     private Integer departmentId;
      private String  departmentDetail;
      private String  gender;
      
@@ -66,6 +67,8 @@ public class EmployeeMapping {
 	public void setDistrict(String district) {
 		this.district = district;
 	}
+	
+
 	public String getBirthDay() {
 		return birthDay;
 	}
@@ -78,11 +81,12 @@ public class EmployeeMapping {
 	public void setStartHireDate(Date startHireDate) {
 		this.startHireDate = startHireDate;
 	}
-	public Integer getDepartmentDetailId() {
-		return departmentDetailId;
+	
+	public Integer getDepDetailId() {
+		return depDetailId;
 	}
-	public void setDepartmentDetailId(Integer departmentDetailId) {
-		this.departmentDetailId = departmentDetailId;
+	public void setDepDetailId(Integer depDetailId) {
+		this.depDetailId = depDetailId;
 	}
 	public String getDepartmentDetail() {
 		return departmentDetail;
@@ -95,6 +99,12 @@ public class EmployeeMapping {
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	public Integer getDepartmentId() {
+		return departmentId;
+	}
+	public void setDepartmentId(Integer departmentId) {
+		this.departmentId = departmentId;
 	}
      
      
