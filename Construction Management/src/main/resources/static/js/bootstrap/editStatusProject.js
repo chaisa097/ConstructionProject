@@ -46,8 +46,10 @@
 	    if (day.length < 2) day = '0' + day;
 
 	    var finishdate = [year, month, day].join('-');
-	        	
-		$("div[name='addEditData'] input[name='projectName']").val(json[0].projectName);
+		$("#projectName").html(json[0].projectName); 
+		$("#Status").html(json[0].percentStatus);
+		  var  TotalEx =json[0].totalExpense.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		$("#Expense").html(TotalEx);
 	  	$("div[name='addEditData'] textarea[name='description']").val(json[0].description);
 	  	$("div[name='addEditData'] textarea[name='address']").val(json[0].address);
 	  	$("div[name='addEditData'] select[name='provinceList']").val(json[0].provinceId).selectpicker('refresh');
@@ -77,12 +79,15 @@
 	
 	
 	
-	
+	function show_value(x)
+	{
+	 document.getElementById("slider_value").innerHTML=x;
+	}
 	
 
  function Save(){
 	 
-	                 var params = {};
+	                var params = {};
                 	var message = ""
 			if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
 					params.method = 'edit';				
@@ -91,21 +96,9 @@
 				}
 				
 				if(BeanUtils.isNotEmpty(params.method)){
-					params.projectName = $('div[name=addEditData] input[name=projectName]').val();				
-					params.description = $('div[name=addEditData] textarea[name=description]').val();
-					params.address = $('div[name=addEditData] textarea[name=address]').val();
-					params.employeeId = $('div[name=addEditData] select[name="employeeList"]').val();
-					params.provinceId = $('div[name=addEditData] select[name="provinceList"]').val();
+				
 					params.percentStatus =  $('div[name=addEditData] input[name=percentStatus]').val();
-					params.startDate  = $('div[name=addEditData] input[name=startDate]').val();
-					params.finishDate = $('div[name=addEditData] input[name=finishDate]').val();
-					params.customerName = $('div[name=addEditData] input[name=customerName]').val();
-					params.customerPhone = $('div[name=addEditData] input[name=customerPhone]').val();
-					params.budget =	$('div[name=addEditData] input[name=budget]').val();
-					params.totalHireEmployee =	$('div[name=addEditData] input[name=totalHireEmployee]').val();
-					params.totalUseMaterial =	$('div[name=addEditData] input[name=totalUseMaterial]').val();
-					params.totalExpense =	$('div[name=addEditData] input[name=totalExpense]').val();
-					params.criticalBudget=	$('div[name=addEditData] input[name=criticalBudget]').val();			
+							
 			    	$.ajax({
 			        	type: 'POST'
 			        	, url: application.contextPath+"/editStatusProject.html"

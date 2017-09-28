@@ -29,7 +29,7 @@ $(document).ready(function(){
 			         			            		
 			            		  data.push('<tr orderMaterialId="'+value.orderMaterialId+'"><td>'+
 			            				     '<a href='+domainSystem+'/confirmOrder.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-warning btn-xs"> '+
-		    								    '<span class="glyphicon glyphicon-eye-open"></span> Approve and Reject '+
+		    								    '<span class="glyphicon glyphicon-eye-open"></span> Approve or Reject '+
 		    							      	'</a> '+
 					                        '<td name=orderMaterialNo>'+value.orderMaterialNo+'</td> '+
 					                        '<td name=status>'+value.status+'</td> '+

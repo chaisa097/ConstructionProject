@@ -16,6 +16,7 @@ import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.ExportMaterialMapping;
 import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.service.ExportMaterialService;
+import com.softsquare.application.service.ProjectService;
 
 @RestController
 @RequestMapping("/listExportMaterial.html")
@@ -23,7 +24,8 @@ import com.softsquare.application.service.ExportMaterialService;
 public class ListExportMaterialController {
 	@Autowired
 	 private ExportMaterialService exportMaterialService;
-
+	@Autowired
+	ProjectService listprojectSevice;
 	@RequestMapping(method=RequestMethod.GET)
     public ModelAndView page(HttpServletRequest request, HttpServletResponse response ,@ModelAttribute ExportMaterialMapping mapping){		
     	ModelAndView mav = new ModelAndView();
@@ -54,7 +56,19 @@ public class ListExportMaterialController {
 		exportMaterialService.updatetotalUseMaterial(project);
 	}
 	
-	
+	@RequestMapping(params =  "method=searchTotalUseMaterial" , method=RequestMethod.POST)
+    public void SeachProject(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping mapping) throws Throwable{
+	Gson gson = new Gson();	
+		
+		String  json = gson.toJson(listprojectSevice.findProject(mapping) );
+
+		 try {
+			response.getWriter().write(json);
+		 } catch (Exception e) {
+				e.printStackTrace();
+		 }
+
+	 }
 	
 	
 	

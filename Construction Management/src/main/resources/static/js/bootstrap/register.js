@@ -36,10 +36,10 @@
 		            	var data = [];
 		            	$.each(json, function(index, value) {
 		            		  data.push('<tr><td>'+
-					                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.userId+'")> '+
+					                    	'<button type="button"  style="margin-top:5px;"class="btn btn-primary btn-xs" onclick=editRow("'+value.userId+'")> '+
 												'<span class="glyphicon glyphicon-pencil"></span>'+
 											'</button> '+
-											'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.userId+'")> '+
+											'<button type="button" style="margin-top:5px;" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.userId+'")> '+
 												'<span class="glyphicon glyphicon-trash"></span> '+
 											'</button> '+
 										'</td> '+
@@ -56,12 +56,12 @@
 	    
 	    function SaveFunction(){
 	    	var params = {};
-	    	if(BeanUtils.equals($("div[name='addEditData'] input[name='password']").val(), $("div[name='addEditData'] input[name='rePassword']").val())){
-	    		if(BeanUtils.isNotEmpty($("div[name='statusSave']").attr('status'))){
-	    			if(BeanUtils.equals($("div[name='statusSave']").attr('status'), 'create')){
-	    				params.method = 'save';
-	    			}else if(BeanUtils.equals($("div[name='statusSave']").attr('status'), 'update')){
+	    	if(BeanUtils.equals($("div[name='addEditData'] input[name='password']").val(), $("div[name='addEditData'] input[name='rePassword']").val())){	    		
+	    		params.method = 'save';
+	    		message = "create employee success!!"
+	    	if(BeanUtils.equals($("div[name='statusSave']").attr('status'), 'update')){
 	    				params.method = 'edit';
+	    			
 		    		}
 	    			var roleId = $("div[name='addEditData'] select[name='roleList']").val();
 	    			params.employeeId = $("div[name='addEditData'] select[name='employeeList']").val(); 
@@ -76,13 +76,14 @@
 			        	, data: params
 			        	, success: function(result){		        
 			        		$('div#roleHeader select[name="roleList"]').val(roleId).selectpicker('refresh');
+			        		alert(message);
 			        		clearValue();
 			        		search();
 			        		disAndEnInputField();
 			        	}
 			        });
 	    		}
-	    }
+	    
 	    function editRow(value){
 	    	disAndEnInputField('update');
 	    	var params = {method: 'search', userId: value};
@@ -113,9 +114,7 @@
 	        });
 	    }
 		
-		function addRow(){
-			disAndEnInputField('create');
-		}
+		
 		
 		function backFunction(){
 			location.href = "home.html";
@@ -130,20 +129,6 @@
 				$("div[name='addEditData'] input[name='rePassword']").prop('disabled', false);
 				$("div[name='addEditData'] select[name='roleList']").prop('disabled', false).selectpicker('refresh');
 				$("div[name='addEditData'] select[name='employeeList']").prop('disabled', false).selectpicker('refresh');
-			}else if(BeanUtils.equals(param, 'create')){
-				$("div[name='statusSave']").attr('status', param);
-				$("div[name='addEditData'] input[name='name']").prop('disabled', false);
-				$("div[name='addEditData'] input[name='password']").prop('disabled', false);
-				$("div[name='addEditData'] input[name='rePassword']").prop('disabled', false);
-				$("div[name='addEditData'] select[name='roleList']").prop('disabled', false).selectpicker('refresh');
-				$("div[name='addEditData'] select[name='employeeList']").prop('disabled', false).selectpicker('refresh');
-			}else{
-				$("div[name='statusSave']").attr('status', '');
-				$("div[name='addEditData'] input[name='name']").prop('disabled', true);
-				$("div[name='addEditData'] input[name='password']").prop('disabled', true);
-				$("div[name='addEditData'] input[name='rePassword']").prop('disabled', true);
-				$("div[name='addEditData'] select[name='roleList']").prop('disabled', true).selectpicker('refresh');
-				$("div[name='addEditData'] select[name='employeeList']").prop('disabled', true).selectpicker('refresh');
 			}
 		}
 		

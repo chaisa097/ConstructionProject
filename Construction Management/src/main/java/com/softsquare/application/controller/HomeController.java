@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
+import com.softsquare.application.domain.LoginMapping;
 import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.entity.Employee;
 import com.softsquare.application.service.EmployeeService;
+import com.softsquare.application.service.LoginService;
 import com.softsquare.application.service.ProjectService;
-
+import com.softsquare.application.common.util.LoginUtils;
 @RestController
 @RequestMapping("/home.html")
 @Configurable
@@ -27,10 +29,16 @@ public class HomeController {
 	ProjectService  proServ;
 	@Autowired
 	EmployeeService EmpServ;
+	@Autowired
+	LoginService loginService;
+	
 	
 	  @RequestMapping(method=RequestMethod.GET)
 	    public ModelAndView home(HttpServletRequest httpServletRequest){
 	    	ModelAndView mav = new ModelAndView();
+	    	LoginMapping login = loginService.getUser(LoginUtils.getUsername());
+	    	mav.addObject("empFirstName",login.getEmpFirstName());
+	    	mav.addObject("empLastName",login.getEmpLastName());
 	    	mav.setViewName("home");
 	    	return ControllerDefault.DefaultModelAndView(mav, httpServletRequest);
 	    }

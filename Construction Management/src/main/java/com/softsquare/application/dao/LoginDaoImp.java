@@ -43,6 +43,7 @@ public class LoginDaoImp extends AbstractDao<Integer, Login> implements LoginDao
 		return loginList;
 	}
 	
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public Map<String, Object> findByLOGID(String userName) {

@@ -5,22 +5,75 @@
 
 <html>
 <head>
- <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+<!-- <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
  <link rel="stylesheet" href="dist/css/sb-admin-2.css">
 <link rel="stylesheet" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
   <script src="webjars/jquery/2.1.1/jquery.min.js"></script>
     <script src="metisMenu/metisMenu.min.js"></script>
-  <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+  <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>-->
+  
+   <meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet"
+	href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="bower_components/font-awesome/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="bower_components/Ionicons/css/ionicons.min.css">
+<!-- daterange picker -->
+<link rel="stylesheet"
+	href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+<!-- bootstrap datepicker -->
+<link rel="stylesheet"
+	href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="plugins/iCheck/all.css">
+<!-- Bootstrap Color Picker -->
+<link rel="stylesheet"
+	href="bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+<!-- Bootstrap time Picker -->
+<link rel="stylesheet"
+	href="plugins/timepicker/bootstrap-timepicker.min.css">
+<!-- Select2 -->
+<link rel="stylesheet"
+	href="bower_components/select2/dist/css/select2.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+<!-- DataTables -->
+<link rel="stylesheet"
+	href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 </head>
 <div name="statusSave" hidden="true"></div>
-<div class="container">
-	<div class="form-group"> 		
-		          <div class="panel panel-info">
-		            <div class="panel-heading">
-		                <h3 class="panel-title">  Information of Construction Project </h3>
-		                
-		            </div>
-		            <table class="table">
+		<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper" style="margin-top: -89px;">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<h1>
+			Project
+		</h1>
+		<ol class="breadcrumb">
+			<li><a href="${domainSystem}home.html"><i
+					class="fa fa-dashboard"></i>Home</a></li>
+					<li><a href="${domainSystem}listProjectPM.html"><i
+					class="fa fa-folder"></i>Manage Project</a></li>
+			<li class="active">View Project</li>
+		</ol>
+	</section>
+
+	<!-- Main content -->
+	<section class="content">
+
+		<!-- /.box -->
+			<div class="box">
+				<table class="table">
 		                <thead>
 		                    <tr>
 		                                       		                    		                   
@@ -77,15 +130,15 @@
                           </tr>
                                                 
                               <tr>
-                             <td>TotalHireEmployee/Baht</td>
+                             <td>TotalHireEmployee</td>
                               <td><p id="totalHireEmployee"></p> </td>                            
                              </tr>
                             <tr>                          
-                             <td>TotalUsedMaterial/Baht</td>
+                             <td>TotalUsedMaterial</td>
                               <td><p id="totalUseMaterial"></p> </td>                            
                           </tr>
                            <tr>                                                           
-                             <td>TotalExpenseInConstruction/Baht</td>
+                             <td>TotalExpenseInConstruction</td>
                               <td><p id="totalExpense"></p></td>                            
                           </tr>
                           <tr>                                                           
@@ -96,11 +149,12 @@
                                         
 		                </tbody>
 		            </table>
-		        </div>
-		       
-			   			 				
-		    		  
-		 </div>
-	</div>
+				
+			<!-- /.box -->
+		</div>
+
+	</section>
+	<!-- /.content -->
 	
+</div>	
 </html>

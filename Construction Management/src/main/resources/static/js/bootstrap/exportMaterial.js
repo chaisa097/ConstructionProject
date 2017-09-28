@@ -51,15 +51,14 @@ function searchFunction(){
 		            	var data = [];		         
 		            		$.each(json, function(index, value) {
 		            			 data.push('<tr><td>'+
-										  '<button type="button" id="button'+value.materialId+'" class="btn btn-default btn-xs" onclick=selectRow("'+value.materialId+'")> '+
-											'<span class="glyphicon glyphicon-minus"></span> '+
+										  '<button type="button" id="button'+value.materialId+'" class="btn btn-success btn-xs" onclick=selectRow("'+value.materialId+'")> '+
+											' Select '+
 									     	'</button> '+
 									      '</td> '+
 			            				    '<td name=typeName>'+value.typeName+'</td> '+
 					                        '<td name=materialName>'+value.materialName+'</td> '+
-					                        '<td name=description>'+value.description+'</td> '+
-					                        '<td name=quantityOrder>'+value.quantityRequest+'</td> '+
-					                        '<td name=anotation>'+value.unitName+'</td></tr>');
+					                        '<td name=description>'+value.description+'</td> '+					              
+					                        '<td name=anotation>' +value.quantityRequest+'/'+value.unitName+'</td></tr>');
 			            	});
 		            	$('table.table tbody').html(data.join());	
 		            

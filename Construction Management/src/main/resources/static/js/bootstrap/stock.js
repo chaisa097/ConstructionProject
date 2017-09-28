@@ -26,8 +26,7 @@
 				                        '<td>'+value.materialName+'</td> '+
 				                        '<td>'+value.description+'</td> '+
 				                        '<td>'+value.totalQuatity+'</td> '+	
-				                        '<td>'+value.unitName+'</td> '+	
-				                        '<td>'+value.price+'</td></tr>');
+				                        '<td>'+value.price+' baht/'+value.unitName+'</td></tr>');
 		            	});
 		            	$('table.table tbody').html(data.join());		  
 		        	}

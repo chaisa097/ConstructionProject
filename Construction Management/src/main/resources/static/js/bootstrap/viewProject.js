@@ -33,15 +33,21 @@ var date2 = [ day, month, year].join('/');
       	$("#projectName").html(json[0].projectName);
       	$("#description").html(json[0].description);
       	$("#address").html(json[0].address);      
-      	$("#percentStatus").html(json[0].percentStatus);
+      	 var  percentStatus =json[0].percentStatus.toString().replace(/\B(?=(\d{2})+(?!\d))/g, "%");	
+      	$("#percentStatus").html(percentStatus);
       	$("#startDate").html(date);
       	$("#finishDate").html(date2);
       	$("#customerName").html(json[0].customerName);
-      	$("#customerPhone").html(json[0].customerPhone);
-      	$("#budget").html(json[0].budget);
-      	$("#totalHireEmployee").html(json[0].totalHireEmployee);
-      	$("#totalUseMaterial").html(json[0].totalUseMaterial);
-      	$("#totalExpense").html(json[0].totalExpense);
+      	 var  customerPhone =json[0].customerPhone.toString().replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');	
+      	$("#customerPhone").html(customerPhone);
+   	     var  budget =json[0].budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
+      	$("#budget").html(budget);
+      	 var  totalHire =json[0].totalHireEmployee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
+      	$("#totalHireEmployee").html(totalHire);
+      	 var  totalUseMaterial =json[0].totalUseMaterial.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
+      	$("#totalUseMaterial").html(totalUseMaterial);
+      	 var  totalExpense =json[0].totalExpense.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
+      	$("#totalExpense").html(totalExpense);
       	$("#criticalBudget").html(json[0].criticalBudget);    		
       
   	}

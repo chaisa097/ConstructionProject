@@ -32,8 +32,9 @@ public class LoginUtils {
 		if(userDetails != null) {
 			return userDetails.getPassword();
 		}
-		return null;
+		return null; 
 	}
+
 	
 	public static String getRole() {
 		UserDetails userDetails = getUserDetails();

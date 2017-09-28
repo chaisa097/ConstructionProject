@@ -96,7 +96,7 @@
 			        	, url: application.contextPath+"/listProject.html"
 			        	, data: params
 			        	, success: function(result){
-			        	
+			        		location.reload();
 			        	}
 			        });
 			 }

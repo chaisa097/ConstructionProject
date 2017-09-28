@@ -39,22 +39,25 @@
 				            	var date = [day, month, year].join('/');
 			         			            		
 			            		  data.push('<tr orderMaterialId="'+value.orderMaterialId+'"><td>'+
-			            				     '<a href='+domainSystem+'/orderMaterialDetail.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-success btn-xs"> '+
-	    								    '<span class="glyphicon glyphicon-plus"></span>  Material'+
-	    							      	'</a> '+
-	    							      	'<a href='+domainSystem+'/viewOrder.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-info btn-xs"> '+
-	    							      	'<span class="glyphicon glyphicon-eye-open"></span> Send '+
-	    							      	'</a> '+
-						                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.orderMaterialId+'")> '+
-												 '<span class="glyphicon glyphicon-pencil"></span> '+
-												'</button> '+
-												'<button type="button" class="btn btn-danger btn-xs"  onclick=deleteRow("'+value.orderMaterialId+'")> '+
-													'<span class="glyphicon glyphicon-trash"></span>'+
-												'</button> '+
+                   
+												 '<a href='+domainSystem+'/orderMaterialDetail.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-success btn-xs"> '+
+			    								    '<span class="glyphicon glyphicon-plus"></span>  Material'+
+			    							      	'</a> '+
+			    							      	
+													'<a href='+domainSystem+'/viewOrder.html?orderMaterialId='+value.orderMaterialId+' class="btn btn-info btn-xs"> '+
+			    							      	'<span class="glyphicon glyphicon-eye-open"></span> Send'+
+			    							      	'</a> '+
 											'</td> '+
 					                        '<td name=orderMaterialNo>'+value.orderMaterialNo+'</td> '+
 					                        '<td name=status>'+value.status+'</td> '+
-					                        '<td name=orderMaterialDate>'+(date)+'</td></tr>');
+					                        '<td name=orderMaterialDate>'+(date)+'</td> '+
+					                        
+					                        '<td>'+'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.orderMaterialId+'")> '+
+											 '<span class="glyphicon glyphicon-pencil"></span> '+
+												'</button> '+
+												'<button type="button" class="btn btn-danger btn-xs"  onclick=deleteRow("'+value.orderMaterialId+'")> '+
+													'<span class="glyphicon glyphicon-trash"></span>'+
+												'</button> '+'</td></tr>');
 			            	});
 			            	$('table.table tbody').html(data.join());	
 			            
@@ -67,10 +70,9 @@ function Save(){
 			 if(BeanUtils.isNotEmpty($('div[name=addEditData] textarea[name=address]').val())){				                                                     		
 				var params = {};
 				var message = ""
-				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
 					params.method = 'save';
 					message = "create success!!"
-				}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
+				 if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
 					params.method = 'edit';				
 					message = "update success!!"
 				}
@@ -93,22 +95,10 @@ function Save(){
 		 }
 
 
-function addRow(){			 
-	 disAndEnInputField('create');
-}
+
 
 function disAndEnInputField(param){
-	 if(BeanUtils.equals(param, 'create')){
-		 	createOrUpdateMode(param);
-			$("div[name='addEditData'] input[name='orderMaterialDate']").prop('disabled', false);
-			$("div[name='addEditData'] input[name='orderMaterialNo']").prop('disabled', true);
-			$("div[name='addEditData'] input[name='status']").prop('disabled', true);
-			$("div[name='addEditData'] textarea[name='address']").prop('disabled', false);
-		
-		
-	
-		
-		}else if(BeanUtils.equals(param, 'update')){
+	 if(BeanUtils.equals(param, 'update')){
 			createOrUpdateMode(param);
 			$("div[name='addEditData'] input[name='orderMaterialDate']").prop('disabled', false);
 			$("div[name='addEditData'] input[name='orderMaterialNo']").prop('disabled', true);
@@ -130,9 +120,7 @@ function createOrUpdateMode(param){
 		$("div[name='addEditData'] input[name='status']").val('');
 	    $("div[name='addEditData'] textarea[name='address']").val('');	 
 		 
-	 if(BeanUtils.equals(param, 'create')){
-		 $("div[name='statusSave']").attr('mode', 'create');
-	 }else if(BeanUtils.equals(param, 'update')){
+ if(BeanUtils.equals(param, 'update')){
 		 $("div[name='statusSave']").attr('mode', 'update');
 	 }else{
 		 $("div[name='statusSave']").attr('mode', '');

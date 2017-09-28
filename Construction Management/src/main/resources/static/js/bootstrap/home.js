@@ -12,6 +12,7 @@ var params = {method: 'search'};
      	$("#budget").html(Bud); 
         var  TotalEx =json[0].totalExpense.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
     	$("#totalExpense").html(TotalEx); 
+    		
      	
   	}
   });
@@ -23,7 +24,8 @@ var params = {method: 'search'};
   	, data: params
   	, success: function(result){
     	var json = $.parseJSON(result);
-      	$("#employeeId").html(json[0].employeeId);  		
+      	$("#employeeId").html(json[0].employeeId); 
+      	console.log(json);
       
   	}
   });	

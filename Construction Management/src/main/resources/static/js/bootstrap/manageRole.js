@@ -1,6 +1,7 @@
 		$(document).ready(function(){
    	    	BSBaseTable.callFiterTable();
    	    	searchFunction();
+  	
 	    });
 	    
 		 function searchFunction(){
@@ -48,6 +49,7 @@
 			        	, success: function(result){
 			        		searchFunction();
 			        		$('div[name=addEditData] input[name=roleCode]').attr('roleId', '')
+			        		alert("Save Successfully");
 			        	}
 			        });
 				}
@@ -112,3 +114,7 @@
 			 }
 		 }
 	
+		 
+	
+		 
+		 

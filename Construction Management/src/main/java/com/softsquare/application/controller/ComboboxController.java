@@ -1,6 +1,8 @@
 package com.softsquare.application.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,6 +25,7 @@ import com.softsquare.application.entity.Province;
 import com.softsquare.application.entity.Role;
 import com.softsquare.application.entity.Stock;
 import com.softsquare.application.entity.Unit;
+import com.softsquare.application.entity.Working;
 import com.softsquare.application.service.DepartmentDetailService;
 import com.softsquare.application.service.DepartmentService;
 import com.softsquare.application.service.EmployeeService;
@@ -32,6 +35,7 @@ import com.softsquare.application.service.RoleService;
 import com.softsquare.application.service.ProvinceService;
 import com.softsquare.application.service.TypeService;
 import com.softsquare.application.service.UnitService;
+import com.softsquare.application.service.WorkingService;
 
 
 @RestController
@@ -60,6 +64,9 @@ public class ComboboxController {
 	@Autowired
 	private UnitService unitServ;
 	
+	@Autowired
+	private WorkingService workerServ;
+	
 	@RequestMapping(params =  "method=role" , method=RequestMethod.POST)
     public void register(HttpServletRequest request, HttpServletResponse response){
 		ArrayList<Role> roleList =  roleSerivce.getRole();
@@ -77,6 +84,7 @@ public class ComboboxController {
 	@RequestMapping(params =  "method=employee" , method=RequestMethod.GET)
     public void AddEmployee(HttpServletRequest request, HttpServletResponse response  ){
 		ArrayList<Employee> employeeList =  employeeSerivce.getEmployee();
+
 		Gson gson = new Gson();
 		String  json = gson.toJson(employeeList);
 		try {
@@ -230,8 +238,23 @@ public class ComboboxController {
 		}
 	}
 	
+	@RequestMapping(params =  "method=departmentDetailbyEdit", method=RequestMethod.GET)
+    public void departmentDetiall(HttpServletRequest request, HttpServletResponse response  ){
+		ArrayList<DepartmentDetail> depDetailList =  depdetailService.getAllDartmentDetail();
+		Gson gson = new Gson();
+		String  json = gson.toJson(depDetailList);
+		try {
+//			response.getWriter().write("{records:"+json+"}");
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
+	
+	
+	
 	@RequestMapping(params =  "method=departmentDetial", method=RequestMethod.GET)
-    public void departmentDetiallist(@RequestParam("departmentId") int Id,HttpServletRequest request, HttpServletResponse response  ){
+    public void departmentDetiallistByDepartmentId(@RequestParam("departmentId") int Id,HttpServletRequest request, HttpServletResponse response  ){
 		ArrayList<DepartmentDetail> depDetailList =  depdetailService.AllDepartmentDetail(Id);	
 		Gson gson = new Gson();
 		String  json = gson.toJson(depDetailList);

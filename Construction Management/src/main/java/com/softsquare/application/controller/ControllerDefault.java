@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,6 +16,7 @@ import com.softsquare.application.common.util.LoginUtils;
 
 @Component
 public class ControllerDefault {
+	
 	
 	public static  ModelAndView DefaultModelAndView(ModelAndView mav, HttpServletRequest httpServletRequest){
 		Properties prop = new Properties();
@@ -28,6 +30,7 @@ public class ControllerDefault {
 		final String[] pageStocker = new String[]{"home","stock","receiveMaterial","addMaterialStock","requestMaterialStock","exportMaterial"};
 		final String[] pageNoLogin = new String[]{"index", "pageTest"};
 		int count = 0;
+		
 		
 		if(BeanUtils.isNotEmpty(mav.getViewName())){
 			if("logoutpage".equals(mav.getViewName())){
@@ -81,6 +84,10 @@ public class ControllerDefault {
 							throw new Exception();
 						}
 						
+					
+					
+						
+						
 						mav.addObject("userNameUserSystem", LoginUtils.getUsername());
 						mav.addObject("roleUserSystem", LoginUtils.getRole());
 					} catch(Exception ex){
@@ -97,7 +104,7 @@ public class ControllerDefault {
 							}
 						}
 						if(count == 0){
-							throw new Exception();
+							throw new Exception(); 
 						}
 					}catch(Exception ex){
 						mav.setViewName("index");

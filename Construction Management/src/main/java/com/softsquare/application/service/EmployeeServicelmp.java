@@ -16,8 +16,10 @@ import com.softsquare.application.common.util.DateUtils;
 import com.softsquare.application.dao.EmployeeDao;
 import com.softsquare.application.domain.DepartmentMapping;
 import com.softsquare.application.domain.EmployeeMapping;
+import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.entity.Department;
 import com.softsquare.application.entity.Employee;
+import com.softsquare.application.entity.Project;
 
 @Service
 public class EmployeeServicelmp implements EmployeeService {
@@ -40,6 +42,13 @@ public class EmployeeServicelmp implements EmployeeService {
 		return employeedao.findEmployee(employeeMapping);
 	}
 	@Override
+	  public  ArrayList<EmployeeMapping> findEmployeeByID(EmployeeMapping employeeMapping) {
+	
+		return employeedao.findEmployeeById(employeeMapping);
+		
+	}
+	
+	@Override
 	public ArrayList<Employee> getProjectManager() {
 		return employeedao.getProjectManager();
 	}
@@ -60,11 +69,10 @@ public class EmployeeServicelmp implements EmployeeService {
 			   
 		   }
 		emp.setCitizenId(mapping.getCitizenId());
-	
-	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
-	    Date convertedbirthday = sdf.parse(mapping.getBirthDay());
-		emp.setBirthDay(convertedbirthday);
-		emp.setDepartmentDetailId(mapping.getDepartmentDetailId());
+		  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
+		    Date convertedBirthDay = sdf.parse(mapping.getBirthDay());
+		emp.setBirthDay(convertedBirthDay);
+		emp.setDepartmentDetailId(mapping.getDepDetailId());
 		emp.setProvinceId(mapping.getProvinceId());
 		emp.setSubDistrict(mapping.getSubDistrict());
 		emp.setDistrict(mapping.getDistrict());
@@ -81,7 +89,22 @@ public class EmployeeServicelmp implements EmployeeService {
 		return  employeedao.CountEmployee();
 	}
 	
-	
+	@Override
+	public void updateEmployee(EmployeeMapping mapping) throws Exception {
+		Employee emp =  employeedao.getEmployeeForUpdate(mapping);
+		emp.setEmpFirstName(mapping.getEmpFirstName());
+		emp.setEmpLastName(mapping.getEmpLastName());
+		emp.setGender(mapping.getGender());
+		  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
+		    Date convertedBirthDay = sdf.parse(mapping.getBirthDay());
+		emp.setBirthDay(convertedBirthDay);
+		emp.setDepartmentDetailId(mapping.getDepDetailId());
+		emp.setDistrict(mapping.getDistrict());
+		emp.setSubDistrict(mapping.getSubDistrict());
+		emp.setProvinceId(mapping.getProvinceId());
+		emp.setCitizenId(mapping.getCitizenId());
+		employeedao.updateEmployee(emp);
+	}
 	
 	
 	

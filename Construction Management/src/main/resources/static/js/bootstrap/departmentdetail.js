@@ -43,9 +43,9 @@ $(document).ready(function(){
 		
 			 if(BeanUtils.isNotEmpty($('div[name=addEditData] input[name=depDetailName]').val()) && BeanUtils.isNotEmpty($('div[name=addEditData] input[name=Salary]').val())){
 				var params = {};
-				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'save')){
 					params.method = 'save';
-				}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'edit')){
+					
+				 if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'edit')){
 					params.method = 'edit';
 					params.depDetailId = $('div[name=addEditData] input[name=depDetailName]').attr('depDetailId');
 				}
@@ -60,17 +60,17 @@ $(document).ready(function(){
 			        	, data: params
 			        	, success: function(result){
 			        		searchFunction();
-			        		disAndEnInputField('');
+			        		
 			        	}
 			        });
 				}
 			 }
 		 }
 		 
-		 function addRow(){
+	/*	 function addRow(){
 			 disAndEnInputField('save');
 		 }
-		 
+		 */
 		 function editRow(value){
 			 disAndEnInputField('edit');
 		    	var params = {method: 'searchDepartmentforUpdate', depDetailId: value};
@@ -111,12 +111,7 @@ $(document).ready(function(){
 		 
 		
 		 function disAndEnInputField(param){
-			 if(BeanUtils.equals(param,'save')){
-				 	createOrUpdateMode(param);
-					$("div[name='addEditData'] select[name='departmentList']").prop('disabled', false).selectpicker('refresh');
-					$("div[name='addEditData'] input[name='depDetailName']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='Salary']").prop('disabled', false);
-				}else if(BeanUtils.equals(param,'edit')){
+		    if(BeanUtils.equals(param,'edit')){
 					createOrUpdateMode(param);
 					$("div[name='addEditData'] select[name='departmentList']").prop('disabled', false).selectpicker('refresh');
 					$("div[name='addEditData'] input[name='depDetailName']").prop('disabled', false);

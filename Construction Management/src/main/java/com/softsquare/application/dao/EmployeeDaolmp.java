@@ -126,13 +126,45 @@ public class EmployeeDaolmp  extends AbstractDao<Integer, Employee> implements E
 		 if(BeanUtils.isNotEmpty(employeeMapping.getEmployeeId())){
 			 criteria.add(Restrictions.eq("employee.employeeId", employeeMapping.getEmployeeId()));			 
 		 }
-		 if(BeanUtils.isNotEmpty(employeeMapping.getDepartmentDetailId())){
-			 criteria.add(Restrictions.eq("employee.employeeId", employeeMapping.getDepartmentDetailId()));			 
+		 if(BeanUtils.isNotEmpty(employeeMapping.getDepDetailId())){
+			 criteria.add(Restrictions.eq("employee.employeeId", employeeMapping.getDepDetailId()));			 
 		 }
 		 criteria.setResultTransformer(Transformers.aliasToBean(EmployeeMapping.class));
 		 ArrayList<EmployeeMapping> employeeList =  (ArrayList<EmployeeMapping>) criteria.list();
 		return employeeList;
 	}
+	@SuppressWarnings("unchecked")	
+	@Override
+	public  ArrayList<EmployeeMapping> findEmployeeById(EmployeeMapping employeeMapping) {
+		Criteria criteria = getSession().createCriteria(Employee.class, "employee");	
+		criteria.createAlias("employee.departmentDetail", "departmentDetail");
+		 ProjectionList projections = Projections.projectionList()
+				 	.add(Projections.property("employee.employeeId").as("employeeId"))
+		            .add(Projections.property("employee.empFirstName").as("empFirstName"))
+		            .add(Projections.property("employee.empLastName").as("empLastName"))
+		            .add(Projections.property("employee.citizenId").as("citizenId"))
+		            .add(Projections.property("employee.provinceId").as("provinceId"))		      
+		            .add(Projections.property("employee.district").as("district"))
+		            .add(Projections.property("employee.subDistrict").as("subDistrict"))		 
+		            .add(Projections.property("employee.birthDay").as("birthDay"))
+		            .add(Projections.property("employee.gender").as("gender"))
+		            .add(Projections.property("departmentDetail.depDetailId").as("depDetailId"));
+		           
+		 criteria.setProjection(projections);
+	     criteria.add(Restrictions.eq("employee.employeeId", employeeMapping.getEmployeeId()));	
+	     criteria.setResultTransformer(Transformers.aliasToBean(EmployeeMapping.class));
+	     criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<EmployeeMapping> employeeList =  (ArrayList<EmployeeMapping>) criteria.list();
+		return employeeList;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@Override
 	public  ArrayList<Employee> CountEmployee() {
@@ -152,14 +184,16 @@ public class EmployeeDaolmp  extends AbstractDao<Integer, Employee> implements E
 		 ProjectionList projections = Projections.projectionList()
 		            .add(Projections.property("employee.employeeId").as("employeeId"))
 		            .add(Projections.property("employee.empFirstName").as("empFirstName"))
-		            .add(Projections.property("employee.empLirstName").as("empLirstName"))
-		            .add(Projections.property("employee.citizenId").as("citizenId")) 
+		            .add(Projections.property("employee.empLastName").as("empLastName"))
+		            .add(Projections.property("employee.employeeCode").as("employeeCode"))
+		            .add(Projections.property("employee.provinceId").as("provinceId")) 
+		            .add(Projections.property("employee.gender").as("gender")) 
 		            .add(Projections.property("employee.district").as("district")) 
 		            .add(Projections.property("employee.subDistrict").as("subDistrict")) 
 		            .add(Projections.property("employee.birthDay").as("birthDay")) 
 		            .add(Projections.property("employee.citizenId").as("citizenId")) 
-		            .add(Projections.property("employee.statsHire_Date").as("statsHireDate"))
-		             .add(Projections.property("employee.departmentDetail_Id").as("departmentDetail_Id"));
+		            .add(Projections.property("employee.startHireDate").as("startHireDate"))
+		             .add(Projections.property("employee.departmentDetailId").as("departmentDetailId"));
 
 		 criteria.setProjection(projections);
 		 if(BeanUtils.isNotEmpty(mapping.getEmpFirstName())){

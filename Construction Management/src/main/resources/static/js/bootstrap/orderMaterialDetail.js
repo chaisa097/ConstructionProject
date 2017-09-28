@@ -54,10 +54,9 @@
 			 if( BeanUtils.isNotEmpty($('div[name=addEditData] select[name=typeList]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] input[name=quantityOrder]').val())){				                                                     		
 				var params = {};
 				var message = ""
-				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'create')){
 					params.method = 'save';
 					message = "add material success!!"
-				}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
+				 if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
 					params.method = 'edit';				
 					message = "update success!!"
 				}
@@ -111,21 +110,9 @@
 		}
 	
 
-		function addRow(){			 
-			 disAndEnInputField('create');
-		}
 
 		function disAndEnInputField(param){
-			 if(BeanUtils.equals(param, 'create')){
-				 	createOrUpdateMode(param);
-					$("div[name='addEditData'] select[name='typeList']").prop('disabled', false).selectpicker('refresh');
-					$("div[name='addEditData'] select[name='materialList']").prop('disabled',  false).selectpicker('refresh');
-					$("div[name='addEditData'] input[name='quantityOrder']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='anotation']").prop('disabled', false);
-					
-							
-				
-				}else if(BeanUtils.equals(param, 'update')){
+		 if(BeanUtils.equals(param, 'update')){
 					createOrUpdateMode(param);
 					$("div[name='addEditData'] select[name='typeList']").prop('disabled', false).selectpicker('refresh');
 					$("div[name='addEditData'] select[name='materialList']").prop('disabled',  false).selectpicker('refresh');
@@ -147,9 +134,7 @@
 				$("div[name='addEditData'] input[name='quantityOrder']").val('');
 				$("div[name='addEditData'] input[name='anotation']").val('');
 				 
-			 if(BeanUtils.equals(param, 'create')){
-				 $("div[name='statusSave']").attr('mode', 'create');
-			 }else if(BeanUtils.equals(param, 'update')){
+			 if(BeanUtils.equals(param, 'update')){
 				 $("div[name='statusSave']").attr('mode', 'update');
 			 }else{
 				 $("div[name='statusSave']").attr('mode', '');

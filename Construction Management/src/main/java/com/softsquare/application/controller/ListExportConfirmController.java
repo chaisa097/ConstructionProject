@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.ExportMaterialMapping;
+import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.service.ExportMaterialService;
 
 @RestController
@@ -40,6 +41,7 @@ public class ListExportConfirmController {
 			response.getWriter().write(json);
 		} catch (Exception e) {
 				e.printStackTrace();
-		}
+		}	
 	}
+
 }

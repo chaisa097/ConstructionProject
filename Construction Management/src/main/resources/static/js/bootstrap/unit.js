@@ -25,7 +25,7 @@
 					                        '<td name=unitName>'+value.unitName+'</td></tr>');
 			            	});
 			            	$('table.table tbody').html(data.join());	
-			            	disAndEnInputField('');
+			           
 			        	}
 			        });
 		    }
@@ -34,11 +34,10 @@
 		
 			 if(BeanUtils.isNotEmpty($('div[name=addEditData] input[name=unitCode]').val()) && BeanUtils.isNotEmpty($('div[name=addEditData] input[name=unitName]').val())){
 				var params = {};
-				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'save')){
 					params.method = 'save';
-				}else if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'edit')){
+				 if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'edit')){
 					params.method = 'edit';
-					params.typeId = $('div[name=addEditData] input[name=typeCode]').attr('typeId');
+					params.unitId = $('div[name=addEditData] input[name=unitCode]').attr('unitId');
 				}
 				
 				if(BeanUtils.isNotEmpty(params.method)){
@@ -51,15 +50,16 @@
 			        	, success: function(result){
 			        		searchFunction();
 			        		$('div[name=addEditData] input[name=unitCode]').attr('unitId', '')
+			        		createOrUpdateMode(params);
 			        	}
 			        });
 				}
 			 }
 		 }
 		 
-		 function addRow(){
+		/* function addRow(){
 			 disAndEnInputField('save');
-		 }
+		 }*/
 		 
 		 function editRow(value){
 			 disAndEnInputField('edit');
@@ -86,11 +86,7 @@
 		
 		 
 		 function disAndEnInputField(param){
-			 if(BeanUtils.equals(param,'save')){
-				 	createOrUpdateMode(param);
-					$("div[name='addEditData'] input[name='unitCode']").prop('disabled', false);
-					$("div[name='addEditData'] input[name='unitName']").prop('disabled', false);
-				}else if(BeanUtils.equals(param,'edit')){
+		 if(BeanUtils.equals(param,'edit')){
 					createOrUpdateMode(param);
 					$("div[name='addEditData'] input[name='unitCode']").prop('disabled', false);
 					$("div[name='addEditData'] input[name='unitName']").prop('disabled', false);
@@ -104,9 +100,7 @@
 		 function createOrUpdateMode(param){
 			 $("div[name='addEditData'] input[name='unitCode']").val('');
 			 $("div[name='addEditData'] input[name='unitName']").val('');
-			 if(BeanUtils.equals(param, 'save')){
-				 $("div[name='statusSave']").attr('mode', 'save');
-			 }else if(BeanUtils.equals(param, 'edit')){
+		     if(BeanUtils.equals(param, 'edit')){
 				 $("div[name='statusSave']").attr('mode', 'edit');
 			 }else{
 				 $("div[name='statusSave']").attr('mode', '');
