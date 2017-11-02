@@ -138,6 +138,19 @@ function  searchMaterialReceive(){
 
         	}
         });
+    	var params = {method: 'searchPrice', materialId:value};
+    	$.ajax({
+        	type: 'POST'
+        	, url: application.contextPath+"/AddMaterialStock.html"
+        	, data: params
+        	, success: function(result){
+            	var json = $.parseJSON(result);
+            
+            	$("div[name='addEditData'] input[name='receivePrice']").val(json[0].price);
+        	}
+        });
+    	
+    	
     }	
 		
 

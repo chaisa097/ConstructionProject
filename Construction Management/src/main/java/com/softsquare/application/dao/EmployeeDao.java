@@ -19,5 +19,6 @@ public interface EmployeeDao {
 	public Map<String, Object> findNoMax();
 	public  ArrayList<Employee> CountEmployee();
 	public  ArrayList<EmployeeMapping> findEmployeeById(EmployeeMapping employeeMapping);
-	
+	public ArrayList<Employee> getEmployeeForUserLogin();
+	public  ArrayList<EmployeeMapping> findEmployeeByIdForView(EmployeeMapping employeeMapping);
 }

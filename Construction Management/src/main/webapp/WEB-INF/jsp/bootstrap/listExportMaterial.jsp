@@ -51,37 +51,6 @@
   
 </head>
 <div name="statusSave" hidden="true"></div>
-<!-- <div class="container">
-	<div class="form-group">	
-		<div class="panel panel-warning">
-		  <div class="panel-heading"><lable class="headPanal">Material Used</lable>
-		  
-         </div>
-		 </div>
-		        <div class="panel panel-info filterable">
-		            <div class="panel-heading">
-		                <h3 class="panel-title"> List Import Material </h3>
-		                <div class="pull-right">
-		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Filter</button>
-		                </div>
-		            </div>
-		            <table class="table">
-		                <thead>
-		                    <tr class="filters">
-		                    	<th></th>
-		                        <th><input type="text" class="form-control" placeholder="ExportMaterialNo Form Stock" disabled></th>
-		                          <th><input type="text" class="form-control" placeholder="EmployeeName" disabled></th>
-		                          <th><input type="text" class="form-control" placeholder="Date" disabled></th>
-		                        <th><input type="text" class="form-control" placeholder="Total Import Material:One request/Bath" disabled></th>
-		                      
-		                    </tr>
-		                </thead>
-		                <tbody>
-		                </tbody>
-		            </table>
-		        </div>
-		    </div>
-		 </div> -->
 		 <!-- Content Wrapper. Contains page content -->
    <div class="content-wrapper" style="margin-top: -89px;">
 	<!-- Content Header (Page header) -->
@@ -128,7 +97,7 @@
 								<th></th>
 								 <th><input type="text" class="form-control" placeholder="No" disabled></th>
 		                          <th><input type="text" class="form-control" placeholder="EngineerName" disabled></th>
-		                          <th><input type="text" class="form-control" placeholder="Date" disabled></th>
+		                          <th><input type="text" class="form-control" placeholder="Date(DD/MM/YYYY)" disabled></th>
 		                        <th><input type="text" class="form-control" placeholder="Total(THB)" disabled></th>
 							</tr>
 						</thead>
@@ -140,8 +109,7 @@
 				</div>
 				<div class="box-footer">
               	<div class="col-md-7">
-					<button style="margin-top:3px;" onclick="calculate()" type="submit"
-					class="btn btn-success pull-right">Calculate</button>
+					
 					</div>
 					<div class="col-xs-1">
 					<h4 >TotalAll</h4>

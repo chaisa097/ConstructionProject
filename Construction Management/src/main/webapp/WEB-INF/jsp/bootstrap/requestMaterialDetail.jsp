@@ -107,9 +107,9 @@
         <small>Material</small>
       </h1>
       <ol class="breadcrumb">
-         <li><a href="${domainSystem}listOrder.html"><i class="fa fa-opencart"></i>Order Material</a></li>
-         <li><a href="${domainSystem}OrderMaterial.html"><i class="fa fa-file-o"></i>Order</a></li>
-        <li class="active">Add Material</li>
+         <li><a href="${domainSystem}importMaterial.html"><i class="fa fa-file"></i>Own Project</a></li>
+         <li><a href="#"><i class="fa fa-file-text-o"></i>Request Material</a></li>
+        <li class="active">add Material</li>
       </ol>
     </section>
 
@@ -134,7 +134,7 @@
 					 <select class="typeList form-control select2" id="type"  name="typeList" data-live-search="true" data-size="5" data-header="Select Type" ></select>
 					</div>
 					<div class="col-xs-3">
-						<label>Material In Stock </label>
+						<label style="color:red;">Material In Stock </label>
 						<select class="form-control select2" id="type"  name="materialList" data-live-search="true" data-size="5" data-header="Select Material" ></select>
 					</div>
 					<div class="col-xs-3">
@@ -158,9 +158,7 @@
            <div class="box">
             <div class="box-header">
               <h3 class="box-title">Material List</h3>
-               <div class="pull-right">
-		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Search</button>
-		                </div>
+             
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -180,6 +178,14 @@
               
                <div class="pull-right">
 		              <div id="page-selection"></div>
+		              
+		            	<button type="button" class="btn btn-success" onclick="Send()">
+					<span class="glyphicon glyphicon-view"></span> View
+				   </button> 
+				 
+		         
+		              
+		              
 		              </div>
               
             </div>
@@ -191,6 +197,8 @@
   
     </section>
     <!-- /.content -->
+    
+    
   </div>
 
 

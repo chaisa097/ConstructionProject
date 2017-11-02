@@ -9,7 +9,7 @@
    	    	});
    	   	    	    
 		    	
-		    	 var params = {method:'Allemployee'};
+		    	 var params = {method:'employeeForLogin'};
 		 	     BSBaseComboBox.getAllEmployee(params,
 		 	    			 function(data){
 		 	   	$("div select[name=employeeList]").html(data).selectpicker('refresh');

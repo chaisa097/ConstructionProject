@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.LoginMapping;
 import com.softsquare.application.entity.Login;
+import com.softsquare.application.entity.Working;
 
 @Repository()
 @Component
@@ -96,6 +97,21 @@ public class LoginDaoImp extends AbstractDao<Integer, Login> implements LoginDao
 		 ArrayList<LoginMapping> resultList =  (ArrayList<LoginMapping>) criteria.list();
 		return resultList;
 	}
+	@Override	
+	public ArrayList<Login> findUserAccount() {
+		 Criteria criteria = getSession().createCriteria(Login.class, "login");
+		 ProjectionList projections = Projections.projectionList()
+		            .add(Projections.property("login.id").as("id"))
+		            .add(Projections.property("login.employeeId").as("employeeId")); 	           
+		 criteria.setProjection(projections);		 
+		 criteria.setResultTransformer(Transformers.aliasToBean(Login.class));
+		ArrayList<Login> loginList = (ArrayList<Login>) criteria.list();
+		return loginList;
+		
+	}
+	
+	
+	
 	
 	@Override
 	public Login findUserForUpdate(LoginMapping loginMapping) {

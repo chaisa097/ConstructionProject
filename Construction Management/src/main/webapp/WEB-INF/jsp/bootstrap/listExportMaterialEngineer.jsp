@@ -72,10 +72,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-      Check
-        <small>Import Material </small>
-        To
-         <small> Own Project</small>
+       Import Material Checking
       </h1>
      
       <ol class="breadcrumb">
@@ -96,12 +93,12 @@
            <div class="box">
             <div class="box-header">
            
-             <h3 class="box-title">List Export Material Form Stock</h3>
+             <h3 class="box-title">List Export Material form Stock</h3>
           
              
               
                <div class="pull-right">
-		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Search</button>
+		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>filter</button>
 		                </div>
             </div>
             <!-- /.box-header -->

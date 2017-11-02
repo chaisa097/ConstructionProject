@@ -48,7 +48,8 @@ $.ajax({
 	  
      	});
      	
-     	$('table.table tbody').html(data.join());       	
+     	$('table.table tbody').html(data.join());
+    	calculate();
  	}
  }); 
 
@@ -83,7 +84,9 @@ $.ajax({
          		  
          		  
          	});
-         	$('table.table tbody').html(data.join());
+         	$('table.table tbody').html(data.join());calculate();
+         	
+         	location.reload();
        
      	}
      }); 
@@ -139,7 +142,8 @@ function deleteRow(value){
 	        	, url: application.contextPath+"/addEmployee.html"
 	        	, data: params
 	        	, success: function(result){
-	        		searchFunction();
+	        		seachWorker();
+	        		
 	        	}
 	        });
 	 }
@@ -163,9 +167,7 @@ function deleteRow(value){
 	        	, url: application.contextPath+"/addEmployee.html"
 	        	, data: params
 	        	, success: function(result){	        			
-	        		alert("calcuate Success");
-	        		location.reload();
-	        					        		
+			        		
 	        	}
 	        });
 		}

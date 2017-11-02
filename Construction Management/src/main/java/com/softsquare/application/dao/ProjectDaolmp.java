@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -32,6 +33,7 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		 Criteria criteria = getSession().createCriteria(Project.class, "project");
 		 criteria.createAlias("project.province", "province");
 		 criteria.createAlias("project.employee", "employee");
+		 criteria.addOrder(Order.desc("project.projectId"));
 		 ProjectionList projections = Projections.projectionList()
 		            .add(Projections.property("project.projectId").as("projectId"))
 		            .add(Projections.property("project.projectName").as("projectName"))

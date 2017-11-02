@@ -242,11 +242,7 @@
 					<h3 style="margin-top:3px;margin-left: -8px; " class="box-title">List worker</h3>
 					</div>
 			
-						
-					 <div class="pull-right">
-		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Filter</button>
-		                </div>
-					
+				
 						
 						
 				</div>
@@ -274,8 +270,7 @@
 
 					</table>
 					<div class="col-md-9">
-						<button style="margin-top:3px;" onclick="calculate()" 
-					class="btn btn-success pull-right">Calculate</button>
+					
 					</div>
 					<div class="col-xs-3">
 						<div class="col-xs-2">

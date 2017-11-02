@@ -38,6 +38,14 @@ public class EmployeeServicelmp implements EmployeeService {
 		return employeedao.getAllEmployee();
 	}
 	@Override
+	public  ArrayList<EmployeeMapping> findEmployeeByIdForView(EmployeeMapping employeeMapping){
+		return employeedao.findEmployeeByIdForView(employeeMapping);
+	}
+	@Override
+	public ArrayList<Employee> getEmployeeForUserLogin(){
+		return employeedao.getEmployeeForUserLogin();
+	}
+	@Override
 	public  ArrayList<EmployeeMapping> findEmployee(EmployeeMapping employeeMapping) {
 		return employeedao.findEmployee(employeeMapping);
 	}
@@ -106,6 +114,11 @@ public class EmployeeServicelmp implements EmployeeService {
 		employeedao.updateEmployee(emp);
 	}
 	
-	
+	@Override
+	public void removeEmployee(EmployeeMapping employee) throws Exception {
+		Employee em = new Employee();
+		em.setEmployeeId(employee.getEmployeeId());
+		employeedao.removeEmployee(em);
+	}
 	
 }

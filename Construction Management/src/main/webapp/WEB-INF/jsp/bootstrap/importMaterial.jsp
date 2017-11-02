@@ -110,9 +110,9 @@
 		    	<th><input type="text" class="form-control"
 									placeholder="ProjectName" disabled></th>
 							<th><input type="text" class="form-control"
-									placeholder="Budget" disabled></th>
+									placeholder="Budget(THB)" disabled></th>
 								<th><input type="text" class="form-control"
-									placeholder="Material Used" disabled></th>	
+									placeholder="Material Used(THB)" disabled></th>	
 								<th><input type="text" class="form-control"
 									placeholder="StatusProject" disabled></th>
                 </tr>

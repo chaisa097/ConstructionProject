@@ -39,7 +39,7 @@
 				            	var date = [day, month, year].join('-');
 			            		
 			            		  data.push('<tr projectId="'+value.projectId+'"><td>'+			
-		    								'<a href='+domainSystem+'/addEmployee.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
+		    								'<a href='+domainSystem+'/viewExportMaterialPM.html?exportMaterialId='+value.exportMaterialId+' class="btn btn-info btn-xs"> '+
 		    								  '<span class="glyphicon glyphicon-eye-open"></span> '+
 		    								'</a> '+	
 					                        '<td name=exportMaterialNo>'+value.exportMaterialNo+'</td> '+
@@ -48,7 +48,7 @@
 					                        '<td id="totalExport">'+value.totalExport+'</td></tr>');
 			            	});
 			            	$('table.table tbody').html(data.join());
-
+			            	calculate();
 			        	}
 			        });
 		    }
@@ -69,10 +69,7 @@
 			        	type: 'POST'
 			        	, url: application.contextPath+"/listExportMaterial.html"
 			        	, data: params
-			        	, success: function(result){	 
-			        		alert("calcuate Success");
-			        		location.reload();
-			        					        		
+			        	, success: function(result){	 			        		
 			        	}
 			        });
 				}

@@ -26,26 +26,27 @@
 			    	     	    
 			   });
 		    	
-			           if( BeanUtils.isNotEmpty(headerId)){		
-				    	    var params = {method:'departmentDetailbyEdit'};
-					    	BSBaseComboBox.getDepartmentDetailByEdit(params,function(data){
+			         
+			           
+			         if(BeanUtils.isNotEmpty(headerId)){	
+			        	 
+				    	    var params1 = {method:'departmentDetailbyEdit'};
+					    	BSBaseComboBox.getDepartmentDetailByEdit(params1,function(data){
 					      	$("div select[name=positionList]").html(data).selectpicker('refresh');
 						
 					
-				 	});	  
-			           }
-			           
-			           
-			           if( BeanUtils.isNotEmpty(headerId)){				     
+				      	});	  
+			        	 
 			   	 	    var params = {method: 'searchData'};
 			   			 disAndEnInputField('update');
-			   			params.employeeId = headerId;
+			   			  params.employeeId = headerId;
+			   			
 			   	  	$.ajax({
 			   	      	type: 'POST'
 			   	      	, url: application.contextPath+"/createEmployee.html"
 			   	      	, data: params
 			   	      	, success: function(result){
-			   	        	var json = $.parseJSON(result);
+			   	        var json = $.parseJSON(result);
 			   	      	var d = new Date(json[0].birthDay),
 			            month = '' + (d.getMonth() + 1),
 			            day = '' + d.getDate(),
@@ -77,24 +78,28 @@
 			   	 	     
 			   	 	     
 			   	 }
+			           
+			        
 			   
     });
 
 
 function save(){
-	
-
+	  
 			 if( BeanUtils.isNotEmpty($('div[name=addEditData] input[name=empFirstName]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] input[name=empLastName]').val())
-					 &&BeanUtils.isNotEmpty($('div[name=addEditData] input[name=citizenId]').val())&&BeanUtils.isNotEmpty($('div[name=addEditData] input[name=birthDay]').val())  
+					 &&BeanUtils.isNotEmpty($('div[name=addEditData] input[name=citizenId]').val())&&BeanUtils.isNotEmpty($('div[name=addEditData] input[name=birthDay]').val()) 
 					
 			 ){				                                                     		
 				var params = {};
+				
 				var message = ""
 					params.method = 'save';
 					message = "create employee success!!"
+						
 				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
 					params.method = 'edit';				
 					params.employeeId = headerId
+					  console.log('#someButton was clicked');
 					message = "update success!!"
 				}
 				
@@ -122,6 +127,12 @@ function save(){
 				}
 			 }
 		 }
+
+function back(){
+	   location.href ="employee.html";
+
+ }
+
 
 function disAndEnInputField(param){
 	 if(BeanUtils.equals(param, 'update')){
@@ -156,26 +167,25 @@ function createOrUpdateMode(param){
 	    $("div[name='addEditData'] input[name='empFirstName']").val('');
 	    $("div[name='addEditData'] select[name='provinceList']").val('').selectpicker('refresh');
 		$("div[name='addEditData'] select[name='positionList']").val('').selectpicker('refresh');
+		$("div[name='addEditData'] select[name='departmentList']").val('').selectpicker('refresh');
 		$("div[name='addEditData'] input[name='empLastName']").val('');
+		$("div[name='addEditData'] input[name='citizenId']").val('');
 		$("div[name='addEditData'] input[name='birthDay']").val('');
 		$("div[name='addEditData'] input[name='gender']").val('');
 		$("div[name='addEditData'] input[name='subDistrict']").val('');
 		$("div[name='addEditData'] input[name='district']").val('');
 		
 	 if(BeanUtils.equals(param, 'update')){
-		 $("div[name='statusSave']").attr('mode', 'update');
-	 }else{
-		 $("div[name='statusSave']").attr('mode', '');
-	 }
+			 $("div[name='statusSave']").attr('mode', 'update');
+		 }else{
+			 $("div[name='statusSave']").attr('mode', '');
+		 }
 }
 
 
 
 
-function back(){
-	   location.href ="employee.html";
 
-    }
 
 
 

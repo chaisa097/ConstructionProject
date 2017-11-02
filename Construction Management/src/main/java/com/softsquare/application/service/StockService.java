@@ -9,4 +9,5 @@ public interface StockService {
 	
 	public ArrayList<StockMapping> findAllStock(StockMapping mapping);
 	public ArrayList<StockMapping> getMaterialinStock(StockMapping mapping);
+	public ArrayList<StockMapping> findMaterialPriceFormStock(StockMapping mapping);
 }

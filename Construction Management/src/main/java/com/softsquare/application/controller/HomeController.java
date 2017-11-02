@@ -33,7 +33,7 @@ public class HomeController {
 	LoginService loginService;
 	
 	
-	  @RequestMapping(method=RequestMethod.GET)
+	 @RequestMapping(method=RequestMethod.GET)
 	    public ModelAndView home(HttpServletRequest httpServletRequest){
 	    	ModelAndView mav = new ModelAndView();
 	    	LoginMapping login = loginService.getUser(LoginUtils.getUsername());
@@ -42,8 +42,7 @@ public class HomeController {
 	    	mav.setViewName("home");
 	    	return ControllerDefault.DefaultModelAndView(mav, httpServletRequest);
 	    }
-	
-	  
+		  
 	 @RequestMapping(params = "method=search", method=RequestMethod.POST)
      public void countProject(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping mapping) throws Throwable{
 			Gson gson = new Gson();	
@@ -54,10 +53,8 @@ public class HomeController {
 			try {
 				response.getWriter().write(json);
 			} catch (Exception e) {
-					e.printStackTrace();
+				e.printStackTrace();
 			}
-
-			
 		}
 	 
 	 @RequestMapping(params = "method=searchEmployee", method=RequestMethod.POST)
@@ -71,15 +68,6 @@ public class HomeController {
 				response.getWriter().write(json);
 			} catch (Exception e) {
 					e.printStackTrace();
-			}
-
-			
+			}			
 		}
-	  
-	 
-	 
-	  
-	  
-	  
-	
 }

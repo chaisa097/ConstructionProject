@@ -95,6 +95,22 @@ public class ProjectServicelmp implements ProjectService {
 	public void updateProject(ProjectMapping project) throws Exception {
 		Project pro =  projectListDao.findProejctForUpdate(project);
 	    pro.setPercentStatus(project.getPercentStatus());
+	    pro.setBudget(project.getBudget());
+	    pro.setAddress(project.getAddress());
+	    pro.setEmployeeId(project.getEmployeeId());
+	    pro.setProjectName(project.getProjectName());
+	    pro.setDescription(project.getDescription());
+	    pro.setCustomerName(project.getCustomerName());
+	    pro.setCustomerPhone(project.getCustomerPhone());
+	    pro.setProvinceId(project.getProvinceId());
+	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
+	    Date convertedStartDate = sdf.parse(project.getStartDate());
+	    pro.setStartDate(convertedStartDate);
+	    Date convertedFinishDate = sdf.parse(project.getFinishDate());	  
+	    pro.setFinishDate(convertedFinishDate);
+	    pro.setPercentStatus(project.getPercentStatus());
+	    pro.setBudget(project.getBudget());
+	    pro.setCriticalBudget(project.getCriticalBudget());
 	    projectListDao.updateProject(pro);
 	}
 

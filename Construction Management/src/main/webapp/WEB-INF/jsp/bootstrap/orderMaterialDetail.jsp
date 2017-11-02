@@ -34,88 +34,6 @@
  
 </head>
 <div name="statusSave" hidden="true"></div>
-<!-- <div class="container">
-	<div class="form-group">
-		<div class="panel panel-info">
-		  <div class="panel-heading"><lable class="headPanal">MaterialDetail</lable>
-				
-			  </div>
-		 </div>
-		 
-		 <div class="panel-body" style="margin-top:-25px;">
-		  <div class="row">
-		 		<div class="panel panel-warning">
-		  <div class="panel-heading">
-
-				      
-				<div class="row" style="margin-top:10px; margin-bottom:15px" name="addEditData">
-				
-					<div  class="col-md-1" style="margin-top:10px; margin-bottom:5px">
-				  	<input type="image" src="images/add.png"  onclick="addRow()"   width="80" height="48">
-			     	</div>
-			     	
-					<div class="col-md-3" style="margin-top:5px; margin-bottom:5px">
-					<label class="control-label-required">Type</label>
-						<select class="typeList"  id="type"  name="typeList" data-live-search="true" data-size="5" data-header="Select Type" disabled></select>
-					</div>
-			        
-					<div class="col-md-3" style="margin-top:5px; margin-bottom:5px" >
-					<label>Material</label>
-						<select class="selectpicker show-tick show-menu-arrow" id="type"  name="materialList" data-live-search="true" data-size="5" data-header="Select Material" disabled></select>
-					</div>
-				
-					
-					
-					<div class="col-md-2" style="margin-top:5px; margin-bottom:5px" >
-						<label>Quantity of Order</label>
-						<input type="number" id="" class="form-control" placeholder="Amount of Order" name="quantityOrder" disabled>
-					</div>
-				
-					<div class="col-md-3" style="margin-top:5px; margin-bottom:5px" >
-					<label>Anotation</label>
-					<input type="text" id="" class="form-control" placeholder="Anotation" name="anotation" disabled>
-							
-					</div>
-						<div class="col-md-11" style="margin-top:10px; margin-bottom:5px" >
-						</div>
-					<div class="col-md-1" style="margin-top:10px; margin-bottom:-5px" >
-				    <input type="image" src="images/Save2.png"  onclick="Save()"   width="40" height="40">  
-			        </div>
-					
-				</div>
-			  </div>
-		 </div>
-				
-		        <div class="panel panel-default filterable">
-		            <div class="panel-heading">
-		            
-		                <h3 class="panel-title">Material List</h3>
-		            </div>
-		            <table class="table">
-		                <thead>
-		                    <tr class="filters">
-		                    	<th></th>
-		                        <th><input type="text" class="form-control" placeholder="MaterialName" disabled></th>
-		                        <th><input type="text" class="form-control" placeholder="Description" disabled></th>
-		                        <th><input type="text" class="form-control" placeholder="AmountOfOrder" disabled></th>
-		                        <th><input type="text" class="form-control" placeholder="Unit" disabled></th>
-		                        <th><input type="text" class="form-control" placeholder="Anotation" disabled></th>
-		                    </tr>
-		                </thead>
-		                <tbody>
-		                </tbody>
-		            </table>
-		        </div>
-		    
-		        
-		        
-		        
-		    </div>
-		 </div>
-	</div>
-</div>	 -->
-
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="margin-top:-89px;" >
     <!-- Content Header (Page header) -->
@@ -179,9 +97,6 @@
            <div class="box">
             <div class="box-header">
               <h3 class="box-title">Material List</h3>
-               <div class="pull-right">
-		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Search</button>
-		                </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body">

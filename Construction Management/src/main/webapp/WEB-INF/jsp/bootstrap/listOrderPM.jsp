@@ -130,10 +130,12 @@
 								<th></th>
 								<th><input type="text" class="form-control"
 									placeholder="OrderNo" disabled></th>
+									<th><input type="text" class="form-control"
+									placeholder="EngineerName" disabled></th>
 								<th><input type="text" class="form-control"
 									placeholder="status" disabled></th>
 								<th><input type="text" class="form-control"
-									placeholder="OrderDate" disabled></th>
+									placeholder="OrderDate(DD/MM/YYYY)" disabled></th>
 							</tr>
 						</thead>
 						<tbody>

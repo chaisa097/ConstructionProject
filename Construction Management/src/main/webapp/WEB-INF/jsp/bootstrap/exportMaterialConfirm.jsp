@@ -36,8 +36,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-     Own Import 
-        <small> Material</small>
+      Import  Material in site working
       </h1>
      
       <ol class="breadcrumb">
@@ -58,7 +57,7 @@
            <div class="box">
             <div class="box-header">
            
-             <h3 class="box-title">List Own Import Material</h3>
+             <h3 class="box-title">List Import Material</h3>
           
              
               

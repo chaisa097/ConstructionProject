@@ -53,6 +53,7 @@ C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\common\security\CustomUserDetailsService.java
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\domain\MaterialTypeMapping.java
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\RecieveMaterialDaoImp.java
+C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\viewEmployeeController.java
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\RequestMaterialDetailServiceImp.java
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\RequestMaterialDao.java
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\LoginDao.java
@@ -159,6 +160,7 @@ C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\RequestMaterialDetailService.java
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ListExportMaterialEngineerController.java
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\ProvinceService.java
+C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\controller\ViewMaterialDetailPMController.java
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\dao\EmployeeDaolmp.java
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\entity\Province.java
 C:\Users\Asus\git\ConstructionProject\Construction Management\src\main\java\com\softsquare\application\service\ExportMaterialDetailServiceImp.java

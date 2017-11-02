@@ -31,9 +31,9 @@
       <form   action="http://${ipDomainSystem}${loginUrl}" method="post">
       <!--  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> -->   
         
-      <h3 class="form-signin-heading" action="${loginUrl}" method="post">Please sign in</h3>  
+      <h3 class="form-signin-heading"  action="${loginUrl}" method="post">Please sign in</h3>  
       <hr class="colorgraph"><br>   
-      <img class="img-responsive img-circle center-block" width="150" height="50" src="images/iConCON.png">
+      <img class="img-responsive img-circle center-block" width="150" height="100%" src="images/Metal-Construction-icon.png">
         
       
               <div class="login__form">

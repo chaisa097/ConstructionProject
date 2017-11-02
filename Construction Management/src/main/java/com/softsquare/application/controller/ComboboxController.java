@@ -95,9 +95,9 @@ public class ComboboxController {
 		}
 	}
 	
-	@RequestMapping(params =  "method=Allemployee" , method=RequestMethod.GET)
+	@RequestMapping(params =  "method=employeeForLogin" , method=RequestMethod.GET)
     public void registerAllEmployee(HttpServletRequest request, HttpServletResponse response  ){
-		ArrayList<Employee> employeeList =  employeeSerivce.getAllEmployee();
+		ArrayList<Employee> employeeList =  employeeSerivce.getEmployeeForUserLogin();
 		Gson gson = new Gson();
 		String  json = gson.toJson(employeeList);
 		try {

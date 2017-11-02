@@ -178,6 +178,10 @@
             
               <div class="box-footer">
                <div class="pull-right">
+               	<button type="button" class="btn btn-primary" onclick="Back()">
+					Back
+				   </button> 
+               
 		            	<button type="button" class="btn btn-warning" onclick="SendRequest()">
 					 Send
 				   </button> 
