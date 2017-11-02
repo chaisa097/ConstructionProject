@@ -27,9 +27,9 @@
 	            	var data = [];
 	            	$.each(json, function(index, value) {
 	            		  data.push('<tr projectId="'+value.projectId+'"><td>'+
-				                    	'<button type="button" class="btn btn-info btn-xs" onclick=viewRow("'+value.projectId+'")> '+
-											'<span class="glyphicon glyphicon-eye-open"></span>'+
-										'</button> '+
+	            				     '<a href='+domainSystem+'/viewProject.html?projectId='+value.projectId+' class="btn btn-info btn-xs"> '+
+								       '<span class="glyphicon glyphicon-eye-open"></span> '+
+								     '</a> '+
 										'<a href='+domainSystem+'/createProject.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
 										  '<span class="glyphicon glyphicon-pencil"></span> '+
 										'</a> '+				

@@ -47,9 +47,19 @@ public class WorkingDaolmp extends AbstractDao<Integer, Working> implements Work
 		ArrayList<WorkingMapping> workingList = (ArrayList<WorkingMapping>) criteria.list();
 		return workingList;
 		
-		 
 	}
-	
+	@Override	
+	public ArrayList<Working> findWorker() {
+		 Criteria criteria = getSession().createCriteria(Working.class, "working");
+		 ProjectionList projections = Projections.projectionList()
+		            .add(Projections.property("working.workingId").as("workingId"))
+		            .add(Projections.property("working.employeeId").as("employeeId")); 	           
+		 criteria.setProjection(projections);		 
+		 criteria.setResultTransformer(Transformers.aliasToBean(Working.class));
+		ArrayList<Working> workingList = (ArrayList<Working>) criteria.list();
+		return workingList;
+		
+	}
 	
 	@Override	
 	public ArrayList<Working> findWorkbyEmployeeId(int workerId ) {
@@ -62,18 +72,15 @@ public class WorkingDaolmp extends AbstractDao<Integer, Working> implements Work
 		            .add(Projections.property("working.employeeId").as("employeeId"))  
 		            .add(Projections.property("employee.empFirstName").as("empFirstName"))
 		            .add(Projections.property("employee.empLastName").as("empLastName"))
-		            .add(Projections.property("employee.employeeCode").as("employeeCode"));      
-		           		           
+		            .add(Projections.property("employee.employeeCode").as("employeeCode"));              		           
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("working.employeeId",workerId ));			 
 		 criteria.setResultTransformer(Transformers.aliasToBean(Working.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		ArrayList<Working> workingList = (ArrayList<Working>) criteria.list();
 		return workingList;
-		
-		 
 	}
-			
+	
 	
 	@Override
 	public void saveWorking(Working working) throws Exception {

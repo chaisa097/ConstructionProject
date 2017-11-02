@@ -8,23 +8,14 @@
 		      	$("div select[name=typeList]").html(data).selectpicker('refresh');
 			
 	   	
-	    	});
-	 
-		    	
-		    	
-			    	$('.typeList').on('change', function(event){
-			    	    var params2 = {method:'MaterialStock', TypeId: event.currentTarget.value};
-			    	    BSBaseComboBox.getMaterial(params2,function(data){
-			    	    	$("div select[name=materialList]").html(data).selectpicker('refresh');
-			    	   
-			    	    	
-			    	    	
+	    	});			    	
+			   $('.typeList').on('change', function(event){
+			   var params2 = {method:'MaterialStock', TypeId: event.currentTarget.value};
+			   BSBaseComboBox.getMaterial(params2,function(data){
+			   $("div select[name=materialList]").html(data).selectpicker('refresh');
+			    			    	    	
 			    	 });
-			    	    
-			    	    
-			    	  
-			 
-			    	    
+		    	    
 			    	  });
 			    	
 			    	searchFunction();
@@ -149,6 +140,9 @@
 			location.href = "createRequestMaterial.html";
 
 		}
-		
+		function Send(){
+			location.href = "viewRequestMaterial.html?requestMaterialId="+headerId+" ";
+
+		}
 		
 		

@@ -14,7 +14,7 @@
 										
 										'<ul style="margin-top:1px;" class="nav navbar-nav">'+
 	    						        '<li class="dropdown">'+
-	    						          '<a href="#" class="dropdown-toggle" data-toggle="dropdown" >'+'<span style="font-size:20px;margin-top:-10px;" class="glyphicon glyphicon-th-list pull-right"></span>'+'</a>'+
+	    						          '<a href="#" class="dropdown-toggle" data-toggle="dropdown" >'+'<span style="font-size:10px;margin-top:-10px;" class="glyphicon glyphicon-menu-down pull-right"></span>' +'Manage' +'</a>'+
 	    						          '<ul class="dropdown-menu">'+
 	    						          '<li>'+ '<a href='+domainSystem+'/createRequestMaterial.html?projectId='+value.projectId+' > '+
 	    								  '<span class="glyphicon glyphicon-folder-open"></span>Request Material '+
@@ -29,8 +29,8 @@
 										
 										
 			                        '<td name=projectName>'+value.projectName+'</td> '+
-			                        '<td name=budget>'+value.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'THB' +'</td> '+
-			                        '<td name=totalUseMaterial>'+value.totalUseMaterial.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+ 'THB'+  '  </td> '+
+			                        '<td name=budget>'+value.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'</td> '+
+			                        '<td name=totalUseMaterial>'+value.totalUseMaterial.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'  </td> '+
 			                        '<td name=percentStatus>'+value.percentStatus+'%'+'</td></tr>');
 	            	});
 	            	$('table.table tbody').html(data.join());	

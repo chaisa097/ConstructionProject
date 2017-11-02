@@ -16,7 +16,8 @@ public interface EmployeeService {
 	public void saveEmployee(EmployeeMapping mapping) throws Exception;
 	public  ArrayList<Employee> CountEmployee();
 	public void updateEmployee(EmployeeMapping mapping) throws Exception ;
-	  public  ArrayList<EmployeeMapping> findEmployeeByID(EmployeeMapping employeeMapping) ;
-	
-	
+	public  ArrayList<EmployeeMapping> findEmployeeByID(EmployeeMapping employeeMapping) ;
+	public ArrayList<Employee> getEmployeeForUserLogin();
+	public void removeEmployee(EmployeeMapping employee) throws Exception;
+	public  ArrayList<EmployeeMapping> findEmployeeByIdForView(EmployeeMapping employeeMapping);
 }

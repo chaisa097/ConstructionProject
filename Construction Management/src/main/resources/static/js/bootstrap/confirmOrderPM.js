@@ -27,10 +27,10 @@ function searchHeader(){
 
 	    var date = [year, month, day].join('-');
 	    
-		  	$("textarea[name='address']").val(json[0].address);
-	      	$("input[name='orderMaterialNo']").val(json[0].orderMaterialNo);
-	      	$("input[name='orderMaterialDate']").val(date); 
-	     	$("input[name='status']").val(json[0].status); 
+	     	 $("#address").html(json[0].address);  
+	      	$("#orderMaterialNo").html(json[0].orderMaterialNo);  
+	      	$("#orderMaterialDate").html(date); 
+	      	$("#status").html(json[0].status); 
 	  	}
 	  });
 }

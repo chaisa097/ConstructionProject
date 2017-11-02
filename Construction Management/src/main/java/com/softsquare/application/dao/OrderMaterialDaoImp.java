@@ -91,16 +91,20 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 	@Override
 	public ArrayList<OrderMaterial> getPMConfirmOrderWaitStatus() {
 		 Criteria criteria = getSession().createCriteria(OrderMaterial.class, "order");
+		 criteria.createAlias("order.employee", "employee");
 		 ProjectionList projections = Projections.projectionList()
 		            .add(Projections.property("order.orderMaterialId").as("orderMaterialId"))
 		            .add(Projections.property("order.orderMaterialNo").as("orderMaterialNo"))
 		            .add(Projections.property("order.address").as("address"))
 		            .add(Projections.property("order.employeeId").as("employeeId"))
 		            .add(Projections.property("order.orderMaterialDate").as("orderMaterialDate"))
-		            .add(Projections.property("order.status").as("status"));
+		            .add(Projections.property("order.status").as("status"))
+		            .add(Projections.property("employee.empFirstName").as("empFirstName"))
+		            .add(Projections.property("employee.empLastName").as("empLastName"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.or(Restrictions.eq("order.status","Waiting Confirm")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(OrderMaterial.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<OrderMaterial> orderList = (ArrayList<OrderMaterial>) criteria.list();
 		return orderList;
 	}

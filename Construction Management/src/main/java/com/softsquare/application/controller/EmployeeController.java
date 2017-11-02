@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 import com.softsquare.application.domain.DepartmentDetailMapping;
 import com.softsquare.application.domain.EmployeeMapping;
+import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.service.EmployeeService;
 
 @RestController
@@ -44,7 +45,10 @@ public class EmployeeController {
 		}
 
    }
-	
+	@RequestMapping(params =  "method=delete" , method=RequestMethod.POST)
+	public void delete(HttpServletRequest request, HttpServletResponse response, @ModelAttribute EmployeeMapping mapping) throws Throwable{
+		employeeSevice.removeEmployee(mapping);
+	}
 	
 	
 	

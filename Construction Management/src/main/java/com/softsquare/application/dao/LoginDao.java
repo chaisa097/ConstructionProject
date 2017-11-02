@@ -16,5 +16,6 @@ public interface LoginDao {
 	public void updateUser(Login user) throws Exception;
 	public void deleteUser(Login user) throws Exception;
 	public  Map<String, Object> findByLOGID(String userName);
+	public ArrayList<Login> findUserAccount();
 
 }

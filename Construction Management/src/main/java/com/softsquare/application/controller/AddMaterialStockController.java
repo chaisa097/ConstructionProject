@@ -17,10 +17,12 @@ import com.softsquare.application.domain.MaterialMapping;
 import com.softsquare.application.domain.OrderMaterialDetailMapping;
 import com.softsquare.application.domain.OrderMaterialMapping;
 import com.softsquare.application.domain.ReceiveMaterialMapping;
+import com.softsquare.application.domain.StockMapping;
 import com.softsquare.application.service.MaterialService;
 import com.softsquare.application.service.OrderMaterialDetialService;
 import com.softsquare.application.service.OrderMaterialService;
 import com.softsquare.application.service.ReceiveMaterialService;
+import com.softsquare.application.service.StockService;
 import com.softsquare.application.service.ReceiveMaterialDetailService;
 @RestController
 @RequestMapping("/AddMaterialStock.html")
@@ -37,7 +39,8 @@ public class AddMaterialStockController {
 	 private  ReceiveMaterialDetailService reDetailServ;
 	@Autowired
 	 private  MaterialService materialServ;
-	
+	@Autowired           
+	private StockService stockServ;
 	
 	@RequestMapping(method=RequestMethod.GET)
     public ModelAndView page(HttpServletRequest request, HttpServletResponse response ,ReceiveMaterialMapping mapping){		
@@ -81,7 +84,16 @@ public class AddMaterialStockController {
 		}
 	}
 	
-	
+	@RequestMapping(params =  "method=searchPrice", method=RequestMethod.POST)
+    public void searchPriceMaterial(HttpServletRequest request, HttpServletResponse response, @ModelAttribute StockMapping mapping) throws Throwable{
+		Gson gson = new Gson();
+		String  json = gson.toJson(stockServ.findMaterialPriceFormStock(mapping));
+		try {
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
 	
 	
 	@RequestMapping(params = "method=save" , method=RequestMethod.POST)

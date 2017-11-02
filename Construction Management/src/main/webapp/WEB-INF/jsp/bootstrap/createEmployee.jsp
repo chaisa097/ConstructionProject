@@ -76,7 +76,7 @@
 	<section class="content">
 
 		<!-- SELECT2 EXAMPLE -->
-
+      
 		<div class="box box-default" name="addEditData">
 			<div class="box-header with-border">
 				<h3 class="box-title">Employee Form</h3>
@@ -123,16 +123,16 @@
 							<div>
 
 								<input id="FirstName" type="text" class="form-control"
-									placeholder="FirstName" name="empFirstName" required>
+									placeholder="FirstName" name="empFirstName" id="FirstName"  >
 							</div>
 							<div style="margin-top: 10px">
 								<input id="LastName" type="text" class="form-control"
-									placeholder="LastName" name="empLastName" required>
+									placeholder="LastName" name="empLastName"  >
 							</div>
 
 							<div style="margin-top: 10px">
 								<input id="citizenId" type="text" class="form-control"
-									placeholder="CitizenId" maxlength="13" name="citizenId" required>
+									placeholder="CitizenId" maxlength="13" name="citizenId"  >
 							</div>
 							<div style="margin-top: 10px">
 								<div class="input-group date">
@@ -141,7 +141,7 @@
 									</div>
 								
 								<input type="date" class="form-control" name="birthDay"
-									id="BirthDay" required>
+									id="BirthDay"  required="">
 									</div>
 							</div>
 							<div style="margin-top:20px">
@@ -189,29 +189,29 @@
 						<div class="form-group">
 							<select class="form-control select2" id="province"
 								name="provinceList" data-live-search="true" data-size="5"
-								data-header="Select Province" required=""></select>
+								data-header="Select Province" ></select>
 							
 								
 
 							<div style="margin-top: 10px">
 									<input type="text" class="form-control"
 									placeholder="Sub-District" name="subDistrict"
-									id="subDistrict">
+									id="subDistrict"  >
 
 							</div>
 							<div style="margin-top: 10px">
 								<input type="text" class="form-control" placeholder="District"
-									name="district" id="district">
+									name="district" id="district" >
 							</div>
 							<div  style="margin-top: 10px">
 								<select class="depList , form-control select2" 
 									name="departmentList" data-live-search="true" data-size="5"
-									data-header="Select Department"></select>
+									data-header="Select Department"  ></select>
 							</div>
 							<div style="margin-top: 10px">
 							<select class="form-control select2" id="position"
 									name="positionList" data-live-search="true" data-size="5"
-									data-header="Select position"></select>
+									data-header="Select position"  ></select>
 							</div>
 						</div>
 						<!-- /.form-group -->
@@ -233,6 +233,7 @@
 
 			</div>
 		</div>
+	
 	
 		<!-- /.box -->
 

@@ -121,6 +121,14 @@
             <put-attribute name="pageToolBar" value=""/>
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
+           <definition name="viewEmployee" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/viewEmployee.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/viewEmployee.js" />
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
         
          <definition name="editStatusProject" extends="ss.layout">
          	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
@@ -391,6 +399,14 @@
             <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
         </definition>
         
+          <definition name="viewExportMaterialPM" extends="ss.layout">
+         	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
+         	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/viewExportMaterialPM.jsp" />
+            <put-attribute name="pageJsRenderIncluded" value="/js/render/empty.js" />
+            <put-attribute name="pageJsIncluded" value="/js/bootstrap/viewExportMaterialPM.js"/>
+            <put-attribute name="pageToolBar" value=""/>
+            <put-attribute name="menuBar" value="/WEB-INF/jsp/menuBar.jsp"/>
+        </definition>
           <definition name="exportMaterialConfirm" extends="ss.layout">
          	<put-attribute name="localization" value="/WEB-INF/jsp/localization/register-localization.jsp" />
          	<put-attribute name="body" value="/WEB-INF/jsp/bootstrap/exportMaterialConfirm.jsp" />

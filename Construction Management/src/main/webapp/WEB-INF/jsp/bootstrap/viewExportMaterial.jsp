@@ -132,8 +132,6 @@
 					Confirm 
 				   </button> 
 		              </div>
-              
-              
 				</div>
             <!-- /.box-body -->
             </div>

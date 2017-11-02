@@ -18,9 +18,9 @@ function search(){
         	var data = [];
         	$.each(json, function(index, value) {
         		  data.push('<tr employeeId="'+value.employeeId+'"><td>'+
-        				  '<button type="button" class="btn btn-info btn-xs" onclick=viewRow("'+value.employeeId+'")> '+
-							'<span class="glyphicon glyphicon-eye-open"></span>'+
-						'</button> '+
+        				  '<a href='+domainSystem+'/viewEmployee.html?employeeId='+value.employeeId+' class="btn btn-info btn-xs"> '+
+						  '<span class="glyphicon glyphicon-eye-open"></span> '+
+						'</a> '+
 						'<a href='+domainSystem+'/createEmployee.html?employeeId='+value.employeeId+' class="btn btn-primary btn-xs"> '+
 						  '<span class="glyphicon glyphicon-pencil"></span> '+
 						'</a> '+				
@@ -36,6 +36,23 @@ function search(){
     });
   
 }
+
+function deleteRow(value){
+	if( confirm("Delete!")== true){
+	 if(BeanUtils.isNotEmpty(value)){
+		 var params = {method: 'delete', employeeId: value};
+	    	$.ajax({
+	        	type: 'POST'
+	        	, url: application.contextPath+"/employee.html"
+	        	, data: params
+	        	, success: function(result){
+	        		location.reload();
+	        	}
+	        });
+	 }
+	}
+ }
+
 
 function createEmployee(){
 	location.href = "createEmployee.html";
