@@ -25,6 +25,7 @@ var params = {method: 'search'};
   	, success: function(result){
     	var json = $.parseJSON(result);
       	$("#employeeId").html(json[0].employeeId); 
+      	$("#employeeId").html(json[0].employeeId); 
       	console.log(json);
       
   	}

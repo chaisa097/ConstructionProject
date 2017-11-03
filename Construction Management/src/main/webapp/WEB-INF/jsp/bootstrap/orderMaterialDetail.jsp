@@ -118,6 +118,9 @@
               
                <div class="pull-right">
 		              <div id="page-selection"></div>
+		                 	<button type="button" class="btn btn-success" onclick="Send()">
+					<span class="glyphicon glyphicon-view"></span> View
+				   </button> 
 		              </div>
               
             </div>

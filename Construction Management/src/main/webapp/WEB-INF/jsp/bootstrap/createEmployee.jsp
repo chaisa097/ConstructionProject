@@ -76,7 +76,7 @@
 	<section class="content">
 
 		<!-- SELECT2 EXAMPLE -->
-      
+
 		<div class="box box-default" name="addEditData">
 			<div class="box-header with-border">
 				<h3 class="box-title">Employee Form</h3>
@@ -123,7 +123,7 @@
 							<div>
 
 								<input id="FirstName" type="text" class="form-control"
-									placeholder="FirstName" name="empFirstName" id="FirstName"  >
+									placeholder="FirstName" name="empFirstName" id="FirstName" >
 							</div>
 							<div style="margin-top: 10px">
 								<input id="LastName" type="text" class="form-control"
@@ -233,8 +233,7 @@
 
 			</div>
 		</div>
-	
-	
+
 		<!-- /.box -->
 
 	</section>
