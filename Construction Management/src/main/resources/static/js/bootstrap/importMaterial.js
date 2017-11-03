@@ -31,7 +31,7 @@
 			                        '<td name=projectName>'+value.projectName+'</td> '+
 			                        '<td name=budget>'+value.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'</td> '+
 			                        '<td name=totalUseMaterial>'+value.totalUseMaterial.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'  </td> '+
-			                        '<td name=percentStatus>'+value.percentStatus+'%'+'</td></tr>');
+			                        '<td >'+ '<progress min="0"   max="100" style="width:40%"  value="'+value.percentStatus+'" >'+ '</progress>' +' ' +value.percentStatus +'%'+'</td></tr>');
 	            	});
 	            	$('table.table tbody').html(data.join());	
 	            

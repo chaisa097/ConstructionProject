@@ -76,7 +76,7 @@ function SendOrder(){
 	
  }
 function back(){
-	location.href = "listOrder.html";
+	location.href = "orderMaterialDetail.html?orderMaterialId="+headerId+"";
 
 }
 

@@ -74,7 +74,7 @@ function SendRequest(){
 	        });
 	
  }
-function Back(){
+function back(){
 	location.href = "requestMaterialDetail.html?requestMaterialId="+headerId+" ";
 
 }

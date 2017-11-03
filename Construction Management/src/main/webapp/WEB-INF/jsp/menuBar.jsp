@@ -280,10 +280,11 @@
 			<!-- sidebar menu: : style can be found in sidebar.less -->
 			<ul class="sidebar-menu" data-widget="tree" >
 				<li class="header">MAIN MENU</li>
+				
+				<c:if test="${roleUserSystem eq 'admin'}">
 				<li><a href="${domainSystem}home.html"> <i
 						class="fa fa-dashboard"></i> <span>Home</span>
 				</a></li>
-				<c:if test="${roleUserSystem eq 'admin'}">
 				<li><a href="${domainSystem}manageRole.html"> <i
 						class="fa fa-user-secret"></i> <span>Manage Role</span>
 				</a></li>
@@ -332,6 +333,9 @@
 					</ul></li>
 					</c:if>
 					      <c:if test="${roleUserSystem eq 'pm'}">
+					      <li><a href="${domainSystem}home.html"> <i
+						class="fa fa-dashboard"></i> <span>Home</span>
+				</a></li>
 					      	<li><a href="${domainSystem}listProjectPM.html"> <i
 						class="fa fa-folder"></i> <span>Manage Project</span>
 
@@ -377,6 +381,9 @@
 					      </c:if>
 					      
 					 <c:if test="${roleUserSystem eq 'st'}">
+					 <li><a href="${domainSystem}home.html"> <i
+						class="fa fa-dashboard"></i> <span>Home</span>
+				</a></li>
 					 
 	         	<li><a href="${domainSystem}stock.html"> <i
 						class="fa fa-cubes"></i> <span>Stock</span>

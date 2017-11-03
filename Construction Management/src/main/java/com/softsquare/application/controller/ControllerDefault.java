@@ -27,7 +27,7 @@ public class ControllerDefault {
 		final String[] pageAdmin = new String[]{"home", "registerList", "register", "manageRole","province","createProject","listproject","viewProject","viewEmployee","department","departmentdetail","employeeList","createEmployee","type","unit","material"};
 		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","listOrderPM","confirmOrder","editStatusProject","listRequestMaterialPM","confirmRequestMaterial","listExportMaterial","viewExportMaterialPM"};
 		final String[] pageEngineer = new String[]{"importMaterial","stock","orderMaterial","orderMaterialDetail","viewOrder","listOrder","createRequestMaterial","requestMaterialDetail","viewRequestMaterial","listRequestMaterial","listExportMaterialEngineer","viewExportMaterial","exportMaterialConfirm"};
-		final String[] pageStocker = new String[]{"home","stock","receiveMaterial","addMaterialStock","requestMaterialStock","exportMaterial"};
+		final String[] pageStocker = new String[]{"stock","receiveMaterial","addMaterialStock","requestMaterialStock","exportMaterial"};
 		final String[] pageNoLogin = new String[]{"index", "pageTest"};
 		int count = 0;
 		
@@ -62,6 +62,7 @@ public class ControllerDefault {
 								}
 							}
 						}else if(roleAll[3].equals(LoginUtils.getRole())){ //Stocker 
+						
 							for (String string : pageStocker) {
 								if(string.equals(mav.getViewName())){
 									count = 1;
@@ -90,11 +91,13 @@ public class ControllerDefault {
 						
 						mav.addObject("userNameUserSystem", LoginUtils.getUsername());
 						mav.addObject("roleUserSystem", LoginUtils.getRole());
+						
 					} catch(Exception ex){
 						mav.addObject("userNameUserSystem", LoginUtils.getUsername());
 						mav.addObject("roleUserSystem", LoginUtils.getRole());
-						mav.setViewName("home");
-					}
+						
+						    mav.setViewName("home");
+					    }
 					
 				}else{
 					try{

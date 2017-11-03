@@ -147,5 +147,8 @@
 
 		}
 		
-		
+		function Send(){
+			location.href = "viewOrder.html?orderMaterialId="+headerId+" ";
+
+		}
 		
