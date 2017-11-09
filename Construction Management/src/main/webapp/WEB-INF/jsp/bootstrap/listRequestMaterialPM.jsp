@@ -132,10 +132,14 @@
 								<th></th>
 									<th><input type="text" class="form-control"
 									placeholder="RequestNo" disabled></th>
+										<th><input type="text" class="form-control"
+									placeholder="EngineerName" disabled></th>
 								<th><input type="text" class="form-control"
 									placeholder="status" disabled></th>
 								<th><input type="text" class="form-control"
 									placeholder="RequestDate" disabled></th>
+									<th><input type="text" class="form-control"
+									placeholder="Use Material Date" disabled></th>
 							</tr>
 						</thead>
 						<tbody>

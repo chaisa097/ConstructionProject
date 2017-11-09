@@ -15,7 +15,28 @@ $(document).ready(function(){
 	      	$("#totalHireEmployee").html(totalHire);  
 	  	}
 	  });
+	$('#amountOfmonth').on('input', function() {
+		
+		var numInput = document.querySelector('#amountOfmonth');
 
+		// Listen for input event on numInput.
+		numInput.addEventListener('input', function(){
+		    // Let's match only digits.
+		    var num = this.value.match(/^\d+$/);
+		    if (num === null) {
+		        // If we have no match, value will be empty.
+		        this.value = "";
+		    }
+		}, false)
+		
+			var input=$(this);
+			var is_name=input.val();
+			if(is_name){input.removeClass("invalid").addClass("valid");}
+			else{input.removeClass("valid").addClass("invalid");}
+			
+	    
+			
+		});
 	searchFunction();
     BSBaseTable.callFiterTable();
 
@@ -33,9 +54,6 @@ $.ajax({
      	var data = [];
      	$.each(json, function(index, value) {
      		  data.push('<tr workingId="'+value.workingId+'"><td>'+
-		                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.workingId+'")> '+
-								 '<span class="glyphicon glyphicon-pencil"></span> '+
-								'</button> '+
 								'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.workingId+'")> '+
 									'<span class="glyphicon glyphicon-trash"></span>'+
 								'</button> '+
@@ -68,9 +86,6 @@ $.ajax({
          	$.each(json, function(index, value) {
          	   
          		  data.push('<tr workingId="'+value.workingId+'"><td>'+
- 		                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.workingId+'")> '+
- 								 '<span class="glyphicon glyphicon-pencil"></span>'+
- 								'</button> '+
  								'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.workingId+'")> '+
  									'<span class="glyphicon glyphicon-trash"></span> '+
  								'</button> '+

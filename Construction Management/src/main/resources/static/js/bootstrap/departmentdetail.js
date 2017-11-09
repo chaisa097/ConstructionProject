@@ -31,7 +31,7 @@ $(document).ready(function(){
 											'</td> '+
 					                        '<td name=departmentCode>'+value.departmentCode+'</td> '+
 					                        '<td name=depDetailName>'+value.depDetailName+'</td> '+
-					                        '<td name=Salary>'+value.Salary+'</td></tr>');
+					                        '<td name=Salary>'+value.Salary.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'</td></tr>');
 			            	});
 			            	$('table.table tbody').html(data.join());	
 			  

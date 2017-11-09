@@ -76,13 +76,24 @@ public class RequestMaterialServiceImp implements RequestMaterialService {
 		  return requestDao.listWaitconfirmRequestMaterialPM(mapping);
 	
 	}
+	@Override
+	public ArrayList<RequestMaterial> CountWaitconfirmRequestMaterialPM(){
+		 return requestDao.CountWaitconfirmRequestMaterialPM();
+	}
 	
 	@Override
 	public ArrayList<RequestMaterialMapping> ListRequestMaterialToStock(RequestMaterialMapping mapping) {
 		  return requestDao.listRequestMaterialStock(mapping);
 	
 	}
-	
+	@Override
+	public ArrayList<RequestMaterial> FindWaitconfirmRequestMaterialPM(){
+		return requestDao.FindWaitconfirmRequestMaterialPM();
+	}
+	@Override
+	public ArrayList<RequestMaterial> CountRequestMaterial() {
+		return requestDao.CountRequestMaterial();
+	}
 	
 	
 	@Override

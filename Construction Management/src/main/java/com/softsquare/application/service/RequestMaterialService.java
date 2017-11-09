@@ -17,4 +17,7 @@ public interface RequestMaterialService {
 	public void updateStatusConfirmed(RequestMaterialMapping mapping) throws Exception;
 	public void updateStatusReject(RequestMaterialMapping mapping) throws Exception;
 	public ArrayList<RequestMaterialMapping> ListRequestMaterialToStock(RequestMaterialMapping mapping);
+	public ArrayList<RequestMaterial> CountRequestMaterial();
+	public ArrayList<RequestMaterial> CountWaitconfirmRequestMaterialPM();
+	public ArrayList<RequestMaterial> FindWaitconfirmRequestMaterialPM();
 }

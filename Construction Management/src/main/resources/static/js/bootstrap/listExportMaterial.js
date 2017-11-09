@@ -39,7 +39,7 @@
 				            	var date = [day, month, year].join('-');
 			            		
 			            		  data.push('<tr projectId="'+value.projectId+'"><td>'+			
-		    								'<a href='+domainSystem+'/viewExportMaterialPM.html?exportMaterialId='+value.exportMaterialId+' class="btn btn-info btn-xs"> '+
+		    								'<a href='+domainSystem+'/viewExportMaterialPM.html?exportMaterialId='+value.exportMaterialId+'&projectId='+headerId+' class="btn btn-info btn-xs"> '+
 		    								  '<span class="glyphicon glyphicon-eye-open"></span> '+
 		    								'</a> '+	
 					                        '<td name=exportMaterialNo>'+value.exportMaterialNo+'</td> '+

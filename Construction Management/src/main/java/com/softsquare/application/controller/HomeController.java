@@ -1,6 +1,5 @@
 package com.softsquare.application.controller;
 
-import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,10 +15,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 import com.softsquare.application.domain.LoginMapping;
 import com.softsquare.application.domain.ProjectMapping;
-import com.softsquare.application.entity.Employee;
 import com.softsquare.application.service.EmployeeService;
 import com.softsquare.application.service.LoginService;
+import com.softsquare.application.service.OrderMaterialService;
 import com.softsquare.application.service.ProjectService;
+import com.softsquare.application.service.RequestMaterialService;
 import com.softsquare.application.common.util.LoginUtils;
 @RestController
 @RequestMapping("/home.html")
@@ -31,6 +31,10 @@ public class HomeController {
 	EmployeeService EmpServ;
 	@Autowired
 	LoginService loginService;
+	@Autowired
+	OrderMaterialService  orderService;
+	@Autowired
+	RequestMaterialService  requestMaterialService;
 	
 	
 	 @RequestMapping(method=RequestMethod.GET)
@@ -48,6 +52,74 @@ public class HomeController {
 			Gson gson = new Gson();	
 			
 			String  json = gson.toJson(proServ.countProject());
+			System.out.println(json);
+
+			try {
+				response.getWriter().write(json);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	 
+	 @RequestMapping(params = "method=searchPM", method=RequestMethod.POST)
+     public void countProjectPM(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping mapping) throws Throwable{
+			Gson gson = new Gson();	
+			
+			String  json = gson.toJson(proServ.countProjectPM());
+			System.out.println(json);
+
+			try {
+				response.getWriter().write(json);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	 
+	 @RequestMapping(params = "method=searchOrder", method=RequestMethod.POST)
+     public void countOrder(HttpServletRequest request, HttpServletResponse response) throws Throwable{
+			Gson gson = new Gson();	
+			
+			String  json = gson.toJson(orderService.CountOrder());
+			System.out.println(json);
+
+			try {
+				response.getWriter().write(json);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	 @RequestMapping(params = "method=searchRequestApprove", method=RequestMethod.POST)
+     public void CountRequestApprove(HttpServletRequest request, HttpServletResponse response) throws Throwable{
+			Gson gson = new Gson();	
+			
+			String  json = gson.toJson(requestMaterialService.CountWaitconfirmRequestMaterialPM());
+			System.out.println(json);
+
+			try {
+				response.getWriter().write(json);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	 @RequestMapping(params = "method=SearchListRequestApprove", method=RequestMethod.POST)
+     public void searchRequestApprove(HttpServletRequest request, HttpServletResponse response) throws Throwable{
+			Gson gson = new Gson();	
+			
+			String  json = gson.toJson(requestMaterialService.FindWaitconfirmRequestMaterialPM());
+			System.out.println(json);
+
+			try {
+				response.getWriter().write(json);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	 
+	 @RequestMapping(params = "method=searchRequest", method=RequestMethod.POST)
+     public void countRequestMaterial(HttpServletRequest request, HttpServletResponse response) throws Throwable{
+			Gson gson = new Gson();	
+			
+			String  json = gson.toJson(requestMaterialService.CountRequestMaterial());
 			System.out.println(json);
 
 			try {

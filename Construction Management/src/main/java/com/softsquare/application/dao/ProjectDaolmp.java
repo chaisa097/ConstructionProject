@@ -26,6 +26,7 @@ import com.softsquare.application.entity.Project;
 public class ProjectDaolmp extends AbstractDao<Integer, Project> implements ProjectDao{
 	@Autowired
 	 private LoginDao  loginDao;
+	         
 	
 	@SuppressWarnings("unchecked")	
 	@Override	
@@ -47,7 +48,9 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		            .add(Projections.property("project.customerPhone").as("customerPhone"))		           
 		            .add(Projections.property("project.budget").as("budget"))
 		            .add(Projections.property("project.criticalBudget").as("criticalBudget"))
-		            .add(Projections.property("project.totalExpense").as("criBudget"))
+		            .add(Projections.property("project.totalExpense").as("totalExpense"))
+		            .add(Projections.property("project.totalHireEmployee").as("totalHireEmployee"))
+		            .add(Projections.property("project.totalUseMaterial").as("totalUseMaterial"))
 		            .add(Projections.property("project.percentStatus").as("percentStatus"))	
 		            .add(Projections.property("employee.empFirstName").as("empFirstName"))		       
 		            .add(Projections.property("employee.employeeId").as("employeeId"));	
@@ -93,7 +96,40 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		return projectList;
 	}
 	
-	
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<Project> CountProjectPM() {
+		 Criteria criteria = getSession().createCriteria(Project.class, "project");
+		 criteria.createAlias("project.employee", "employee");
+		 ProjectionList projections = Projections.projectionList()				  
+				   .add(Projections.count("project.projectId").as("projectId"))
+		           .add(Projections.sum("project.budget").as("budget"))
+		           .add(Projections.sum("project.totalExpense").as("totalExpense"))
+		           .add(Projections.sum("project.totalHireEmployee").as("totalHireEmployee"))
+		           .add(Projections.sum("project.totalUseMaterial").as("totalUseMaterial"));
+		 criteria.setProjection(projections);		 
+		 Map<String, Object> dataLogin = loginDao.findByLOGID(LoginUtils.getUsername());
+		 criteria.add(Restrictions.eq("employee.employeeId",dataLogin.get("employeeId")));		
+		 criteria.setResultTransformer(Transformers.aliasToBean(Project.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		ArrayList<Project> projectList = (ArrayList<Project>) criteria.list();
+		return projectList; 
+	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<Project> getProjectPMId() {
+		 Criteria criteria = getSession().createCriteria(Project.class, "project");
+		 criteria.createAlias("project.employee", "employee");
+		 ProjectionList projections = Projections.projectionList()				  
+				   .add(Projections.property("project.projectId").as("projectId"));
+		 criteria.setProjection(projections);		 
+		 Map<String, Object> dataLogin = loginDao.findByLOGID(LoginUtils.getUsername());
+		 criteria.add(Restrictions.eq("employee.employeeId",dataLogin.get("employeeId")));		
+		 criteria.setResultTransformer(Transformers.aliasToBean(Project.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		ArrayList<Project> projectList = (ArrayList<Project>) criteria.list();
+		return projectList;
+	}
 	
 	@Override	
 	public ArrayList<ProjectMapping> getProjectByEmployee(ProjectMapping projectMapping) {

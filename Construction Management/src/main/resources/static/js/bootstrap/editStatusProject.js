@@ -86,7 +86,7 @@
 	
 
  function Save(){
-	 
+	 if( BeanUtils.isNotEmpty($('div[name=addEditData] input[name=percentStatus]').val())){
 	                var params = {};
                 	var message = ""
 			if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
@@ -113,7 +113,7 @@
 			 }
 		 
 
-
+ }
 
        
   

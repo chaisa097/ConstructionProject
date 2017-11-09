@@ -11,13 +11,13 @@ $(document).ready(function(){
 	    	
 	    	
 	    	BSBaseTable.callFiterTable();  	
-});
+	    	search();
+}); 
 
 function search(){
 	
-	if(BeanUtils.isNotEmpty($('div#roleHeader select[name="projectList"] option:selected').val())){
 	
-	var params = {method: 'searchRequest',projectId: $('div#roleHeader select[name="projectList"] option:selected').val()};
+	var params = {method: 'searchRequest'};
 	//param.projectId = headerId
 	$.ajax({
     	type: 'POST'
@@ -51,5 +51,5 @@ function search(){
         
     	}
     });
-   }
+   
 }

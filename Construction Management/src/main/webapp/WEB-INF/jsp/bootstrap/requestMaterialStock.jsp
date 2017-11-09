@@ -114,39 +114,11 @@
 				<div class="col-xs-2">
 					<h3 style="margin-top:3px;margin-left: -8px; " class="box-title">List RequestMaterial </h3>
 					</div>
-				<div class="col-xs-5">
-					
-			   	<div style="margin-left:3px; " class="row" id="roleHeader">
-							
-								<label style="color:red;">*Project</label> <select
-									class="selectpicker show-tick show-menu-arrow" name="projectList"
-									data-live-search="true" data-size="5" data-header="Select Project"></select>
-								
-								<button style="margin-left:-4px;font-size:20px" type="button" class="btn btn-info" onclick="search()">
-									<span class="glyphicon glyphicon-search"></span>
-								</button>
-                           </div>
-                          <!--  roleHeader End	 -->
-						</div>
-						 <ul class="nav navbar-nav">
-					<!-- Notifications: style can be found in dropdown.less -->
-          <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-danger">10</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                 
-                </ul>
-              
-            </ul>
-          </li>
-		</ul>
-					
+				
+	
+							 <div class="pull-right">
+		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-search"></span> Search</button>
+		                </div>
 						
 				</div>
 				<!-- /.box-header -->

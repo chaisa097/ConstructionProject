@@ -14,12 +14,11 @@ import org.springframework.stereotype.Repository;
 
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.common.util.LoginUtils;
-import com.softsquare.application.domain.ExportMaterialMapping;
-import com.softsquare.application.domain.OrderMaterialMapping;
 import com.softsquare.application.domain.RequestMaterialMapping;
-import com.softsquare.application.entity.ExportMaterial;
-import com.softsquare.application.entity.OrderMaterial;
+import com.softsquare.application.entity.Login;
+import com.softsquare.application.entity.Project;
 import com.softsquare.application.entity.RequestMaterial;
+
 
 @Repository()
 @Component
@@ -27,6 +26,7 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 	
 	@Autowired
 	 private LoginDao  loginDao;
+	
 	
 	@Override
 	public void RequestSave(RequestMaterial request) throws Exception {
@@ -126,11 +126,15 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 	@Override
 	public ArrayList<RequestMaterialMapping> listWaitconfirmRequestMaterialPM(RequestMaterialMapping mapping) {
 		 Criteria criteria = getSession().createCriteria(RequestMaterial.class, "request");
+		 criteria.createAlias("request.employee", "employee");
 		 ProjectionList projections = Projections.projectionList()
 		            .add(Projections.property("request.requestMaterialId").as("requestMaterialId"))
 		            .add(Projections.property("request.projectId").as("projectId"))
 		            .add(Projections.property("request.status").as("status"))
+		            .add(Projections.property("request.useMaterialDate").as("useMaterialDate"))
 		            .add(Projections.property("request.requestMaterialNo").as("requestMaterialNo"))
+		            .add(Projections.property("employee.empFirstName").as("empFirstName"))
+		            .add(Projections.property("employee.empLastName").as("empLastName"))
 		            .add(Projections.property("request.requestDate").as("requestDate"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.or(Restrictions.eq("request.status","Waiting Confirm")));	 
@@ -140,6 +144,62 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 		 ArrayList<RequestMaterialMapping> RequestMaterialList = (ArrayList<RequestMaterialMapping>) criteria.list();
 		return RequestMaterialList;
 	}
+	
+
+	@Override
+	public ArrayList<RequestMaterial> CountWaitconfirmRequestMaterialPM() {
+		 Criteria criteria = getSession().createCriteria(RequestMaterial.class, "request");
+		 criteria.createAlias("request.project", "project");
+		 criteria.createAlias("request.employee", "employee");
+		 ProjectionList projections = Projections.projectionList()
+		            .add(Projections.count("request.requestMaterialId").as("requestMaterialNumber"));
+		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.eq("request.status","Waiting Confirm"));
+		 criteria.setResultTransformer(Transformers.aliasToBean(RequestMaterial.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<RequestMaterial> RequestMaterialList = (ArrayList<RequestMaterial>) criteria.list();
+		return RequestMaterialList;
+	}
+	
+	
+	@Override
+	public ArrayList<RequestMaterial> FindWaitconfirmRequestMaterialPM() {
+		 Criteria criteria = getSession().createCriteria(RequestMaterial.class, "request");
+		 criteria.createAlias("request.project", "project");
+		 criteria.createAlias("request.employee", "employee");
+		 ProjectionList projections = Projections.projectionList()
+		            .add(Projections.property("request.requestMaterialId").as("requestMaterialId"))
+		            .add(Projections.property("request.projectId").as("projectId"))
+		            .add(Projections.property("request.status").as("status"))
+		            .add(Projections.property("request.requestMaterialNo").as("requestMaterialNo"))
+		            .add(Projections.property("request.useMaterialDate").as("useMaterialDate"))
+		            .add(Projections.property("request.requestDate").as("requestDate"))
+		            .add(Projections.property("employee.empFirstName").as("empFirstName"))
+		            .add(Projections.property("employee.empLastName").as("empLastName"))
+		            .add(Projections.property("project.projectName").as("projectName"));
+		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.eq("request.status","Waiting Confirm"));
+		 criteria.setResultTransformer(Transformers.aliasToBean(RequestMaterial.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<RequestMaterial> RequestMaterialList = (ArrayList<RequestMaterial>) criteria.list();
+		 System.out.println(RequestMaterialList);
+		return RequestMaterialList;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<RequestMaterial> CountRequestMaterial() {
+		 Criteria criteria = getSession().createCriteria(RequestMaterial.class, "request");
+		 ProjectionList projections = Projections.projectionList()				  
+				   .add(Projections.count("request.requestMaterialId").as("requestMaterialId"));
+		 criteria.setProjection(projections);	
+		 criteria.add(Restrictions.eq("request.status","Waiting Material"));
+		 criteria.setResultTransformer(Transformers.aliasToBean(RequestMaterial.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		ArrayList<RequestMaterial> requestList = (ArrayList<RequestMaterial>) criteria.list();
+		return requestList;
+	}
+	
 	
 	@Override
 	public ArrayList<RequestMaterialMapping> listRequestMaterialStock(RequestMaterialMapping mapping) {
@@ -154,7 +214,6 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 		            .add(Projections.property("project.projectName").as("projectName"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.or(Restrictions.eq("request.status","Waiting Material")));	 
-		 criteria.add(Restrictions.and(Restrictions.eq("request.projectId",mapping.getProjectId())));
 		 criteria.setResultTransformer(Transformers.aliasToBean(RequestMaterial.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<RequestMaterialMapping> RequestMaterialList = (ArrayList<RequestMaterialMapping>) criteria.list();

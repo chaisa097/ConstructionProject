@@ -19,5 +19,7 @@ public interface ProjectService {
 	 public  ArrayList<ProjectMapping> getAllProject(ProjectMapping projectMapping);
 		public ArrayList<Project> getProject();
 		public ArrayList<Project> countProject();
+		public ArrayList<Project> countProjectPM();
+		public void updateProjectProgress(ProjectMapping project) throws Exception;
 			
 }

@@ -74,11 +74,11 @@
 			        	type: 'POST'
 			        	, url: application.contextPath+"/register.html"
 			        	, data: params
-			        	, success: function(result){		        
+			        	, success: function(result){
+			        		search();
 			        		$('div#roleHeader select[name="roleList"]').val(roleId).selectpicker('refresh');
 			        		alert(message);
 			        		clearValue();
-			        		search();
 			        		disAndEnInputField();
 			        	}
 			        });
