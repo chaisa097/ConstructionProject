@@ -37,7 +37,7 @@ public class PMEditStatusProjectController {
 	
 	@RequestMapping(params =  "method=edit" , method=RequestMethod.POST)
     public void edit(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping mapping) throws Throwable{
-		listprojectSevice.updateProject(mapping);
+		listprojectSevice.updateProjectProgress(mapping);
 	}
 	
 	

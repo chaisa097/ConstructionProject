@@ -19,5 +19,6 @@ public interface OrderMaterialDao {
 	public Map<String, Object> findOrderId(int orderId) ;
 	public ArrayList<OrderMaterial> getPMConfirmOrderWaitStatus();
 	public ArrayList<OrderMaterial> getOrderFinish();
+	public ArrayList<OrderMaterial> CountOrder();
 	
 }

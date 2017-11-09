@@ -54,7 +54,10 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 	public ArrayList<OrderMaterial> getOrderMaterial() {
 		return orderdao.getOrder();
 	}
-	
+	@Override
+	public ArrayList<OrderMaterial> CountOrder(){
+		return orderdao.CountOrder();
+	}
 	@Override
 	public ArrayList<OrderMaterial> getOrderMaterialWaitStatus() {
 		return orderdao.getOrderWaitStatus();

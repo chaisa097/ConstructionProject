@@ -39,3 +39,7 @@ var params = {method: 'search'};
 	
 });
 
+function back(){
+	location.href = "employee.html";
+
+}

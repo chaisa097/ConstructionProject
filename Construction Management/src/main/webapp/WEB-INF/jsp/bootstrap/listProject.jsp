@@ -138,6 +138,12 @@
                <th></th>
 		       <th><input  type="text" class="form-control" placeholder="ProjectName" disabled></th>
                <th><input  type="text" class="form-control" placeholder="Province" disabled></th>
+                 <th><input  type="text" class="form-control" placeholder="StartDate(DD/MM/YYYY)" disabled></th>
+               <th><input  type="text" class="form-control" placeholder="FinishedDate(DD/MM/YYYY)" disabled></th>
+                    <th><input  type="text" class="form-control" placeholder="Budget(THB)" disabled></th>
+                 <th><input  type="text" class="form-control" placeholder="HireEmployee(THB)" disabled></th>
+               <th><input  type="text" class="form-control" placeholder="MaterialUsed(THB)" disabled></th>
+                   <th ><input style="text-align:right"  type="text" class="form-control" placeholder="TotalExpenses(THB)" disabled></th>
                 </tr>
                 </thead>
                <tbody>

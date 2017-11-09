@@ -64,12 +64,13 @@
 			   	  	$("div[name='addEditData'] select[name='positionList']").val(json[0].depDetailId).selectpicker('refresh');
 			   	  	$("div[name='addEditData'] input[name='birthDay']").val(birthDay);
 			   	  	if('Male' == json[0].gender){
-			   	  	 $("#input-gender-male").attr('checked', 'checked');
+			   	 
+			   	      $("#input-gender-male").prop("checked", true)
 			   	  	 }
 			   	  	else if('Female' == json[0].gender) {
-			   	  	$("#input-gender-female").attr('checked', 'checked');
+			   	       $("#input-gender-female").prop("checked", true)
 			   	  	}
-			   	  	
+			      
 			   	  	$("div[name='addEditData'] input[name='subDistrict']").val(json[0].subDistrict);
 			   	  	$("div[name='addEditData'] input[name='district']").val(json[0].district);
 			   	          
@@ -144,7 +145,7 @@ function disAndEnInputField(param){
 			$("div[name='addEditData'] input[name='empLastName']").prop('disabled', false);
 			$("div[name='addEditData'] input[name='citizenId']").prop('disabled', false);
 			$("div[name='addEditData'] input[name='birthDay']").prop('disabled', false);
-			$("div[name='addEditData'] input[name='gender']").prop('disabled', false);
+			$("div[name='addEditData'] input[name='gender']").prop('disabled', true);
 			$("div[name='addEditData'] input[name='subDistrict']").prop('disabled', false);
 			$("div[name='addEditData'] input[name='district']").prop('disabled', false);
 		

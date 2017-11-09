@@ -68,7 +68,7 @@
 					class="fa fa-dashboard"></i>Home</a></li>
 			<li><a href="${domainSystem}listProject.html"><i
 					class="fa fa-folder"></i>Manage Employee</a></li>
-			<li class="active">New Employee</li>
+			<li class="active">View Employee</li>
 		</ol>
 	</section>
 
@@ -197,6 +197,9 @@
 		
 			<!-- /.box-body -->
 			<div class="box-footer">
+			<button type="button" class="btn btn-primary" onclick="back()">
+					Back
+				   </button> 
 			</div>
 		</div>	
 		<!-- /.box -->

@@ -69,6 +69,7 @@ public class MaterialServiceImp implements MaterialService {
 		material.setDescrition(mapping.getDescription());
 		material.setMaterialName(mapping.getMaterialName());
 		material.setTypeId((mapping.getTypeId()));
+		material.setUnitId(mapping.getUnitId());
 		materialDao.UpdateMaterial(material);
 	}
 }

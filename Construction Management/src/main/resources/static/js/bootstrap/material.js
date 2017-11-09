@@ -81,7 +81,7 @@
 			        	, success: function(result){		        
 			        		search();
 			        		$('div[name=addEditData] input[name=materialName]').attr('materialId', '')
-			        
+			                alert(message);
 			        	}
 			        });
 	    		}
@@ -102,7 +102,7 @@
 	            	$("div[name='addEditData'] textarea[name='description']").val(json[0].description);
 	            	$("div[name='addEditData'] select[name='unitList']").val(json[0].unitId).selectpicker('refresh');
 	            	$("div[name='addEditData'] select[name='typeList']").val(json[0].typeId).selectpicker('refresh');
-	            	$('div[name=addEditData] input[name=materialName]').attr('materialId', value);
+	            	$("div[name='addEditData'] input[name='materialName']").attr('materialId', value);
 	        	}
 	        });
 	    }

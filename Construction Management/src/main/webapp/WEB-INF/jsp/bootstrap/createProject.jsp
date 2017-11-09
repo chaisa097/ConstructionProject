@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
     <script src="metisMenu/metisMenu.min.js"></script>
   <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script> -->
+  <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 <link rel="stylesheet" href="css/base/createproject.css">
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
@@ -46,8 +48,6 @@
 <link rel="stylesheet"href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
 <!-- bootstrap datepicker -->
-<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-
 
 </head>
 
@@ -83,6 +83,7 @@
 				</div>
 			</div>
 			<!-- /.box-header -->
+			
 			<div class="box-body">
 				<div class="row">
 					<div class="col-md-2">
@@ -118,7 +119,7 @@
 
 								<input id="proName" type="text" class="form-control"
 									placeholder="Project Name" name="projectName"
-									pattern="[A-Za-z]{5,10}" > <span class="error">This
+									pattern="[A-Za-z]{5,10}"  required>  <span class="error">This
 									field is required</span>
 							</div>
 							<div style="margin-top: 10px">
@@ -137,9 +138,9 @@
 									id="cusName"  >
 							</div>
 							<div style="margin-top: 10px">
-								<input type="text" class="form-control"
+								<input type="text" class="form-control bfh-phone"
 									placeholder="Customer Phone" name="customerPhone"
-									id="cusPhone">
+									id="cusPhone" >
 							</div>
 							
 
@@ -220,11 +221,12 @@
                         							</div>
                      <div style="margin-top: 10px">    							
                  <input type="number" class="form-control" placeholder="Budget"  
-									name="budget" id="budget" min="0"   >
+									name="budget" id="budget" min="0" onkeypress='event.charCode >= 0' >
+									
                  </div>
                    <div style="margin-top: 10px">  
                    <input type="number" class="form-control" min="0" max="100"
-								step="1" name="criticalBudget" id="critical" maxlength="3" >
+								step="1" name="criticalBudget" id="critical" onkeypress='event.charCode >= 0' maxlength="3" >
                    </div>
                  
 						</div>
@@ -246,6 +248,7 @@
 				</div>
 
 			</div>
+		
 		</div>
 		<!-- /.box -->
 

@@ -201,7 +201,7 @@
             
              <div class="col-xs-2">
             
-          <input type="number" id="" class="form-control" placeholder="Amount of Export" min="0" name="exportQuantity" disabled>
+          <input type="number" class="form-control"  placeholder="Amount of Export" id="exQuantity" min="0" onkeypress='event.charCode >= 0'name="exportQuantity" disabled>
                     
             </div>
               <div class="col-xs-1">

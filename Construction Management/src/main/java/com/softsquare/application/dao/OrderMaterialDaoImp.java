@@ -61,7 +61,19 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 	}
 	
 	
-	
+	@SuppressWarnings("unchecked")
+	@Override
+	public ArrayList<OrderMaterial> CountOrder() {
+		 Criteria criteria = getSession().createCriteria(OrderMaterial.class, "orderMaterial");
+		 ProjectionList projections = Projections.projectionList()				  
+				   .add(Projections.count("orderMaterial.orderMaterialId").as("orderMaterialId"));
+		 criteria.setProjection(projections);	
+		 criteria.add(Restrictions.or(Restrictions.eq("orderMaterial.status","Waiting Material")));
+		 criteria.setResultTransformer(Transformers.aliasToBean(OrderMaterial.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		ArrayList<OrderMaterial> orderList = (ArrayList<OrderMaterial>) criteria.list();
+		return orderList;
+	}
 	
 		
 	@Override

@@ -20,7 +20,50 @@
 		            searchMaterialReceive();
 		            searchOrder();
 		            
-		          
+		        	$('#requantity').on('input', function() {
+		    			
+		    			var numInput = document.querySelector('#requantity');
+
+		    			// Listen for input event on numInput.
+		    			numInput.addEventListener('input', function(){
+		    			    // Let's match only digits.
+		    			    var num = this.value.match(/^\d+$/);
+		    			    if (num === null) {
+		    			        // If we have no match, value will be empty.
+		    			        this.value = "";
+		    			    }
+		    			}, false)
+		    			
+		     			var input=$(this);
+		     			var is_name=input.val();
+		     			if(is_name){input.removeClass("invalid").addClass("valid");}
+		     			else{input.removeClass("valid").addClass("invalid");}
+		     			
+		     	    
+		     			
+		     		});
+		        	$('#rePrice').on('input', function() {
+		        		
+		        		var numInput = document.querySelector('#rePrice');
+
+		        		// Listen for input event on numInput.
+		        		numInput.addEventListener('input', function(){
+		        		    // Let's match only digits.
+		        		    var num = this.value.match(/^\d+$/);
+		        		    if (num === null) {
+		        		        // If we have no match, value will be empty.
+		        		        this.value = "";
+		        		    }
+		        		}, false)
+		        		
+		        			var input=$(this);
+		        			var is_name=input.val();
+		        			if(is_name){input.removeClass("invalid").addClass("valid");}
+		        			else{input.removeClass("valid").addClass("invalid");}
+		        			
+		        	    
+		        			
+		        		});
 		          
 			   
     });
@@ -39,7 +82,7 @@
             	var data = [];		         
             		$.each(json, function(index, value) {
 	            		  data.push('<tr><td>'+
-								  '<button type="button" id="button'+value.materialId+'" class="btn btn-default btn-xs" onclick=selectRow("'+value.materialId+'")> '+
+								  '<button type="button" id="button'+value.materialId+'" class="btn btn-success btn-xs" onclick=selectRow("'+value.materialId+'")> '+
 									'<span class="glyphicon glyphicon-plus"></span>'+
 							     	'</button> '+
 							      '</td> '+

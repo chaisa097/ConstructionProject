@@ -115,13 +115,13 @@
             
              <div class="col-xs-2">
             
-          <input type="number" id="" class="form-control" placeholder="Amount of Receive" min="0" name="receiveQuantity" disabled>
+          <input type="number" id="requantity" class="form-control" placeholder="Amount of Receive" min="0" name="receiveQuantity" disabled>
                     
             </div>
             
              <div class="col-xs-2">
             
-        <input type="number" id="" class="form-control" placeholder="Price"min="0" name="receivePrice" disabled>
+        <input type="number" id="rePrice" class="form-control" placeholder="Price"min="0" name="receivePrice" disabled>
                     
             </div>
               <div class="col-xs-1">

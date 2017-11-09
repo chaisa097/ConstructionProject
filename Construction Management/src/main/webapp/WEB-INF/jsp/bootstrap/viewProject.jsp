@@ -130,15 +130,15 @@
                           </tr>
                                                 
                               <tr>
-                             <td>TotalHireEmployee</td>
+                             <td>Hire employee</td>
                               <td><p id="totalHireEmployee"></p> </td>                            
                              </tr>
                             <tr>                          
-                             <td>TotalUsedMaterial</td>
+                             <td>Material used</td>
                               <td><p id="totalUseMaterial"></p> </td>                            
                           </tr>
                            <tr>                                                           
-                             <td>TotalExpenseInConstruction</td>
+                             <td> All Expense total </td>
                               <td><p id="totalExpense"></p></td>                            
                           </tr>
                           <tr>                                                           

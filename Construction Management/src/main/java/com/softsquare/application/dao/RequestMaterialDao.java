@@ -19,5 +19,7 @@ public interface RequestMaterialDao {
 	public ArrayList<RequestMaterialMapping> listRequestMaterialStock(RequestMaterialMapping mapping);
 	public Map<String, Object> findRequestId(int requestId);
 	public RequestMaterial findRequestMaterialForUpdateStatus(int id);
-	
+	public ArrayList<RequestMaterial> CountRequestMaterial();
+	public ArrayList<RequestMaterial> CountWaitconfirmRequestMaterialPM();
+	public ArrayList<RequestMaterial> FindWaitconfirmRequestMaterialPM();
 } 

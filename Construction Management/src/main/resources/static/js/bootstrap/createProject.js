@@ -39,6 +39,17 @@
 	 		});
 	 	   
 	 	  $('#critical').on('input', function() {
+	 		 var numInput = document.querySelector('#critical');
+
+				// Listen for input event on numInput.
+				numInput.addEventListener('input', function(){
+				    // Let's match only digits.
+				    var num = this.value.match(/^\d+$/);
+				    if (num === null) {
+				        // If we have no match, value will be empty.
+				        this.value = "";
+				    }
+				}, false)
 	 			var input=$(this);
 	 			var is_name=input.val();
 	 			if(is_name){input.removeClass("invalid").addClass("valid");}
@@ -74,14 +85,20 @@
  		});
 		
 		
-		$('#cusPhone').on('input', function() {
- 			var input=$(this);
- 			var is_name=input.val();
- 			if(is_name){input.removeClass("invalid").addClass("valid");}
- 			else{input.removeClass("valid").addClass("invalid");}
- 		});
-		
 		$('#budget').on('input', function() {
+			
+			var numInput = document.querySelector('#budget');
+
+			// Listen for input event on numInput.
+			numInput.addEventListener('input', function(){
+			    // Let's match only digits.
+			    var num = this.value.match(/^\d+$/);
+			    if (num === null) {
+			        // If we have no match, value will be empty.
+			        this.value = "";
+			    }
+			}, false)
+			
  			var input=$(this);
  			var is_name=input.val();
  			if(is_name){input.removeClass("invalid").addClass("valid");}
@@ -90,6 +107,9 @@
  	    
  			
  		});
+		
+		
+		
 	 	     
 	 		 if( BeanUtils.isNotEmpty(headerId)){				     
 	 	    var params = {method: 'searchData'};
@@ -199,7 +219,16 @@ function save(){
 		 }
 
   
+function enterNumber(){
 
+	  var e = document.getElementById('text');
+
+	  if (!/[0,9]/.test(e.value)) 
+	   { 
+	alert("Please enter onyl number.");
+	e.value = e.value.substring(0,e.value.length-1);
+	   }
+	}   
 
 
   

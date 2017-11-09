@@ -70,7 +70,7 @@ function SendOrder(){
 	        	, data: params
 	        	, success: function(result){
 	        		alert("Send Success");
-	        		back();
+	        		backFunction();
 	        	}
 	        });
 	
@@ -81,6 +81,6 @@ function back(){
 }
 
 function backFunction(){
-	location.href = "OrderMaterial.html";
+	location.href = "listOrder.html";
 
 }

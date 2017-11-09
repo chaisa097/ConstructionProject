@@ -70,6 +70,8 @@
 					class="fa fa-folder"></i>Manage Employee</a></li>
 			<li class="active">New Employee</li>
 		</ol>
+		
+	
 	</section>
 
 	<!-- Main content -->
@@ -238,6 +240,8 @@
 
 	</section>
 	<!-- /.content -->
+
+
 </div>
 
 

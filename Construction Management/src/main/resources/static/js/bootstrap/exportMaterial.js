@@ -13,7 +13,30 @@ $(document).ready(function(){
 	    	    	$("div select[name=materialList]").html(data).selectpicker('refresh');
 	    
 	    	  });
-	    
+
+	    	
+	    		$('#exQuantity').on('input', function() {
+	    			
+	    			var numInput = document.querySelector('#exQuantity');
+
+	    			// Listen for input event on numInput.
+	    			numInput.addEventListener('input', function(){
+	    			    // Let's match only digits.
+	    			    var num = this.value.match(/^\d+$/);
+	    			    if (num === null) {
+	    			        // If we have no match, value will be empty.
+	    			        this.value = "";
+	    			    }
+	    			}, false)
+	    			
+	     			var input=$(this);
+	     			var is_name=input.val();
+	     			if(is_name){input.removeClass("invalid").addClass("valid");}
+	     			else{input.removeClass("valid").addClass("invalid");}
+	     			
+	     	    
+	     			
+	     		});
 	  searchFunction();
 	  searchExportMaterial();
 			   

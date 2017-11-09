@@ -18,5 +18,5 @@ public interface OrderMaterialService {
 	public void updateStatusFinished(OrderMaterialMapping ordermapping) throws Exception;
 	public ArrayList<OrderMaterial> getPmConfirmOrderMaterialWaitStatus();
 	public ArrayList<OrderMaterial> getOrderFinish();
-	
+	public ArrayList<OrderMaterial> CountOrder();
 }

@@ -232,7 +232,7 @@
 		<!-- SELECT2 EXAMPLE -->
 		<div class="box box-default" name="addEditData">
 			<div class="box-header with-border">
-			<div class="col-xs-9">
+			<div class="col-xs-12">
 			<div class="col-xs-3">
 				<h3 id="projectName"></h3> 
 				</div>
@@ -248,6 +248,13 @@
 				<div class="col-xs-2">
 				<h3 id="Expense"></h3>
 				</div>
+				<div class="col-xs-3">
+						<div class="form-group">
+							<label>CompleteStatus(0-100%) <span id="slider_value" style="color:red;"></span></label>
+							<input id="percentStatus" class="form-control" type="range"
+									min="0" max="100" step="1" onchange="show_value(this.value);" name="percentStatus" >
+						</div>
+					</div>
               </div>
            
 				<div class="box-tools pull-right">
@@ -259,22 +266,7 @@
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
-				<div class="row">
-
-					<div class="col-xs-12">
-						<div class="form-group">
-							<label>CompleteStatus(0-100%) <span id="slider_value" style="color:red;"></span></label>
-							<input id="percentStatus" class="form-control" type="range"
-									min="0" max="100" step="1" onchange="show_value(this.value);" required name="percentStatus" >
-						</div>
-					</div>
-				
-				    
-					
-				
-
-
-				</div>
+			
 				<!-- /.row -->
 
 

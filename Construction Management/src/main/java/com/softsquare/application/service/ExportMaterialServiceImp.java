@@ -75,6 +75,7 @@ public class ExportMaterialServiceImp implements ExportMaterialService {
 			ExportMaterial exportObj = exportMaterialDao.findExportMaterialForUpdate(exportmapping.getRequestMaterialId());
 			Map<String, Object> stockObj = stockdao.findMaterialIdInStock(exportmapping.getMaterialId());
 			int total = 0;
+			if(exportmapping.getExportQuantity()>0) {
 			total = (exportmapping.getExportQuantity() * (int) stockObj.get("price")); // calculate TotalExport
 			exportObj.setTotalExport((int) Id.get("totalExport") + total);
 			exportMaterialDao.updateExport(exportObj);
@@ -84,14 +85,16 @@ public class ExportMaterialServiceImp implements ExportMaterialService {
 			exportdetail.setExportId((int) Id.get("exportMaterialId"));
 			exportdetail.setExportQuantity(exportmapping.getExportQuantity());
 			exportMaterialDetailDao.saveExportDetail(exportdetail);
-
+			}
 			// check material in stock 2 condition
 			ArrayList<Stock> StockArry = stockdao.FindMaterialInStock(exportmapping.getMaterialId());
 			if (StockArry.size() == 1) {// if stock have material
 				Stock stock = StockArry.get(0);// call material that have 
 				if (BeanUtils.isNotNull(stock.getTotalQuatity())) {
+					if (stock.getTotalQuatity()>= exportmapping.getExportQuantity()) {
 				stock.setTotalQuatity(stock.getTotalQuatity() - exportmapping.getExportQuantity());//remove quantity material form stock
 					stockdao.updateStock(stock);
+					}
 				}
 			}
 
@@ -115,8 +118,10 @@ public class ExportMaterialServiceImp implements ExportMaterialService {
 			if (StockArry.size() == 1) {
 				Stock stock = StockArry.get(0);
 				if (BeanUtils.isNotNull(stock.getTotalQuatity())) {
+					if (stock.getTotalQuatity()>= exportmapping.getExportQuantity()) {
 					stock.setTotalQuatity(stock.getTotalQuatity() - exportmapping.getExportQuantity());
 					stockdao.updateStock(stock);
+					}
 				}
 
 			}

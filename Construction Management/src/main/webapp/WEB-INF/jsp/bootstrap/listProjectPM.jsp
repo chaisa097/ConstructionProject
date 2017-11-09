@@ -153,6 +153,10 @@
 								<th></th>
 								<th><input type="text" class="form-control"
 									placeholder="ProjectName" disabled></th>
+									<th><input type="text" class="form-control"
+									placeholder="Budget(THB)" disabled></th>
+									<th><input type="text" class="form-control"
+									placeholder="TotalExpense(THB)" disabled></th>
 								<th><input type="text" class="form-control"
 									placeholder="Province" disabled></th>
 								<th><input type="text" class="form-control"

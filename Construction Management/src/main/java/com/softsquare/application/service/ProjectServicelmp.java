@@ -32,6 +32,11 @@ public class ProjectServicelmp implements ProjectService {
 		
 	}
 	
+	@Override
+	public ArrayList<Project> countProjectPM(){	
+		return projectListDao.CountProjectPM();
+		
+	}
 	
 	@Override
 	public  ArrayList<ProjectMapping> findProjectbyEmployee(ProjectMapping projectMapping) {
@@ -114,7 +119,12 @@ public class ProjectServicelmp implements ProjectService {
 	    projectListDao.updateProject(pro);
 	}
 
-	
+	@Override
+	public void updateProjectProgress(ProjectMapping project) throws Exception {
+		Project pro =  projectListDao.findProejctForUpdate(project);
+	    pro.setPercentStatus(project.getPercentStatus());
+	    projectListDao.updateProject(pro);
+	}
 	
 	}
 	

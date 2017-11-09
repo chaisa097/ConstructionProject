@@ -25,4 +25,6 @@ public interface ProjectDao {
 	public ArrayList<Project> findProjectbyProjectId(int projectId) ;
 	public ArrayList<Project> getProject() ;
 	public ArrayList<Project> CountProject(); 
+	public ArrayList<Project> CountProjectPM();
+	public ArrayList<Project> getProjectPMId();
 }

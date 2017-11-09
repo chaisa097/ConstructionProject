@@ -184,7 +184,7 @@
 			<div class="box-header with-border">
 			<div class="col-xs-8">
 			<div class="col-xs-2">
-				<h3 class="box-title">Selecting Worker of </h3> 
+				<h3 class="box-title">Selecting Worker</h3> 
 				</div>
 				<div class="col-xs-3">
 				<p id="projectName"></p> 
@@ -214,8 +214,8 @@
 					<div class="col-xs-6">
 				
 								<label>Amount Of Month</label>
-								<input type="text" class="form-control" id="amountOfmonth"
-									placeholder="amountOfMonth" name="amountOfMonth" >
+								<input type="number" class="form-control" id="amountOfmonth"
+									placeholder="amountOfMonth" name="amountOfMonth"  min="0" onkeypress='event.charCode >= 0' >
 					</div>
 				
 

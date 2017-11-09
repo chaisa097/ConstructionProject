@@ -2,6 +2,8 @@ $(document).ready(function(){
 		
 		            searchHeader();
 		            searchDetail();
+		            
+        console.log(headerId);
 			   
     });
 	
@@ -53,3 +55,8 @@ function searchDetail(){
 		        	}
 		        });
 	    }
+
+function back(){
+	location.href = "listExportMaterial.html?projectId="+projectId+"";
+
+}

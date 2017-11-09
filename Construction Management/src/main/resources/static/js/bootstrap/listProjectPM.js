@@ -47,6 +47,8 @@ $(document).ready(function(){
 	    						      '</ul>'+
 	    							  
 	    	                        '<td name=projectName>'+value.projectName+'</td> '+
+	    	                        '<td name=budget>'+value.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'</td>'+
+	    	                        '<td name=totalExpense>'+ value.totalExpense.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'</td> '+
 	    	                        '<td name=provinceName>'+value.provinceName+'</td>'+
 	    	                        '<td >'+ '<progress min="0"   max="100" style="width:40%"  value="'+value.percentStatus+'" >'+ '</progress>' +' ' +value.percentStatus +'%'+'</td></tr>');
   
@@ -108,7 +110,9 @@ function search(){
 					      '</ul>'+
 							
 							
-	                        '<td name=projectName>'+value.projectName+'</td> '+
+	                        '<td name=projectName>'+value.projectName+'</td>'+
+	                        '<td name=budget>'+value.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'</td>'+
+	                        '<td name=totalExpense>'+ value.totalExpense.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'</td> '+
 	                        '<td name=provinceName>'+value.provinceName+'</td>'+
 	                        '<td >'+ '<progress min="0"   max="100" style="width:40%"  value="'+value.percentStatus+'" >'+ '</progress>' +' ' +value.percentStatus +'%'+'</td></tr>');
         	});

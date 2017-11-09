@@ -38,6 +38,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
             .anyRequest().fullyAuthenticated().and()
             .formLogin().loginPage("/index.html")
             .defaultSuccessUrl("/home.html")
+            .defaultSuccessUrl("/importMaterial.html")
             .failureUrl("/loginfail.html")
             .permitAll().and()
         	.logout().logoutUrl("/logout.html").deleteCookies("remember-me").logoutSuccessUrl("/logout.html?logout").permitAll()
