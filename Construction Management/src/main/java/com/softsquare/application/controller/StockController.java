@@ -34,7 +34,7 @@ public class StockController {
 	@RequestMapping(params =  "method=search" , method=RequestMethod.POST)
     public void search(HttpServletRequest request, HttpServletResponse response ,@ModelAttribute StockMapping mapping) throws Throwable{
 		Gson gson = new Gson();
-		String  json = gson.toJson(stockServ.findAllStock(mapping));
+		String  json = gson.toJson(stockServ.findStockByType(mapping));
 		try {
 			response.getWriter().write(json);
 		} catch (Exception e) {
@@ -42,7 +42,16 @@ public class StockController {
 		}
 	}
 	
-	
+	@RequestMapping(params =  "method=searchALL" , method=RequestMethod.POST)
+    public void searchAll(HttpServletRequest request, HttpServletResponse response ,@ModelAttribute StockMapping mapping) throws Throwable{
+		Gson gson = new Gson();
+		String  json = gson.toJson(stockServ.findAllStock(mapping));
+		try {
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
 	
 	
 	

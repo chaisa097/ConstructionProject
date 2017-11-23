@@ -69,6 +69,9 @@ public class Project extends BaseEntity  implements Serializable{
 	@Column(name = "PERCENT_STATUS", nullable = false)
 	private Integer percentStatus; 
 	
+	@Column(name = "STATUS", nullable = false)
+	private String  status; 
+	
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EMPLOYEEID", referencedColumnName = "EMPLOYEEID", insertable=false, updatable=false)
     private Employee employee;
@@ -220,6 +223,14 @@ public class Project extends BaseEntity  implements Serializable{
 
 	public void setCriticalBudget(Integer criticalBudget) {
 		this.criticalBudget = criticalBudget;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 	

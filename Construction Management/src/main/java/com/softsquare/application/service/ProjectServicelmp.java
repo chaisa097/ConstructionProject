@@ -31,6 +31,11 @@ public class ProjectServicelmp implements ProjectService {
 		return projectListDao.CountProject();
 		
 	}
+	@Override
+	public ArrayList<Project> CountProjectComplete(){
+		
+		return projectListDao.CountProjectComplete();
+	}
 	
 	@Override
 	public ArrayList<Project> countProjectPM(){	
@@ -123,6 +128,13 @@ public class ProjectServicelmp implements ProjectService {
 	public void updateProjectProgress(ProjectMapping project) throws Exception {
 		Project pro =  projectListDao.findProejctForUpdate(project);
 	    pro.setPercentStatus(project.getPercentStatus());
+	    projectListDao.updateProject(pro);
+	}
+	
+	@Override
+	public void setProjectComplete(ProjectMapping project) throws Exception {
+		Project pro =  projectListDao.findProejctForUpdate(project);
+	    pro.setStatus("Project Complete");
 	    projectListDao.updateProject(pro);
 	}
 	

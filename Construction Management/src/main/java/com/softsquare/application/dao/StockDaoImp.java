@@ -84,7 +84,7 @@ public class StockDaoImp  extends AbstractDao<Integer, Stock> implements StockDa
 	}
 	
 	@Override
-	public ArrayList<StockMapping> findAllStock(StockMapping mapping) {
+	public ArrayList<StockMapping> findByType(StockMapping mapping) {
 		 Criteria criteria = getSession().createCriteria(Stock.class,"stock");	
 		 criteria.createAlias("stock.material","material");
 		 criteria.createAlias("material.type","type");
@@ -101,6 +101,29 @@ public class StockDaoImp  extends AbstractDao<Integer, Stock> implements StockDa
 	                .add(Projections.property("unit.unitName").as("unitName"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("type.typeId", mapping.getTypeId()));	
+		 criteria.setResultTransformer(Transformers.aliasToBean(Stock.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<StockMapping> stockList = (ArrayList<StockMapping>) criteria.list();
+		return stockList;
+	}
+	
+	@Override
+	public ArrayList<StockMapping> findAllStock(StockMapping mapping) {
+		 Criteria criteria = getSession().createCriteria(Stock.class,"stock");	
+		 criteria.createAlias("stock.material","material");
+		 criteria.createAlias("material.type","type");
+		 criteria.createAlias("material.unit","unit");
+		 ProjectionList projections = Projections.projectionList()
+		            .add(Projections.property("stock.stockId").as("stockId"))
+		            .add(Projections.property("stock.materialId").as("materialId"))
+		            .add(Projections.property("stock.totalQuatity").as("totalQuatity"))
+		            .add(Projections.property("stock.price").as("price"))
+		            .add(Projections.property("material.materialName").as("materialName"))
+		            .add(Projections.property("material.description").as("description"))
+		            .add(Projections.property("type.typeName").as("typeName"))
+		            .add(Projections.property("type.typeId").as("typeId"))
+	                .add(Projections.property("unit.unitName").as("unitName"));
+		 criteria.setProjection(projections);
 		 criteria.setResultTransformer(Transformers.aliasToBean(Stock.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<StockMapping> stockList = (ArrayList<StockMapping>) criteria.list();

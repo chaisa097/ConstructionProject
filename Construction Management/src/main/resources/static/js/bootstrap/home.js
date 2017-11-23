@@ -35,6 +35,18 @@ var params = {method: 'search'};
   	}
   });
 	
+	
+	var params = {method: 'countProjectTotal'};
+	$.ajax({
+  	type: 'POST'
+  	, url: application.contextPath+"/home.html"
+  	, data: params
+  	, success: function(result){
+    	var json = $.parseJSON(result);
+      	$("#projecttotal").html(json[0].projectId); 	
+  	}
+  });
+	
 	var params = {method: 'searchPM'};
 	$.ajax({
   	type: 'POST'
@@ -54,7 +66,7 @@ var params = {method: 'search'};
       
       	 google.charts.load("current", {packages:["corechart"]});
          google.charts.setOnLoadCallback(drawChart);
-         function drawChart() {
+    /*     function drawChart() {
            var data = google.visualization.arrayToDataTable([
              ['Expense', 'ALL Own Project'],
              ['Budget',json[0].budget],
@@ -69,8 +81,25 @@ var params = {method: 'search'};
 
            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
            chart.draw(data, options);
+         }*/
+         function drawChart() {
+             var data1 = google.visualization.arrayToDataTable([
+               ['Expense', 'ALL Own Project'],
+               ['HireEmployee',json[0].totalHireEmployee],
+               ['Expense Total', json[0].totalExpense],
+               ['Materaial Used',json[0].totalUseMaterial],
+               
+             ]);
+
+             var options2 = {
+               title: 'My  Expense proportion',
+               is3D: true,
+             };
+
+             var chart = new google.visualization.PieChart(document.getElementById('piechart_Expense'));
+             chart.draw(data1, options2);
+          
          }
-      		
      	
   	}
   });

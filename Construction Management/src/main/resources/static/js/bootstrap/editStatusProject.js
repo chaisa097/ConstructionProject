@@ -114,6 +114,18 @@
 		 
 
  }
+ function EndProject(){
+	 var params = {method: 'setEndProject', projectId:headerId};
+ 	$.ajax({
+     	type: 'POST'
+     	, url: application.contextPath+"/editStatusProject.html"
+     	, data: params
+     	, success: function(result){
+     		alert("Project Successfully");
+     		back();
+     	}
+     });
+ }
 
        
   

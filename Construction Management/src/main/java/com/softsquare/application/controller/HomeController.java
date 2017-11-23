@@ -48,6 +48,20 @@ public class HomeController {
 	    }
 		  
 	 @RequestMapping(params = "method=search", method=RequestMethod.POST)
+     public void countProjectComplete(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping mapping) throws Throwable{
+			Gson gson = new Gson();	
+			
+			String  json = gson.toJson(proServ.CountProjectComplete());
+			System.out.println(json);
+
+			try {
+				response.getWriter().write(json);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	 
+	 @RequestMapping(params = "method=countProjectTotal", method=RequestMethod.POST)
      public void countProject(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping mapping) throws Throwable{
 			Gson gson = new Gson();	
 			

@@ -17,6 +17,9 @@
 						                    	'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.departmentId+'")> '+
 												 '<span class="glyphicon glyphicon-pencil"></span> '+
 												'</button> '+
+												'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.departmentId+'") disabled> '+
+												 '<span class="glyphicon glyphicon-trash"></span> '+
+												'</button> '+
 											'</td> '+
 					                        '<td name=departmentCode>'+value.departmentCode+'</td> '+
 					                        '<td name=departmentName>'+value.departmentName+'</td></tr>');
@@ -31,9 +34,12 @@
 		
 			 if(BeanUtils.isNotEmpty($('div[name=addEditData] input[name=departmentCode]').val()) && BeanUtils.isNotEmpty($('div[name=addEditData] input[name=departmentName]').val())){
 				var params = {};
+				var massage;
 					params.method = 'save';
+				   massage ="save sucessfully";
 				if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'edit')){
 					params.method = 'edit';
+					 massage ="update sucessfully";
 					params.departmentId = $('div[name=addEditData] input[name=departmentCode]').attr('departmentId');
 				}
 				
@@ -46,6 +52,7 @@
 			        	, data: params
 			        	, success: function(result){
 			        		searchFunction();
+			        		alert(massage);
 			        		$('div[name=addEditData] input[name=departmentCode]').attr('departmentId', '')
 			        	}
 			        });

@@ -39,7 +39,10 @@ public class PMEditStatusProjectController {
     public void edit(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping mapping) throws Throwable{
 		listprojectSevice.updateProjectProgress(mapping);
 	}
-	
+	@RequestMapping(params = "method=setEndProject" , method=RequestMethod.POST)
+    public void EndProject(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping mapping) throws Throwable{
+		listprojectSevice.setProjectComplete(mapping);
+	}
 	
 	@RequestMapping(params =  "method=searchData" , method=RequestMethod.POST)
     public void SeachDatapage(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping mapping) throws Throwable{

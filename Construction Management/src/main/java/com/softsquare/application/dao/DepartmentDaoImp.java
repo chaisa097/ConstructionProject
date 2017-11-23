@@ -34,7 +34,6 @@ public  class DepartmentDaoImp extends AbstractDao<Integer, Department> implemen
 	}
 	
 	
-
 	@Override
 	public Department getDepartmentForUpdate(DepartmentMapping mapping) {
 		 Criteria criteria = getSession().createCriteria(Department.class, "department");
