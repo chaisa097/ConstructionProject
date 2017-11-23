@@ -176,12 +176,23 @@
 	 document.getElementById("slider_value").innerHTML=x;
 	}
 	
-	
+function checkRequireField(){
+	var reqField = $('[required]');
+	var checkRequired = true;
+	reqField.toArray().forEach(function(element) {
+	    if(BeanUtils.isEmpty(element.value)){
+	    	$('label[for="'+element.id+'"]').removeAttr( "hidden")
+	    	checkRequired = false;
+	    }else{
+	    	$('label[for="'+element.id+'"]').attr( "hidden", '1')
+	    }
+	});
+	return checkRequired;
+}
 	
 
 function save(){
-//	console.info(startDate);
-			 if( BeanUtils.isNotEmpty($('div[name=addEditData] input[name=projectName]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] textarea[name=description]').val())){				                                                     		
+			 if( checkRequireField() ){				                                                     		
 				var params = {};
 				
 					params.method = 'save';

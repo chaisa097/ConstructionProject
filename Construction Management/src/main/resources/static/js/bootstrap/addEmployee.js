@@ -53,7 +53,7 @@ $.ajax({
      	var json = $.parseJSON(result);
      	var data = [];
      	$.each(json, function(index, value) {
-     		  data.push('<tr workingId="'+value.workingId+'"><td>'+
+     		  data.push('<tr  workingId="'+value.employeeId+'"><td>'+
 								'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.workingId+'")> '+
 									'<span class="glyphicon glyphicon-trash"></span>'+
 								'</button> '+
@@ -72,6 +72,9 @@ $.ajax({
  }); 
 
 }
+
+
+
 
    function seachWorker(){
 		
@@ -108,10 +111,23 @@ $.ajax({
 	
 	
 }
-
+   
+   
+   
+   function checkDataDuplicate(){
+		 var employeeArray =  $('tr[workingid]').toArray();
+		 
+		 employeeArray.forEach(function(element) {
+			 console.log($(element).attr('workingid'));
+		 });
+		  
+	  
+	   }
 
 
 function save(){
+	checkDataDuplicate();
+	   
           
 			 if( BeanUtils.isNotEmpty($('div[name=addEditData] select[name=employeeList]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] input[name=amountOfMonth]').val())){				                                                     		
 				var params = {};
@@ -120,29 +136,43 @@ function save(){
 				
 					params.method ='save';
 					message = "AddEmployee success!!"
-					
-			 if(BeanUtils.equals($("div[name='statusSave']").attr('mode'), 'update')){
-					params.method = 'edit';				
-					message = "updateEmployee success!!"
-				}
-				
-				  	
+						
 				if(BeanUtils.isNotEmpty(params.method)){			
 					params.projectId = headerId
 					params.amountOfMonth = $('div[name=addEditData] input[name=amountOfMonth]').val();
 					params.employeeId = $('div[name=addEditData] select[name="employeeList"]').val();
-			    	$.ajax({
-			        	type: 'POST'
-			        	, url: application.contextPath+"/addEmployee.html"
-			        	, data: params
-			        	, success: function(result){
-			        		alert(message);
-			        		seachWorker(); 
-			        	
-			        					        		
-			        	}
-			    	      
-			        });
+					
+					var employeeId =  $('div[name=addEditData] select[name="employeeList"]').val();
+					var employeeArray =  $('tr[workingid]').toArray();
+			  
+						 employeeArray.forEach(function(element) {
+							 
+							 console.log($(element).attr('workingid'));
+							 
+							 if(params.employeeId == $(element).attr('workingid')){
+								 alert("Dupplicate data");
+								 createOrUpdateMode(param);
+							 }
+							 
+							 });
+									$.ajax({
+							        	type: 'POST'
+							        	, url: application.contextPath+"/addEmployee.html"
+							        	, data: params
+							        	, success: function(result){
+							        		alert(message);
+							        		seachWorker(); 
+							        	
+							        					        		
+							        	}
+							    	      
+							        });
+							
+					
+						
+					
+					
+			    
 				}
 			 }
 		 }

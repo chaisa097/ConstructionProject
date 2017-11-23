@@ -14,38 +14,48 @@
 <link rel="stylesheet" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
     <script src="metisMenu/metisMenu.min.js"></script>
   <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script> -->
-  <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+<script
+	src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 <link rel="stylesheet" href="css/base/createproject.css">
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
 
 <!-- Bootstrap 3.3.7 -->
-<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 <!-- Font Awesome -->
-<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="bower_components/font-awesome/css/font-awesome.min.css">
 <!-- Ionicons -->
-<link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+<link rel="stylesheet"
+	href="bower_components/Ionicons/css/ionicons.min.css">
 <!-- daterange picker -->
-<link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+<link rel="stylesheet"
+	href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
 <!-- bootstrap datepicker -->
 <link rel="stylesheet" href="dist/css/bootstrap-datepicker.min.css">
 <!-- iCheck for checkboxes and radio inputs -->
 <link rel="stylesheet" href="plugins/iCheck/all.css">
 <!-- Bootstrap Color Picker -->
-<link rel="stylesheet" href="bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+<link rel="stylesheet"
+	href="bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
 <!-- Bootstrap time Picker -->
-<link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
+<link rel="stylesheet"
+	href="plugins/timepicker/bootstrap-timepicker.min.css">
 <!-- Select2 -->
-<link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
+<link rel="stylesheet"
+	href="bower_components/select2/dist/css/select2.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
 <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 <!-- DataTables -->
-<link rel="stylesheet"href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet"
+	href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
 <!-- bootstrap datepicker -->
 
@@ -83,177 +93,179 @@
 				</div>
 			</div>
 			<!-- /.box-header -->
-			
+
 			<div class="box-body">
 				<div class="row">
-					<div class="col-md-2">
+					<div class="col-md-6">
 						<div class="form-group">
-
-							<div>
-								<label>ProjectName</label>
-
+							<div class="row" style="margin-top: 10px;">
+								<div class="col-md-3">
+									<label>ProjectName</label>
+								</div>
+								<div class="col-md-8">
+									<input id="proName" type="text" class="form-control" placeholder="Project Name"	name="projectName" pattern="[A-Za-z]{5,10}" required>
+									<label style="color: red;" for="proName" hidden="1">This field is required</label>
+								</div>
 							</div>
-							<div style="margin-top: 20px">
-								<label>Description</label>
+							<div class="row" style="margin-top: 10px;">
+								<div class="col-md-3">
+									<label>Description</label>
+								</div>
+								<div class="col-md-8">
+									<textarea id="descript" class="form-control"
+										placeholder="Description" rows="3" cols="10"
+										name="description" required></textarea>
+									<label style="color: red;" for="descript" hidden="1">This field is required</label>
+								</div>								
 							</div>
-							
-							
-							<div style="margin-top:60px">
-								<label>Address</label>
+							<div class="row" style="margin-top: 10px;">
+								<div class="col-md-3">
+									<label>Address</label>
+								</div>
+								<div class="col-md-8">
+									<textarea id="address" class="form-control"
+										placeholder="Address of Construction Site" rows="3" cols="10"
+										name="address" required></textarea>
+										<label style="color: red;" for="address" hidden="1">This field is required</label>
+								</div>
 							</div>
-                          <div style="margin-top: 60px">
-								<label>Customer</label>
+							<div class="row" style="margin-top: 10px;">
+								<div class="col-md-3">
+									<label>Customer</label>
+								</div>
+								<div class="col-md-8">
+									<input type="text" class="form-control"
+										placeholder="Customer Name" name="customerName" id="cusName" required>
+										<label style="color: red;" for="cusName" hidden="1">This field is required</label>
+								</div>
 							</div>
-							<div style="margin-top: 20px">
-								<label>CustomerPhone</label>
+							<div class="row" style="margin-top: 10px;">
+								<div class="col-md-3">
+									<label>CustomerPhone</label>
+								</div>
+								<div class="col-md-8">
+									<input type="text" class="form-control bfh-phone"
+										placeholder="Customer Phone" name="customerPhone"
+										id="cusPhone"required>
+											<label style="color: red;" for="cusPhone" hidden="1">This field is required</label>
+								</div>
 							</div>
-							
-							
 						</div>
 					</div>
-
-					<div class="col-md-4" style="margin-left: -55px;">
-						<div class="form-group">
-
-							<div>
-
-								<input id="proName" type="text" class="form-control"
-									placeholder="Project Name" name="projectName"
-									pattern="[A-Za-z]{5,10}"  required>  <span class="error">This
-									field is required</span>
+			       <div class="col-md-6">
+					<div class="form-group">
+                      	<div class="row" style="margin-top: 10px;">
+						<div  class="col-md-3">
+							<label>Province</label>
 							</div>
-							<div style="margin-top: 10px">
-								<textarea id="descript" class="form-control"
-									placeholder="Description" rows="3" cols="10" name="description" ></textarea>	
-							</div>
-							
-							<div style="margin-top: 10px">
-								<textarea id="address" class="form-control"
-									placeholder="Address of Construction Site" rows="3" cols="10"
-									name="address" ></textarea>
-							</div>
-							<div style="margin-top: 10px">
-								<input type="text" class="form-control"
-									placeholder="Customer Name" name="customerName"
-									id="cusName"  >
-							</div>
-							<div style="margin-top: 10px">
-								<input type="text" class="form-control bfh-phone"
-									placeholder="Customer Phone" name="customerPhone"
-									id="cusPhone" >
-							</div>
-							
-
+                          <div class="col-md-8">
+                        <select class="form-control select2" id="province"
+							name="provinceList" data-live-search="true" data-size="5"
+							data-header="Select Province" required></select>
+							<label style="color: red;" for="province" hidden="1">This field is required</label>
 						</div>
-					</div>
-					<div class="col-md-2" style="margin-left: 50px;">
-						<div class="form-group">
-
-							<div>
-								<label>Province</label>
-
+						
 							</div>
-							<div style="margin-top: 20px">
-								<label>ProjectManager</label>
-							</div>
-                           <div style="margin-top: 20px">
-								<label>StartDate</label>
-							</div>
-							
-							  <div style="margin-top: 20px">
-								<label>FinishedDate</label>
-							</div>
-							<div style="margin-top: 20px">
-							CompleteStatus(0-100%)
-							 	<span id="slider_value" style="color:red;"></span>
-							
-							</div>
-							<div style="margin-top: 20px">
-							Budget
-
-							</div>
-							<div style="margin-top: 20px">
-							Critical Budget(0-100%)
-							 	
-							
-							</div>
-							
+							 	<div class="row" style="margin-top: 10px;">
+							<div  class="col-md-3">
+							<label>ProjectManager</label>							
 						</div>
-					</div>
-
-
-					<!-- /.col -->
-					<div class="col-md-4">
-						<div class="form-group">
-							<select class="form-control select2" id="province"
-								name="provinceList" data-live-search="true" data-size="5"
-								data-header="Select Province" ></select>
-
-							<div style="margin-top: 10px">
-								<select class="form-control select2" id="employee"
-									name="employeeList" data-live-search="true" data-size="5"
-									data-header="Select ProjectManager" ></select>
+						<div class="col-md-8">
+							<select class="form-control select2" id="employee"
+								name="employeeList" data-live-search="true" data-size="5"
+								data-header="Select ProjectManager" required></select>
+                              <label style="color: red;" for="employee" hidden="1">This field is required</label>
+						</div>
+						</div>
+					
+						<div class="row" style="margin-top: 10px;">
+						<div class="col-md-3">
+							<label>StartDate</label>
+						</div>
+						<div class="col-md-8">
+							<div class="input-group date">
+								<div class="input-group-addon">
+									<i class="fa fa-calendar"></i>
+								</div>
+								<input type="date" class="form-control" name="startDate"
+									id="startDate"required>
+                       
 
 							</div>
-							<div style="margin-top: 10px">
-                            <div class="input-group date">
-                       <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                       </div>
-                     <input type="date" class="form-control" name="startDate"
-									id="startDate" >
-								
-									
-                       </div>
-                       </div>
-                       <div style="margin-top: 10px">
-                        <div class="input-group date">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                 <input type="date" class="form-control" name="finishDate"
-									id="finishDate" >
-                </div>
-                      </div>
-                       <div style="margin-top: 10px">
-								<input id="Status" class="form-control" type="range"
-									min="0" max="100" step="5"  value="0" onchange="show_value(this.value);"  name="percentStatus"  disabled> 
-                        							</div>
-                     <div style="margin-top: 10px">    							
-                 <input type="number" class="form-control" placeholder="Budget"  
-									name="budget" id="budget" min="0" onkeypress='event.charCode >= 0' >
-									
-                 </div>
-                   <div style="margin-top: 10px">  
-                   <input type="number" class="form-control" min="0" max="100"
-								step="1" name="criticalBudget" id="critical" onkeypress='event.charCode >= 0' maxlength="3" >
-                   </div>
-                 
+							    <label style="color: red;" for="startDate" hidden="1">This field is required</label>
 						</div>
-						<!-- /.form-group -->
-
+						
+                        </div>
+                        <div class="row" style="margin-top: 10px;">
+						<div class="col-md-3">
+							<label>FinishedDate</label>
+						</div>
+						<div class="col-md-8">
+						<div class="input-group date">
+								<div class="input-group-addon">
+									<i class="fa fa-calendar"></i>
+								</div>
+								<input type="date" class="form-control" name="finishDate"
+									id="finishDate" required>
+                    
+							</div>
+							   <label style="color: red;" for="finishDate" hidden="1">This field is required</label>
+						</div>
+							</div>
+							 <div class="row" style="margin-top: 10px;">
+						<div class="col-md-3">
+							CompleteStatus(0-100%) <span id="slider_value"
+								style="color: red;"></span>
+						</div>
+						<div class="col-md-8">
+						<input id="Status" class="form-control" type="range" min="0"
+								max="100" step="5" value="0" onchange="show_value(this.value);"
+								name="percentStatus" disabled>
+							</div>
+						</div>
+						 <div class="row" style="margin-top: 10px;">
+						<div  class="col-md-3">
+						<label>Budget</label>
+						</div>
+								<div class="col-md-8">
+									<input type="number" class="form-control" placeholder="Budget"
+								name="budget" id="budget" min="0"
+								onkeypress='event.charCode >= 0' required>
+								     <label style="color: red;" for="budget" hidden="1">This field is required</label>
+								</div>
+						</div>
+						 <div class="row" style="margin-top: 10px;">
+						<div class="col-md-3">
+						<label>Critical Budget(0-100%)</label>
+						</div>
+							<div class="col-md-8">
+								<input type="number" class="form-control" min="0" max="100"
+								step="1" name="criticalBudget" id="critical"
+								onkeypress='event.charCode >= 0' maxlength="3" required>
+								 <label style="color: red;" for="critical" hidden="1">This field is required</label>
+						</div>
+						
+                        </div>
 					</div>
-					<!-- /.col -->
 				</div>
-				<!-- /.row -->
-			</div>
-			<!-- /.box-body -->
-			<div class="box-footer">
-				<div class="col-xs-10"></div>
-				<div class="col-xs-2">
-					<button onclick="save()"  data-toggle="modal" data-target="#save"
-						class="btn  btn-success btn-lg">Save</button>
-					<a href="${domainSystem}listProject.html" style="margin-left: 2px;"
-						class="btn  btn-default btn-lg">Cancel</a>
-				</div>
-
-			</div>
-		
+			<!-- /.row -->
 		</div>
-		<!-- /.box -->
+		<!-- /.box-body -->
+		<div class="box-footer">
+			<div class="col-xs-8"></div>
+			<div class="col-xs-2">
+				<button onclick="save()" data-toggle="modal" data-target="#save"
+					class="btn btn-success btn-lg">Save</button>
+				<a href="${domainSystem}listProject.html"
+					class="btn btn-default btn-lg">Cancel</a>
+			</div>
 
-	</section>
-	<!-- /.content -->
+		</div>
+</div>
+<!-- /.box -->
+
+</section>
+<!-- /.content -->
 </div>
 
 
@@ -284,7 +296,7 @@
 		</div>
 	</div>
 </div>
- 
+
 
 
 
