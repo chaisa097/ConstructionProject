@@ -377,7 +377,19 @@
 						<li><a href="${domainSystem}exportMaterialConfirm.html"><i
 								class="fa fa-circle-o"></i>Import  Material </a></li>
 					</ul></li>
-				  
+				  	<li class="treeview"><a href="#"> <i class="fa fa-folder"></i>
+						<span>Manage Material</span> <span class="pull-right-container">
+							<i class="fa fa-angle-left pull-right"></i>
+					</span>
+				</a>
+					<ul class="treeview-menu">
+						<li><a href="${domainSystem}type.html"><i
+								class="fa fa-circle-o"></i> MaterialType</a></li>
+						<li><a href="${domainSystem}unit.html"><i
+								class="fa fa-circle-o"></i> Unit</a></li>
+						<li><a href="${domainSystem}material.html"><i
+								class="fa fa-circle-o"></i> Material</a></li>
+					</ul></li>
 					      </c:if>
 					      
 					 <c:if test="${roleUserSystem eq 'st'}">

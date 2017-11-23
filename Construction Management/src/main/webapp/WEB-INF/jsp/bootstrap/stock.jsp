@@ -124,7 +124,7 @@
 					
 			   	<div style="margin-left:3px; " class="row" id="roleHeader">
 							
-								<label style="color:red;">Type*</label> <select
+								<label>Type</label> <select
 									class="selectpicker show-tick show-menu-arrow" name="typeList"
 									data-live-search="true" data-size="5" data-header="Select Type"></select>
 								

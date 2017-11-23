@@ -95,7 +95,7 @@ public class WorkingDaolmp extends AbstractDao<Integer, Working> implements Work
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public Map<String, Object> findProejectIdByEmployeeId(int employeeId) {
+	public ArrayList<Working> findProejectByEmployeeId(int employeeId) {
 		 Criteria criteria = getSession().createCriteria(Working.class, "working");
 		 criteria.createAlias("working.project", "project");
 		 criteria.createAlias("working.employee", "employee");
@@ -103,14 +103,18 @@ public class WorkingDaolmp extends AbstractDao<Integer, Working> implements Work
 		 ProjectionList projections = Projections.projectionList()
 		            .add(Projections.property("working.workingId").as("workingId"))
 		            .add(Projections.property("working.employeeId").as("employeeId"))
+		            .add(Projections.property("project.projectName").as("projectName"))
+		            .add(Projections.property("project.budget").as("budget"))
+		            .add(Projections.property("project.totalUseMaterial").as("totalUseMaterial"))
+		            .add(Projections.property("project.percentStatus").as("percentStatus"))
 		            .add(Projections.property("project.projectId").as("projectId"));
 		 criteria.setProjection(projections);
 		 if(BeanUtils.isNotEmpty(employeeId)){
 			 criteria.add(Restrictions.eq("working.employeeId", employeeId));			 
 		 }
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
-		 Map<String, Object> loginList = (Map<String, Object>) criteria.uniqueResult();
-		return loginList;
+			ArrayList<Working> workingList = (ArrayList<Working>) criteria.list();
+		return workingList;
 	}
 	
 	

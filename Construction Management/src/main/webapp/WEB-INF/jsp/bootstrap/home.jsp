@@ -53,7 +53,7 @@
          <!-- ./col -->
          <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-orange">
+          <div class="small-box bg-blue">
             <div class="inner">
               <h3 id="totalHireEmployeePM"></h3>
 
@@ -89,7 +89,7 @@
       
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-blue">
+          <div class="small-box bg-aqua">
             <div class="inner">
               <h3 id="projectPM"></h3>
 
@@ -172,7 +172,7 @@
       </div>
       <!-- /.row -->
       
-            <div class="col-lg-6 col-xs-6">
+       <div class="col-lg-6 col-xs-6">
        <!-- TO DO List -->
           <div class="box box-primary">
             <div class="box-header">
@@ -180,11 +180,15 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-             <div id="piechart_3d" style="width: 600px; height: 350px;"></div>
+             <div id="piechart_Expense" style="width: 600px; height: 350px;"></div>
             </div>
           
           </div>
           </div>
+      
+      
+      
+           
   
           
           
@@ -198,7 +202,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3 id="projectId"></h3>
+              <h3 id="projecttotal"></h3>
 
               <p>Project</p>
             </div>
@@ -223,22 +227,21 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-6 col-xs-6">
+          <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3 id="budget"><sup style="font-size: 20px"></sup></h3>
+              <h3 id="projectId"></h3>
 
-              <p>Budget</p>
+              <p>Project Complete</p>
             </div>
             <div style="margin-top :20px" class="icon">
-              <i class="  fa fa-btc"></i>
+              <i  class="fa fa-building-o"></i>
             </div>
-            <a href="#" class="small-box-footer">Budget <i class="fa fa-money"></i></a>
+            <a href="${domainSystem}listProject.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
-       <div class="col-lg-6 col-xs-6">
+         <div class="col-lg-6 col-xs-6">
        <!-- TO DO List -->
           <div class="box box-primary">
             <div class="box-header">
@@ -251,6 +254,22 @@
           
           </div>
           </div>
+        <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-blue">
+            <div class="inner">
+              <h3 id="budget"><sup style="font-size: 20px"></sup></h3>
+
+              <p>Budget</p>
+            </div>
+            <div style="margin-top :20px" class="icon">
+              <i class="  fa fa-btc"></i>
+            </div>
+            <a href="#" class="small-box-footer">Budget <i class="fa fa-money"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+     
        
         <!-- ./col -->
         <div class="col-lg-6 col-xs-6">
