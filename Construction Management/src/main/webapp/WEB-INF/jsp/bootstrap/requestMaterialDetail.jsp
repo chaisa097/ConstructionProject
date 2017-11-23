@@ -127,27 +127,35 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-     	<div class="row">
-
-					<div class="col-xs-3">
+     	<div class="row" style="margin-left:10px;">
+			<div class="col-md-3">
+				<div class="row">
 					<label >Type</label>
-					 <select class="typeList form-control select2" id="type"  name="typeList" data-live-search="true" data-size="5" data-header="Select Type" ></select>
-					</div>
-					<div class="col-xs-3">
-						<label style="color:red;">Material In Stock </label>
-						<select class="form-control select2" id="type"  name="materialList" data-live-search="true" data-size="5" data-header="Select Material" ></select>
-					</div>
-					<div class="col-xs-3">
-						<label>Amount of Request</label>
-							<input type="number" id="" class="form-control" placeholder="Amount of Request" name="quantityRequest" >
-					</div>
-
-					
-				<div class="col-xs-1">
-				 <label></label>
-                      <button style="margin-top:25px;margin-right:50px;"   onclick="Save()" data-toggle="modal" data-target="#save"  class="btn btn-success pull-right"><span style="font-size:19; " class="glyphicon glyphicon-plus"></span></button>
-                 </div>
 				</div>
+				<div class="row">
+					<select class="typeList form-control select2" id="type"  name="typeList" data-live-search="true" data-size="5" data-header="Select Type" ></select>
+				</div>	
+			</div>
+			<div class="col-md-3" style="margin-left:10px;">	
+				<div class="row">
+					<label style="color:red;">Material In Stock </label>
+				</div>
+				<div class="row">
+					<select class="form-control select2" id="type"  name="materialList" data-live-search="true" data-size="5" data-header="Select Material" ></select>
+				</div>					
+			</div>
+			<div class="col-md-3" style="margin-left:10px;">	
+				<div class="row">
+					<label>Amount of Request</label>
+				</div>
+				<div class="row">
+					<input type="number" id="" class="form-control" placeholder="Amount of Request" name="quantityRequest" >
+				</div>					
+			</div>
+			<div class="col-md-1" style="margin-left:10px;">
+            	<button style="margin-top:25px;margin-right:50px;"   onclick="Save()" data-toggle="modal" data-target="#save"  class="btn btn-success pull-right"><span aria-hidden="true" class="glyphicon glyphicon-plus"></span></button>
+            </div>
+		</div>
 				<!-- /.row -->
         </div>
         <!-- /.box-body -->

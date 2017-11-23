@@ -32,6 +32,7 @@ public class WorkingDaolmp extends AbstractDao<Integer, Working> implements Work
 		 criteria.createAlias("employee.departmentDetail","departmentDetail");
 		 ProjectionList projections = Projections.projectionList()
 		            .add(Projections.property("working.workingId").as("workingId"))
+		            .add(Projections.property("working.employeeId").as("employeeId"))
 		            .add(Projections.property("working.amountOfMonth").as("amountOfMonth"))  
 		            .add(Projections.property("employee.empFirstName").as("empFirstName"))
 		            .add(Projections.property("employee.empLastName").as("empLastName"))

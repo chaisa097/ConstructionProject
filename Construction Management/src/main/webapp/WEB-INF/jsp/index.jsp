@@ -17,7 +17,15 @@
        <link rel="stylesheet" href="css/base/login.css">
         <title></title>
     </head>
-    <body>
+    <style>
+     body{
+     
+     
+     }
+    
+    </style>
+    
+    <body background="images/IndexConstruction.jpg" style=" position: relative;background-size: 100% 100%;">
     	<c:if test="${not empty error}">
 			<div class="error" style="visibility:hidden;" >${error}</div>
 		</c:if>
