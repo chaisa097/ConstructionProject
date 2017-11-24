@@ -191,6 +191,7 @@ public class EmployeeDaolmp  extends AbstractDao<Integer, Employee> implements E
 		            .add(Projections.property("employee.subDistrict").as("subDistrict"))		 
 		            .add(Projections.property("employee.birthDay").as("birthDay"))
 		            .add(Projections.property("employee.gender").as("gender"))
+		            .add(Projections.property("departmentDetail.Salary").as("Salary"))
 		            .add(Projections.property("departmentDetail.depDetailId").as("depDetailId"));
 		           
 		 criteria.setProjection(projections);

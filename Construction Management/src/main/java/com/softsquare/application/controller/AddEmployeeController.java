@@ -17,6 +17,8 @@ import com.google.gson.Gson;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.ProjectMapping;
 import com.softsquare.application.domain.WorkingMapping;
+import com.softsquare.application.domain.EmployeeMapping;
+import com.softsquare.application.service.EmployeeService;
 import com.softsquare.application.service.ProjectService;
 import com.softsquare.application.service.WorkingService;
 
@@ -30,7 +32,8 @@ public class AddEmployeeController {
 	
 	@Autowired
 	ProjectService listprojectSevice;
-	
+	@Autowired
+	EmployeeService employeeSevice;
 	
 	@RequestMapping(method=RequestMethod.GET)
     public ModelAndView page(HttpServletRequest request, HttpServletResponse response, @ModelAttribute WorkingMapping mapping){
@@ -65,6 +68,20 @@ public class AddEmployeeController {
 	Gson gson = new Gson();	
 		
 		String  json = gson.toJson(workingSevice.findWorker(mapping));
+
+		 try {
+			response.getWriter().write(json);
+		 } catch (Exception e) {
+				e.printStackTrace();
+		 }
+
+		
+	 }
+	@RequestMapping(params =  "method=searchSalary" , method=RequestMethod.POST)
+    public void SeachEmployee(HttpServletRequest request, HttpServletResponse response, @ModelAttribute EmployeeMapping mapping) throws Throwable{
+	Gson gson = new Gson();	
+		
+		String  json = gson.toJson(employeeSevice.findEmployeeByID(mapping));
 
 		 try {
 			response.getWriter().write(json);

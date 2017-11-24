@@ -30,149 +30,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
     <body  class="hold-transition skin-yellow-light sidebar-mini">
-    
-    <%-- <a download id="downloadFile" hidden></a>
-    <div class="nav-div-header-menu" style="position:fixed; width:100%; z-index:300" >
-    <nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		    <span class="sr-only">Toggle navigation</span>
-		    <span class="icon-bar"></span>
-		    <span class="icon-bar"></span>
-		    <span class="icon-bar"></span>
-		     <span class="icon-bar"></span>
-		  </button>
-	      <a class="navbar-brand" href="${domainSystem}">CONSTRUCTION MANAGEMENT</a>
-	    </div>
-	     <ul class="nav navbar-nav">
-	      <li class="nav-item">
-         <a class="nav-link" href="${domainSystem}home.html">Home</a>
-          </li>
-          </ul>
-	    
-	   <div class="collapse navbar-collapse">
-	    <ul class="nav navbar-nav">
-	     <c:if test="${roleUserSystem eq 'admin'}">
-	      <li class="dropdown">
-	         <li class="nav-item">
-         <a class="nav-link" href="${domainSystem}register.html">Manage User</a>
-          </li>
-
-	      <li class="nav-item">
-        <a class="nav-link" href="${domainSystem}manageRole.html">ManageRole</a>
-         </li>
-        
-	      <li class="dropdown">
-	        <a class="dropdown-toggle" id="manageData" data-toggle="dropdown" href="#">ManageData
-	        <span class="caret"></span></a>
-	        <ul class="dropdown-menu">
-	        	<li><a href="${domainSystem}province.html">Province</a></li>
-	           <li class="divider"></li>
-	        	 <li><a href="${domainSystem}listProject.html">Project</a></li>
-	        	<li class="divider"></li>
-	           <li><a href="${domainSystem}department.html">Department</a></li>
-	       		<li class="divider"></li>
-	       		<li><a href="${domainSystem}departmentdetail.html">Position</a></li>
-	       		<li class="divider"></li>
-	       		<li><a href="${domainSystem}employee.html">Employee</a></li>
-	       			<li class="divider"></li>
-	       		<li><a href="${domainSystem}type.html">MaterialType</a></li>
-	       			<li class="divider"></li>
-	       		<li><a href="${domainSystem}unit.html">Unit</a></li>
-	       			<li class="divider"></li>
-	       		<li><a href="${domainSystem}material.html">Material</a></li>
-	        </ul> 
-	      </li>
-	      
-	      </c:if>
-	      <c:if test="${roleUserSystem eq 'pm'}">
-	      
-	      
-	        <li class="nav-item">
-         <a class="nav-link" href="${domainSystem}listProjectPM.html">ManageProject</a>
-          </li>
-	      
-	        <li class="nav-item">
-         <a class="nav-link" href="${domainSystem}stock.html">Stock</a>
-          </li>
-          
-          
-           <li class="nav-item">
-         <a class="nav-link" href="${domainSystem}listOrderPM.html">Approve OderMaterial</a>
-          </li>
-	      
-	     </c:if>
-	     
-	      <c:if test="${roleUserSystem eq 'st'}">
-	       <li class="nav-item">
-         <a class="nav-link" href="${domainSystem}stock.html">Stock</a>
-          </li>
-	      
-	       <li class="nav-item">
-         <a class="nav-link" href="${domainSystem}receiveMaterial.html">Receive Material</a>
-          </li>
-	      
-	       <li class="nav-item">
-         <a class="nav-link" href="${domainSystem}requestMaterialStock.html">Request Material</a>
-          </li>
-	     </c:if>
-	      
-	      	 <c:if test="${roleUserSystem eq 'eng'}">      
-	
-	         <li class="nav-item">
-         <a class="nav-link" href="${domainSystem}importMaterial.html">Own Project</a>
-          </li>
-	        
-	      
-	        <li class="nav-item">
-         <a class="nav-link" href="${domainSystem}stock.html">Stock</a>
-          </li>
-          
-	       <li class="dropdown">
-	        <a class="dropdown-toggle" id="manageProject"  data-toggle="dropdown" href="#">Order Material Into Stock
-	        <span class="caret"></span></a>
-	        <ul class="dropdown-menu">
-	        	<li><a href="${domainSystem}OrderMaterial.html">Order Material</a></li>
-	        	<li class="divider"></li>
-	        	<li><a href="${domainSystem}listOrder.html">History of OrderMaterial</a></li>
-	        </ul>
-	      </li>
-	      
-
-	           
-	      </c:if>
-	     
-	    </ul>
-
-	  <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-	        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="	glyphicon glyphicon-user"></i>
-	        <span class="caret"></span></a>
-	        <ul class="dropdown-menu">
-	          <li><a>User Name : ${userNameUserSystem}</a></li>
-	           <li><a>User Role : ${roleUserSystem}</a></li>
-	        </ul>
-	      </li>
-	       <li><a href="${domainSystem}logoutpage.html"> <img class="img-responsive img-circle" width="30" height="30" src="images/IconLogout.jpg"></a></li>
-      </ul>
-      <!--    <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-	        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Language
-	        <span class="caret"></span></a>
-	        <ul class="dropdown-menu">
-	          <li><a href="?lang=en">English</a></li>
-	          <li><a href="?lang=th">Thai</a></li>
-	        </ul>--[-
-	      </li>
-	      
-      </ul>
-	 -->
-	  </div>
-	  </div>
-	</nav>
-</div> --%>
-
   <header class="main-header">
     <!-- Logo -->
     <a href="#" class="logo">
@@ -187,51 +44,7 @@
       </a>
 
       <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-    
-          <!-- Notifications: style can be found in dropdown.less -->
-        <!--  <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <span class="label label-danger">10</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 10 notifications</li>
-              <li>-->
-                <!-- inner menu: contains the actual data -->
-                <!--<ul class="menu">
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                      page and may cause design problems
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-users text-red"></i> 5 new members joined
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i class="fa fa-user text-red"></i> You changed your username
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="footer"><a href="#">View all</a></li>
-            </ul>
-          </li> -->
-       
+        <ul class="nav navbar-nav">  
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -302,7 +115,10 @@
 						class="fa fa-folder"></i> <span>Manage Project</span>
 
 				</a></li>
+                 <li><a href="${domainSystem}projectHistory.html"> <i
+						class="fa fa-folder"></i> <span>Project History</span>
 
+				</a></li>
 				<li class="treeview" ><a href="#"> <i class="fa fa-folder"></i>
 						<span>Manage Employee</span> <span class="pull-right-container">
 							<i class="fa fa-angle-left pull-right"></i>
@@ -344,10 +160,7 @@
 						class="fa fa-cubes"></i> <span>Stock</span>
 
 				</a></li>
-				  	<li><a href="${domainSystem}listOrderPM.html"> <i
-						class="fa fa-check-square-o"></i> <span>Approve OrderMaterial</span>
-
-				</a></li>
+				  	
 					      </c:if>
 					      
 					         <c:if test="${roleUserSystem eq 'eng'}">
@@ -402,7 +215,17 @@
 						
 			
 				</a></li>
-	      
+				<li><a href="${domainSystem}listOrder.html"><i
+						class="fa fa-opencart"></i> <span>Order Material</span>
+						</a>
+						</li>
+				
+	           <li><a href="${domainSystem}listOrderPM.html"> <i
+						class="fa fa-check-square-o"></i> <span>Approve OrderMaterial</span>
+
+				</a></li>
+				
+				
 	          <li><a href="${domainSystem}receiveMaterial.html"><i
 						class="fa fa-truck"></i> <span>Receive Material</span>
 						

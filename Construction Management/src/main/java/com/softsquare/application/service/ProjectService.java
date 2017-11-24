@@ -23,4 +23,5 @@ public interface ProjectService {
 	public void updateProjectProgress(ProjectMapping project) throws Exception;
 	public void setProjectComplete(ProjectMapping project) throws Exception;		
 	public ArrayList<Project> CountProjectComplete();
+	public ArrayList<ProjectMapping> getProjectComplete();
 }

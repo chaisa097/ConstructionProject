@@ -33,7 +33,7 @@ var date2 = [ day, month, year].join('/');
       	$("#projectName").html(json[0].projectName);
       	$("#description").html(json[0].description);
       	$("#address").html(json[0].address);      
-      	 var  percentStatus =json[0].percentStatus.toString().replace(/\B(?=(\d{2})+(?!\d))/g, "%");	
+      	 var  percentStatus =json[0].percentStatus.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "%");	
       	$("#percentStatus").html(percentStatus);
       	$("#startDate").html(date);
       	$("#finishDate").html(date2);

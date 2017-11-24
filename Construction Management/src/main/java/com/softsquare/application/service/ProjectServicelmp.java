@@ -49,6 +49,10 @@ public class ProjectServicelmp implements ProjectService {
 	
 		return projectListDao.getProjectByEmployee(projectMapping);
 	}
+	@Override
+	public ArrayList<ProjectMapping> getProjectComplete(){
+		return projectListDao.getProjectComplete();
+	}
 	
 	@Override
 	public  ArrayList<ProjectMapping> getAllProject(ProjectMapping projectMapping) {

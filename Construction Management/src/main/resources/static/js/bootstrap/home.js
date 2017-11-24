@@ -66,7 +66,7 @@ var params = {method: 'search'};
       
       	 google.charts.load("current", {packages:["corechart"]});
          google.charts.setOnLoadCallback(drawChart);
-    /*     function drawChart() {
+        function drawChart() {
            var data = google.visualization.arrayToDataTable([
              ['Expense', 'ALL Own Project'],
              ['Budget',json[0].budget],
@@ -79,10 +79,10 @@ var params = {method: 'search'};
              is3D: true,
            };
 
-           var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+           var chart = new google.visualization.PieChart(document.getElementById('piechart_Expense'));
            chart.draw(data, options);
-         }*/
-         function drawChart() {
+        }
+       /*  function drawChart() {
              var data1 = google.visualization.arrayToDataTable([
                ['Expense', 'ALL Own Project'],
                ['HireEmployee',json[0].totalHireEmployee],
@@ -99,7 +99,7 @@ var params = {method: 'search'};
              var chart = new google.visualization.PieChart(document.getElementById('piechart_Expense'));
              chart.draw(data1, options2);
           
-         }
+         }*/
      	
   	}
   });

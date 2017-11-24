@@ -28,4 +28,5 @@ public interface ProjectDao {
 	public ArrayList<Project> CountProjectPM();
 	public ArrayList<Project> getProjectPMId();
 	public ArrayList<Project> CountProjectComplete();
+	public ArrayList<ProjectMapping> getProjectComplete();
 }

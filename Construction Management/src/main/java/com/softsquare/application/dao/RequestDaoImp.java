@@ -127,6 +127,7 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 	public ArrayList<RequestMaterialMapping> listWaitconfirmRequestMaterialPM(RequestMaterialMapping mapping) {
 		 Criteria criteria = getSession().createCriteria(RequestMaterial.class, "request");
 		 criteria.createAlias("request.employee", "employee");
+		 criteria.createAlias("request.project", "project");
 		 ProjectionList projections = Projections.projectionList()
 		            .add(Projections.property("request.requestMaterialId").as("requestMaterialId"))
 		            .add(Projections.property("request.projectId").as("projectId"))
@@ -135,10 +136,12 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 		            .add(Projections.property("request.requestMaterialNo").as("requestMaterialNo"))
 		            .add(Projections.property("employee.empFirstName").as("empFirstName"))
 		            .add(Projections.property("employee.empLastName").as("empLastName"))
+		            .add(Projections.property("project.status").as("prostatus"))
 		            .add(Projections.property("request.requestDate").as("requestDate"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.or(Restrictions.eq("request.status","Waiting Confirm")));	 
 		 criteria.add(Restrictions.and(Restrictions.eq("request.projectId",mapping.getProjectId())));
+		 criteria.add(Restrictions.or(Restrictions.ne("project.status", "Project Complete"),Restrictions.isNull("project.status")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(RequestMaterial.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<RequestMaterialMapping> RequestMaterialList = (ArrayList<RequestMaterialMapping>) criteria.list();
@@ -152,9 +155,11 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 		 criteria.createAlias("request.project", "project");
 		 criteria.createAlias("request.employee", "employee");
 		 ProjectionList projections = Projections.projectionList()
-		            .add(Projections.count("request.requestMaterialId").as("requestMaterialNumber"));
+				     .add(Projections.property("project.status").as("prostatus"))
+		            .add(Projections.count("request.requestMaterialId").as("requestMaterialNumber")); 
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("request.status","Waiting Confirm"));
+		 criteria.add(Restrictions.or(Restrictions.ne("project.status", "Project Complete"),Restrictions.isNull("project.status")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(RequestMaterial.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<RequestMaterial> RequestMaterialList = (ArrayList<RequestMaterial>) criteria.list();
@@ -175,10 +180,12 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 		            .add(Projections.property("request.useMaterialDate").as("useMaterialDate"))
 		            .add(Projections.property("request.requestDate").as("requestDate"))
 		            .add(Projections.property("employee.empFirstName").as("empFirstName"))
+		            .add(Projections.property("project.status").as("prostatus"))
 		            .add(Projections.property("employee.empLastName").as("empLastName"))
 		            .add(Projections.property("project.projectName").as("projectName"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("request.status","Waiting Confirm"));
+		 criteria.add(Restrictions.or(Restrictions.ne("project.status", "Project Complete"),Restrictions.isNull("project.status")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(RequestMaterial.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<RequestMaterial> RequestMaterialList = (ArrayList<RequestMaterial>) criteria.list();
@@ -190,10 +197,13 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 	@Override
 	public ArrayList<RequestMaterial> CountRequestMaterial() {
 		 Criteria criteria = getSession().createCriteria(RequestMaterial.class, "request");
+		 criteria.createAlias("request.project", "project");
 		 ProjectionList projections = Projections.projectionList()				  
-				   .add(Projections.count("request.requestMaterialId").as("requestMaterialId"));
+				   .add(Projections.property("project.status").as("prostatus"))
+				   .add(Projections.count("request.requestMaterialId").as("requestMaterialId"));		 
 		 criteria.setProjection(projections);	
 		 criteria.add(Restrictions.eq("request.status","Waiting Material"));
+		 criteria.add(Restrictions.or(Restrictions.ne("project.status", "Project Complete"),Restrictions.isNull("project.status")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(RequestMaterial.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		ArrayList<RequestMaterial> requestList = (ArrayList<RequestMaterial>) criteria.list();
@@ -211,9 +221,11 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 		            .add(Projections.property("request.status").as("status"))
 		            .add(Projections.property("request.requestMaterialNo").as("requestMaterialNo"))
 		            .add(Projections.property("request.requestDate").as("requestDate"))
+		            .add(Projections.property("project.status").as("prostatus"))
 		            .add(Projections.property("project.projectName").as("projectName"));
 		 criteria.setProjection(projections);
-		 criteria.add(Restrictions.or(Restrictions.eq("request.status","Waiting Material")));	 
+		 criteria.add(Restrictions.or(Restrictions.eq("request.status","Waiting Material")));
+		 criteria.add(Restrictions.or(Restrictions.ne("project.status", "Project Complete"),Restrictions.isNull("project.status")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(RequestMaterial.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		 ArrayList<RequestMaterialMapping> RequestMaterialList = (ArrayList<RequestMaterialMapping>) criteria.list();
