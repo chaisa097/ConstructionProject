@@ -13,6 +13,14 @@ $(document).ready(function(){
 	      	$("#projectName").html(json[0].projectName);
 	      	 var  totalHire =json[0].totalHireEmployee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
 	      	$("#totalHireEmployee").html(totalHire);  
+	      	var totalExpense = 0;
+	      	var totalExpense  = json[0].totalHireEmployee + json[0].totalUseMaterial;	      	
+	    	var criticalBudget = (json[0].criticalBudget/100)*json[0].budget;
+	         var profit = json[0].budget-criticalBudget;
+	      	if (totalExpense>profit){
+	      		alert("You should not add employee into project because Expense Total more than your fix criticalBudget");
+	      	}
+	      	
 	  	}
 	  });
 	$('#amountOfmonth').on('input', function() {
@@ -39,6 +47,7 @@ $(document).ready(function(){
 		});
 	searchFunction();
     BSBaseTable.callFiterTable();
+    
 
 });
 
@@ -114,19 +123,10 @@ $.ajax({
    
    
    
-   function checkDataDuplicate(){
-		 var employeeArray =  $('tr[workingid]').toArray();
-		 
-		 employeeArray.forEach(function(element) {
-			 console.log($(element).attr('workingid'));
-		 });
-		  
-	  
-	   }
+
 
 
 function save(){
-	checkDataDuplicate();
 	   
           
 			 if( BeanUtils.isNotEmpty($('div[name=addEditData] select[name=employeeList]').val())&& BeanUtils.isNotEmpty($('div[name=addEditData] input[name=amountOfMonth]').val())){				                                                     		
@@ -153,8 +153,33 @@ function save(){
 								 alert("Dupplicate data");
 								 createOrUpdateMode(param);
 							 }
-							 
-							 });
+						 });
+						 
+						 
+								$.ajax({
+								  	type: 'POST'
+								  	, url: application.contextPath+"/addEmployee.html"
+								  	, data: {method:'search', projectId:headerId}
+								  	, success: function(result){
+								    	var json = $.parseJSON(result);	    	
+								      	var totalExpense = 0;
+								      	
+								      	$.ajax({
+								      	 	type: 'POST'
+								      	 	, url: application.contextPath+"/addEmployee.html"
+								      	 	, data: {method: 'searchSalary',employeeId:employeeId}
+								            , success: function(result){
+									    	var jsonNew = $.parseJSON(result);	   
+								      	
+									    	var expenseNewWorker = 0;
+								      	 expenseNewWorker = params.amountOfMonth*jsonNew[0].Salary;
+								      	var totalExpense=0;
+								      	 totalExpense  = json[0].totalHireEmployee + json[0].totalUseMaterial + expenseNewWorker;
+					        	if( totalExpense > json[0].budget ){
+								      		alert("All Expense more than Budget ");
+								      		 createOrUpdateMode(param);
+								      	}
+
 									$.ajax({
 							        	type: 'POST'
 							        	, url: application.contextPath+"/addEmployee.html"
@@ -167,7 +192,11 @@ function save(){
 							        	}
 							    	      
 							        });
-							
+								            
+								      	}
+								     });           
+								  	}
+								  });
 					
 						
 					

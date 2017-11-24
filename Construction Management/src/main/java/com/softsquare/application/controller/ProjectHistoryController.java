@@ -30,8 +30,8 @@ public class ProjectHistoryController {
 	return ControllerDefault.DefaultModelAndView(mav, request);
 }
 	
-	@RequestMapping(params =  "method=search" , method=RequestMethod.POST)
-	public void searchProjectPM(HttpServletRequest request, HttpServletResponse response, @ModelAttribute ProjectMapping mapping) throws Throwable{
+	@RequestMapping(params ="method=search" , method=RequestMethod.POST)
+	public void searchProjectPM(HttpServletRequest request, HttpServletResponse response) throws Throwable{
 		Gson gson = new Gson();	
 		
 		String  json = gson.toJson(listprojectSevice.getProjectComplete());

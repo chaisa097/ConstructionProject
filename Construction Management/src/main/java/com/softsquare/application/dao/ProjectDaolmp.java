@@ -90,7 +90,7 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 				   .add(Projections.property("project.status").as("status"))
 		           .add(Projections.sum("project.budget").as("budget"))
 		           .add(Projections.sum("project.totalExpense").as("totalExpense"));
-		 criteria.setProjection(projections);		 
+		 criteria.setProjection(projections);
 		 criteria.setResultTransformer(Transformers.aliasToBean(Project.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		ArrayList<Project> projectList = (ArrayList<Project>) criteria.list();
@@ -129,7 +129,8 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		           .add(Projections.sum("project.totalUseMaterial").as("totalUseMaterial"));
 		 criteria.setProjection(projections);		 
 		 Map<String, Object> dataLogin = loginDao.findByLOGID(LoginUtils.getUsername());
-		 criteria.add(Restrictions.eq("employee.employeeId",dataLogin.get("employeeId")));		
+		 criteria.add(Restrictions.eq("employee.employeeId",dataLogin.get("employeeId")));
+		 criteria.add(Restrictions.or(Restrictions.ne("project.status", "Project Complete"),Restrictions.isNull("project.status")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(Project.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		ArrayList<Project> projectList = (ArrayList<Project>) criteria.list();
@@ -209,15 +210,15 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		            .add(Projections.property("project.status").as("status"))
 		            .add(Projections.property("project.criticalBudget").as("criticalBudget"))
 		            .add(Projections.property("project.totalExpense").as("totalExpense"))
+		            .add(Projections.property("project.totalHireEmployee").as("totalHireEmployee"))
+		            .add(Projections.property("project.totalUseMaterial").as("totalUseMaterial"))
 		            .add(Projections.property("project.percentStatus").as("percentStatus"))	
 		            .add(Projections.property("employee.empFirstName").as("empFirstName"))		       
 		            .add(Projections.property("employee.employeeId").as("employeeId"));	
 		 criteria.setProjection(projections);
-		 criteria.add(Restrictions.eq("project.status", "Project Complete"));
+		 criteria.add(Restrictions.eq("project.status","Project Complete"));	
 		 criteria.setResultTransformer(Transformers.aliasToBean(Project.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
-
-		
 		ArrayList<ProjectMapping> projectList = (ArrayList<ProjectMapping>) criteria.list();
 		return projectList;
 		

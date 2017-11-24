@@ -9,10 +9,16 @@
 			      	$("#projectName").html(json[0].projectName);
 			      	 var  UseMaterial =json[0].totalUseMaterial.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
 			      	$("#totalUseMaterial").html(UseMaterial);  
+			      	var totalExpense = json[0].totalUseMaterial + json[0].totalHireEmployee;
+			      	var criticalBudget = (json[0].criticalBudget/100)*json[0].budget;
+			         var profit = json[0].budget-criticalBudget;
+			      	if (totalExpense>profit){
+			      		alert("You should not import material into project because Expense Total more than your fix criticalBudget");
+			      	}
 			  	}
 			  });
 
-	    	searchFunction();
+	    	 searchFunction();
 	    	 BSBaseTable.callFiterTable();
     });
 		
@@ -69,11 +75,12 @@
 			        	type: 'POST'
 			        	, url: application.contextPath+"/listExportMaterial.html"
 			        	, data: params
-			        	, success: function(result){	 			        		
+			        	, success: function(result){
+			        		
 			        	}
 			        });
 				}
-			 
+				
 		 
 		 }
 		 

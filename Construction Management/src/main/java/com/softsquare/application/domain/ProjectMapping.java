@@ -22,7 +22,7 @@ public class ProjectMapping {
 	private Integer percentStatus;
     private String employee;
     private String province;
-    
+    private String status;
     
 	public Integer getProjectId() {
 		return projectId;
@@ -133,6 +133,12 @@ public class ProjectMapping {
 	}
 	public void setProvince(String province) {
 		this.province = province;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
     
     
