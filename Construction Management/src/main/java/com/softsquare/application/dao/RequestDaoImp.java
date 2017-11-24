@@ -197,10 +197,13 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 	@Override
 	public ArrayList<RequestMaterial> CountRequestMaterial() {
 		 Criteria criteria = getSession().createCriteria(RequestMaterial.class, "request");
+		 criteria.createAlias("request.project", "project");
 		 ProjectionList projections = Projections.projectionList()				  
-				   .add(Projections.count("request.requestMaterialId").as("requestMaterialId"));
+				   .add(Projections.property("project.status").as("prostatus"))
+				   .add(Projections.count("request.requestMaterialId").as("requestMaterialId"));		 
 		 criteria.setProjection(projections);	
 		 criteria.add(Restrictions.eq("request.status","Waiting Material"));
+		 criteria.add(Restrictions.or(Restrictions.ne("project.status", "Project Complete"),Restrictions.isNull("project.status")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(RequestMaterial.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 		ArrayList<RequestMaterial> requestList = (ArrayList<RequestMaterial>) criteria.list();
