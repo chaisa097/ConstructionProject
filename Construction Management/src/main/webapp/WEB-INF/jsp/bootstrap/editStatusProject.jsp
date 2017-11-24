@@ -112,8 +112,8 @@
 			</div>
 			<!-- /.box-body -->
 			<div class="box-footer">
-			    <button onclick="EndProject()" type="submit"
-					class="btn btn-success ">Complete Project</button>
+			    <button id="endPro" onclick="EndProject()" type="submit"
+					class="btn btn-success" disabled>Complete Project</button>
 				<button onclick="Save()" type="submit"
 					class="btn btn-info pull-right">Save</button>
 						

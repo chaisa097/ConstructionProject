@@ -48,6 +48,10 @@
 	    var finishdate = [year, month, day].join('-');
 		$("#projectName").html(json[0].projectName); 
 		$("#Status").html(json[0].percentStatus);
+        		
+		if(json[0].percentStatus==100){
+			$("#endPro").removeAttr( "disabled")
+		}
 		  var  TotalEx =json[0].totalExpense.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		$("#Expense").html(TotalEx);
 	  	$("div[name='addEditData'] textarea[name='description']").val(json[0].description);
@@ -98,6 +102,10 @@
 				if(BeanUtils.isNotEmpty(params.method)){
 				
 					params.percentStatus =  $('div[name=addEditData] input[name=percentStatus]').val();
+					
+					if(params.percentStatus==100){
+						$("#endPro").removeAttr( "disabled")
+					}
 							
 			    	$.ajax({
 			        	type: 'POST'

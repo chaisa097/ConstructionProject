@@ -53,7 +53,7 @@
          <!-- ./col -->
          <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-blue">
+          <div class="small-box bg-orange">
             <div class="inner">
               <h3 id="totalHireEmployeePM"></h3>
 
@@ -104,7 +104,7 @@
         
             <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-olive">
+          <div class="small-box bg-blue">
             <div class="inner">
               <h3 id="budgetPM"><sup style="font-size: 20px"></sup></h3>
 
@@ -268,9 +268,6 @@
             <a href="#" class="small-box-footer">Budget <i class="fa fa-money"></i></a>
           </div>
         </div>
-        <!-- ./col -->
-     
-       
         <!-- ./col -->
         <div class="col-lg-6 col-xs-6">
           <!-- small box -->

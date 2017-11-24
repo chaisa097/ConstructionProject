@@ -124,19 +124,25 @@ function Save(){
 			params.requestMaterialId = headerId
 			params.materialId = $('div[name=addEditData] select[name=materialList]').val();
 			params.exportQuantity = $('div[name=addEditData] input[name=exportQuantity]').val();
+			var stockquality = $("input[name=totalQuatity]").val();
+			if(params.exportQuantity>stockquality){
+				alert("Export material more than quanlity in stock");
+				disAndEnInputField(param);
+			}
 			
-	    	$.ajax({
-	        	type: 'POST'
-	        	, url: application.contextPath+"/ExportMaterial.html"
-	        	, data: params
-	        	, success: function(result){
-	        		alert(message);
-	        		 searchExportMaterial();
-	        					        		
-	        	}
-	    	      
-	        });
+	    
 		}
+		$.ajax({
+        	type: 'POST'
+        	, url: application.contextPath+"/ExportMaterial.html"
+        	, data: params
+        	, success: function(result){
+        		alert(message);
+        		 searchExportMaterial();
+        					        		
+        	}
+    	      
+        });
 	 }
 }
 

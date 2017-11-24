@@ -302,7 +302,10 @@
 						class="fa fa-folder"></i> <span>Manage Project</span>
 
 				</a></li>
+                 <li><a href="${domainSystem}listProjectHistory.html"> <i
+						class="fa fa-folder"></i> <span>Project History</span>
 
+				</a></li>
 				<li class="treeview" ><a href="#"> <i class="fa fa-folder"></i>
 						<span>Manage Employee</span> <span class="pull-right-container">
 							<i class="fa fa-angle-left pull-right"></i>
@@ -344,10 +347,7 @@
 						class="fa fa-cubes"></i> <span>Stock</span>
 
 				</a></li>
-				  	<li><a href="${domainSystem}listOrderPM.html"> <i
-						class="fa fa-check-square-o"></i> <span>Approve OrderMaterial</span>
-
-				</a></li>
+				  	
 					      </c:if>
 					      
 					         <c:if test="${roleUserSystem eq 'eng'}">
@@ -402,7 +402,17 @@
 						
 			
 				</a></li>
-	      
+				<li><a href="${domainSystem}listOrder.html"><i
+						class="fa fa-opencart"></i> <span>Order Material</span>
+						</a>
+						</li>
+				
+	           <li><a href="${domainSystem}listOrderPM.html"> <i
+						class="fa fa-check-square-o"></i> <span>Approve OrderMaterial</span>
+
+				</a></li>
+				
+				
 	          <li><a href="${domainSystem}receiveMaterial.html"><i
 						class="fa fa-truck"></i> <span>Receive Material</span>
 						
