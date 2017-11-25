@@ -22,4 +22,5 @@ public interface RequestMaterialDao {
 	public ArrayList<RequestMaterial> CountRequestMaterial();
 	public ArrayList<RequestMaterial> CountWaitconfirmRequestMaterialPM();
 	public ArrayList<RequestMaterial> FindWaitconfirmRequestMaterialPM();
+	public void removeRequest(RequestMaterial request) throws Exception;
 } 

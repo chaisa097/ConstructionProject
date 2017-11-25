@@ -52,9 +52,7 @@
 					                        '<td name=status>'+value.status+'</td> '+
 					                        '<td name=orderMaterialDate>'+(date)+'</td> '+
 					                        
-					                        '<td>'+'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.orderMaterialId+'")> '+
-											 '<span class="glyphicon glyphicon-pencil"></span> '+
-												'</button> '+
+					                        '<td>'+
 												'<button type="button" class="btn btn-danger btn-xs"  onclick=deleteRow("'+value.orderMaterialId+'")> '+
 													'<span class="glyphicon glyphicon-trash"></span>'+
 												'</button> '+'</td></tr>');
@@ -94,7 +92,19 @@ function Save(){
 			 }
 		 }
 
-
+function deleteRow(value){
+	 if(BeanUtils.isNotEmpty(value)){
+		 var params = {method: 'delete', orderMaterialId: value};
+	    	$.ajax({
+	        	type: 'POST'
+	        	, url: application.contextPath+"/OrderMaterial.html"
+	        	, data: params
+	        	, success: function(result){
+	        		searchFunction();
+	        	}
+	        });
+	 }
+}
 
 
 function disAndEnInputField(param){

@@ -70,10 +70,8 @@
 
 	<!-- Main content -->
 	<section class="content">
-
-		<!-- /.box -->
 			<div class="box">
-				<table class="table">
+				<table class="table-condensed">
 		                <thead>
 		                    <tr>
 		                                       		                    		                   
@@ -83,67 +81,67 @@
 		                
 		                     <tr>
                              <td>ProjectName</td>
-                             <td><p id="projectName"></p></td>                                    
+                             <td><p style="margin-top:10px;margin-left:20px; " id="projectName"></p></td>                                    
                             </tr>
                           
 		                   <tr>
                              <td>Description</td>
-                              <td><p id="description"></p> </td>                            
+                              <td><p style="margin-top:10px;margin-left:20px; " id="description"></p> </td>                            
                           </tr>                                                                            
 		                  <tr>
                              <td>Address</td>
-                              <td><p id="address"></p></td>                            
+                              <td><p  style="margin-top:10px;margin-left:20px; "id="address"></p></td>                            
                           </tr>
 		               
 		                    <tr>
                              <td>CompleteStatus(1-100%) </td>
                          
-                              <td><p id="percentStatus" ></p></td>                            
+                              <td><p style="margin-top:10px;margin-left:20px; " id="percentStatus" ></p></td>                            
                           </tr>
 		                						
 				          
 		                   <tr>
                              <td>StartDate</td>
-                              <td><p id="startDate"></p> </td>                            
+                              <td><p style="margin-top:10px;margin-left:20px; " id="startDate"></p> </td>                            
                           </tr>
                           
                           <tr>
                              <td>FinishDate</td>
-                              <td><p id="finishDate"></p> </td>                            
+                              <td><p style="margin-top:10px;margin-left:20px; " id="finishDate"></p> </td>                            
                           </tr>
                           
                            <tr>
                              <td>CustomerName</td>
-                              <td><p id="customerName"></p> </td>                            
+                              <td><p style="margin-top:10px;margin-left:20px; " id="customerName"></p> </td>                            
                           </tr>
                               <tr>
                           
                               <tr>
                              <td>CustomerPhone</td>
-                              <td><p id="customerPhone"></p></td>                            
+                              <td><p style="margin-top:10px;margin-left:20px; " id="customerPhone"></p></td>                            
                           </tr>
                           
                           
                             <tr>
                              <td>Budget</td>
-                              <td><p id="budget"></p></td>                            
+                              <td><p style="margin-top:10px;margin-left:20px; " id="budget"></p></td>                            
                           </tr>
                                                 
                               <tr>
                              <td>Hire employee</td>
-                              <td><p id="totalHireEmployee"></p> </td>                            
+                              <td><p style="margin-top:10px;margin-left:20px; " id="totalHireEmployee"></p> </td>                            
                              </tr>
                             <tr>                          
                              <td>Material used</td>
-                              <td><p id="totalUseMaterial"></p> </td>                            
+                              <td><p style="margin-top:10px;margin-left:20px; " id="totalUseMaterial"></p> </td>                            
                           </tr>
                            <tr>                                                           
                              <td> All Expense total </td>
-                              <td><p id="totalExpense"></p></td>                            
+                              <td><p style="margin-top:10px;margin-left:20px; " id="totalExpense"></p></td>                            
                           </tr>
                           <tr>                                                           
                              <td>Critical Budget(1-100%)</td>
-                              <td><p id="criticalBudget"></p> </td>                            
+                              <td><p style="margin-top:10px;margin-left:20px; " id="criticalBudget"></p> </td>                            
                           </tr>
                           
                                         
@@ -152,7 +150,42 @@
 				
 			<!-- /.box -->
 		</div>
+     <div class="box">
+				
+				<div class="box-header">
+				<div class="col-xs-2">
+					<h3 style="margin-top:3px;margin-left: -8px; " class="box-title">List worker</h3>
+					</div>
+			
+				
+						
+						
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body">
+				
+					<table class="table">
+						<thead>
+							<tr class="filters">
+										<th>EmployeeName</th>
+										<th>Position</th>
+										<th>Salary</th>
+ 										<th>AmountOfworking</th>
+										<th style="text-align:right">Total/people</th> 
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
 
+					</table>
+					<div class="col-md-9">
+					
+					</div>
+					
+					
+				</div>
+				<!-- /.box-body -->
+			</div>
 	</section>
 	<!-- /.content -->
 	

@@ -136,6 +136,7 @@
                <th></th>
 		       <th><input  type="text" class="form-control" placeholder="EmployeeName" disabled></th>
                <th><input  type="text" class="form-control" placeholder="Position" disabled></th>
+                 <th><input  type="text" class="form-control" placeholder="Department" disabled></th>
                 </tr>
                 </thead>
                <tbody>

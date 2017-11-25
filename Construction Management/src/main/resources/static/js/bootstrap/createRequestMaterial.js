@@ -38,9 +38,7 @@ function searchFunction(){
 					                        '<td name=orderMaterialNo>'+value.requestMaterialNo+'</td> '+
 					                        '<td name=status>'+value.status+'</td> '+
 					                        '<td name=requestDate>'+(date)+'</td> '+
-					                        '<td >'+'<button type="button" class="btn btn-primary btn-xs" onclick=editRow("'+value.requestMaterialId+'")> '+
-											 '<span class="glyphicon glyphicon-pencil"></span> '+
-												'</button> '+
+					                        '<td >'+
 												'<button type="button" class="btn btn-danger btn-xs"  onclick=deleteRow("'+value.requestMaterialId+'")> '+
 													'<span class="glyphicon glyphicon-trash"></span>'+
 												'</button> '+'</td></tr>');
@@ -86,6 +84,19 @@ function addRow(){
 	 disAndEnInputField('create');
 }
 
+function deleteRow(value){
+	 if(BeanUtils.isNotEmpty(value)){
+		 var params = {method: 'delete', requestMaterialId: value};
+	    	$.ajax({
+	        	type: 'POST'
+	        	, url: application.contextPath+"/createRequestMaterial.html"
+	        	, data: params
+	        	, success: function(result){
+	        		searchFunction();
+	        	}
+	        });
+	 }
+}
 
 
 function disAndEnInputField(param){
@@ -93,8 +104,6 @@ function disAndEnInputField(param){
 	 if(BeanUtils.equals(param, 'update')){
 			createOrUpdateMode(param);
 			$("div[name='addEditData'] input[name='useMaterialDate']").prop('disabled', false);
-			$("div[name='addEditData'] input[name='requestNo']").prop('disabled', true);
-			$("div[name='addEditData'] input[name='status']").prop('disabled', true);
 			$("div[name='addEditData'] textarea[name='contactOwner']").prop('disabled', false);
 		}else{
 			createOrUpdateMode(param);

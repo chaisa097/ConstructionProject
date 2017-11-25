@@ -13,8 +13,11 @@ import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.common.util.LoginUtils;
 import com.softsquare.application.dao.LoginDao;
 import com.softsquare.application.dao.OrderMaterialDao;
+import com.softsquare.application.dao.OrderMaterialDetailDao;
 import com.softsquare.application.domain.OrderMaterialMapping;
+import com.softsquare.application.domain.RequestMaterialMapping;
 import com.softsquare.application.entity.OrderMaterial;
+import com.softsquare.application.entity.OderMaterialDetail;;
 
 
 @Service
@@ -25,6 +28,8 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 	@Autowired
 	 private LoginDao  loginDao;
 	
+	@Autowired
+	 private OrderMaterialDetailDao  orderDetailDao;
 	
 	@Override
 	public void saveOrder(OrderMaterialMapping ordermapping) throws Exception {
@@ -112,6 +117,17 @@ public class OrderMaterialServiceImp implements OrderMaterialService{
 	    orderdao.updateOrder(order);    	          
 	}
 	
-	
+	@Override
+	public void removeOrder(OrderMaterialMapping ordermapping) throws Exception {
+		OrderMaterial  order = new OrderMaterial();
+		order.setOrderMaterialId(ordermapping.getOrderMaterialId());
+		ArrayList<OderMaterialDetail> orderdetail = orderDetailDao.getOrderMaterialDetialByOrderId(ordermapping.getOrderMaterialId());
+		for(int i=0;i>orderdetail.size();i++) {
+			OderMaterialDetail  orDetail = new OderMaterialDetail();
+			orDetail.setOrderMaterialId(orderdetail.get(i).getOrderMaterialDatailId());
+			orderDetailDao.deleteOrderMaterial(orDetail);
+		}
+		orderdao.deleteOrder(order);
+	}
 	
 }

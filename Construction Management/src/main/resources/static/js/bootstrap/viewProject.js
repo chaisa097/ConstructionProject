@@ -53,15 +53,39 @@ var date2 = [ day, month, year].join('/');
   	}
   });
 	
-	
-	
+	searchworker();
+
 });
-
-
 
 function back(){
 	location.href = "listProjectPM.html";
 		
 }
+function searchworker(){
+$.ajax({
+ 	type: 'POST'
+ 	, url: application.contextPath+"/viewProject.html"
+ 	, data: {method: 'searchWorker',projectId:headerId}
+   
+ 	, success: function(result){
+     	var json = $.parseJSON(result);
+     	var data = [];
+     	$.each(json, function(index, value) {
+     		  data.push('<tr>'+
+							 '<td  id="empName" >'+value.empFirstName+' '+value.empLastName+'</td>'+
+							 '<td  id="employeeCode">'+value.depDetailName+'</td>'+
+							 '<td  id="salary">'+value.Salary+'</td>'+
+     		                 '<td  id="amountOfMonth">'+value.amountOfMonth+'/'+'month' + '</td>'+
+	                         '<td  id="totalSalary" style="text-align:right" >'+(value.amountOfMonth*value.Salary)+'</td></tr>');
+	  
+     	});
+     	
+     	$('table.table tbody').html(data.join());
+ 	}
+ 	
+ 	
+ 	
+ }); 
 
 
+}

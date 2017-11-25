@@ -12,7 +12,9 @@ var params = {method: 'search'};
      	$("#budget").html(Bud+' THB'); 
         var  TotalEx =json[0].totalExpense.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");	
     	$("#totalExpense").html(TotalEx+' THB'); 
-    		
+     var calculateProfit = json[0].budget -  json[0].totalExpense;
+     var profit =  calculateProfit.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+     $("#Profit").html(profit+' THB'); 
     	 google.charts.load("current", {packages:["corechart"]});
          google.charts.setOnLoadCallback(drawChart);
          function drawChart() {

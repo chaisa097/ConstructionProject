@@ -260,7 +260,7 @@
             <div class="inner">
               <h3 id="budget"><sup style="font-size: 20px"></sup></h3>
 
-              <p>Budget</p>
+              <p>Budget Total</p>
             </div>
             <div style="margin-top :20px" class="icon">
               <i class="  fa fa-btc"></i>
@@ -283,6 +283,21 @@
             <a href="#" class="small-box-footer">Expenses<i class="fa fa-money"></i></a>
           </div>
         </div>
+          <div class="col-lg-6 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-Olive">
+            <div class="inner">
+              <h3 id="Profit"></h3>
+
+              <p>Profit Total</p>
+            </div>
+            <div style="margin-top :20px" class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="#" class="small-box-footer">profit<i class="fa fa-money"></i></a>
+          </div>
+        </div>
+        
         <!-- ./col -->
       </div>
       <!-- /.row -->

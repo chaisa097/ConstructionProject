@@ -23,6 +23,11 @@ public class OrderMaterialDetailDaoImp extends AbstractDao<Integer, OderMaterial
 	public void saveOrderMaterial(OderMaterialDetail orderdetail) throws Exception {
 		save(orderdetail);
 	}
+	
+	@Override
+	public void deleteOrderMaterial(OderMaterialDetail orderdetail) throws Exception {
+		delete(orderdetail);
+	}
 	@Override
 	public ArrayList<OrderMaterialDetailMapping> getOrderMaterial(OrderMaterialDetailMapping  orderMapping) {
 		 Criteria criteria = getSession().createCriteria(OderMaterialDetail.class, "orderDetail");
@@ -48,6 +53,30 @@ public class OrderMaterialDetailDaoImp extends AbstractDao<Integer, OderMaterial
 		return orderdetailList;
 	}
 	
+	@Override
+	public ArrayList<OderMaterialDetail> getOrderMaterialDetialByOrderId(int  orderId) {
+		 Criteria criteria = getSession().createCriteria(OderMaterialDetail.class, "orderDetail");
+		  criteria.createAlias("orderDetail.order", "order");
+		  criteria.createAlias("orderDetail.material", "material");
+		  criteria.createAlias("material.unit", "unit");
+		  criteria.createAlias("material.type", "type");
+		 ProjectionList projections = Projections.projectionList()
+				 .add(Projections.property("orderDetail.orderMaterialDatailId").as("orderMaterialDatailId"))
+				     .add(Projections.property("order.orderMaterialId").as("orderMaterialId"))
+				     .add(Projections.property("orderDetail.anotation").as("anotation"))
+				    .add(Projections.property("orderDetail.quantityOrder").as("quantityOrder"))
+		            .add(Projections.property("material.materialId").as("materialId"))
+		            .add(Projections.property("material.description").as("description"))
+		            .add(Projections.property("material.materialName").as("materialName"))
+		            .add(Projections.property("unit.unitName").as("unitName"))
+		              .add(Projections.property("type.typeName").as("typeName"));
+		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.eq("order.orderMaterialId",orderId));
+		 criteria.setResultTransformer(Transformers.aliasToBean(Material.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<OderMaterialDetail> orderdetailList = (ArrayList<OderMaterialDetail>) criteria.list();		 
+		return orderdetailList;
+	}
 	
 	@Override
 	public void orderMaterialDetailDelete(OderMaterialDetail orderDetail) throws Exception {

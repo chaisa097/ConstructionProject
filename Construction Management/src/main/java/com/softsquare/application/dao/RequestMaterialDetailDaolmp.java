@@ -29,9 +29,7 @@ public class RequestMaterialDetailDaolmp extends AbstractDao<Integer,RequestMate
 	public void removeMaterialInRequestDetail(RequestMaterialDetail requestDetail) throws Exception {
 		delete(requestDetail);
 	}
-	
-	
-	
+		
 	@Override
 	public ArrayList<RequestMaterialDetailMapping> getRequestMaterialDetial(RequestMaterialDetailMapping Mapping) {
 		 Criteria criteria = getSession().createCriteria(RequestMaterialDetail.class, "reqMaterialDetail");
@@ -56,7 +54,29 @@ public class RequestMaterialDetailDaolmp extends AbstractDao<Integer,RequestMate
 		return reqdetailList;
 	}
 	
-	
+	@Override
+	public ArrayList<RequestMaterialDetail> findMaterialDetailByRequestMaterialId(int RequestId) {
+		 Criteria criteria = getSession().createCriteria(RequestMaterialDetail.class, "reqMaterialDetail");
+		  criteria.createAlias("reqMaterialDetail.requestMaterial", "requestMaterial");
+		  criteria.createAlias("reqMaterialDetail.material", "material");
+		  criteria.createAlias("material.unit", "unit");
+		  criteria.createAlias("material.type", "type");
+		 ProjectionList projections = Projections.projectionList()
+				  .add(Projections.property("reqMaterialDetail.requestMaterialDetailId").as("requestMaterialDetailId"))
+				  .add(Projections.property("reqMaterialDetail.quantityRequest").as("quantityRequest"))
+				  .add(Projections.property("reqMaterialDetail.requestMaterialId").as(" requestMaterialId"))
+		          .add(Projections.property("material.materialId").as("materialId"))
+		          .add(Projections.property("material.description").as("description"))
+		          .add(Projections.property("material.materialName").as("materialName"))
+		          .add(Projections.property("unit.unitName").as("unitName"))
+		          .add(Projections.property("type.typeName").as("typeName"));
+		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.eq("reqMaterialDetail.requestMaterialId",RequestId));
+		 criteria.setResultTransformer(Transformers.aliasToBean(Material.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<RequestMaterialDetail> reqdetailList = (ArrayList<RequestMaterialDetail>) criteria.list();		 
+		return reqdetailList;
+	}
 	
 	
 }

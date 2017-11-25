@@ -18,6 +18,7 @@ import com.softsquare.application.domain.RequestMaterialMapping;
 import com.softsquare.application.entity.Login;
 import com.softsquare.application.entity.Project;
 import com.softsquare.application.entity.RequestMaterial;
+import com.softsquare.application.entity.Role;
 
 
 @Repository()
@@ -37,7 +38,10 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 	public void updateRequest(RequestMaterial request) throws Exception {
 		merge(request);		
 	}
-	
+	@Override
+	public void removeRequest(RequestMaterial request) throws Exception {
+		delete(request);
+	}
 	@SuppressWarnings("unchecked")
 	@Override
 	public Map<String, Object> findRequestId(int requestId) {

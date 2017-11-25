@@ -72,12 +72,7 @@ public class EmployeeDaolmp  extends AbstractDao<Integer, Employee> implements E
 		 Map<String, Object> result = (Map<String,Object>) criteria.uniqueResult();
 		return result;
 	}
-	
-
-	
-	
-	
-	
+		
 	@Override
 	public ArrayList<Employee> getAllEmployee() {
 		 Criteria criteria = getSession().createCriteria(Employee.class, "employee");
@@ -91,6 +86,7 @@ public class EmployeeDaolmp  extends AbstractDao<Integer, Employee> implements E
 		            .add(Projections.property("employee.employeeCode").as("employeeCode"))
 		            .add(Projections.property("departmentDetail.depDetailName").as("depDetailName"))
 		            .add(Projections.property("departmentDetail.departmentId").as("departmentId"))
+		            .add(Projections.property("department.departmentName").as("departmentName"))
 		            .add(Projections.property("department.departmentCode").as("departmentCode"));
 		 criteria.setProjection(projections);	
 		 criteria.setResultTransformer(Transformers.aliasToBean(Employee.class));

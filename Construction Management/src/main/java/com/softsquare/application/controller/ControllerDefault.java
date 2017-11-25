@@ -24,7 +24,7 @@ public class ControllerDefault {
 		String domainName = null;
     
 		final String[] roleAll = new String[]{"admin","pm","eng","st"};
-		final String[] pageAdmin = new String[]{"home", "registerList","projectHistory" ,"register", "manageRole","province","createProject","listproject","viewProject","viewEmployee","department","departmentdetail","employeeList","createEmployee","type","unit","material"};
+		final String[] pageAdmin = new String[]{"home","addEmployee", "registerList","projectHistory" ,"register", "manageRole","province","createProject","listproject","viewProject","viewEmployee","department","departmentdetail","employeeList","createEmployee","type","unit","material"};
 		final String[] pageProjectManager = new String[]{"home","listPojectPM","addEmployee","viewProject","stock","editStatusProject","listRequestMaterialPM","confirmRequestMaterial","listExportMaterial","viewExportMaterialPM"};
 		final String[] pageEngineer = new String[]{"importMaterial","stock","orderMaterial","orderMaterialDetail","viewOrder","listOrder","createRequestMaterial","requestMaterialDetail","viewRequestMaterial","listRequestMaterial","listExportMaterialEngineer","viewExportMaterial","exportMaterialConfirm","type","unit","material"};
 		final String[] pageStocker = new String[]{"stock","receiveMaterial","addMaterialStock","requestMaterialStock","exportMaterial","confirmOrder","orderMaterial","orderMaterialDetail","viewOrder","listOrder","listOrderPM"};

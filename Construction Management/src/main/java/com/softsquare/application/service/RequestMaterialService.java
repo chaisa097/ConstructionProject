@@ -20,4 +20,6 @@ public interface RequestMaterialService {
 	public ArrayList<RequestMaterial> CountRequestMaterial();
 	public ArrayList<RequestMaterial> CountWaitconfirmRequestMaterialPM();
 	public ArrayList<RequestMaterial> FindWaitconfirmRequestMaterialPM();
+	public void updateRequest(RequestMaterialMapping mapping) throws Exception;
+	public void removeRequest(RequestMaterialMapping mapping) throws Exception;
 }

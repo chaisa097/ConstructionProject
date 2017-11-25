@@ -14,7 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.ProjectMapping;
+import com.softsquare.application.domain.WorkingMapping;
 import com.softsquare.application.service.ProjectService;
+import com.softsquare.application.service.WorkingService;
 
 @RestController
 @RequestMapping("/viewProject.html")
@@ -23,7 +25,8 @@ public class ViewProjectController {
 	
 	@Autowired
 	ProjectService listprojectSevice;
-	
+	@Autowired
+	WorkingService workingSevice;
 	@RequestMapping(method=RequestMethod.GET)
     public ModelAndView page(HttpServletRequest request, HttpServletResponse response,@ModelAttribute ProjectMapping mapping){
     	ModelAndView mav = new ModelAndView();
@@ -48,6 +51,24 @@ public class ViewProjectController {
 
 		
 	 }
+	
+	@RequestMapping(params =  "method=searchWorker" , method=RequestMethod.POST)
+    public void Seachworker(HttpServletRequest request, HttpServletResponse response, @ModelAttribute WorkingMapping mapping) throws Throwable{
+	Gson gson = new Gson();	
+		
+		String  json = gson.toJson(workingSevice.findWorker(mapping));
+
+		 try {
+			response.getWriter().write(json);
+		 } catch (Exception e) {
+				e.printStackTrace();
+		 }
+
+		
+	 }
+	
+	
+	
 	
 }
 	

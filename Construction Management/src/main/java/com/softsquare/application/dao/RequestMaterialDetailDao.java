@@ -10,4 +10,5 @@ public interface RequestMaterialDetailDao {
 	public void RequestDetailSave(RequestMaterialDetail requestDetail) throws Exception;
 	public void removeMaterialInRequestDetail(RequestMaterialDetail requestDetail) throws Exception;
 	public ArrayList<RequestMaterialDetailMapping> getRequestMaterialDetial(RequestMaterialDetailMapping Mapping);
+	public ArrayList<RequestMaterialDetail> findMaterialDetailByRequestMaterialId(int RequestId);
 }

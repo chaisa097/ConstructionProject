@@ -80,7 +80,10 @@ public class OrderMaterialDaoImp extends AbstractDao<Integer, OrderMaterial>   i
 	public void saveOrder(OrderMaterial order) throws Exception {
 		save(order);
 	}
-
+	@Override
+	public void deleteOrder(OrderMaterial order) throws Exception {
+		delete(order);
+	}
 	@Override
 	public ArrayList<OrderMaterial> getOrder() {
 		 Criteria criteria = getSession().createCriteria(OrderMaterial.class, "order");
