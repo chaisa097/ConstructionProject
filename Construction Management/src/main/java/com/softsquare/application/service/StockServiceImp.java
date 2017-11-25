@@ -31,6 +31,8 @@ public class StockServiceImp implements StockService {
 	public ArrayList<StockMapping> findMaterialPriceFormStock(StockMapping mapping){
 		return stockDao.findMaterialPriceFormStock(mapping);
 	}
-	
-	
+	@Override
+	public ArrayList<StockMapping> findMaterialQuatityFormStockbyMaterialId(int  materialid){
+		return stockDao.findMaterialQuatityFormStockbyMaterialId(materialid);
+	}
 }

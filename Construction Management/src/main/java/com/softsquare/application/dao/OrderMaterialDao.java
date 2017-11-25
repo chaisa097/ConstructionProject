@@ -20,5 +20,7 @@ public interface OrderMaterialDao {
 	public ArrayList<OrderMaterial> getPMConfirmOrderWaitStatus();
 	public ArrayList<OrderMaterial> getOrderFinish();
 	public ArrayList<OrderMaterial> CountOrder();
+	public void deleteOrder(OrderMaterial order) throws Exception;
+
 	
 }

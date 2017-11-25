@@ -141,7 +141,7 @@
 					<label style="color:red;">Material In Stock </label>
 				</div>
 				<div class="row">
-					<select class="form-control select2" id="type"  name="materialList" data-live-search="true" data-size="5" data-header="Select Material" ></select>
+					<select class="form-control select2" id="Materialstock"  name="materialList" data-live-search="true" data-size="5" data-header="Select Material" ></select>
 				</div>					
 			</div>
 			<div class="col-md-3" style="margin-left:10px;">	

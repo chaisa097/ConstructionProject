@@ -148,5 +148,22 @@ public class StockDaoImp  extends AbstractDao<Integer, Stock> implements StockDa
 		return stockList;
 	}
 	
+	@Override
+	public ArrayList<StockMapping> findMaterialQuatityFormStockbyMaterialId(int  materialid) {
+		 Criteria criteria = getSession().createCriteria(Stock.class,"stock");	
+		 criteria.createAlias("stock.material","material");
+		 ProjectionList projections = Projections.projectionList()
+		            .add(Projections.property("stock.stockId").as("stockId"))
+		            .add(Projections.property("stock.materialId").as("materialId"))
+		            .add(Projections.property("stock.totalQuatity").as("totalQuatity"))
+		            .add(Projections.property("stock.price").as("price"));
+
+		 criteria.setProjection(projections);
+		 criteria.add(Restrictions.eq("stock.materialId",materialid));	
+		 criteria.setResultTransformer(Transformers.aliasToBean(Stock.class));
+		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		 ArrayList<StockMapping> stockList = (ArrayList<StockMapping>) criteria.list();
+		return stockList;
+	}
 	
 }

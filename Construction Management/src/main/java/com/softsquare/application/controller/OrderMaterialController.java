@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.softsquare.application.domain.OrderMaterialMapping;
+import com.softsquare.application.domain.RequestMaterialMapping;
 import com.softsquare.application.service.OrderMaterialService;
 
 
@@ -38,7 +39,10 @@ public class OrderMaterialController {
 		 OrderServ.saveOrder(mapping);
 		
 	}
-	
+	@RequestMapping(params =  "method=delete" , method=RequestMethod.POST)
+	public void delete(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialMapping mapping) throws Throwable{
+		OrderServ.removeOrder(mapping);
+	}
     
 	@RequestMapping(params =  "method=search" , method=RequestMethod.POST)
 	public void search(HttpServletRequest request, HttpServletResponse response, @ModelAttribute OrderMaterialMapping mapping) throws Throwable{

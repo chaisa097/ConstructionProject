@@ -16,6 +16,7 @@ public interface StockDao {
 	public ArrayList<StockMapping> getMaterialinStock(StockMapping mapping); 
 	public ArrayList<StockMapping> findMaterialPriceFormStock(StockMapping mapping);
 	public ArrayList<StockMapping> findByType(StockMapping mapping);
+	public ArrayList<StockMapping> findMaterialQuatityFormStockbyMaterialId(int  materialid);
 	
 	
 }

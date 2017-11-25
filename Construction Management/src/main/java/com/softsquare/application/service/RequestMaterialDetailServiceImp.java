@@ -40,4 +40,9 @@ public class RequestMaterialDetailServiceImp implements RequestMaterialDetailSer
 		redetailDao.removeMaterialInRequestDetail(reDetail);
 	}
 	
+	@Override
+	public ArrayList<RequestMaterialDetail> findMaterialDetailId(int id)  {
+		return  redetailDao.findMaterialDetailByRequestMaterialId(id);
+	}
+	
 }

@@ -12,11 +12,14 @@ import org.springframework.stereotype.Service;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.common.util.LoginUtils;
 import com.softsquare.application.dao.RequestMaterialDao;
-import com.softsquare.application.domain.OrderMaterialMapping;
+import com.softsquare.application.dao.RequestMaterialDetailDao;
+
 import com.softsquare.application.domain.RequestMaterialMapping;
 import com.softsquare.application.dao.LoginDao;
-import com.softsquare.application.entity.OrderMaterial;
+
 import com.softsquare.application.entity.RequestMaterial;
+import com.softsquare.application.entity.RequestMaterialDetail;
+
 @Service
 public class RequestMaterialServiceImp implements RequestMaterialService {
 
@@ -26,6 +29,8 @@ public class RequestMaterialServiceImp implements RequestMaterialService {
 	@Autowired
 	private LoginDao loginDao;	
 		
+	@Autowired
+	private RequestMaterialDetailDao  redetailDao;
 	
 	@Override
 	public void saveRequest(RequestMaterialMapping requestmapping) throws Exception {
@@ -118,6 +123,13 @@ public class RequestMaterialServiceImp implements RequestMaterialService {
 	}
 	
 	@Override
+	public void updateRequest(RequestMaterialMapping mapping) throws Exception {
+		RequestMaterial request =  requestDao.findRequestMaterialForUpdateStatus(mapping);
+		requestDao.updateRequest(request);
+	        
+	}
+	
+	@Override
 	public void updateStatusReject(RequestMaterialMapping mapping) throws Exception {
 		RequestMaterial request =  requestDao.findRequestMaterialForUpdateStatus(mapping);
 		request.setStatus("Reject");
@@ -125,7 +137,20 @@ public class RequestMaterialServiceImp implements RequestMaterialService {
 	        
 	}
 	
-	
+	@Override
+	public void removeRequest(RequestMaterialMapping mapping) throws Exception {
+		RequestMaterial  request = new RequestMaterial();
+		request.setRequestMaterialId(mapping.getRequestMaterialId());
+		System.out.println("555555555555"+mapping.getRequestMaterialId());
+		ArrayList<RequestMaterialDetail> requestDetial = redetailDao.findMaterialDetailByRequestMaterialId(mapping.getRequestMaterialId());
+		for(int i=0;i>requestDetial.size();i++) {
+			RequestMaterialDetail  reDetail = new RequestMaterialDetail();
+			reDetail.setRequestMaterialDetailId(requestDetial.get(i).getRequestMaterialDetailId());
+			redetailDao.removeMaterialInRequestDetail(reDetail);
+		}
+		requestDao.removeRequest(request);
+	}
+
 	
 	
 	

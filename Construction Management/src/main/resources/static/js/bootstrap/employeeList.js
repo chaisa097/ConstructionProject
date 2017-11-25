@@ -28,7 +28,8 @@ function search(){
 					   '<span class="glyphicon glyphicon-trash"></span>'+
 				       '</button> '+
 	                        '<td name=employeeName>'+value.empFirstName+' '+value.empLastName+'</td> '+
-	                        '<td name=depDetailName>'+value.depDetailName+'</td></tr>');
+	                        '<td name=depDetailName>'+value.depDetailName+'</td>'+
+	                        '<td name=departmentName>'+value.departmentName+'</td></tr>');
         	});
         	$('table.table tbody').html(data.join());	
         

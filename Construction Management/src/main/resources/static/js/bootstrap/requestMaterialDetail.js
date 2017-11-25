@@ -61,17 +61,33 @@
 					params.requestMaterialId = headerId
 					params.materialId = $('div[name=addEditData] select[name="materialList"]').val();
 					params.quantityRequest = $('div[name=addEditData]  input[name=quantityRequest]').val();
-						
+					
+				         var materialstockId  = $("#Materialstock").val();
+				         
+				         var params1 = {method: 'materialstock', materialId: materialstockId};
+					    	$.ajax({
+					        	type: 'POST'
+					        	, url: application.contextPath+"/requestMaterialDetail.html"
+					        	, data: params1
+					        	, success: function(result){
+					        		var json = $.parseJSON(result)
+					        if(params.quantityRequest>json[0].totalQuatity){
+					        	alert("Request material more than quanlity in Stock")
+					        	disAndEnInputField(param);
+					        }
+				         
 			    	$.ajax({
 			        	type: 'POST'
 			        	, url: application.contextPath+"/requestMaterialDetail.html"
 			        	, data: params
-			        	
 			        	, success: function(result){
 			        		alert(message);			        	
 			        		searchFunction();
 			        	}
 			        });
+			    	
+					        	}
+					        });
 				}
 			 }
 		 }

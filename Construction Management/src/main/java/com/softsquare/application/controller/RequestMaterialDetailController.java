@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.softsquare.application.common.util.BeanUtils;
+import com.softsquare.application.domain.MaterialMapping;
 import com.softsquare.application.domain.OrderMaterialDetailMapping;
 import com.softsquare.application.domain.RequestMaterialDetailMapping;
 import com.softsquare.application.domain.StockMapping;
@@ -57,6 +58,20 @@ public class RequestMaterialDetailController {
 				e.printStackTrace();
 		}
 	}
+	
+	@RequestMapping(params =  "method=materialstock" , method=RequestMethod.POST)
+    public void searchMaterialStockQuality(HttpServletRequest request, HttpServletResponse response, @ModelAttribute MaterialMapping mapping) throws Throwable{
+		Gson gson = new Gson();
+		String  json = gson.toJson(stockServ.findMaterialQuatityFormStockbyMaterialId(mapping.getMaterialId()));
+		try {
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
+	
+	
+	
 	
 	@RequestMapping(params ="method=delete" , method=RequestMethod.POST)
 	public void delete(HttpServletRequest request, HttpServletResponse response, @ModelAttribute RequestMaterialDetailMapping mapping) throws Throwable{

@@ -10,4 +10,6 @@ public interface OrderMaterialDetailDao {
 	public void saveOrderMaterial(OderMaterialDetail orderdetail) throws Exception;
 	public ArrayList<OrderMaterialDetailMapping> getOrderMaterial(OrderMaterialDetailMapping  orderMapping);
 	public void orderMaterialDetailDelete(OderMaterialDetail orderDetail) throws Exception;
+	public ArrayList<OderMaterialDetail> getOrderMaterialDetialByOrderId(int  orderId);
+	public void deleteOrderMaterial(OderMaterialDetail orderdetail) throws Exception;
 }

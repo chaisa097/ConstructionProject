@@ -19,4 +19,5 @@ public interface OrderMaterialService {
 	public ArrayList<OrderMaterial> getPmConfirmOrderMaterialWaitStatus();
 	public ArrayList<OrderMaterial> getOrderFinish();
 	public ArrayList<OrderMaterial> CountOrder();
+	public void removeOrder(OrderMaterialMapping ordermapping) throws Exception ;
 }

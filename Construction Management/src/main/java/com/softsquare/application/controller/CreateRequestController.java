@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import com.softsquare.application.common.util.BeanUtils;
 import com.softsquare.application.domain.OrderMaterialMapping;
 import com.softsquare.application.domain.RequestMaterialMapping;
+import com.softsquare.application.domain.UnitMapping;
 import com.softsquare.application.service.RequestMaterialService;
 
 @RestController
@@ -41,7 +42,15 @@ public class CreateRequestController {
       RequestService.saveRequest(mapping);
 		
 	}
+	@RequestMapping(params =  "method=edit" , method=RequestMethod.POST)
+	public void edit(HttpServletRequest request, HttpServletResponse response, @ModelAttribute RequestMaterialMapping mapping) throws Throwable{
+		RequestService.updateRequest(mapping);
+	}
 	
+	@RequestMapping(params =  "method=delete" , method=RequestMethod.POST)
+	public void delete(HttpServletRequest request, HttpServletResponse response, @ModelAttribute RequestMaterialMapping mapping) throws Throwable{
+		RequestService.removeRequest(mapping);
+	}
 	@RequestMapping(params =  "method=search" , method=RequestMethod.POST)
 	public void search(HttpServletRequest request, HttpServletResponse response, @ModelAttribute RequestMaterialMapping mapping) throws Throwable{
 		Gson gson = new Gson();
