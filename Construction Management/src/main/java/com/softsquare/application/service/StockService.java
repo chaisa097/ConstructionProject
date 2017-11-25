@@ -11,4 +11,5 @@ public interface StockService {
 	public ArrayList<StockMapping> getMaterialinStock(StockMapping mapping);
 	public ArrayList<StockMapping> findMaterialPriceFormStock(StockMapping mapping);
 	public ArrayList<StockMapping> findStockByType(StockMapping mapping);
+	public ArrayList<StockMapping> findMaterialQuatityFormStockbyMaterialId(int  materialid);
 }
