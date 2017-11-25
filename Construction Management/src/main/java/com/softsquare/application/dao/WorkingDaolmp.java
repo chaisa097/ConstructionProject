@@ -105,6 +105,7 @@ public class WorkingDaolmp extends AbstractDao<Integer, Working> implements Work
 		            .add(Projections.property("working.employeeId").as("employeeId"))
 		            .add(Projections.property("project.projectName").as("projectName"))
 		            .add(Projections.property("project.budget").as("budget"))
+		            .add(Projections.property("project.status").as("status"))
 		            .add(Projections.property("project.totalUseMaterial").as("totalUseMaterial"))
 		            .add(Projections.property("project.percentStatus").as("percentStatus"))
 		            .add(Projections.property("project.projectId").as("projectId"));
@@ -112,6 +113,7 @@ public class WorkingDaolmp extends AbstractDao<Integer, Working> implements Work
 		 if(BeanUtils.isNotEmpty(employeeId)){
 			 criteria.add(Restrictions.eq("working.employeeId", employeeId));			 
 		 }
+		 criteria.add(Restrictions.or(Restrictions.ne("project.status", "Project Complete"),Restrictions.isNull("project.status")));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 			ArrayList<Working> workingList = (ArrayList<Working>) criteria.list();
 		return workingList;

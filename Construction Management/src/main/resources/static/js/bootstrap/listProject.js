@@ -54,12 +54,9 @@
 										'<a href='+domainSystem+'/createProject.html?projectId='+value.projectId+' class="btn btn-primary btn-xs"> '+
 										  '<span class="glyphicon glyphicon-pencil"></span> '+
 										'</a> '+				
-									'<button type="button" class="btn btn-danger btn-xs"  onclick=deleteRow("'+value.projectId+'")> '+
+									/*'<button type="button" class="btn btn-danger btn-xs"  onclick=deleteRow("'+value.projectId+'")> '+
 									'<span class="glyphicon glyphicon-trash"></span>'+
-								   '</button> '+
-								   
-					
-									
+								   '</button> '+*/
 			                        '<td name=projectName>'+value.projectName+'</td> '+
 			                        '<td name=provinceName>'+value.provinceName+'</td> '+
 			                        '<td name=startDate>'+(date1)+'</td> '+
@@ -70,7 +67,7 @@
 			                        '<td name=totalExpense style="text-align:right">'+value.totalExpense.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'</td></tr>');
 	            	});
 	            	$('table.table tbody').html(data.join());	
-	            
+	            	   $('#table').DataTable();
 	        	}
 	        });
 	 	     

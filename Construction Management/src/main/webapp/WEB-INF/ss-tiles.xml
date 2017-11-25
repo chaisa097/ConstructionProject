@@ -69,7 +69,8 @@
 				<add-attribute value="/js/bootstrap/table/bs-base-table.js" />
 				<add-attribute value="/js/bootstrap/paging/jquery.bootpag.min.js" />
 				<add-attribute value="/js/bootstrap/paging/pagingConstant.js" />
-				<add-attribute value="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" />
+				<add-attribute value="/js/datamask/jquery.mask.js" />
+				<add-attribute value="/js/datamask/jquery.mask.min.js" />
 				<!--<add-attribute value="/Bootstrap-calendar/public_html/moment.min.js" />
 				<add-attribute value="/Bootstrap-calendar/public_html/fullcalendar.min.js" /> 
 				<add-attribute value="/js/script/calendar/calendar.js" />-->

@@ -55,10 +55,11 @@
    <div class="content-wrapper" style="margin-top: -89px;">
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
+	
 		<h1>
-			Use Material In <small  id="projectName"></small> 
-				
+		Material Used in Project
 		</h1>
+		
 		<ol class="breadcrumb">
 			<li><a href="${domainSystem}home.html"><i
 					class="fa fa-dashboard"></i>Home</a></li>
@@ -74,7 +75,8 @@
 		<!-- /.box -->
 		<div class="panel panel-info filterable">
 			<div class="box">
-				
+				<center><h2 id="projectName">
+		</h2></center>
 				<div class="box-header">
 				<div class="col-xs-2">
 					<h3 style="margin-top:3px;margin-left: -8px; " class="box-title">List Import Material</h3>

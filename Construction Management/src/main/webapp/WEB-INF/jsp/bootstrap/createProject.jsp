@@ -16,8 +16,9 @@
   <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script> -->
 <script
 	src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+	  <script src="dist/js/jquery.inputmask.js"></script>
+	   <script src="dist/js/inputmask.js"></script>
 <link rel="stylesheet" href="css/base/createproject.css">
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
