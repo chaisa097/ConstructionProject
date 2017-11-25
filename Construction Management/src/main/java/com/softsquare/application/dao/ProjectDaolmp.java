@@ -54,11 +54,10 @@ public class ProjectDaolmp extends AbstractDao<Integer, Project> implements Proj
 		            .add(Projections.property("project.percentStatus").as("percentStatus"))	
 		            .add(Projections.property("employee.empFirstName").as("empFirstName"))		       
 		            .add(Projections.property("employee.employeeId").as("employeeId"));	
-		 criteria.setProjection(projections);			 
+		 criteria.setProjection(projections);	
+		 criteria.add(Restrictions.or(Restrictions.ne("project.status", "Project Complete"),Restrictions.isNull("project.status")));
 		 criteria.setResultTransformer(Transformers.aliasToBean(Project.class));
 		 criteria.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
-
-		
 		ArrayList<ProjectMapping> projectList = (ArrayList<ProjectMapping>) criteria.list();
 		return projectList;
 		

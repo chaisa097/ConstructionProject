@@ -55,7 +55,7 @@
 	 			if(is_name){input.removeClass("invalid").addClass("valid");}
 	 			else{input.removeClass("valid").addClass("invalid");}
 	 		});
-	 	     
+	 	 $(function(){ $('#critical').mask('000'); });
 	 	  $('#descript').on('input', function() {
 	 			var input=$(this);
 	 			var is_name=input.val();
@@ -84,6 +84,14 @@
  			else{input.removeClass("valid").addClass("invalid");}
  		});
 		
+		$('#cusPhone').on('input', function() {
+ 			var input=$(this);
+ 			var is_name=input.val();
+ 			if(is_name){input.removeClass("invalid").addClass("valid");}
+ 			else{input.removeClass("valid").addClass("invalid");}
+ 		});
+		
+		$(function(){ $('#cusPhone').mask('000-000-0000'); });
 		
 		$('#budget').on('input', function() {
 			
