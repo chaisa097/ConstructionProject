@@ -52,7 +52,42 @@
 
     <!-- Main content -->
     <section class="content">
-
+        <div class="panel panel-info filterable">
+           <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Header Order List</h3>
+               <div class="pull-right">
+		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Search</button>
+		                </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table  class="table">
+                <thead>
+                <tr class="filters">
+               <th></th>
+		      <th><input type="text" class="form-control"
+									placeholder="OrderNo" disabled></th>
+								<th><input type="text" class="form-control"
+									placeholder="status" disabled></th>
+								<th><input type="text" class="form-control"
+									placeholder="OrderDate" disabled></th>
+                </tr>
+                </thead>
+               <tbody>
+		       </tbody>
+                
+              </table>
+              
+               <div class="pull-right">
+		              <div id="page-selection"></div>
+		              </div>
+              
+            </div>
+            <!-- /.box-body -->
+            </div>
+             <!-- /.box -->
+          </div>
       <!-- SELECT2 EXAMPLE -->
       <div class="box box-default" name="addEditData">
         <div class="box-header with-border">
@@ -94,42 +129,7 @@
         </div>
       </div>
       <!-- /.box -->
-       <div class="panel panel-info filterable">
-           <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Header Order List</h3>
-               <div class="pull-right">
-		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Search</button>
-		                </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table  class="table">
-                <thead>
-                <tr class="filters">
-               <th></th>
-		      <th><input type="text" class="form-control"
-									placeholder="OrderNo" disabled></th>
-								<th><input type="text" class="form-control"
-									placeholder="status" disabled></th>
-								<th><input type="text" class="form-control"
-									placeholder="OrderDate" disabled></th>
-                </tr>
-                </thead>
-               <tbody>
-		       </tbody>
-                
-              </table>
-              
-               <div class="pull-right">
-		              <div id="page-selection"></div>
-		              </div>
-              
-            </div>
-            <!-- /.box-body -->
-            </div>
-             <!-- /.box -->
-          </div>
+     
          
   
     </section>

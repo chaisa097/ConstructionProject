@@ -116,12 +116,25 @@
                 
               </table>
               
-               <div class="pull-right">
-		              <div id="page-selection"></div>
+              
+               	
+		         
+				       <div class="box-footer">
+			     <div id="page-selection">
+		              <button type="button" class="btn btn-primary" onclick="back()">
+					Back
+				   </button>
+		              
+		               <div class="pull-right">
 		                 	<button type="button" class="btn btn-success" onclick="Send()">
 					<span class="glyphicon glyphicon-view"></span> View
 				   </button> 
+			</div>
+				   
 		              </div>
+		              
+		              </div>
+		              
               
             </div>
             <!-- /.box-body -->

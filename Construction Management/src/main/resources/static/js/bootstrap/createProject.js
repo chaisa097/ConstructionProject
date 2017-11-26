@@ -223,6 +223,12 @@ function save(){
 					params.customerPhone = $('div[name=addEditData] input[name=customerPhone]').val();
 					params.budget =	$('div[name=addEditData] input[name=budget]').val();
 					params.criticalBudget=	$('div[name=addEditData] input[name=criticalBudget]').val();			
+					
+					if(params.criticalBudget>100){
+						alert("CriticalBudget more than 100");
+						createOrUpdateMode(param);
+					}
+					
 			    	$.ajax({
 			        	type: 'POST'
 			        	, url: application.contextPath+"/createProject.html"

@@ -11,5 +11,5 @@ public interface RequestMaterialDetailService {
 	 public  ArrayList<RequestMaterialDetailMapping> ListRequestDetail(RequestMaterialDetailMapping mapping);
 	 public void removeRequestDetail(RequestMaterialDetailMapping mapping) throws Exception;
 	 public ArrayList<RequestMaterialDetail> findMaterialDetailId(int id);
-	
+		public ArrayList<RequestMaterialDetail> findMaterialDetailByRequestMaterialId(int RequestId);
 }

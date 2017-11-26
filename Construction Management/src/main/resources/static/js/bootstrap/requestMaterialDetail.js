@@ -29,7 +29,7 @@
 		            	var json = $.parseJSON(result);
 		            	var data = [];
 		            	$.each(json, function(index, value) {
-		            		  data.push('<tr requestMaterialDetailId="'+value.requestMaterialDetailId+'"><td>'+
+		            		  data.push('<tr materialId="'+value.materialId+'"><td>'+
 											'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.requestMaterialDetailId+'")> '+
 												'<span class="glyphicon glyphicon-trash"></span>'+
 											'</button> '+
@@ -61,6 +61,16 @@
 					params.requestMaterialId = headerId
 					params.materialId = $('div[name=addEditData] select[name="materialList"]').val();
 					params.quantityRequest = $('div[name=addEditData]  input[name=quantityRequest]').val();
+					
+					var employeeArray =  $('tr[materialId]').toArray();
+					  
+					 employeeArray.forEach(function(element) {
+						 if(params.materialId == $(element).attr('materialId')){
+							 alert("Dupplicate Material");
+							 createOrUpdateMode(param);
+						 }
+					 });
+					
 					
 				         var materialstockId  = $("#Materialstock").val();
 				         
@@ -153,7 +163,18 @@
 
 		
 		function back(){
-			location.href = "createRequestMaterial.html";
+			 var params1 = {method: 'searchProjectId', requestMaterialId: headerId};
+		    	$.ajax({
+		        	type: 'POST'
+		        	, url: application.contextPath+"/requestMaterialDetail.html"
+		        	, data: params1
+		        	, success: function(result){
+		        		var json = $.parseJSON(result)
+			   
+			   location.href = "createRequestMaterial.html?projectId="+json[0].projectId+"";
+			   
+	        	}
+			});
 
 		}
 		function Send(){

@@ -13,7 +13,7 @@
 			      	var criticalBudget = (json[0].criticalBudget/100)*json[0].budget;
 			         var profit = json[0].budget-criticalBudget;
 			      	if (totalExpense>profit){
-			      		alert("You should not import material into project because Expense Total more than your fix criticalBudget");
+			      		alert("You should not import material into project because Expense Total more than criticalBudget fix");
 			      	}
 			  	}
 			  });
@@ -86,7 +86,9 @@
 		 
 		 
 		 
-		 
+		 function back(){
+				location.href = "listProjectPM.html";
+			}	 
 		 
 		 
 		 

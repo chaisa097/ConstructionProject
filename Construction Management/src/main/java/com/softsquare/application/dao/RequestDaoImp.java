@@ -239,11 +239,14 @@ public class RequestDaoImp extends AbstractDao<Integer,RequestMaterial> implemen
 	@Override
 	public ArrayList<RequestMaterialMapping> FindRequestMaterial(RequestMaterialMapping  mapping) {
 		 Criteria criteria = getSession().createCriteria(RequestMaterial.class, "request");
+		 criteria.createAlias("request.project", "project");
 		 ProjectionList projections = Projections.projectionList()
 		            .add(Projections.property("request.requestMaterialId").as("requestMaterialId"))
 		            .add(Projections.property("request.status").as("status"))
 		            .add(Projections.property("request.contactOwner").as("contactOwner"))
 		            .add(Projections.property("request.requestMaterialNo").as("requestMaterialNo"))
+		            .add(Projections.property("request.requestDate").as("requestDate"))
+		            .add(Projections.property("project.projectName").as("projectName"))
 		            .add(Projections.property("request.useMaterialDate").as("useMaterialDate"));
 		 criteria.setProjection(projections);
 		 criteria.add(Restrictions.eq("request.requestMaterialId",mapping.getRequestMaterialId()));	

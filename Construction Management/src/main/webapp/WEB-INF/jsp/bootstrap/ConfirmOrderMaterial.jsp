@@ -7,6 +7,8 @@
 <html>
 <head>
  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -32,6 +34,8 @@
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
    <!-- DataTables -->
   <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/jszip.min.js"></script>
 </head>
 <div name="statusSave" hidden="true"></div>
   <!-- Content Wrapper. Contains page content -->
@@ -48,12 +52,14 @@
          <li><a href="#"><i class="fa fa-folder"></i> Approve Order Material</a></li>
       </ol>
     </section>
-
+ <div id="content">
     <!-- Main content -->
     <section class="content">
       <!-- /.box -->
        <div class="panel panel-info filterable">
+        
            <div class="box">
+          
             <div class="box-header">
                <div class="row">
                
@@ -85,16 +91,15 @@
 					<h4 style="margin-left:-30px;" id="address"> </h4>
 					</div>
 			
-
+           </div>
+           
             </div>
              <div class="box-footer">
 				</div>
-
-			</div>
 			
             <!-- /.box-header -->
             <div class="box-body">
-              <table  class="table">
+              <table id="exportTable"  class="table">
                 <thead>
                 <tr class="filters">
 		                           <th><input type="text" class="form-control" placeholder="MaterialName" disabled></th>
@@ -106,13 +111,9 @@
                 </thead>
                <tbody>
 		       </tbody>
-                
               </table>
-              
-               
-              
-            </div>
-            
+               </div>
+        
               <div class="box-footer">
                <div class="pull-right">
                   <button type="button" class="btn btn-danger" onclick="rejectOrder()">
@@ -121,7 +122,9 @@
 		            	<button type="button" class="btn btn-success" onclick="ConfirmOrder()">
 					<span class="glyphicon glyphicon-ok"></span> Confirm
 				   </button> 
-				
+				<button id="exportButton" type="button" class="btn btn-success" onclick="exportPDF()" >
+					<span class="fa fa-file-pdf-o"></span> PDF file
+				   </button> 
 		              </div>
               
               
@@ -133,6 +136,9 @@
          
   
     </section>
+   </div>
+    
+            <div id="editor"></div>
     <!-- /.content -->
   </div>
 

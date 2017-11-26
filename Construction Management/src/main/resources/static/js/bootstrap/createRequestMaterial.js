@@ -127,3 +127,7 @@ function createOrUpdateMode(param){
 		 $("div[name='statusSave']").attr('mode', '');
 	 }
 }
+function back(){
+	location.href = "importMaterial.html";
+
+}

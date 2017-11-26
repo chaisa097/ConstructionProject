@@ -54,6 +54,6 @@ function searchFunction(){
 			        });
 		    }
 
-function backFunction(){
+function back(){
 	location.href = "listProjectPM.html";
 }

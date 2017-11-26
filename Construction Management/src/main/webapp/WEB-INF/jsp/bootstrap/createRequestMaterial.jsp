@@ -128,8 +128,55 @@
 
     <!-- Main content -->
     <section class="content">
-
-      <!-- SELECT2 EXAMPLE -->
+       <div class="panel panel-info filterable">
+           <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Header Request List</h3>
+               <div class="pull-right">
+		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Search</button>
+		                </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table  class="table">
+                <thead>
+                <tr class="filters">
+               <th></th>
+								<th><input type="text" class="form-control"
+									placeholder="RequestNo" disabled></th>
+								<th><input type="text" class="form-control"
+									placeholder="status" disabled></th>
+								<th><input type="text" class="form-control"
+									placeholder="RequestDate" disabled></th>
+		     
+                </tr>
+                </thead>
+               <tbody>
+		       </tbody>
+                
+              </table>
+           
+              
+            </div>
+            
+             <div class="box-footer">
+			     <div id="page-selection">
+		              <button type="button" class="btn btn-primary" onclick="back()">
+					Back
+				   </button>
+		              
+		        
+				   
+		              </div>
+		              
+		              </div>
+            
+            <!-- /.box-body -->
+            
+            </div>
+             <!-- /.box -->
+          </div>
+      <!-- Box2 -->
       <div class="box box-default" name="addEditData">
         <div class="box-header with-border">
           <h3 class="box-title">New Header Request</h3>
@@ -170,43 +217,7 @@
         </div>
       </div>
       <!-- /.box -->
-       <div class="panel panel-info filterable">
-           <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Header Request List</h3>
-               <div class="pull-right">
-		                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span>Search</button>
-		                </div>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table  class="table">
-                <thead>
-                <tr class="filters">
-               <th></th>
-								<th><input type="text" class="form-control"
-									placeholder="RequestNo" disabled></th>
-								<th><input type="text" class="form-control"
-									placeholder="status" disabled></th>
-								<th><input type="text" class="form-control"
-									placeholder="RquestDate" disabled></th>
-		     
-                </tr>
-                </thead>
-               <tbody>
-		       </tbody>
-                
-              </table>
-              
-               <div class="pull-right">
-		              <div id="page-selection"></div>
-		              </div>
-              
-            </div>
-            <!-- /.box-body -->
-            </div>
-             <!-- /.box -->
-          </div>
+     
          
   
     </section>

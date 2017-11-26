@@ -269,9 +269,16 @@
 						</tbody>
 
 					</table>
-					<div class="col-md-9">
+				
+					
+					
+					
+				</div>
+				<div class="box-footer">
+			  	<div class="col-md-9">
 					
 					</div>
+					
 					<div class="col-xs-3">
 						<div class="col-xs-2">
 						<lable class="headPanal" >TotalAll:</lable>
@@ -280,8 +287,21 @@
 					 <lable ><p id="totalHireEmployee"></p></lable>
 					</div>
 					</div>
-					
-				</div>
+		              </div>
+		              
+		              </div>
+				<div class="box-footer">
+			     <div id="page-selection">
+		              <button type="button" class="btn btn-primary" onclick="back()">
+					Back
+				   </button>
+		              
+		           
+				   
+		              </div>
+		              
+		              </div>
+				
 				<!-- /.box-body -->
 			</div>
 			<!-- /.box -->

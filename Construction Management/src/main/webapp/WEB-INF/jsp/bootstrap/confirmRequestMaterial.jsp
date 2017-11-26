@@ -107,7 +107,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       Request
+      Approve Request
         <small>Material</small>
       </h1>
       <ol class="breadcrumb">
@@ -123,38 +123,53 @@
        <div class="panel panel-info filterable">
            <div class="box">
             <div class="box-header">
-               <div class="row">
                
-                    <div class="col-xs-1">
-					<h4>RequestNo :</h4>
-					</div>
-					<div class="col-xs-9">
-					<h4  style="margin-left:-30px;" id="requestMaterialNo"> </h4>
-					</div>
-
-					<div class="col-xs-1">
-					<h4>Using Date :</h4>
-					</div>
-					<div class="col-xs-1">
-					<h4 style="margin-left:-30px;" id="useMaterialDate"> </h4>
-					</div>
-					
-					<div class="col-xs-1">
-					<h4> Status :</h4>
-					</div>
-					<div class="col-xs-2">
-					<h4 style="margin-left:-30px;" id="status"> </h4>
-					</div>
-					
-					<div class="col-xs-2">
-					<h4> Owner Contact :</h4>
-					</div>
-					<div class="col-xs-2">
-					<h4 style="margin-left:-30px;" id="contactOwner"> </h4>
-					</div>
+                  
 			
-
-            </div>
+                     <div class="row" >
+								<div class="col-md-7">
+								<div class="col-md-2">
+									<h4>RequestNo:</h4>
+									</div>
+								<h4 style="margin-left:2px;" id="requestMaterialNo"> </h4>
+								</div>
+								<div class="col-md-5">
+									<div class="col-md-3">
+								<h4> Request Date :</h4>
+								</div>
+								<h4 style="margin-left:2px;" id="requestDate"> </h4>
+								</div>
+				     	</div>
+						<div class="row" >
+								<div class="col-md-4">
+								<div class="col-md-2">
+									<h4>Status:</h4>
+									</div>
+							  <h4 style="margin-left:-30px;" id="status"> </h4>
+								</div>
+								<div class="col-md-8">
+									<div class="col-md-2">
+								<h4>Contact Owner :</h4>
+								</div>
+							<h4 style="margin-left:-30px;" id="contactOwner"> </h4>
+								</div>
+				     	</div>
+						
+             	<div class="row" >
+								<div class="col-md-5">
+								<div class="col-md-2">
+									<h4>Project:</h4>
+									</div>
+							  <h4 style="margin-left:2px;" id="projectName"> </h4>
+								</div>
+							<div class="col-md-5">
+								<div class="col-md-4">
+							<h4>Using Material Date :</h4>
+									</div>
+							 <h4 style="margin-left:2px;" id="useMaterialDate"> </h4>
+								</div>
+				     	</div>
+        
              <div class="box-footer">
 				</div>
 
@@ -181,6 +196,9 @@
             </div>
             
               <div class="box-footer">
+                   <button type="button" class="btn btn-primary" onclick="back()">
+					Back
+				   </button>
                <div class="pull-right">
 		            	<button type="button" class="btn btn-success" onclick="ConfirmRequest()">
 					<span class="glyphicon glyphicon-ok"></span> Confirm

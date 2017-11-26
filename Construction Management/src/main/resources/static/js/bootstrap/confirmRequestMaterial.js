@@ -25,12 +25,25 @@ function searchHeader(){
 	    if (month.length < 2) month = '0' + month;
 	    if (day.length < 2) day = '0' + day;
 
-	    var date = [year, month, day].join('-');
+	    var date = [day, month, year].join('/');
+	    
+	    var d3 = new Date(json[0].requestDate),
+        month = '' + (d3.getMonth() + 1),
+        day = '' + d3.getDate(),
+        year = d3.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    var requestDate = [day, month, year].join('/');
+	    
 	    
 	    $("#contactOwner").html(json[0].contactOwner);  
      	$("#requestMaterialNo").html(json[0].requestMaterialNo);  
      	$("#useMaterialDate").html(date); 
      	$("#status").html(json[0].status); 
+     	$("#projectName").html(json[0].projectName); 
+    	$("#requestDate").html(requestDate); 
 	  	}
 	  });
 }
@@ -86,3 +99,23 @@ function rejectRequest(){
        	}
        });
 }
+
+function back(){
+	 var params1 = {method: 'searchProjectId', requestMaterialId: headerId};
+   	$.ajax({
+       	type: 'POST'
+       	, url: application.contextPath+"/requestMaterialDetail.html"
+       	, data: params1
+       	, success: function(result){
+       		var json = $.parseJSON(result)
+	   
+	   location.href = "listRequestMaterialPM.html?projectId="+json[0].projectId+"";
+	   
+   	}
+	});
+   	
+   	
+
+
+}
+

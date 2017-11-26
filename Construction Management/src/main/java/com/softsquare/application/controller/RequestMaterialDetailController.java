@@ -89,4 +89,16 @@ public class RequestMaterialDetailController {
 		}
 	}
 	
+	@RequestMapping(params =  "method=searchProjectId", method=RequestMethod.POST)
+    public void searchProjectbyRequestMaterialId(HttpServletRequest request, HttpServletResponse response, @ModelAttribute RequestMaterialDetailMapping mapping) throws Throwable{
+		Gson gson = new Gson();
+		String  json = gson.toJson(requestDetailService.findMaterialDetailByRequestMaterialId(mapping.getRequestMaterialId()));
+		try {
+			response.getWriter().write(json);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
+	}
+	
+	
 }

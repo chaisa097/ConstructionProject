@@ -40,3 +40,8 @@
 			        	}
 			        });
 		    }
+		 
+		 function back(){
+				location.href = "importMaterial.html";
+
+			}

@@ -122,6 +122,17 @@
 		              </div>
               
             </div>
+              <div class="box-footer">
+			     <div id="page-selection">
+		              <button type="button" class="btn btn-primary" onclick="back()">
+					Back
+				   </button>
+		              
+		        
+				   
+		              </div>
+		              
+		              </div>
             <!-- /.box-body -->
             </div>
              <!-- /.box -->

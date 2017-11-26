@@ -32,7 +32,7 @@
 		            	var json = $.parseJSON(result);
 		            	var data = [];
 		            	$.each(json, function(index, value) {
-		            		  data.push('<tr orderMaterialDatailId="'+value.orderMaterialDatailId+'"><td>'+
+		            		  data.push('<tr materialId="'+value.materialId+'"><td>'+
 											'<button type="button" class="btn btn-danger btn-xs" onclick=deleteRow("'+value.orderMaterialDatailId+'")> '+
 												'<span class="glyphicon glyphicon-trash"></span>'+
 											'</button> '+
@@ -66,7 +66,15 @@
 					params.quantityOrder = $('div[name=addEditData]  input[name=quantityOrder]').val();
 					params.anotation = $('div[name=addEditData]  input[name=anotation]').val();
 					params.orderMaterialId = headerId
-						
+					var employeeArray =  $('tr[materialId]').toArray();
+					  
+					 employeeArray.forEach(function(element) {
+						 if(params.materialId == $(element).attr('materialId')){
+							 alert("Dupplicate Material");
+							 createOrUpdateMode(param);
+						 }
+					 });
+					
 			    	$.ajax({
 			        	type: 'POST'
 			        	, url: application.contextPath+"/orderMaterialDetail.html"

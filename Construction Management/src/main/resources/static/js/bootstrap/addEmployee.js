@@ -147,8 +147,6 @@ function save(){
 			  
 						 employeeArray.forEach(function(element) {
 							 
-							 console.log($(element).attr('workingid'));
-							 
 							 if(params.employeeId == $(element).attr('workingid')){
 								 alert("Dupplicate data");
 								 createOrUpdateMode(param);
